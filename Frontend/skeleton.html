@@ -3,42 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <style>
+
+        .head {
+            background-color: red;
+        }
         
     </style>
   </head>
   <body>
 
-    <header class="head">
-        <div class="head__logo"></div>
-        <div class="head__export"></div>
-        <ul class="sections-menu"> <!-- categories-menu -->
+    <header class="head navbar is-fixed-top">
+        <div class="container">
+            <div class="head__logo"></div>
+            <div class="head__export"></div>
+            <div class="head__avatar"></div>
+        </div>  
+    </header>
+
+    <aside>   
+        <ul class="sections-menu">
             <li class="section">
-                <span>
-                    <i class="section__icon"></i>
-                    <p class="section__label"></p>
-                    <ul class="section__submenu">
-                        <li class="section__x">
-                            <span>
-                                <i class="x__icon"></i>
-                                <p class="x__label"></p>
-                                <ul class="x__submenu"></ul>
-                            </span>
-                        </li>
-                    </ul>
-                </span>
+                <i class="section__icon"></i>
+                <p class="section__label"></p>
+                <ul class="categories-menu">
+                    <li class="category">
+                        <i class="category__icon"></i>
+                        <p class="category__label"></p>
+                    </li>
+                </ul>
             </li>
         </ul>
     </aside>
+
     <main>
         <!-- YOUR CODE HERE -->
     </main>
-    <footer>
-        <div class="foot__navigation">
-            <span class="foot__back-btn"></span>
-            <span class="foot__pagination"></span>
-            <span class="foot__next-btn"></span>
-        </div>
+
+    <footer class="foot">
+        <button class="foot__back"></button>
+        <span class="foot__pagination"></span>
+        <button class="foot__next"></button>
     </footer>
 
  </body>
