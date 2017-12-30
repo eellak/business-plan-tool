@@ -1,4 +1,4 @@
-]23 Dec 2017
+23 Dec 2017
 - Meeting with design team (1h) 
 
 25 Dec 2017
@@ -14,4 +14,7 @@
 - Meeting with the client: Presenting design prototype to client along with A. Papadimitriou, D. Polychroniadou, Kostis S-Z (1h 15m)
 
 29 Dec 2017
-- Meeting with Team #4: M. Papadopoulos (1h)  
+- Meeting with Team #4: M. Papadopoulos (1h)  
+
+30 Dec 2017
+- Meeting with Orestis Alagialoglou: Choose CSS framework and coded html skeleton (1h 15m)  
