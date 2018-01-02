@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <style>
-
         .head {
-            background-color: red;
+            background-color: rgb(30, 33, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height:80px;
         }
-    </style>
-  </head>
-  <body>
 
-    <header class="head navbar is-fixed-top">
-        <div class="container">
-            <div class="head__logo"></div>
-            <div class="head__export"></div>
-            <div class="head__avatar"></div>
-        </div>  
+        .head__logo {
+            margin-left:20px;
+		}
+
+        .head__export {
+        	color: #fff;
+            display: flex;
+            margin-right:50px; /* Επειδή το Logo είναι μεγαλύτερο από το avatar, για να φένεται καλύτερα */
+            align-items: center;
+        }
+
+
+        .head__avatar {
+            height: 65px;
+            border-radius: 50%;
+            margin-right:20px;
+        }
+        
+        .head__export p{
+            margin-left:5px;
+            font-size:20px;
+        }
+
+        .head__export i{
+            
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <header class="head">
+        <div class="head__logo">
+            <img src="Logo.png" alt="Logo">
+        </div>
+        <div class="head__export">
+        	<i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+        	<p>Export</p>
+        </div>
+        <img class="head__avatar" src="orestis.jpg" alt="Avatar">
+        <!-- </div>   -->
     </header>
 
-    <aside>   
+    <aside>
         <ul class="sections-menu">
             <li class="section">
                 <i class="section__icon"></i>
@@ -38,6 +79,7 @@
 
     <main>
         <!-- YOUR CODE HERE -->
+        <div class="test">
     </main>
 
     <footer class="foot">
@@ -46,5 +88,6 @@
         <button class="foot__next"></button>
     </footer>
 
- </body>
+</body>
+
 </html>
