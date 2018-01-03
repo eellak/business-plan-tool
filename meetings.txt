@@ -18,3 +18,6 @@
 
 30 Dec 2017
 - Meeting with Orestis Alagialoglou: Choose CSS framework and coded html skeleton (1h 15m)  
+
+3 Jan 2018
+- #1 Meeting with middle team: Orestis A, Vogas D and M. Papadopoulos(#4): Decide between 2 development approaches - all teams do html and then the middle team combines the html to the Vue application VS all teams get involved to the Vue application - (1h 30m)  
