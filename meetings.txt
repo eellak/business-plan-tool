@@ -1,4 +1,23 @@
+23 Dec 2017
+- Meeting with design team (1h) 
 
-32 Dec 2042 
-Meeting with S. Jobs and B. Gates
-(1h)
+25 Dec 2017
+- Meeting with D. Polychroniadou and M. Papadopoulos (30m)
+
+27 Dec 2017
+- Meeting with Design Team: D. Polychroniadou, A. Papadimitriou and Kostis S-Z (2h) 
+
+27 Dec 2017
+- Meeting with A. Papadimitriou: Explaining github stuff to Aggeliki (10m) 
+
+29 Dec 2017
+- Meeting with the client: Presenting design prototype to client along with A. Papadimitriou, D. Polychroniadou, Kostis S-Z (1h 15m)
+
+29 Dec 2017
+- Meeting with Team #4: M. Papadopoulos (1h)  
+
+30 Dec 2017
+- Meeting with Orestis Alagialoglou: Choose CSS framework and coded html skeleton (1h 15m)  
+
+3 Jan 2018
+- #1 Meeting with middle team: Orestis A, Vogas D and M. Papadopoulos(#4): Decide between 2 development approaches - all teams do html and then the middle team combines the html to the Vue application VS all teams get involved to the Vue application - (1h 30m)  
