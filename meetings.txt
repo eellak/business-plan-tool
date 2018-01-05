@@ -3,9 +3,13 @@
 29 Dec 2017
 - Meeting with G.Assioglou (1h)
 3 Jan 2018
+- #1 Meeting with middle team: Orestis A, Vogas D and M. Papadopoulos(#4): Decide between 2 development approaches - all teams do html and then the middle team combines the html to the Vue application VS all teams get involved to the Vue application - (1h 30m)  
 - Meeting with G.Assioglou, O.Alagioglou and D.Vogas (30m)
 4 Jan 2018
 - Meeting with G.Assioglou (30m)
 4 Jan 2018
 - Meeting with P.Tosidis and A.Anastasiadou (2h)
+
+gassio test
+
 test isidoros
