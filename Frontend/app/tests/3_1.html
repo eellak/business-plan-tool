@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ομάδα Διοίκησης</title>
+    <style>
+      .manager-form {
+        display: flex;
+      }
+        .manager-form p {
+          margin-left: 10px;
+        }
+        .manager-form input {
+          margin-left: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  </head>
+  <body>
+    
+    <div id="app">
+
+        <div class="manager-container">  
+            <div class="manager-form" v-for="m in managers">
+                <p>Όνομα<input type="text" v-model="m.name"></p>
+                <p>Επώνυμο<input type="text" v-model="m.surName"></p>
+                <p>Θέση εργασίας<input type="text" v-model="m.job"></p>
+                <p>LinkedIn<input type="text" v-model="m.linkedIn"></p>
+                <button @click="removeManager(m, $event)">- Remove</button>
+            </div>
+        </div>
+
+        <button @click="addManager()">+ Add manager</button>
+        <button @click="saveManagers()">✓ Save</button>
+        <!-- <button @click="saveManagers()">✓ Save</button> -->
+
+        <li v-for="m in managers">
+          {{ m.name }}
+        </li>
+
+        <hr>
+
+        <!-- <div v-for="a in ages">
+          <input type="text" v-model="a.age">
+        </div>
+        <h1>{{ age }}</h1> -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="test.js"></script>
+  </body>
+</html>
