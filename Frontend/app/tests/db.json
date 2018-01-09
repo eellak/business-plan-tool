@@ -1,0 +1,25 @@
+{
+  "manager": [
+    {
+      "name": "Δημήτρης",
+      "surName": "Βόγας",
+      "job": "Προγ",
+      "linkedIn": "ααα",
+      "id": 1
+    },
+    {
+      "name": "Δημήτρης",
+      "surName": "Βόγας",
+      "job": "Προγ",
+      "linkedIn": "ααα",
+      "id": 2
+    },
+    {
+      "name": "",
+      "surName": "",
+      "job": "",
+      "linkedIn": "",
+      "id": 3
+    }
+  ]
+}
