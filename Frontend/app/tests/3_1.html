@@ -2,8 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Ομάδα Διοίκησης</title>
+    <title>3.1 Ομάδα Διοίκησης</title>
     <style>
+      .app { 
+        height: 100vh; 
+        background-color: yellow;
+        padding: 2em;
+      }
       .manager-form {
         display: flex;
       }
@@ -13,12 +18,24 @@
         .manager-form input {
           margin-left: 5px;
         }
+
+      .manager-actions {
+        margin-top: 25px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .manager-actions button {
+        padding: 10px 15px;
+        margin: 10px;
+      }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
   </head>
   <body>
     
-    <div id="app">
+    <div class="app">
 
         <div class="manager-container">  
             <div class="manager-form" v-for="m in managers">
@@ -30,20 +47,14 @@
             </div>
         </div>
 
-        <button @click="addManager()">+ Add manager</button>
-        <button @click="saveManagers()">✓ Save</button>
-        <!-- <button @click="saveManagers()">✓ Save</button> -->
+        <div class="manager-actions">
+          <button @click="addManager()">+ Add manager</button>
+          <button @click="saveManagers()">✓ Save</button>
+        </div>
 
         <li v-for="m in managers">
           {{ m.name }}
         </li>
-
-        <hr>
-
-        <!-- <div v-for="a in ages">
-          <input type="text" v-model="a.age">
-        </div>
-        <h1>{{ age }}</h1> -->
 
     </div>
 
@@ -51,6 +62,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script src="test.js"></script>
+    <script src="logic.js"></script>
   </body>
 </html>
