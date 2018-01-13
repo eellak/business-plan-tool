@@ -183,9 +183,9 @@
 //9
 "nineLinks": {
   "linkList": [
-    {"linkID":1, "URL":"www1", "title":"Τιτλος1"},
-    {"linkID":2, "URL":"www2", "title":"Τιτλος2"},
-    {"linkID":3, "URL":"www3", "title":"Τιτλος3"}
+    {"linkID":1, "URL":"www1", "title":"Τιτλος1", "section": "Section1"},
+    {"linkID":2, "URL":"www2", "title":"Τιτλος2", "section": "Section2"},
+    {"linkID":3, "URL":"www3", "title":"Τιτλος3", "section": "Section3"}
   ]
 }
 
