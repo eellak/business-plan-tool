@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BP Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        /* APP */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: initial;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+        /* HEADER */
+        .head {
+            background-color: rgb(30, 33, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            ;
+        }
+        .head__logo {
+            margin-left: 20px;
+        }
+        .head__export {
+            color: #fff;
+            display: flex;
+            margin-right: 100px;
+            align-items: center;
+        }
+        .head__avatar {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .head__export p {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+        .head__export i {}
+        /* FOOTER */
+        footer {
+            background-color: rgb(203, 202, 202);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .foot__back {
+            margin-right: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .foot__next {
+            margin-left: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .foot__pagination {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .main_container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        nav {
+            background-color: rgb(30, 33, 51);
+            width: 350px;
+        }
+        /* SECTIONS MENU */
+        .sections-menu {}
+        .sections-menu ul {
+            list-style: none;
+            margin: 0;
+        }
+        .sections-menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 350px;
+            border-top: 1px solid black;
+            background-color: rgb(30, 33, 51);
+        }
+        .sections-menu ul li {
+            border-right: 5px solid rgb(61, 65, 90);
+        }
+        .sections-menu ul ul {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 100%;
+            top: -2%;
+            background-color: rgb(40, 44, 63);
+        }
+        .sections-menu ul ul li {
+            background-color: rgb(79, 84, 115);
+            width: 250px;
+        }
+        .sections-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sections-menu ul li a {
+            color: white;
+        }
+        /* BASIC ELEMENTS */
+        .basic_button {
+            background-color: rgb(24, 146, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="head">
+        <div class="head__logo">
+            <img src="Logo.png" alt="Logo">
+        </div>
+        <div class="head__export">
+            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <p>Export</p>
+        </div>
+        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+    </header>
+
+
+    <div class="main_container">
+        <nav>
+            <div class="sections-menu">
+                <ul>
+                    <li>
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                        <ul>
+                            <li>
+                                <a href="index.html">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="index2.html">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+                            </li>
+                            <li>
+                                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                        <ul>
+                            <li>
+                                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="">ΣΥΝΟΨΗ</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
+            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
+            <!--Περιεχόμενο που εμφανίζεται με τι πάτημα του κουμπιού-->
+            <div id="myDIV">Εδώ η περιγραφή των <br>οδηγιών...</div>
+            <!--Επιλογή προιόντος ή υπηρεσίας-->
+            <h1>0. Επιλέξτε προϊόν/υπηρεσία για προσθήκη.</h1>
+            <label class="container">Προϊόντα
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Υπηρεσίες
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            
+            <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
+            <div class="Align">
+            <!--Καταγραφή ονόματος προϊόντος/υπηρεσίας-->    
+            <form>
+                <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
+                <textarea placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ"></textarea>
+            </form>
+            <!--Καταγραφή του που απευθύνεται το προϊόν/υπηρεσία-->     
+            <form>
+                <h1>2. Ομάδα-στόχος.</h1>  
+                <textarea placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ"></textarea>
+            </form>
+            </div>
+            
+            <div class="Align">
+            <!--Καταγραφή των στοιχείων καινοτομίας-->
+            <form>
+                <h1>3. Στοιχεία καινοτομίας/ανταγωνιστικότητας.</h1>
+                <textarea placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ"></textarea>
+            </form>
+            
+             <form>
+             <!--Καταγραφή της τεχνολογίας που χρησιμοποιείται-->
+                <h1>4. Τεχνολογία στην οποία βασίζεται.</h1>
+                <textarea placeholder="ΤΕΧΝΟΛΟΓΙΑ"></textarea>
+            </form>
+            </div>
+            
+            <!--Καταγραφή απαιτήσεων αδείας. Τα λινκς δε ξέρω γιατί υπάρχουν,το μόκαπ έτσι είναι.-->
+            <h1>5. Απαιτήσεις άδειας.</h1>
+            <form class=quest58>
+                <textarea placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
+            </form>
+            <div class="options">
+                <a href="Placeholder link">Πιστοποιητικό ασφάλειας</a><br>
+                <a href="Placeholder link 2">ISO</a><br>
+                <a href="Placeholder link 3">Κατοχυρωμένη πατέντα</a>
+            </div>
+            <!-- Καταγραφή στοιχείων ανταγωνισμού-->
+            <div class="Align">
+            <form>
+                <h1>6. Στοιχεία ανταγωνισμού.</h1>
+                <textarea placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ"></textarea>
+            </form>
+            
+            <!--Καταγραφή τελικής τιμής-->
+            <form>
+                 <h1>7. Τιμή διάθεσης στον τελικό χρήστη.</h1>
+                 <textarea placeholder="ΤΕΛΙΚΗ ΤΙΜΗ"></textarea>
+            </form>
+            </div>
+            
+            <!--Καταγραφή περιγραφής προϊόντος/υπηρεσίας.-->
+            <h1>8. Περιγραφή.</h1>
+            <form class=quest58>
+                <textarea placeholder="ΠΕΡΙΓΡΑΦΗ"></textarea>
+            </form>
+            <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
+            <button type="submit" class="add"><img src="add32.png"> </button>
+                    
+        </main>
+    </div>
+
+
+    <footer class="foot">
+        <button class="foot__back">ΠΙΣΩ</button>
+        <span class="foot__pagination">
+            <p>1/2</p>
+        </span>
+        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+    </footer>
+    
+    
+    <script>
+        //Κάνει το button να εμφανίζει τις οδηγίες
+        function tipsButton() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "block") {
+            x.style.display = "none";
+            } else {
+            x.style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
