@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>BP Tool</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        /* BASIC ELEMENTS */
-
-        .basic_button {
-            background-color: rgb(24, 146, 105);
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
-
-<body>
+<template>
+  <div class="skeleton">
 
     <header class="head">
         <div class="head__logo">
-            <img src="Logo.png" alt="Logo">
+            <img src="../assets/logo.png" alt="Logo">
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="../assets/elvis.jpg" alt="Avatar">
     </header>
-
 
     <div class="main_container">
         <nav>
             <div class="sections-menu">
                 <ul>
                     <li>
+                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                      <ul>
+                        <router-link to="/2a-identity" tag="li" class="">
+                          <a>ΤΑΥΤΟΤΗΤΑ</a>
+                        </router-link>
+                        <router-link to="/2b-description" tag="li" class="">
+                          <a>ΠΕΡΙΓΡΑΦΗ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <!-- <li>
                         <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
                         <ul>
                             <li>
@@ -143,17 +130,16 @@
                     </li>
                     <li>
                         <a href="">ΣΥΝΟΨΗ</a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
         </nav>
 
         <main>
-            <!-- YOUR CODE HERE -->
+            <router-view/>
         </main>
     </div>
-
 
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
@@ -162,6 +148,182 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-</body>
+    
+  </div>
+</template>
 
-</html>
+<script>
+export default {
+  name: 'Skeleton',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
+
+<style>
+        /* APP */
+
+        .skeleton {
+            display: flex;
+            flex-direction: column;
+            justify-content: initial;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+
+        /* HEADER */
+
+        .head {
+            background-color: rgb(30, 33, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            ;
+        }
+
+        .head__logo {
+            margin-left: 20px;
+        }
+
+        .head__export {
+            color: #fff;
+            display: flex;
+            margin-right: 100px;
+            align-items: center;
+        }
+
+
+        .head__avatar {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .head__export p {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+
+        .head__export i {}
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: rgb(203, 202, 202);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foot__back {
+            margin-right: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__next {
+            margin-left: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__pagination {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+        }
+
+
+        main {
+            flex-grow: 1;
+        }
+
+        .main_container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        nav {
+            background-color: rgb(30, 33, 51);
+            width: 350px;
+        }
+
+
+        /* SECTIONS MENU */
+
+        .sections-menu {}
+
+        .sections-menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .sections-menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 350px;
+            border-top: 1px solid black;
+            background-color: rgb(30, 33, 51);
+        }
+
+        .sections-menu ul li {
+            border-right: 5px solid rgb(61, 65, 90);
+        }
+
+        .sections-menu ul ul {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 100%;
+            top: -2%;
+            background-color: rgb(40, 44, 63);
+        }
+
+        .sections-menu ul ul li {
+            background-color: rgb(79, 84, 115);
+            width: 250px;
+        }
+
+        .sections-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sections-menu ul li a {
+            color: white;
+        }
+
+
+        /* BASIC ELEMENTS */
+
+        .basic_button {
+            background-color: rgb(24, 146, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
