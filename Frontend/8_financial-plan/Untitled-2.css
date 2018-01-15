@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	
+	font-family: "Open Sans";
+ 	position:relative;
+	backround-color:lightblue;
+	color:#1e2133;
+	
+}
+#userArea{
+	backround-color:#fff;
+	position:absolute;
+	top:102px;
+	left:424px;
+	height:866px;
+	width:1334px;
+        overflow-y: scroll;
+
+}
+
+h5{
+	position:relative;
+	top:20px;
+	font-size:20px;
+	}
+
+h4{
+	font-size: 40px;
+	color:#cbcaca
+}
+
+
+
+.userInput{
+	
+	position:relative;
+	background-color: #fff;
+	top:10px;
+	left:px;
+	width:393px;
+	height:66px;
+	text-align: left;
+	text-indent: 20px;
+	font-size:25px;
+	
+	
+	}
+	
+#f{
+
+}
+	
+
+button{
+	
+	font-family:"Source Sans Pro";
+	position:fixed;
+	width:217px;
+	height:65px;
+	background-color:#299858 ; 
+	font-size: 25px;
+    color:#fff;
+	
+}
+
+#instructions{
+	
+	height:68px;
+	width:172px;
+	position:absolute;
+	top:45px;
+	left:1081px;
+}
+
+
+#calculate{
+	position:relative;
+	top:20px;
+	
+	
+	
+}
+
+#add{
+	position:relative;
+	top:30px;
+	
+	
+}
+
+placeholder{
+	
+	color:#cbcaca
+}
