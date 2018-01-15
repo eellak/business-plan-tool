@@ -23,7 +23,14 @@
 
 }
 
-//2.2 empty
+//2.2
+"twoEmployees": {
+  "employees": [
+    {"id": 1, "job": "Πωλητής" },
+    {"id": 2, "job": "Λογιστής" },
+    {"id": 3, "job": "Καθαριστής" },
+  ]
+}
 
 //2.3
 "twoPartners": {
@@ -32,7 +39,6 @@
     {"id": 2, "name": "Partner2", "surName": "hisSurname2", "expertise": "Exp2", "linkedIn": "www2", "from": 20171114, "until": 20190910, "duties": "Περιγραφη καθηκοντων 2"},
     {"id": 3, "name": "Partner3", "surName": "hisSurname3", "expertise": "Exp3", "linkedIn": "www3", "from": 20121115, "until": 20290920, "duties": "Περιγραφη καθηκοντων 3"}
   ]
-
 }
 
 //2.4
