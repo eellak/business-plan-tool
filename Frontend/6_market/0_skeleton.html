@@ -225,13 +225,24 @@
 
 
     <footer class="foot">
-        <button class="foot__back">ΠΙΣΩ</button>
+        <button class="foot__back" onclick="previousPage()">ΠΙΣΩ</button>
         <span class="foot__pagination">
             <p>1/2</p>
         </span>
-        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+        <button class="foot__next" onclick="nextPage()">ΜΠΡΟΣΤΑ</button>
     </footer>
 
+	<script type="text/javascript">
+		function previousPage(){
+			window.location.href = ""; // insert previous page here
+		}
+		
+		function nextPage(){
+			window.location.href = ""; // insert next page here
+		}
+    </script>
+	
+	
 </body>
 
 </html>
