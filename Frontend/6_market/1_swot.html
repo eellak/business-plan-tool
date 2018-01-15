@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Skeleton</title>
+    <title>Swot Analysis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="0_skeleton.css">
+	<link rel="stylesheet" type="text/css" href="1_swot.css">
     
 </head>
 
@@ -117,7 +118,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="swot.html" class="current">
+                        <a href="1_swot.html" class="current">
                             <p>ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</p>
                         </a>
                         <ul>
@@ -219,30 +220,166 @@
         </nav>
 
         <main>
-		
+            <h1> SWOT ANALYSIS </h1>
+            <button id="instructions" class="button" onclick="foo()">ΟΔΗΓΙΕΣ</button>
+			<div id="hidden_div" class="hiddenDiv">
+				<div>
+					<p class="first"><strong>Οδηγίες για σωστό σχέδιο Swot Analysis:</strong></p>
+					<p>1. Να είναι ρεαλιστικό, σύντομο αλλά και απλό</p>
+					<p>2. Να γίνεται σαφής διαχωρισμός της υφιστάμενης και της επιθυμητής κατάστασης για την επιχείρηση</p>
+					<p>3. Να είναι συγκεκριμένο</p>
+					<p>4. Η ανάλυση πρέπει διαρκώς να έχει ως γνώμονα τον ανταγωνισμό</p>
+				</div>
+            </div>
+            <table class="stef">
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Δυνατά Σημεία</strong>
+                        </label>
+
+                    </td>
+                    <td>
+                        <label>
+                            <strong>Αδύνατα Σημεία</strong>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποια είναι τα πλεονεκτήματα?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θα μπορούσε να βελτιωθεί?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιο είναι το πλέον ανταγωνιστικό προϊόν / υπηρεσία?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θα έπρεπε να αποφευχθεί?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιοι είναι οι διαθέσιμοι πόροι που είναι μοναδικοί ή έχουν το μικρότερο συγκριτικά κόστος?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θεωρούν οι τοπικοί οικονιμικοί παράγοντες ως ενδογενής αδυναμία?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Τι θεωρούν οι τοπικοί οικονομικοί παράγοντες ως ενδογενής δύναμη της περιοχής?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/add.png">
+                    </td>
+                    <td>
+                        <img src="img/add.png">
+                    </td>
+                </tr>
+                <tr class="space">
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Ευκαιρίες</strong>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <strong>Απειλές</strong>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιες είναι οι καλές ευκαιρίες που προβάλλουν?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Ποια εμπόδια εμφανίζονται συνήθως?"></textarea>
+                    </td>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Ποιες είναι οι ενδιαφέρουσες τάσεις που αφορούν την περιοχή?"></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Τι κάνουν οι ανταγωνιστές?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές στην τεχνολογία και τις αγορές σε μικρή ή μεγάλη κλίμακα.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Εμφανίζονται αλλαγές στις προδιαγραφές για τα ήδη παρεχόμενα προϊόντα ή υπηρεσίες?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές στην κρατική πολιτική στο πεδίο ενδιαφέροντος.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Οι τεχνολογικές αλλαγές απειλούν ή ακυρώνουν τη υφιστάμενη οικονομία της περιοχής?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές σε κοινωνικά μοτίβα, πληθυσμιακά προφίλ, αλλαγές τρόπου ζωής.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Υπάρχουν χρηματοδοτικά ή χρηματοοικονομικά προβλήματα?"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="img/add.png">
+                        </td>
+                        <td>
+                            <img src="img/add.png">
+                        </td>
+                    </tr>
+            </table>
+            <button id="confirm" class="button">ΕΠΙΒΕΒΑΙΩΣΗ</button>
         </main>
     </div>
 
 
     <footer class="foot">
-        <button class="foot__back" onclick="previousPage()">ΠΙΣΩ</button>
+		<button class="foot__back" onclick="previousPage()">ΠΙΣΩ</button>
         <span class="foot__pagination">
-            <p>1/2</p>
+            <p>1/3</p>
         </span>
         <button class="foot__next" onclick="nextPage()">ΜΠΡΟΣΤΑ</button>
     </footer>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 
-	<script type="text/javascript">
+    <script type="text/javascript">
+        var y = document.getElementById("hidden_div");
+		y.style.display = 'none';
+		function foo(){
+            var x = document.getElementById("hidden_div");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+		
+		
 		function previousPage(){
 			window.location.href = ""; // insert previous page here
 		}
 		
 		function nextPage(){
-			window.location.href = ""; // insert next page here
+			window.location.href = "2_pestel.html";
 		}
     </script>
-	
-	
 </body>
 
 </html>
