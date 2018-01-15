@@ -1,8 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
 body {
 	
 	font-family: "Open Sans";
@@ -12,6 +10,27 @@ body {
 	
 }
 #userArea{
+
+	backround-color:#fff;
+	position:absolute;
+	top:102px;
+	left:424px;
+	height:866px;
+	width:1334px;
+        overflow-y: scroll;
+
+}
+
+h5{
+	position:relative;
+	top:20px;
+	font-size:20px;
+	}
+
+h4{
+	font-size: 40px;
+	color:#cbcaca
+}
 	overflow-y: hidden;
 	font-family: "Open Sans";
 	color:#1e2133;
@@ -39,15 +58,16 @@ h5{
 	}
 
 
-
-
-
 .userInput{
 	
 	position:relative;
 	background-color: #fff;
+	top:10px;
+	left:px;
+
 	top:0px;
 	left:83px;
+
 	width:393px;
 	height:66px;
 	text-align: left;
@@ -56,6 +76,10 @@ h5{
 	
 	
 	}
+	
+#f{
+
+}
 	
 #c{
 	position:absolute;
@@ -90,6 +114,8 @@ h5{
 button{
 	
 	font-family:"Source Sans Pro";
+
+	position:fixed;
 	position:relative;
 	width:217px;
 	height:65px;
@@ -113,11 +139,18 @@ button{
 	position:relative;
 	top:20px;
 	left:82px;
+
 	
 	
 }
 
 #add{
+
+	position:relative;
+	top:30px;
+	
+	
+}
 	position:absolute;
 	top:672px;
 	left:80px;
@@ -152,7 +185,6 @@ button{
 	
 	color:#1e2133
 }
-
 
 placeholder{
 	
