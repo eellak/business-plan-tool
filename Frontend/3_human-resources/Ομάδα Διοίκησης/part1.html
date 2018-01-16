@@ -332,30 +332,33 @@
             
 
             <button class="Instructions">ΟΔΗΓΙΕΣ</button>
-            <span class="add__member">
+            <div class="add__member">
                 <label>1. Προσθέστε Μέλος</label><br>
-                <div class="same__line">
-                  <form class="fname">
-                      <input type="text" name="fname" placeholder="ΟΝΟΜΑ">
-                  </form>
+                <div class="add__member-row" v-for="m in managers">
+                    <div class="same__line">
+                      <form class="fname">
+                          <input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.name">
+                      </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="sname">
+                          <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.surName">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="duty">
+                            <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.job">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <img src="link.png" alt="link">
+                    </div><br>
                 </div>
-                <div class="same__line">
-                    <form class="sname">
-                      <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ">
-                    </form>
-                </div>
-                <div class="same__line">
-                    <form class="duty">
-                        <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ">
-                    </form>
-                </div>
-                <div class="same__line">
-                    <img src="link.png" alt="link">
-                </div><br>
-                <button name="plus__member" id="plus__member"><img src="plus.png" alt="plus"></button>
-                
-            </span>
-
+                <button name="plus__member" id="plus__member" @click="create()">
+                    <img src="plus.png" alt="plus">
+                </button>
+                <button class="Instructions" @click="insert()">ΑΠΟΘΗΚΕΥΣΗ</button>
+            </div>
         </main>
     </div>
 
@@ -367,6 +370,13 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+
+        <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import our logic file -->
+    <script src="logic.js"></script>
+
 </body>
 
 </html>
