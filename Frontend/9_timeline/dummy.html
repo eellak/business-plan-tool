@@ -9,7 +9,6 @@
 
     <style>
         /* APP */
-
         body {
             display: flex;
             flex-direction: column;
@@ -17,10 +16,7 @@
             align-items: stretch;
             min-height: 100vh;
         }
-
-
         /* HEADER */
-
         .head {
             background-color: rgb(30, 33, 51);
             display: flex;
@@ -29,36 +25,27 @@
             height: 80px;
             ;
         }
-
         .head__logo {
             margin-left: 20px;
         }
-
         .head__export {
             color: #fff;
             display: flex;
             margin-right: 100px;
             align-items: center;
         }
-
-
         .head__avatar {
             height: 70px;
             width: 70px;
             border-radius: 50%;
             margin-right: 20px;
         }
-
         .head__export p {
             margin-left: 5px;
             font-size: 20px;
         }
-
         .head__export i {}
-
-
         /* FOOTER */
-
         footer {
             background-color: rgb(203, 202, 202);
             height: 60px;
@@ -66,7 +53,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .foot__back {
             margin-right: 30px;
             background-color: rgb(41, 152, 88);
@@ -78,7 +64,6 @@
             align-items: center;
             border-style: none;
         }
-
         .foot__next {
             margin-left: 30px;
             background-color: rgb(41, 152, 88);
@@ -90,15 +75,13 @@
             align-items: center;
             border-style: none;
         }
-
         .foot__pagination {
             font-size: 20px;
             font-weight: 600;
             color: black;
         }
-
-
         main {
+            overflow-y: scroll;            
             flex-grow: 1;
         }
 
@@ -108,22 +91,16 @@
             justify-content: space-between;
             align-items: stretch;
         }
-
         nav {
             background-color: rgb(30, 33, 51);
             width: 350px;
         }
-
-
         /* SECTIONS MENU */
-
         .sections-menu {}
-
         .sections-menu ul {
             list-style: none;
             margin: 0;
         }
-
         .sections-menu ul li {
             padding: 15px;
             position: relative;
@@ -131,11 +108,9 @@
             border-top: 1px solid black;
             background-color: rgb(30, 33, 51);
         }
-
         .sections-menu ul li {
             border-right: 5px solid rgb(61, 65, 90);
         }
-
         .sections-menu ul ul {
             opacity: 0;
             position: absolute;
@@ -144,24 +119,18 @@
             top: -2%;
             background-color: rgb(40, 44, 63);
         }
-
         .sections-menu ul ul li {
             background-color: rgb(79, 84, 115);
             width: 250px;
         }
-
         .sections-menu ul li:hover ul {
             opacity: 1;
             visibility: visible;
         }
-
         .sections-menu ul li a {
             color: white;
         }
-
-
         /* BASIC ELEMENTS */
-
         .basic_button {
             background-color: rgb(24, 146, 105);
             width: 100px;
@@ -170,7 +139,66 @@
             justify-content: center;
             align-items: center;
         }
+        .Instructions {
+            margin-left: 850px;
+            margin-top: 20px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .add__member {
+            font-family: "Open Sans";
+            margin-left: 40px;
+            font-size: 30px;
+            color: rgb(61, 65, 90);
+            
+
+        }
+        .same__line{
+            
+            width: 180px;
+            height: 30px;
+            margin: 20px;
+            border: 1px solid transparent;
+            display: inline-block;
+
+        }
+        input[type=text], select {
+            width: 110%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color:#cbcaca
+
+}
+#plus__member{
+    margin:20px;
+    padding:0px;
+    white-space:nowrap;
+    width:auto;
+    overflow:visible;
+    border: 0;
+    background: transparent;
+}
+    
+
+
+
+
+
+
+
+
     </style>
+   
+
 </head>
 
 <body>
@@ -180,10 +208,10 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <img src="export.png" alt="export">
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="man.png" alt="Avatar">
     </header>
 
 
@@ -301,7 +329,7 @@
         </nav>
 
         <main>
-            <!-- YOUR CODE HERE -->
+            TEAM 9
         </main>
     </div>
 
@@ -313,6 +341,12 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+
+        <!-- Import Gantt Library Here -->
+
+        <script src="logic.js"></script>
+
 </body>
 
 </html>

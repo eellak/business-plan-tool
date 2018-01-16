@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <title>BP Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        /* APP */
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: initial;
+            align-items: stretch;
+            min-height: 100vh;
+            height: 100%;
+        }
+
+
+        /* HEADER */
+
+        .head {
+            /*
+			background-color: rgb(100, 100, 100);
+            */
+            background-color: rgb(30, 35, 50);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+        }
+
+        .head__logo {
+            margin-left: 20px;
+        }
+
+        .head_export {
+            color: #fff;
+            display: flex;
+            margin-right: 100px;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .head_export img {
+            height: 40px;
+        }
+
+        .head_export p {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 8px;
+        }
+
+        .head__avatar {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+
+
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: rgb(205, 200, 200);
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foot__back {
+            margin-right: 30px;
+            background-color: rgb(40, 150, 90);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__next {
+            margin-left: 30px;
+            background-color: rgb(40, 150, 90);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__pagination {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+        }
+
+
+        main {
+            flex-grow: 1;
+        }
+
+        .main_container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 80%;
+        }
+
+        nav {
+            background-color: rgb(30, 35, 50);
+            width: 350px;
+            height: 100%;
+        }
+
+
+        /* SECTIONS MENU */
+
+        .sections-menu {
+            height: 100%;
+        }
+
+        .sections-menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .sections-menu ul li {
+            position: relative;
+            width: 350px;
+            height: 50px;
+            border-top: 2px solid slateblue;
+            background-color: rgb(30, 35, 50);
+            display: flex;
+            align-items: center;
+        }
+
+        .sections-menu ul li:hover {
+            background-color: mediumseagreen;
+        }
+
+
+        .sections-menu ul li a {
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .sections-menu ul li img {
+            width: 33%;
+            height: 100%;
+            padding-left: 10%;
+        }
+
+
+        .sections-menu ul li p {
+            width: 77%;
+            height: 100%;
+            padding-left: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .sections-menu ul ul {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 100%;
+            top: -3.5%;
+            background-color: rgb(40, 45, 65);
+        }
+
+        .sections-menu ul ul li {
+            background-color: rgb(80, 85, 115);
+            width: 350px;
+            height: 50px;
+            padding-left: 0%;
+            border-left: 2px solid slateblue;
+            border-right: 2px solid slateblue;
+        }
+
+
+        .sections-menu ul ul li a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .sections-menu ul li p {
+            width: 100%;
+        }
+
+
+        .sections-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* BASIC ELEMENTS */
+
+        .basic_button {
+            background-color: rgb(25, 145, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .last_border,
+        ul {
+            border-bottom: 2px solid slateblue;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .hidden>div {
+            display: none;
+        }
+
+        .visible>div {
+            display: block;
+        }
+
+
+
+        /* APP */
+
+        .set {
+            margin-left: 7px;
+            margin-right: 7px;
+
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .button {
+            float: right;
+            margin-right: 20px;
+            background-color:rgb(40, 150, 90);
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        p {
+
+            font-style: italic;
+        }
+
+        h1 {
+
+            text-align: center;
+            font-style: italic;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+
+
+        .factors {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .contenttitles {
+            font-style: italic;
+            font-size: 1em;
+            font-weight: bold;
+
+
+        }
+
+
+        .examtextclass {
+            font-size: 0.875em;
+            text-align: justify;
+            height: 200px;
+            width: 400px;
+        }
+
+        .desctextclass {
+            font-size: 0.875em;
+            height: 200px;
+            width: 400px;
+            text-align: justify;
+        }
+
+        .stef {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px 5px;
+        }
+
+        .stef tr {
+            width: 80%;
+        }
+
+        .stef tr td {
+            width: 50%;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+        }
+
+        .stef tr td label {
+            width: 100%;
+        }
+
+        .stef tr td textarea {
+            width: 100%;
+            height: 50px;
+        }
+
+        .space {
+            height: 50px;
+        }
+
+
+        /* Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(205, 200, 200);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(30, 33, 51);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="head">
+        <div class="head__logo">
+            <img src="myLogo.png" alt="Logo">
+        </div>
+        <div class="head_export">
+            <img src="export.png">
+            <p>ΕΞΑΓΩΓΗ</p>
+        </div>
+        <img class="head__avatar" src="account_avatar.png" alt="Avatar">
+    </header>
+
+
+    <div class="main_container">
+        <nav>
+            <div class="sections-menu">
+                <ul class="last_border">
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΤΑΥΤΟΤΗΤΑ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΠΕΡΙΓΡΑΦΗ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΠΡΟΣΩΠΙΚΟ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΕΞΟΠΛΙΣΜΟΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="background-color:rgb(150,205,205)">
+                        <a href="" style="color:black">
+                            <img src="myIcon.png" alt="">
+                            <p>ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</p>
+                        </a>
+                        <ul>
+                            <li style="background-color:rgb(150,205,205)">
+                                <a href="" style="color:black">
+                                    <p>1) ΑΝΑΛΥΣΗ SWOT</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>2) ΑΝΑΛΥΣΗ PESTEL</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>3) ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΣΤΡΑΤΗΓΙΚΗ MARKETING</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΣΤΡΑΤΗΓΙΚΗ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΕΝΕΡΓΕΙΕΣ MARKETING</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΕΞΟΠΛΙΣΜΟΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</p>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <p>ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>ΝΕΚΡΟ ΣΗΜΕΙΟ</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΠΑΡΑΡΤΗΜΑ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="myIcon.png" alt="">
+                            <p>ΣΥΝΟΨΗ</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main style="overflow:auto;">
+            <h1> SWOT ANALYSIS </h1>
+            <button id="instructions" class="button">ΟΔΗΓΙΕΣ</button>
+            <table class="stef">
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Δυνατά Σημεία</strong>
+                        </label>
+
+                    </td>
+                    <td>
+                        <label>
+                            <strong>Αδύνατα Σημεία</strong>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποια είναι τα πλεονεκτήματα?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θα μπορούσε να βελτιωθεί?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιο είναι το πλέον ανταγωνιστικό προϊόν / υπηρεσία?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θα έπρεπε να αποφευχθεί?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιοι είναι οι διαθέσιμοι πόροι που είναι μοναδικοί ή έχουν το μικρότερο συγκριτικά κόστος?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Τι θεωρούν οι τοπικοί οικονιμικοί παράγοντες ως ενδογενής αδυναμία?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Τι θεωρούν οι τοπικοί οικονομικοί παράγοντες ως ενδογενής δύναμη της περιοχής?"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="add.png">
+                    </td>
+                    <td>
+                        <img src="add.png">
+                    </td>
+                </tr>
+                <tr class="space">
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Ευκαιρίες</strong>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <strong>Απειλές</strong>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea placeholder="Ποιες είναι οι καλές ευκαιρίες που προβάλλουν?"></textarea>
+                    </td>
+                    <td>
+                        <textarea placeholder="Ποια εμπόδια εμφανίζονται συνήθως?"></textarea>
+                    </td>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Ποιες είναι οι ενδιαφέρουσες τάσεις που αφορούν την περιοχή?"></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Τι κάνουν οι ανταγωνιστές?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές στην τεχνολογία και τις αγορές σε μικρή ή μεγάλη κλίμακα.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Εμφανίζονται αλλαγές στις προδιαγραφές για τα ήδη παρεχόμενα προϊόντα ή υπηρεσίες?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές στην κρατική πολιτική στο πεδίο ενδιαφέροντος.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Οι τεχνολογικές αλλαγές απειλούν ή ακυρώνουν τη υφιστάμενη οικονομία της περιοχής?"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea placeholder="Αλλαγές σε κοινωνικά μοτίβα, πληθυσμιακά προφίλ, αλλαγές τρόπου ζωής.."></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="Υπάρχουν χρηματοδοτικά ή χρηματοοικονομικά προβλήματα?"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="C:\Users\alexa\Desktop\add.png">
+                        </td>
+                        <td>
+                            <img src="C:\Users\alexa\Desktop\add.png">
+                        </td>
+                    </tr>
+            </table>
+            <button id="confirm" class="button">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+        </main>
+    </div>
+
+
+    <footer class="foot">
+        <button class="foot__back">ΠΙΣΩ</button>
+        <span class="foot__pagination">
+            <p>1/2</p>
+        </span>
+        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+    </footer>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.text_container').addClass("hidden");
+
+            $('.text_container').click(function () {
+                var $this = $(this);
+
+                if ($this.hasClass("hidden")) {
+                    $(this).removeClass("hidden").addClass("visible");
+
+                } else {
+                    $(this).removeClass("visible").addClass("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
