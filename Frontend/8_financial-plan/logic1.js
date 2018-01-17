@@ -1,18 +1,21 @@
 var app = new Vue({
     el: 'main',
     data: {
-      actions: [ {id: '1', title: 'Ενεργεια1', implementationCost: 60},
-                {id: '2', title: 'Ενεργεια2', implementationCost: 60},
-                {id: '3', title: 'Ενεργεια3', implementationCost: 60},
-                {id: '4', title: 'Ενεργεια4', implementationCost: 60}
-              ],
+      actions: [ 
+        {id: '1', title: 'Ενεργεια1', implementationCost: 60},
+        {id: '2', title: 'Ενεργεια2', implementationCost: 60},
+        {id: '3', title: 'Ενεργεια3', implementationCost: 60},
+        {id: '4', title: 'Ενεργεια4', implementationCost: 60}
+      ],
     },
     methods: {
       add(){
           var action = `<div class="actions-container">
                           <br/>
                           <select class="userInput">
-                              <option  v-for="a in actions" >{{ a.title }}</option>
+                              <option>` 
+                              + a.title + 
+                              `</option>
                           </select>
                           <p class="userInput" id="B"  type="text" name="cost" placeholder="COST">
                       </div>
@@ -45,3 +48,9 @@ var app = new Vue({
 
 /*“Ομάδα υλοποίησης”, “Τόπος εγκατάστασης & εξοπλισμός”,
 “Στρατηγική marketing & πωλήσεων” “Προϊόντα/Υπηρεσίες”*/
+
+
+// TASKS
+// 1. Add + button
+// 2. Validation of two actions checked
+// 3. Calculations
