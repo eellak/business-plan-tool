@@ -270,20 +270,10 @@
         </nav>
 
         <main>
-            <!-- YOUR CODE HERE -->
-            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
+            <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
 
-            <div id="myDIV">Εδώ η περιγραφή των <br>οδηγιών...</div>
-            <!--Επιλογή προϊόντος/υπηρεσίας-->
-            <h1>0. Επιλέξτε προϊόν/υπηρεσία.</h1>
-            <label class="container">Προϊόντα
-                <input type="radio" checked="checked" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Υπηρεσίες
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
+            <div id="instructions">Εδώ η περιγραφή των <br>οδηγιών...</div>
+
             <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
             <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
             <form>
@@ -293,12 +283,14 @@
                     <option value="">Επιλογή 3.</option>
                 </select>
             </form>
+			
             <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
             <div class="Align">          
                 <form>
                     <h1>2. Κοστολόγηση προϊόντος/υπηρεσίας.</h1>  
                     <textarea placeholder="Τιμή πώλησης προϊόντος/υπηρεσίας(ατομικά)"></textarea>
                 </form>
+				
            <!--Καταγραφή κόστους παραγωγής προϊοντος/υπηρεσίας-->
                 <form>
                     <h1>3. Κόστος παραγωγής προϊοντος/υπηρεσίας.</h1>
@@ -319,7 +311,7 @@
             </form>
             </div>
             <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-            <button type="submit" class="add"><img src="add32.png"> </button>
+            <button type="submit" class="add" @click=addProduct()><img src="add32.png"> </button>
             
         </main>
     </div>
@@ -332,17 +324,10 @@
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
     
-    <script>
-        //Κάνει το button να εμφανίζει τις οδηγίες
-        function tipsButton() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "block") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    <script src="./logic_3.js"></script>
  
 </body>
 
