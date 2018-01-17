@@ -235,10 +235,12 @@
 						var docDefinition = {
 							content:[
 								// Section 1.1
+								// This content element is a complicated one, with extra "tags" like bold, underline, etc. Notice it is inside curly brackets.
 								{text: "1.1 Ταυτότητα Επιχείρησης:", bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"},
-
+							
 								" ", // Whitespace
-
+								
+								// This content element is a simple string element, no need for curly brackets, just comma after it.
 								"Όνομα επιχείρησης: " 		 + db.oneIdentity.name,
 								// Date is converted into string and sliced to get proper format
 								"Ημερομηνία δημιουργίας: "   + String(db.oneIdentity.date).slice(6) + "/" + String(db.oneIdentity.date).slice(4, 6) + 
@@ -249,7 +251,9 @@
 								" ", // Whitespace
 
 								"Πελάτες: ",
-								{ol: db.oneIdentity.clients}, // Prints clients array in an numbered list, dynamic
+								// Prints clients array in an numbered list, dynamic based on the array
+								// Due to the "ol" tag, it needs curly brackets. Equivalent to {ol: [firstItem, secondItem]} syntax.
+								{ol: db.oneIdentity.clients}, 
 
 								" "," ", // 2 whitespaces between sections
 
@@ -257,7 +261,7 @@
 								{text: "1.2 Περιγραφή Επιχείρησης:", bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"},
 
 								" ", // Whitespace
-
+								// Simple string element coming straight from db
 								db.oneDescription,
 
 								" "," ", // 2 whitespaces between sections
