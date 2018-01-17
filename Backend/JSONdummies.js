@@ -15,12 +15,11 @@
 
 //2.1
 "twoTeam": {
-  "managers": {
+  "managers": [
     {"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
     {"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
     {"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
-  }
-
+  ]
 }
 
 //2.2
@@ -89,11 +88,11 @@
 "fourCharacteristics": {//product:true= product , product:false = service
   "charList": [
     {"productID": 1, "productType": false, "name": "Prod1", "directed_to": "Dir1", "innovation_factor": "Inn1",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
     {"productID": 2, "productType": false, "name": "Prod2", "directed_to": "Dir2", "innovation_factor": "Inn2",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
     {"productID": 3, "productType": false, "name": "Prod3", "directed_to": "Dir2", "innovation_factor": "Inn3",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
   ]
 }
 
