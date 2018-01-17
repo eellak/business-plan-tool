@@ -5,16 +5,11 @@
 
 
 <head>
-
     <meta charset="utf-8">
-
     <title>BP Tool</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./Untitled-2.css">
 
 
 
@@ -299,44 +294,25 @@
 
 
         <main>
-
-
-
-<link href="Untitled-2.css" rel="stylesheet" type="text/css">
-
-
-<block id="userArea">
-<header></header>
-<div><h5 id="a"> 1.Question</h5> 
-<div><select class="userInput">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                </select>
-  <input class="userInput" id="B"  type="text" name="cost" placeholder="COST">
-</div>
-	
-	
-	
- 
-	</div>
-	<input id="add" type="image" src="add.png"  />
-	<br/><br/><br/>
-	
-	<div><div></div><button id="calculate"> calculate</button></div>
-	
-	
-	
-	
-<button id="instructions"> Instructions</button>
-	
-
-		
-</block>
-		
-	
-	
+            <div id="userArea">
+                <header></header>
+                <h5 id="a"> 1.Question</h5>
+                <div class="actions">
+                    <div class="actions-container"  v-for="a in actions">
+                        <br/>
+                        <select class="userInput">
+                            <option v-for="paok in 10" >{{ a.title }}</option>
+                        </select>
+                        <p class="userInput" id="B"  type="text" name="cost" placeholder="COST">
+                    </div>
+                </div>
+                <button @click="add()" >+</button>
+                <button id="instructions"> Instructions</button>
+                <input id="add" type="image" src="add.png"  />
+                    <br/><br/><br/>
+                    <button id="calculate" @click="save()"> calculate</button>
+            <!-- <button @click="test()" >paok</button> -->
+            </div> 
         </main>
 
     </div>
@@ -358,6 +334,13 @@
         <button class="foot__next">???????</button>
 
     </footer>
+        <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import jQuery.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Import our logic file -->
+    <script src="logic1.js"></script>
+    
 
 </body>
 
