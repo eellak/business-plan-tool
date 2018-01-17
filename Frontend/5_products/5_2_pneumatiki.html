@@ -270,43 +270,39 @@
         </nav>
 
         <main>
-            <!-- YOUR CODE HERE -->
             <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
-            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
+            <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
+			
             <!--Περιεχόμενο που εμφανίζεται με τo πάτημα του κουμπιού-->
-            <div id="myDIV">Εδώ η περιγραφή των <br>οδηγιών...</div>
-            <!--Επιλογή προιόντος ή υπηρεσίας-->
-            <h1>0. Επιλέξτε προϊόν/υπηρεσία.</h1>
-            <label class="container">Προϊόντα
-                <input type="radio" checked="checked" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Υπηρεσίες
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
+            <div id="instructions">Εδώ η περιγραφή των <br>οδηγιών...</div>
+			
             <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
             <form>
                 <h1>1. Όνομα προϊόντος/υπηρεσίας.</h1>
-                <select id="dropdown" name="dropdown">
+                <select id="dropdown" name="dropdown" @change="showNextDropdown(this.options[this.selectedIndex].value)">
+                    <option value="">Επιλέξτε προϊόν</option>
                     <option value="">Επιλογή 1.</option>
                     <option value="">Επιλογή 2.</option>
                     <option value="">Επιλογή 3.</option>
                 </select>
             </form>
-            <!--Επιλογή της πνευματικής ιδιοκτησίας του προϊόντος/υπηρεσίας από dropdown menu-->
-            <form>
-                <h1>2. Επιλέξτε πνευματική ιδιοκτησία.</h1>
-                <select id="dropdown" name="dropdown">
-                    <option value="">1. Πατέντα</option>
-                    <option value="">2. Εμπορικό σήμα</option>
-                    <option value="">3. Δικαιώμα Πνευματικής ιδιοκτησίας</option>
-                    <option value="">4. Καταχωρημένο σχέδιο ή υπόδειγμα</option>
-                    <option value="">5. Domain name</option>
-                </select>
-            </form>
-            <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-            <button type="submit" class="add"><img src="add32.png"> </button>
+			
+			<div v-for="product in products">
+				<!--Επιλογή της πνευματικής ιδιοκτησίας του προϊόντος/υπηρεσίας από dropdown menu-->
+				<form>
+					<h1>2. Επιλέξτε πνευματική ιδιοκτησία.</h1>
+					<select id="dropdown_pneumatiki" name="dropdown" v-model=product.copyright>
+						<option value="">1. Πατέντα</option>
+						<option value="">2. Εμπορικό σήμα</option>
+						<option value="">3. Δικαιώμα Πνευματικής ιδιοκτησίας</option>
+						<option value="">4. Καταχωρημένο σχέδιο ή υπόδειγμα</option>
+						<option value="">5. Domain name</option>
+					</select>
+				</form>
+				
+				<!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
+				<button type="submit" class="add" @click=addProduct()><img src="add32.png"> </button>
+			</div>
             
         </main>
     </div>
@@ -319,17 +315,10 @@
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
     
-    <script>
-        //Κάνει το button να εμφανίζει τις οδηγίες
-        function tipsButton() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "block") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    <script src="./logic_2.js"></script>
     
 </body>
 
