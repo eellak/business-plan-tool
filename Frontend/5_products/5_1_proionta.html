@@ -271,79 +271,93 @@
 
         <main>
             <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
-            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
+            <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
             <!--Περιεχόμενο που εμφανίζεται με τι πάτημα του κουμπιού-->
             <div id="instructions">Εδώ η περιγραφή των <br>οδηγιών...</div>
             <!--Επιλογή προιόντος ή υπηρεσίας-->
-            <h1>0. Επιλέξτε προϊόν/υπηρεσία για προσθήκη.</h1>
-            <label class="container">Προϊόντα
-                <input type="radio" checked="checked" name="radio" id="radio_product">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Υπηρεσίες
-                <input type="radio" name="radio" id="radio_services">
-                <span class="checkmark"></span>
-            </label>
+			<div v-for="product in products">
+				<h1>0. Επιλέξτε προϊόν/υπηρεσία για προσθήκη.</h1>
+				<label class="container">Προϊόντα
+					<input type="radio" checked="checked" name="radio" id="radio_product" v-model=product.productType value="Προϊόν">
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Υπηρεσίες
+					<input type="radio" name="radio" id="radio_services"  v-model=product.productType value="Υπηρεσία">
+					<span class="checkmark"></span>
+				</label>
 
-            <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
-            <div class="Align">
-            <!--Καταγραφή ονόματος προϊόντος/υπηρεσίας-->
-            <form>
-                <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
-                <textarea id="name" placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ"></textarea>
-            </form>
-            <!--Καταγραφή του που απευθύνεται το προϊόν/υπηρεσία-->
-            <form>
-                <h1>2. Ομάδα-στόχος.</h1>
-                <textarea id="directed_to" placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ"></textarea>
-            </form>
-            </div>
+				<!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
+				<div class="Align">
+				<!--Καταγραφή ονόματος προϊόντος/υπηρεσίας-->
+				<form>
+					<h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
+					<textarea id="name" placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ" v-model=product.name></textarea>
+				</form>
+				<!--Καταγραφή του που απευθύνεται το προϊόν/υπηρεσία-->
+				<form>
+					<h1>2. Ομάδα-στόχος.</h1>
+					<textarea id="directed_to" placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ" v-model=product.directed_to></textarea>
+				</form>
+				</div>
 
-            <div class="Align">
-            <!--Καταγραφή των στοιχείων καινοτομίας-->
-            <form>
-                <h1>3. Στοιχεία καινοτομίας/ανταγωνιστικότητας.</h1>
-                <textarea id="innovation_factor" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ"></textarea>
-            </form>
+				<div class="Align">
+				<!--Καταγραφή των στοιχείων καινοτομίας-->
+				<form>
+					<h1>3. Στοιχεία καινοτομίας/ανταγωνιστικότητας.</h1>
+					<textarea id="innovation_factor" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ" v-model=product.innovation></textarea>
+				</form>
 
-             <form>
-             <!--Καταγραφή της τεχνολογίας που χρησιμοποιείται-->
-                <h1>4. Τεχνολογία στην οποία βασίζεται.</h1>
-                <textarea id="technology" placeholder="ΤΕΧΝΟΛΟΓΙΑ"></textarea>
-            </form>
-            </div>
+				 <form>
+				 <!--Καταγραφή της τεχνολογίας που χρησιμοποιείται-->
+					<h1>4. Τεχνολογία στην οποία βασίζεται.</h1>
+					<textarea id="technology" placeholder="ΤΕΧΝΟΛΟΓΙΑ" v-model=product.technology></textarea>
+				</form>
+				</div>
 
-            <!--Καταγραφή απαιτήσεων αδείας. Τα λινκς δε ξέρω γιατί υπάρχουν,το μόκαπ έτσι είναι.-->
-            <h1>5. Απαιτήσεις άδειας.</h1>
-            <form class=quest58>
-                <textarea placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
-            </form>
-            <div class="options">
-                <a href="Placeholder link">Πιστοποιητικό ασφάλειας</a><br>
-                <a href="Placeholder link 2">ISO</a><br>
-                <a href="Placeholder link 3">Κατοχυρωμένη πατέντα</a>
-            </div>
-            <!-- Καταγραφή στοιχείων ανταγωνισμού-->
-            <div class="Align">
-            <form>
-                <h1>6. Στοιχεία ανταγωνισμού.</h1>
-                <textarea id="competition" placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ"></textarea>
-            </form>
+				<!--Καταγραφή απαιτήσεων αδείας.-->
+				<h1>5. Απαιτήσεις άδειας.</h1>
+				<form class=quest58>
+					<textarea placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
+				</form>
+				<!-- Καταγραφή πιστοποιητικού. -->
+				<label class="container2">
+					<input type="radio" checked="checked" name="radio2" id="radio_pist_asf" v-model=product.certificate value="Πιστοποιητικό ασφάλειας">
+					<a href="Placeholder link">Πιστοποιητικό ασφάλειας</a><br>
+					<span class="checkmark"></span>
+				</label>
+				<label class="container2">
+					<input type="radio" name="radio2" id="radio_iso"  v-model=product.certificate value="ISO">
+					<a href="Placeholder link 2">ISO</a><br>
+					<span class="checkmark"></span>
+				</label>
+				<label class="container2">
+					<input type="radio" name="radio2" id="radio_kat_pat"  v-model=product.certificate value="Κατοχυρωμένη πατέντα">
+					<a href="Placeholder link 3">Κατοχυρωμένη πατέντα</a>
+					<span class="checkmark"></span>
+				</label>
+				
+				<!-- Καταγραφή στοιχείων ανταγωνισμού-->
+				<div class="Align">
+				<form>
+					<h1>6. Στοιχεία ανταγωνισμού.</h1>
+					<textarea id="competition" placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ" v-model=product.competition></textarea>
+				</form>
 
-            <!--Καταγραφή τελικής τιμής-->
-            <form>
-                 <h1>7. Τιμή διάθεσης στον τελικό χρήστη.</h1>
-                 <textarea id="price" placeholder="ΤΕΛΙΚΗ ΤΙΜΗ"></textarea>
-            </form>
-            </div>
+				<!--Καταγραφή τελικής τιμής-->
+				<form>
+					 <h1>7. Τιμή διάθεσης στον τελικό χρήστη.</h1>
+					 <textarea id="price" placeholder="ΤΕΛΙΚΗ ΤΙΜΗ" v-model=product.price></textarea>
+				</form>
+				</div>
 
-            <!--Καταγραφή περιγραφής προϊόντος/υπηρεσίας.-->
-            <h1>8. Περιγραφή.</h1>
-            <form class=quest58>
-                <textarea id="description" placeholder="ΠΕΡΙΓΡΑΦΗ"></textarea>
-            </form>
+				<!--Καταγραφή περιγραφής προϊόντος/υπηρεσίας.-->
+				<h1>8. Περιγραφή.</h1>
+				<form class=quest58>
+					<textarea id="description" placeholder="ΠΕΡΙΓΡΑΦΗ" v-model=product.description></textarea>
+				</form>
+			</div>
             <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-            <button type="submit" class="add" onclick="addProduct()"><img src="add32.png"> </button>
+            <button type="submit" class="add" @click="addProduct()"><img src="add32.png"> </button>
 
         </main>
     </div>
@@ -357,38 +371,9 @@
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
 
-
-    <script>
-        //Κάνει το button να εμφανίζει τις οδηγίες
-        function tipsButton() {
-            var x = document.getElementById("instructions");
-            if (x.style.display === "block") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-
-        function addProduct() {
-            if (document.getElementById('radio_product').checked) {
-              var productType = 'Προϊόν';
-            }
-            else {
-              var productType = 'Υπηρεσία';
-            }
-
-            var name = document.getElementById("name").value;
-            var directed_to = document.getElementById("directed_to").value;
-            var innovation_factor = document.getElementById("innovation_factor").value;
-            var technology = document.getElementById("technology").value;
-            var competition = document.getElementById("competition").value;
-            var price = document.getElementById("price").value;
-            var description = document.getElementById("description").value;
-
-            alert(productType + " προστέθηκε!\n" + name + "\n" + description);
-        }
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    <script src="./logic.js"></script>
 </body>
 
 </html>
