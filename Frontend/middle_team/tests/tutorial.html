@@ -1,0 +1,78 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial Vue.js</title>
+    <style>
+      .manager-container {
+         display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div class="app">
+
+      <div class="manager-container" v-for="m in managers">
+        <p>Όνομα:</p><input type="text" v-model="m.name">
+        <p>Επίθετο:</p><input type="text" v-model="m.surName">
+        <p>Δουλειά</p><input type="text" v-model="m.job">
+        <p>LinkedIn:</p><input type="text" v-model="m.linkedIn">
+        <p>{{ m.id }}</p>
+        <button @click="removeManager($event)">-Remove</button>
+      </div>
+      
+      <button @click="addManager()">+Add manager</button>
+
+      <li v-for="m in managers">{{ m.name }}</li>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <hr>
+        
+      <button @click="save()">✓ Save</button>
+
+    </div>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        var app = new Vue({ 
+          el: '.app', 
+          data: {
+            managers: []
+          },
+          methods: {
+            addManager: function() {
+              var newManager = { name: '', surName: '', job: '', linkedIn: '' }
+              this.managers.push(newManager)
+            },
+            removeManager(event) {
+              console.log(event)
+            },
+            save() {
+              for(var i=0; i < this.managers.length; i++) {
+                alert('saving...')
+                axios.post('http://localhost:3000/manager', 
+                  {
+                    name: this.managers[i].name,
+                    surName: this.managers[i].surName,
+                    job: this.managers[i].job,
+                    linkedIn: this.managers[i].linkedIn,
+                  })
+              }
+            },
+          }
+        })
+
+
+    </script>
+
+  </body>
+
+</html>
