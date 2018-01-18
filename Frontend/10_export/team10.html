@@ -42,11 +42,13 @@
 						},
 
 						// 2.1
-						"twoManagers": [
-							{"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
-							{"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
-							{"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
-						],
+						"twoTeam": {
+						  "managers": [
+						    {"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
+						    {"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
+						    {"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
+						  ]
+						},
 
 						// 2.2
 						"twoEmployees": {
@@ -228,15 +230,47 @@
 	            },
 				
 	            methods: {
+
+					// Functions for dynamic PDFMake content generation based on the json
+
+					twoOneManagersFun() { 
+						managersArray = [] // Array to store the PDFMake content
+						// Loop through the managers object and format the content in PDFMake form
+						for (manager in this.db.twoTeam.managers) {
+							managersArray.push([{text: this.db.twoTeam.managers[manager].name + " " + this.db.twoTeam.managers[manager].surname},
+											    {text: this.db.twoTeam.managers[manager].job}, 
+											    {text: this.db.twoTeam.managers[manager].linkedIn}, " "])
+						}
+						// This loop is equivalent to the above, both work, use whichever suits you
+						// for (var i = 0; i < this.db.twoTeam.managers.length; i++){
+						// 	managersArray.push([{text: this.db.twoTeam.managers[i].name + " " + this.db.twoTeam.managers[i].surname},
+						// 						{text: this.db.twoTeam.managers[i].job}, 
+						// 						{text: this.db.twoTeam.managers[i].linkedIn}, " "])
+						// }
+						return managersArray
+					},
+
+					twoTwoEmployeesFun() { 
+						employeesArray = [] 
+						for (employee in this.db.twoEmployees.employees) {
+							employeesArray.push([{text: this.db.twoEmployees.employees[employee].job}, " "])
+						}
+						return employeesArray
+					},
+					// YOUR FUNCTION HERE, with commas in between the functions
+
+					// Functions end
+
 	                exportFun() {
 						var db = this.db // Local db variable, QOL 
 
 						// PDFMake code here
 						var docDefinition = {
-							content:[
+							// Content of the pdf document
+							content: [
 								// Section 1.1
 								// This content element is a complicated one, with extra "tags" like bold, underline, etc. Notice it is inside curly brackets.
-								{text: "1.1 Ταυτότητα Επιχείρησης:", bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"},
+								{text: "1.1 Ταυτότητα Επιχείρησης:", style: "sectionHeader"},
 							
 								" ", // Whitespace
 								
@@ -258,7 +292,7 @@
 								" "," ", // 2 whitespaces between sections
 
 								// Section 1.2
-								{text: "1.2 Περιγραφή Επιχείρησης:", bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"},
+								{text: "1.2 Περιγραφή Επιχείρησης:", style: "sectionHeader"},
 
 								" ", // Whitespace
 								// Simple string element coming straight from db
@@ -266,9 +300,21 @@
 
 								" "," ", // 2 whitespaces between sections
 
-								// TODO Section 2.1
+								// Section 2.1
+								{text: "2.1 Ομάδα Διοίκησης:", style: "sectionHeader"},
 
-								// TODO Section 2.2
+								" ", // Whitespace
+
+								{ol: this.twoOneManagersFun()},
+
+								" "," ", // 2 whitespaces between sections
+								
+								//  Section 2.2
+								{text: "2.2 Προσωπικό:", style: "sectionHeader"},
+
+								" ", // Whitespace
+
+								{ol: this.twoTwoEmployeesFun()},
 	 
 								// TODO Section 2.3
 	 
@@ -285,7 +331,17 @@
 
 
 								// Your content end
-							] // Content array end
+							], // Content array end
+
+							styles: {
+							    sectionHeader: {
+							      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+							    },
+							    anotherStyle: {
+							      italics: true,
+							      alignment: 'right'
+							    }
+							  }
 						} // docDefinition end
 						
 						// Download the PDF, named after the business name given in section 1.1
