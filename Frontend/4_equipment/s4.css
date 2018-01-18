@@ -1,0 +1,137 @@
+.row1 {
+    width: 100%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    margin-top: 30px;
+}
+.row2 {
+    width: 70%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: left;
+    height: 100%;
+}
+.row3 {
+    width: 30%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    height: 100%;
+}
+.row4 {
+    width: 40%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    height: 100%;
+}
+.row5 {
+    width: 50%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    height: 100%;
+}
+.container_main{
+    height: 100%;
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    width: 70%;
+}
+.btn{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: visible;
+    box-sizing: border-box; 
+    margin-left:60%;
+    margin-top:20px;
+}
+.input_1{
+    text-align: center;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+& + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    background: #f35429;
+  }
+  
+  // Box focus
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: #f35429;
+  }
+  
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
