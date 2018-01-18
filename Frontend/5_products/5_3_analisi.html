@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BP Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="head">
+    <div class="head__logo">
+      <img src="Logo.png" alt="Logo">
+    </div>
+    <div class="head__export">
+      <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+      <p>Export</p>
+    </div>
+    <img class="head__avatar" src="Logo.png" alt="Avatar">
+  </header>
+
+
+  <div class="main_container">
+    <nav>
+      <div class="sections-menu">
+        <ul>
+          <li>
+            <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+            <ul>
+              <li>
+                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
+              </li>
+              <li>
+                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+            <ul>
+              <li>
+                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+              </li>
+              <li>
+                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+            <ul>
+              <li>
+                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+            <ul>
+              <li>
+                <a href="5_1_xaraktiristika.html">ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
+              </li>
+              <li>
+                <a href="5_2_pneumatiki.html">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+              </li>
+              <li>
+                <a href="5_3_analisi.html">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+            <ul>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+              </li>
+              <li>
+                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+            <ul>
+              <li>
+                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+              </li>
+              <li>
+                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+            <ul>
+              <li>
+                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+              </li>
+              <li>
+                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+          </li>
+          <li>
+            <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+          </li>
+          <li>
+            <a href="">ΣΥΝΟΨΗ</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
+
+      <div id="instructions">Εδώ η περιγραφή των <br>οδηγιών...</div>
+
+      <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
+      <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
+      <form>
+        <select id="dropdown_proionta_2" name="dropdown" @change="showNextFields()" v-model="products">
+                        <option v-for="product in products" v-bind:value="product.name">
+                          {{ product.name }}
+                        </option>
+                    </select>
+      </form>
+
+      <div id="analisi">
+        <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
+        <div class="Align">
+          <form>
+            <h1>2. Κοστολόγηση προϊόντος/υπηρεσίας.</h1>
+            <textarea id="sellPrice" placeholder="Τιμή πώλησης προϊόντος/υπηρεσίας(ατομικά)"></textarea>
+          </form>
+
+          <!--Καταγραφή κόστους παραγωγής προϊοντος/υπηρεσίας-->
+          <form>
+            <h1>3. Κόστος παραγωγής προϊοντος/υπηρεσίας.</h1>
+            <textarea id="productCost" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ"></textarea>
+          </form>
+        </div>
+
+        <div class="Align">
+          <form>
+            <!--Καταγραφή προβλεπόμενου αριθμού πωλήσεων 1ου έτους-->
+            <h1>4. Προβλεπόμενος αριθμός πωλήσεων 1ου έτους.</h1>
+            <textarea id="numProduct" placeholder="Αριθμός προϊόντων/υπηρεσιών που προβλέπεται να πουλήσει στο πρώτο έτος εισαγωγής του."></textarea>
+          </form>
+          <!--Καταγρα΄φη ποσοστού αύξησης πωλήσεων επόμενων ετών-->
+          <form>
+            <h1>5. Ποσοστό αύξησης πωλήσεων επόμενων ετών.</h1>
+            <textarea id="percentageIncrease" placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
+          </form>
+        </div>
+        <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
+        <button type="submit" class="add" @click=addAnalysis()><img src="add32.png"> </button>
+
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="foot">
+    <button class="foot__back">ΠΙΣΩ</button>
+    <span class="foot__pagination">
+            <p>1/2</p>
+        </span>
+    <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <script src="./logic.js"></script>
+
+</body>
+
+</html>
