@@ -18,5 +18,3 @@ var gantt = new Gantt("#gantt", startActions, {
         console.log(mode);
     } })
 gantt.change_view_mode('Month') 
-
-
