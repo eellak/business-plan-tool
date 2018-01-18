@@ -6,8 +6,6 @@
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <style>
         /* APP */
@@ -83,8 +81,10 @@
             color: black;
         }
         main {
+            overflow-y: scroll;            
             flex-grow: 1;
         }
+
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -139,7 +139,66 @@
             justify-content: center;
             align-items: center;
         }
+        .Instructions {
+            margin-left: 850px;
+            margin-top: 20px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .add__member {
+            font-family: "Open Sans";
+            margin-left: 40px;
+            font-size: 30px;
+            color: rgb(61, 65, 90);
+            
+
+        }
+        .same__line{
+            
+            width: 180px;
+            height: 30px;
+            margin: 20px;
+            border: 1px solid transparent;
+            display: inline-block;
+
+        }
+        input[type=text], select {
+            width: 110%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color:#cbcaca
+
+}
+#plus__member{
+    margin:20px;
+    padding:0px;
+    white-space:nowrap;
+    width:auto;
+    overflow:visible;
+    border: 0;
+    background: transparent;
+}
+    
+
+
+
+
+
+
+
+
     </style>
+   
+
 </head>
 
 <body>
@@ -149,10 +208,10 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <img src="export.png" alt="export">
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="man.png" alt="Avatar">
     </header>
 
 
@@ -206,10 +265,10 @@
                         <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
                         <ul>
                             <li>
-                                <a href="index.html">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                                <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
                             </li>
                             <li>
-                                <a href="index2.html">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                                <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
                             </li>
                             <li>
                                 <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
@@ -270,81 +329,39 @@
         </nav>
 
         <main>
-            <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
-            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
-            <!--Περιεχόμενο που εμφανίζεται με τι πάτημα του κουμπιού-->
-            <div id="myDIV">Εδώ η περιγραφή των <br>οδηγιών...</div>
-            <!--Επιλογή προιόντος ή υπηρεσίας-->
-            <h1>0. Επιλέξτε προϊόν/υπηρεσία για προσθήκη.</h1>
-            <label class="container">Προϊόντα
-                <input type="radio" checked="checked" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Υπηρεσίες
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
             
-            <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
-            <div class="Align">
-            <!--Καταγραφή ονόματος προϊόντος/υπηρεσίας-->    
-            <form>
-                <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
-                <textarea placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ"></textarea>
-            </form>
-            <!--Καταγραφή του που απευθύνεται το προϊόν/υπηρεσία-->     
-            <form>
-                <h1>2. Ομάδα-στόχος.</h1>  
-                <textarea placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ"></textarea>
-            </form>
+
+            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+            <div class="add__member">
+                <label>1. Προσθέστε Μέλος</label><br>
+                <div class="add__member-row" v-for="m in managers">
+                    <div class="same__line">
+                      <form class="fname">
+                          <input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.name">
+                      </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="sname">
+                          <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.surName">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="duty">
+                            <!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
+                            <select v-model="m.job">
+                                <option v-for="o in jobOptions"> {{ o }} </option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <img src="link.png" alt="link">
+                    </div><br>
+                </div>
+                <button name="plus__member" id="plus__member" @click="create()">
+                    <img src="plus.png" alt="plus">
+                </button>
+                <button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
             </div>
-            
-            <div class="Align">
-            <!--Καταγραφή των στοιχείων καινοτομίας-->
-            <form>
-                <h1>3. Στοιχεία καινοτομίας/ανταγωνιστικότητας.</h1>
-                <textarea placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ"></textarea>
-            </form>
-            
-             <form>
-             <!--Καταγραφή της τεχνολογίας που χρησιμοποιείται-->
-                <h1>4. Τεχνολογία στην οποία βασίζεται.</h1>
-                <textarea placeholder="ΤΕΧΝΟΛΟΓΙΑ"></textarea>
-            </form>
-            </div>
-            
-            <!--Καταγραφή απαιτήσεων αδείας. Τα λινκς δε ξέρω γιατί υπάρχουν,το μόκαπ έτσι είναι.-->
-            <h1>5. Απαιτήσεις άδειας.</h1>
-            <form class=quest58>
-                <textarea placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
-            </form>
-            <div class="options">
-                <a href="Placeholder link">Πιστοποιητικό ασφάλειας</a><br>
-                <a href="Placeholder link 2">ISO</a><br>
-                <a href="Placeholder link 3">Κατοχυρωμένη πατέντα</a>
-            </div>
-            <!-- Καταγραφή στοιχείων ανταγωνισμού-->
-            <div class="Align">
-            <form>
-                <h1>6. Στοιχεία ανταγωνισμού.</h1>
-                <textarea placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ"></textarea>
-            </form>
-            
-            <!--Καταγραφή τελικής τιμής-->
-            <form>
-                 <h1>7. Τιμή διάθεσης στον τελικό χρήστη.</h1>
-                 <textarea placeholder="ΤΕΛΙΚΗ ΤΙΜΗ"></textarea>
-            </form>
-            </div>
-            
-            <!--Καταγραφή περιγραφής προϊόντος/υπηρεσίας.-->
-            <h1>8. Περιγραφή.</h1>
-            <form class=quest58>
-                <textarea placeholder="ΠΕΡΙΓΡΑΦΗ"></textarea>
-            </form>
-            <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-            <button type="submit" class="add"><img src="add32.png"> </button>
-                    
         </main>
     </div>
 
@@ -356,20 +373,13 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-    
-    
-    <script>
-        //Κάνει το button να εμφανίζει τις οδηγίες
-        function tipsButton() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "block") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-    </script>
-    
+
+
+        <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import our logic file -->
+    <script src="logic.js"></script>
+
 </body>
 
 </html>
