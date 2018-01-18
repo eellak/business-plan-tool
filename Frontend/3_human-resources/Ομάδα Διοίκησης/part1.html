@@ -6,8 +6,6 @@
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <style>
         /* APP */
@@ -83,8 +81,10 @@
             color: black;
         }
         main {
+            overflow-y: scroll;            
             flex-grow: 1;
         }
+
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -139,7 +139,66 @@
             justify-content: center;
             align-items: center;
         }
+        .Instructions {
+            margin-left: 850px;
+            margin-top: 20px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .add__member {
+            font-family: "Open Sans";
+            margin-left: 40px;
+            font-size: 30px;
+            color: rgb(61, 65, 90);
+            
+
+        }
+        .same__line{
+            
+            width: 180px;
+            height: 30px;
+            margin: 20px;
+            border: 1px solid transparent;
+            display: inline-block;
+
+        }
+        input[type=text], select {
+            width: 110%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color:#cbcaca
+
+}
+#plus__member{
+    margin:20px;
+    padding:0px;
+    white-space:nowrap;
+    width:auto;
+    overflow:visible;
+    border: 0;
+    background: transparent;
+}
+    
+
+
+
+
+
+
+
+
     </style>
+   
+
 </head>
 
 <body>
@@ -149,10 +208,10 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <img src="export.png" alt="export">
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="man.png" alt="Avatar">
     </header>
 
 
@@ -270,46 +329,42 @@
         </nav>
 
         <main>
-            <!-- YOUR CODE HERE -->
-            <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
-            <button class="tips" onclick="tipsButton()">ΟΔΗΓΙΕΣ</button>
-            <!--Περιεχόμενο που εμφανίζεται με τo πάτημα του κουμπιού-->
-            <div id="myDIV">Εδώ η περιγραφή των <br>οδηγιών...</div>
-            <!--Επιλογή προιόντος ή υπηρεσίας-->
-            <h1>0. Επιλέξτε προϊόν/υπηρεσία.</h1>
-            <label class="container">Προϊόντα
-                <input type="radio" checked="checked" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Υπηρεσίες
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
-            <form>
-                <h1>1. Όνομα προϊόντος/υπηρεσίας.</h1>
-                <select id="dropdown" name="dropdown">
-                    <option value="">Επιλογή 1.</option>
-                    <option value="">Επιλογή 2.</option>
-                    <option value="">Επιλογή 3.</option>
-                </select>
-            </form>
-            <!--Επιλογή της πνευματικής ιδιοκτησίας του προϊόντος/υπηρεσίας από dropdown menu-->
-            <form>
-                <h1>2. Επιλέξτε πνευματική ιδιοκτησία.</h1>
-                <select id="dropdown" name="dropdown">
-                    <option value="">1. Πατέντα</option>
-                    <option value="">2. Εμπορικό σήμα</option>
-                    <option value="">3. Δικαιώμα Πνευματικής ιδιοκτησίας</option>
-                    <option value="">4. Καταχωρημένο σχέδιο ή υπόδειγμα</option>
-                    <option value="">5. Domain name</option>
-                </select>
-            </form>
-            <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-            <button type="submit" class="add"><img src="add32.png"> </button>
             
+
+            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+            <div class="add__member">
+                <label>1. Προσθέστε Μέλος</label><br>
+                <div class="add__member-row" v-for="m in managers">
+                    <div class="same__line">
+                      <form class="fname">
+                          <input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.name">
+                      </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="sname">
+                          <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.surName">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="duty">
+                            <!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
+                            <select v-model="m.job">
+                                <option v-for="o in jobOptions"> {{ o }} </option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <img src="link.png" alt="link">
+                    </div><br>
+                </div>
+                <button name="plus__member" id="plus__member" @click="create()">
+                    <img src="plus.png" alt="plus">
+                </button>
+                <button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
+            </div>
         </main>
     </div>
+
 
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
@@ -318,19 +373,13 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-    
-    <script>
-        //Κάνει το button να εμφανίζει τις οδηγίες
-        function tipsButton() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "block") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-    </script>
-    
+
+
+        <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import our logic file -->
+    <script src="logic.js"></script>
+
 </body>
 
 </html>

@@ -112,7 +112,7 @@ form{
     align-items: center;
     float: right;
 }
-#myDIV {
+#instructions {
     position: fixed;
     width: 350px;
     height: 300px;
@@ -126,6 +126,15 @@ form{
     align-items: center;
     display: none;
 }
+
+#pneumatiki {
+    display: none;
+}
+
+#analisi {
+    display: none;
+}
+
 .add{
     border: none;
     background-color: white;
