@@ -126,6 +126,15 @@ form{
     align-items: center;
     display: none;
 }
+
+#pneumatiki {
+    display: none;
+}
+
+#analisi {
+    display: none;
+}
+
 .add{
     border: none;
     background-color: white;
