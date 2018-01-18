@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
-        /* APP */
+        
         body {
             display: flex;
             flex-direction: column;
@@ -131,14 +131,14 @@
         }
         /* BASIC ELEMENTS */
         .basic_button {
-            background-color: rgb(24, 146, 105);
+            background-color: rgb(25, 145, 105);
             width: 100px;
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .Instructions {
+}
+        .instructions {
             margin-left: 850px;
             margin-top: 20px;
             background-color: rgb(41, 152, 88);
@@ -150,40 +150,7 @@
             align-items: center;
             border-style: none;
         }
-        .add__member {
-            font-family: "Open Sans";
-            margin-left: 40px;
-            font-size: 30px;
-            color: rgb(61, 65, 90);
-            
-        }
-        .same__line{
-            
-            width: 180px;
-            height: 30px;
-            margin: 20px;
-            border: 1px solid transparent;
-            display: inline-block;
-        }
-        input[type=text], select {
-            width: 110%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            color:#cbcaca
-}
-#plus__member{
-    margin:20px;
-    padding:0px;
-    white-space:nowrap;
-    width:auto;
-    overflow:visible;
-    border: 0;
-    background: transparent;
-}
-    
+        
     </style>
    
 
@@ -196,8 +163,8 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <img src="export.png" alt="export">
-            <p>Export</p>
+            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <p>ΕΞΑΓΩΓΗ</p>
         </div>
         <img class="head__avatar" src="man.png" alt="Avatar">
     </header>
@@ -317,7 +284,7 @@
         </nav>
 
         <main>
-            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+           <button class="instructions">ΟΔΗΓΙΕΣ</button>
 
            <svg id="gantt"></svg>
         </main>
@@ -327,7 +294,7 @@
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
         <span class="foot__pagination">
-            <p>1/2</p>
+            <p>1/1</p>
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
