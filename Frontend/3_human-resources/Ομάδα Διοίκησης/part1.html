@@ -347,7 +347,10 @@
                     </div>
                     <div class="same__line">
                         <form class="duty">
-                            <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.job">
+                            <!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
+                            <select v-model="m.job">
+                                <option v-for="o in jobOptions"> {{ o }} </option>
+                            </select>
                         </form>
                     </div>
                     <div class="same__line">
@@ -357,7 +360,7 @@
                 <button name="plus__member" id="plus__member" @click="create()">
                     <img src="plus.png" alt="plus">
                 </button>
-                <button class="Instructions" @click="insert()">ΑΠΟΘΗΚΕΥΣΗ</button>
+                <button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
             </div>
         </main>
     </div>

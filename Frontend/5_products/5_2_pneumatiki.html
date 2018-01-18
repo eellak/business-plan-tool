@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BP Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="head">
+    <div class="head__logo">
+      <img src="Logo.png" alt="Logo">
+    </div>
+    <div class="head__export">
+      <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+      <p>Export</p>
+    </div>
+    <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+  </header>
+
+
+  <div class="main_container">
+    <nav>
+      <div class="sections-menu">
+        <ul>
+          <li>
+            <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+            <ul>
+              <li>
+                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
+              </li>
+              <li>
+                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+            <ul>
+              <li>
+                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+              </li>
+              <li>
+                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+            <ul>
+              <li>
+                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+            <ul>
+              <li>
+                <a href="5_1_xaraktiristika.html">ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
+              </li>
+              <li>
+                <a href="5_2_pneumatiki.html">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+              </li>
+              <li>
+                <a href="5_3_analisi.html">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+            <ul>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+              </li>
+              <li>
+                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+              </li>
+              <li>
+                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+            <ul>
+              <li>
+                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+              </li>
+              <li>
+                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+            <ul>
+              <li>
+                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+              </li>
+              <li>
+                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+              </li>
+              <li>
+                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+          </li>
+          <li>
+            <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+          </li>
+          <li>
+            <a href="">ΣΥΝΟΨΗ</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
+      <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
+
+      <!--Περιεχόμενο που εμφανίζεται με τo πάτημα του κουμπιού-->
+      <div id="instructions">Εδώ η περιγραφή των <br>οδηγιών...</div>
+
+      <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
+      <form>
+        <h1>1. Όνομα προϊόντος/υπηρεσίας.</h1>
+        <select id="dropdown_proionta" name="dropdown" @change="showNextDropdown()" v-model="products">
+                    <option v-for="product in products" v-bind:value="product.ID">
+                      {{ product.name }}
+                    </option>
+                </select>
+      </form>
+
+      <!--Επιλογή της πνευματικής ιδιοκτησίας του προϊόντος/υπηρεσίας από dropdown menu-->
+      <div id="pneumatiki">
+        <form>
+          <h1>2. Επιλέξτε πνευματική ιδιοκτησία.</h1>
+          <select id="dropdown_pneumatiki" name="dropdown">
+						<option value="">1. Πατέντα</option>
+						<option value="">2. Εμπορικό σήμα</option>
+						<option value="">3. Δικαιώμα Πνευματικής ιδιοκτησίας</option>
+						<option value="">4. Καταχωρημένο σχέδιο ή υπόδειγμα</option>
+						<option value="">5. Domain name</option>
+					</select>
+
+        </form>
+        <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
+        <button type="submit" class="add" @click=addCopyright()><img src="add32.png"> </button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="foot">
+    <button class="foot__back">ΠΙΣΩ</button>
+    <span class="foot__pagination">
+            <p>1/2</p>
+        </span>
+    <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <script src="./logic.js"></script>
+
+</body>
+
+</html>

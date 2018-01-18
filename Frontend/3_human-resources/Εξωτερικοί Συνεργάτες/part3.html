@@ -340,69 +340,54 @@
             
 
             <button class="Instructions">ΟΔΗΓΙΕΣ</button>
-            <span class="add__member">
+            <div class="add__member">
                 <label>1. Προσθέστε Συνεργάτη</label><br>
-                <div class="same__line">
-                  <form class="fname">
-                      <input type="text" name="fname" placeholder="ΟΝΟΜΑ">
-                  </form>
-                </div>
-                <div class="same__line">
-                    <form class="sname">
-                      <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ">
+                <div class="add__member-row" v-for="p in externalPartners">
+                    <div class="same__line">
+                    <form class="fname">
+                        <input type="text" placeholder="ΟΝΟΜΑ" v-model="p.name">
                     </form>
-                </div>
-                <div class="same__line">
-                    <form class="duty">
-                        <input type="text" name="sname" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ">
-                    </form>
-                </div>
-                <div class="same__line">
-                    <img src="link.png" alt="link">
-                </div><br>
-                <div class="same__line">
-                    <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
-                </div>
-                <div class="same__line">
-                    <form class="monthstart" style="margin-left: 20px">
-                        <input type="text" name="monthstart" placeholder="ΜΗΝΑΣ">
-                    </form>
-                </div>
-                <div class="same__line">
-                    <form class="yearstart">
-                        <input type="text" name="yearstart" placeholder="ΧΡΟΝΟΣ">
-                    </form>
-                </div><br>
-                <div class="same__line">
-                    <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
-                </div>
-                <div class="same__line">
-                    <form class="monthend" style="margin-left: 20px">
-                        <input type="text" name="monthend" placeholder="ΜΗΝΑΣ">
-                    </form>
-                </div>
-                <div class="same__line">
-                    <form class="yearend">
-                        <input type="text" name="yearend" placeholder="ΧΡΟΝΟΣ">
-                    </form>
-                </div><br>
-                <div class="duty">
-                    <form class="dutyof" > 
-                        <input type="text" name="dutyof" placeholder="ΚΑΘΗΚΟΝΤΑ">
-                    </form>
-                </div>
-
-
+                    </div>
+                    <div class="same__line">
+                        <form class="sname">
+                        <input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.surName">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <form class="duty">
+                            <input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.expertise">
+                        </form>
+                    </div>
+                    <div class="same__line">
+                        <img src="link.png" alt="link">
+                    </div><br>
+                    <div class="same__line">
+                        <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
+                    </div>
+                    <div class="same__line">
+                        <form class="monthstart" style="margin-left: 20px">
+                            <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.from">
+                        </form>
+                    </div><br>
+                    <div class="same__line">
+                        <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
+                    </div>
+                    <div class="same__line">
+                        <form class="monthend" style="margin-left: 20px">
+                            <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.until">
+                        </form>
+                    </div><br>
+                    <div class="duty">
+                        <form class="dutyof" > 
+                            <input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.duties">
+                        </form>
+                    </div>
                 <br>
-
-
-                <button name="plus__member" id="plus__member"><img src="plus.png" alt="plus"></button>
-                
-            </span>
-
+            </div>
+            <button name="plus__member" id="plus__member" @click="create()"><img src="plus.png" alt="plus"></button>
+            <button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
         </main>
     </div>
-
 
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
@@ -411,6 +396,13 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import our logic file -->
+    <script src="logic.js"></script>
+
 </body>
 
 </html>

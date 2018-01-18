@@ -84,7 +84,6 @@
             overflow-y: scroll;            
             flex-grow: 1;
         }
-
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -157,7 +156,6 @@
             font-size: 30px;
             color: rgb(61, 65, 90);
             
-
         }
         .same__line{
             
@@ -166,7 +164,6 @@
             margin: 20px;
             border: 1px solid transparent;
             display: inline-block;
-
         }
         input[type=text], select {
             width: 110%;
@@ -176,7 +173,6 @@
             border-radius: 4px;
             box-sizing: border-box;
             color:#cbcaca
-
 }
 #plus__member{
     margin:20px;
@@ -188,14 +184,6 @@
     background: transparent;
 }
     
-
-
-
-
-
-
-
-
     </style>
    
 
@@ -329,7 +317,7 @@
         </nav>
 
         <main>
-            TEAM 9
+           <svg id="gantt"></svg>
         </main>
     </div>
 
@@ -344,8 +332,14 @@
 
 
         <!-- Import Gantt Library Here -->
+         <script src="moment.js"></script>
+         <script src="snap.svg-min.js"></script>
+         <script src="frappe-gantt.min.js"> </script>
+         <script src="logic.js"> </script>
+       
 
-        <script src="logic.js"></script>
+        
+        
 
 </body>
 
