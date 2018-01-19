@@ -1,4 +1,4 @@
-<!doctype>
+﻿<!doctype>
 <html>
 
 	<head>
@@ -257,8 +257,64 @@
 						}
 						return employeesArray
 					},
-					// YOUR FUNCTION HERE, with commas in between the functions
 
+					fourCharacteristicsFun() {
+						charListArray = []
+						for (charList in this.db.fourCharacteristics.charList) {
+							if(this.db.fourCharacteristics.charList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}
+							charListArray.push([{text: productType + this.db.fourCharacteristics.charList[charList].name},
+											{text: "Απευθυνόμενο σε: " + this.db.fourCharacteristics.charList[charList].directed_to},
+											{text: "Σχέδιο Καινοτομίας: " + this.db.fourCharacteristics.charList[charList].innovation_factor},
+											{text: "Τεχνολογία: " + this.db.fourCharacteristics.charList[charList].technology},
+											{text: "Απαιτήσεις Άδειας: " + this.db.fourCharacteristics.charList[charList].certificate},
+											{text: "Άδεια: " + this.db.fourCharacteristics.charList[charList].license},
+											{text:"Ανταγωνισμός: " + this.db.fourCharacteristics.charList[charList].competition},
+											{text: "Τελική Τιμή: " + this.db.fourCharacteristics.charList[charList].price},
+											{text: "Περιγραφή: " + this.db.fourCharacteristics.charList[charList].description}, " "])
+						}
+						return charListArray
+					},
+
+					fourCRFun() {
+						crListArray = []
+						for (crList in this.db.fourCR.crList){
+							if(this.db.fourCR.crList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}
+							crListArray.push([{text: productType + this.db.fourCR.crList[crList].name},
+										{text: "Πνευματική Ιδιοκτησία: " + this.db.fourCR.crList[crList].copyright}, " "])
+						}
+						return crListArray
+					},
+					
+					fourIncomeFun() {
+						incomeListArray = []
+						for(incomeList in this.db.fourIncome.incomeList) {
+							if(this.db.fourIncome.incomeList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}	
+							incomeListArray.push([{text: productType + this.db.fourIncome.incomeList[incomeList].name},
+										{text: "Τιμή Πώλησης: " + this.db.fourIncome.incomeList[incomeList].sellPrice},
+										{text: "Κόστος Παραγωγής: " + this.db.fourIncome.incomeList[incomeList].productCost},
+										{text: "Αριθμός Προϊόντων: " + this.db.fourIncome.incomeList[incomeList].numProcuct},		
+										{text: "Ποσοστό Αύξησης: " + this.db.fourIncome.incomeList[incomeList].persentageIncrease} + "%", " "])	
+						}
+						return incomeListArray	
+					},					
+
+					// YOUR FUNCTION HERE, with commas in between the functions
+					
 					// Functions end
 
 	                exportFun() {
@@ -329,7 +385,37 @@
 								// YOUR CONTENT HERE, with commas between stuff as above
 								// Check here for help: http://pdfmake.org/#/gettingstarted , https://www.javascripting.com/view/pdfmake
 
+								// Section 4.1
+								{text: "4.1 Προϊόντα-Υπηρεσίες:", style: "sectionHeader"},
+								
+								" ", // Whitespace
 
+								{ol: this.fourCharacteristicsFun()},
+								
+								" "," ", // 2 whitespaces between sections
+
+								// Section 4.2
+								{text: "4.2 Πνευματική Ιδιοκτησία:", style: "sectionHeader"},
+								
+								" ", // Whitespace
+
+								{ol: this.fourCRFun()},
+								
+								" "," ", // 2 whitespaces between sections
+
+								// Section 4.3
+								{text: "4.3 Ανάλυση Εσόδων:", style: "sectionHeader"},
+								
+								" ", // Whitespace
+
+								{ol: this.fourIncomeFun()},
+								
+								" "," ", // 2 whitespaces between sections
+	 
+								// TODO Section 5
+	 
+								// TODO Section 6
+									
 								// Your content end
 							], // Content array end
 
