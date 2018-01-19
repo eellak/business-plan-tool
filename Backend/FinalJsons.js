@@ -1,4 +1,10 @@
-//1.1 
+/**
+     * These are the JSON objects that they are pulling from the backend. 
+     * Each object cames from a REST API call that is made from the client side application (bptool).
+     * You can see the object sorted by Team features number.
+     */
+
+//Team 2.1 
 "Identity": { //suports GET,POST,PUT,DELETE
   "Id": 1,
   "BpID": 1,
@@ -9,14 +15,14 @@
   "Clients": ["Πελατες1", "Πελατες2", "Πελατες3"]
 }
 
-//1.2
+//Team 2.2
 "Description": { //suports GET,POST,PUT,DELETE
   "Id" : 1,
   "IdentityId" : 1,
   "Text": "Μεγαλο κειμενο για την περιγραφη της επιχειρησης."
 }
 
-//2.1
+//Team 3.1
   "Manager":{ //suports GET,POST,PUT,DELETE
     "Id": 1,  
     "BusinessPlanId" : 1,
@@ -26,13 +32,13 @@
     "LinkedIn": "www1"
 }
 
-//2.2
-  "Employee":{ //suports GET,POST,PUT,DELETE
+//Team 3.2
+  " Employee":{ //suports GET,POST,PUT,DELETE
     "Id": 1, 
     "Job": "Πωλητής/Λογιστής/Καθαριστής" 
  }
 
-//2.3
+//Team 3.3
   "Partner": { //suports GET,POST,PUT,DELETE
     "Id": 1,
     "BusinessPlanId" : 1,
@@ -45,7 +51,7 @@
     "Duties": "Περιγραφη καθηκοντων 1"
 }
 
-//2.4
+//Team 3.4
 "EmployeeSalary":{ //suports GET,POST,PUT,DELETE
     "EmployeeID": 2, 
     "Salary": 17900, 
@@ -54,7 +60,7 @@
 }
    
 
-//3.1
+//Team 4.1
 "facultyList":{ //suports GET,POST,PUT,DELETE
   "Id" : 1,
   "BusinessPlanId" : 1,
@@ -65,7 +71,7 @@
   "Start_date": 20190823
 }
 
-//3.2
+//Team 4.2
 "equipmentList": { //suports GET,POST,PUT,DELETE
   "Id" : 1,
   "BusinessPlanId" : 1,
@@ -76,7 +82,7 @@
   "Acquisition_date": 20160519
 }
 
-//3.3
+//Team 4.3
 "RunningCost": { //supports GET
   "FacultyCosts": { //this is a list ,and each FacultyCost supports GET,POST,PUT,DELETE
     "FacultyId": 2, 
@@ -90,7 +96,7 @@
   "EquipmentExpenses": 210000
 }
 
-//4.1,4.2,4.3 (for teams wanting only some attributes ,appropriate consumers must be made)
+//Team 5.1, 5.2, 5.3 (for teams wanting only some attributes, appropriate consumers must be made)
 "Product": { //suports GET,POST,PUT,DELETE
   "ID": 1, 
   "BusinessPlanId" 1,
@@ -110,7 +116,7 @@
   "PercentageIncome" : 50  
 }
 
-//5.1
+//Team 6.1
 "SWOT": { //suports GET,POST,PUT,DELETE
   "BusinessPlanId": 1,
   "Strong": ["Δυνατα1","Δυνατα2","Δυνατα3"]
@@ -120,7 +126,7 @@
   }
 }
 
-//5.2
+//Team 6.2
 "Factor": { //suports GET,POST,PUT,DELETE
   "ID": 1,
   "BusinessPlanId": 3,
@@ -128,13 +134,13 @@
   "Example": "Παραδειγμα1"
 }
 
-//5.3
+//Team 6.3
 "Note": { //suports GET,POST,PUT,DELETE
   "BusinessPlanId": 1,
   "text": "Κειμενο παρατηρησεων."
 }
 
-//6.1
+//Team 7.1
 "Strategy":{ //suports GET,POST,PUT,DELETE
   "BusinessPlanId": 1,
   "Promotion": "Καναλια προβολης",
@@ -144,7 +150,7 @@
   "Avoid": "Κινησεις προς αποφυγειν"
 }
 
-//6.2
+//Team 7.2
 "MarketingAction":{ //suports GET,POST,PUT,DELETE
   "Id": 1, 
   "BusinessPlanId": 2,
@@ -155,14 +161,14 @@
   "TotalCost":"Συνολικο Κοστος 1"
 }
 
-//7.1
+//Team 8.1
 "StartAction": { //suports GET,POST,PUT,DELETE
   "ID": 1 , 
   "Name": "Ενεργεια1", 
   "ActionCost": 56
 }
 
-//7.2
+//Team 8.2
 "FunctionCost": { //supports GET
   "Functions":{ //this is a list and each Function supports GET,POST,PUT,DELETE
     "ID": 1 , 
@@ -173,14 +179,14 @@
   "functionsTotalCost": 6000
 }
 
-//7.3
+//Team 8.3
 "Deadspot": { //suports GET,POST,PUT,DELETE
   "ID": 1 , 
   "BusinessPlanId": 2,
   "Spot":"Νεκρο σημειο1"
 }
 
-//9
+// Appendix: Upload functionality
 "Link": { //suports GET,POST,PUT,DELETE
   "ID":1, 
   "BusinessPlanId": 1,
@@ -189,7 +195,7 @@
   "Section": "Section1"
 }
 
-//10
+//Team 1.1
 "Conclusion": { //suports GET,POST,PUT,DELETE
   "BussinesPlanId": 1,
   "Text": "Κειμενο περιληψης"
