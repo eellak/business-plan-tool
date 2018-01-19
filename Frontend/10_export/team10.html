@@ -319,6 +319,77 @@
 						}
 						return equipmentCostArray
 					},
+					fourOneCharacteristicsFun() {
+						charListArray = []
+						for (charList in this.db.fourCharacteristics.charList) {
+							if(this.db.fourCharacteristics.charList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}
+							charListArray.push([{text: productType + this.db.fourCharacteristics.charList[charList].name},
+											{text: "Απευθυνόμενο σε: " + this.db.fourCharacteristics.charList[charList].directed_to},
+											{text: "Σχέδιο Καινοτομίας: " + this.db.fourCharacteristics.charList[charList].innovation_factor},
+											{text: "Τεχνολογία: " + this.db.fourCharacteristics.charList[charList].technology},
+											{text: "Απαιτήσεις Άδειας: " + this.db.fourCharacteristics.charList[charList].certificate},
+											{text: "Άδεια: " + this.db.fourCharacteristics.charList[charList].license},
+											{text:"Ανταγωνισμός: " + this.db.fourCharacteristics.charList[charList].competition},
+											{text: "Τελική Τιμή: " + this.db.fourCharacteristics.charList[charList].price + "€"},
+											{text: "Περιγραφή: " + this.db.fourCharacteristics.charList[charList].description}, " "])
+						}
+						return charListArray
+					},
+					fourTwoCRFun() {
+						crListArray = []
+						for (crList in this.db.fourCR.crList){
+							if(this.db.fourCR.crList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}
+							crListArray.push([{text: productType + this.db.fourCR.crList[crList].name},
+										{text: "Πνευματική Ιδιοκτησία: " + this.db.fourCR.crList[crList].copyright}, " "])
+						}
+						return crListArray
+					},
+					fourThreeIncomeFun() {
+						incomeListArray = []
+						for(incomeList in this.db.fourIncome.incomeList) {
+							if(this.db.fourIncome.incomeList.productType){
+								var productType="Προϊόν: "
+							}
+							else{
+								var productType="Υπηρεσία: "
+							}	
+							incomeListArray.push([{text: productType + this.db.fourIncome.incomeList[incomeList].name},
+										{text: "Τιμή Πώλησης: " + this.db.fourIncome.incomeList[incomeList].sellPrice + "€"},
+										{text: "Κόστος Παραγωγής: " + this.db.fourIncome.incomeList[incomeList].productCost},
+										{text: "Αριθμός Προϊόντων: " + this.db.fourIncome.incomeList[incomeList].numProcuct},		
+										{text: "Ποσοστό Αύξησης: " + this.db.fourIncome.incomeList[incomeList].persentageIncrease + "%"}, " "])	
+						}
+						return incomeListArray	
+					},	
+					fiveTwoPestelFun() {
+						factorsArray = []
+						for(factor in this.db.fivePESTEL.factors){
+							factorsArray.push([{text: "Περιγραφή: " + this.db.fivePESTEL.factors[factor].description},
+										{text: "Παράδειγμα: " + this.db.fivePESTEL.factors[factor].example}, " "])
+						}
+						return factorsArray	
+					},
+					sixTwoMarketingFun() {
+						marketingActionsArray = []
+						for(marketingAction in this.db.sixMarketing.marketingActions){
+							marketingActionsArray.push([{text: "Ενέργεια: " + this.db.sixMarketing.marketingActions[marketingAction].title},
+											{text: "Χρόνος Υλοποίησης: " + this.db.sixMarketing.marketingActions[marketingAction].implementationTime},
+											{text: "Συχνότητα: " + this.db.sixMarketing.marketingActions[marketingAction].frequency},
+											{text: "Κόστος Υλοποίησης: " + this.db.sixMarketing.marketingActions[marketingAction].implementationCost},
+											{text: "Συνολικό Κόστος: " + this.db.sixMarketing.marketingActions[marketingAction].totalCost}, " "])
+						}
+						return marketingActionsArray	
+					},
 					// YOUR FUNCTION HERE, with commas in between the functions
 
 
@@ -404,9 +475,78 @@
 	 							{ol: this.threeThreeEquipmentCostFun()},
 								{text: "Συνολικό κόστος εξοπλισμού: " + String(db.threeCost.equipmentExpenses) + "€", bold: true},
 								" "," ",
+								// Section 4
+								{text: "Προϊόντα - Υπηρεσίες", style: "sectionHeader"},
+								" ",
 								// Subsection 4.1
-								// ...
+								{text: "4.1 Χαρακτηριστικά:", style: "subSectionHeader"},
+								" ",
+								{ol: this.fourOneCharacteristicsFun()},
+								" "," ",
+								// Section 4.2
+								{text: "4.2 Πνευματική Ιδιοκτησία:", style: "subSectionHeader"},
+								" ",
+								{ol: this.fourTwoCRFun()},
+								" "," ",
+								// Section 4.3
+								{text: "4.3 Ανάλυση Εσόδων:", style: "subSectionHeader"},
+								" ",
+								{ol: this.fourThreeIncomeFun()},
+								" "," ",
+								// Section 5
+								{text: "Ανάλυση Αγοράς", style: "sectionHeader", pageBreak: "before"},
+								" ",
+								// Section 5.1
+								{text: "5.1 Ανάλυση SWOT:", style: "subSectionHeader"},
+								" ",
+								{text: "5.1.1 Δυνατά:", style: "subSectionHeader"},								
+								" ",
+								{ol: this.db.fiveSWOT.strong},
+								" ",
+								{text: "5.1.2 Αδύνατα:", style: "subSectionHeader"},
+								" ",
+								{ol: this.db.fiveSWOT.weak},
+								" ",
+								{text: "5.1.3 Ευκαιρίες:", style: "subSectionHeader"},
+								" ",
+								{ol: this.db.fiveSWOT.opportunities},								
+								" ",
+								{text: "5.1.4 Απειλές:", style: "subSectionHeader"},
+								" ",
+								{ol: this.db.fiveSWOT.threats},								
+	 							" "," ",
+								// Section 5.2
+								{text: "5.2 Ανάλυση PESTEL:", style: "subSectionHeader"},
+								" ",
+								{ol: this.fiveTwoPestelFun()},
+	 							" "," ",
+								// Section 5.3
+								{text: "5.3 Γενικές Παρατηρήσεις:", style: "subSectionHeader"},
+								" ",
+								{text: this.db.fiveNotes},
+	 							" "," ",
+								// Section 6
+								{text: "Στρατηγική Marketing", style: "sectionHeader"},
+								" ",
+								// Section 6.1	
+								{text: "6.1 Στρατηγική:", style: "subSectionHeader"},
+								" ",
+								"Κανάλια Προβολής: " 			  + db.sixStrategy.promotion,
+								"Κανάλια Διανομής: " 			  + db.sixStrategy.contribution,
+								"Τεχνικές Εισαγωγής στην Αγορά: " + db.sixStrategy.marketEntry,
+								"Δημόσιες Σχέσεις: "              + db.sixStrategy.publicRelations,
+								"Κινήσεις προς Αποφυγείν: "       + db.sixStrategy.avoid,
+	 							" "," ",
+								// Section 6.2
+								{text: "6.2 Ενέργειες Marketing:", style: "subSectionHeader"},
+								" ", 
+								{ol: this.sixTwoMarketingFun()},
+	 							" "," ",
+	 							// YOUR CONTENT HERE, with commas between stuff as above
+								// Check here for help: http://pdfmake.org/#/gettingstarted , https://www.javascripting.com/view/pdfmake
 
+
+								// Your content end
 							], // Content array end
 
 							styles: {
@@ -417,7 +557,7 @@
 							      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
 							    }
 							  }
-							  
+
 						} // docDefinition end
 						
 						// Download the PDF, named after the business name given in section 1.1
