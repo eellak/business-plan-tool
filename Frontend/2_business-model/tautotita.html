@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BP Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <style>
+        /* BASIC ELEMENTS */
+        .basic_button {
+            background-color: rgb(24, 146, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+
+<body>
+  <header class="head">
+      <div class="head__logo">
+          <img src="Logo.ICO" onclick="location.href='skeleton.html';" style="cursor: pointer;" alt="Logo">
+      </div>
+      <div class="head__export">
+          <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+          <p>Export</p>
+      </div>
+      <img class="head__avatar" src="avatar.jpg" alt="Avatar">
+  </header>
+
+    <div class="main_container">
+        <nav>
+            <div class="sections-menu">
+                <ul>
+                    <li>
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                        <ul>
+                            <li>
+                                <a href="tautotita.html">ΤΑΥΤΟΤΗΤΑ</a>
+                            </li>
+                            <li>
+                                <a href="perigrafi.html">ΠΕΡΙΓΡΑΦΗ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+                            </li>
+                            <li>
+                                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                        <ul>
+                            <li>
+                                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="sinopsi.html">ΣΥΝΟΨΗ</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+      <main>
+        <style>
+          #myDIV {
+            width: 94%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: rgb(217, 217, 217);
+            margin-top: 20px;
+            display: none;
+            font-color:rgb(40, 44, 63);
+          }
+        </style>
+        <section class="top_card">
+            <button class="foot__back" onclick="myFunction()">ΟΔΗΓΙΕΣ</button>
+        </section>
+
+  			<div id="myDIV">
+          <p>Συμπληρώστε τα χαρακτηριστικά ταυτότητας του επιχειρηματικού μοντέλου.</p>
+  			</div>
+
+  			<script>
+  				function myFunction() {
+  					var x = document.getElementById("myDIV");
+  					if (x.style.display === "block") {
+  						x.style.display = "none";
+  					} else {
+  						x.style.display = "block";
+  					}
+  				}
+  			</script>
+
+		 <!-- Evala id sti forma gia na ta pairnei katw i js -->
+		 <form id="form">
+			<section class="my_card">
+        <div class="my_card_head"> 1.Τόπος Εγκατάστασης </div>
+				<div class="my_card_body"> <input type="text" name="location" id="location" value="" placeholder="Θεσσαλονίκη" style="width: 80%; font-size:15pt;"></div>
+			</section>
+
+			<section class="my_card">
+				<div class="my_card_head">2.Περίοδος έναρξης δραστηριότητας για νέες επιχειρήσεις/ έτος ίδρυσης για υφιστάμενες επιχειρήσεις<br></div>
+				<div class="styled-select slate">
+        <select id="dokimi" name="month" id="month">
+					<option value="January">Ιανουάριος</option>
+					<option value="February">Φεβρουάριος</option>
+					<option value="March">Μάρτιος</option>
+					<option value="April">Απρίλιος</option>
+					<option value="May">Μάιος</option>
+					<option value="June">Ιούνιος</option>
+					<option value="July">Ιούλιος</option>
+					<option value="August">Αύγουστος</option>
+					<option value="September">Σεπτέμβριος</option>
+					<option value="October">Οκτώβριος</option>
+					<option value="November">Νοέμβριος</option>
+					<option value="December">Δεκέμβριος</option>
+				</select>
+        </div>
+
+        <div class="styled-select slate">
+				<select id="year" name="year"></select></div>
+				  <script>
+					var start = 1900;
+					var end = new Date().getFullYear();
+					var options = "";
+					for(var year = start ; year <=end; year++){
+					  options += "<option>"+ year +"</option>";
+					}
+					document.getElementById("year").innerHTML = options;
+				  </script>
+			</section>
+
+			<section class="my_card">
+				<div class="my_card_head">3.Νομική Μορφή<br></div>
+				<div class="my_card_body">
+          <div class="styled-select slate">
+					<select name="legal type" id="legal type">
+					<option value="Single">Ατομική</option>
+					<option value="ΟΕ">ΟΕ</option>
+					<option value="Cooperative">Συνεταιριστική</option>
+					<option value="Anonimus">Ανώνυμη</option>
+					</select>
+        </div>
+				</div>
+			</section>
+
+			<section class="my_card">
+					<div class="my_card_head"><legend>4. Τύπος Επιχείρησης</legend></div>
+
+						<div>
+							<input type="checkbox" id="productive" name="productive" value="productive">
+							<label for="productive">Παραγωγική</label>
+						</div>
+						<div>
+							<input type="checkbox" id="retail" name="retail" value="retail">
+							<label for="retail">Εμπορική επιχειρήση λιανικής</label>
+						</div>
+						<div>
+							<input type="checkbox" id="wholesale" name="wholesale" value="wholesale">
+							<label for="wholesale">Εμπορική επιχειρήση χονδρικής</label>
+						</div>
+						<div>
+							<input type="checkbox" id="service" name="service" value="service">
+							<label for="service">Παροχή υπηρεσιών</label>
+						</div>
+						<div>
+							<input type="checkbox" id="franchise" name="franchise" value="franchise">
+							<label for="franchise">Franchise</label>
+						</div>
+						<div>
+							<input type="checkbox" id="distributor" name="distributor" value="distributor">
+							<label for="distributor">Distributor</label>
+						</div>
+						<div>
+							<input type="checkbox" id="other1" name="other1" value="other1">
+							<label for="other1">Other</label>
+							<input type="text" id="otherValue1" name="otherVal1">
+						</div>
+
+			</section>
+
+			<section class="my_card">
+				<div class="my_card_head"><legend>5.Πελάτες</legend></div>
+
+						<div>
+							<input type="checkbox" id="private individual" name="private individual" value="private individual">
+							<label for="private individual">Ιδιώτες</label>
+						</div>
+						<div>
+							<input type="checkbox" id="companies" name="companies" value="companies">
+							<label for="companies">Επιχειρήσεις</label>
+						</div>
+						<div>
+							  <input type="checkbox" id="other2" name="other2" value="other2">
+							  <label for="other2">Other</label>
+							  <input type="text" id="otherValue2" name="otherVal2">
+						</div>
+
+			</section>
+
+		</form>
+  </main>
+</div>
+
+
+
+  <!--fortwnei to jquery ston kwdika gia na douleuei i submit tou katw script -->
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+		</script>
+
+		<script>
+			function formSubmit(){
+				console.log("log")
+				$("#form").submit()
+        location.href='perigrafi.html';
+			}
+		</script>
+
+
+	  <footer class="foot">
+		  <button class="foot__back" onclick="location.href='skeleton.html';">ΠΙΣΩ</button>
+		  <span class="foot__pagination">
+			  <p>1/2</p>
+		  </span>
+		  <button class="foot__next" onclick="formSubmit()">ΜΠΡΟΣΤΑ</button>
+	  </footer>
+  </body>
+
+  </html>

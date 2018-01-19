@@ -1,30 +1,30 @@
 <!doctype>
 <html>
 
-    <head>
-	
-        <title>jsPDF Test</title>
+	<head>
+
+    	<title>Export button</title>
 		
-    </head>
+	</head>
 
-    <body>
+	<body>
 
-        <div class="app">
-            
-            <button @click="ExportFun()">Export</button>
+	    <div class="app">
+	        
+	        <button @click="exportFun()">Export</button>
 
-        </div>
+	    </div>
 		
 		<!-- Imports -->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script> 									 <!-- Vuejs library -->
+	    <script src="https://cdn.jsdelivr.net/npm/vue"></script> 									 <!-- Vuejs library -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.35/pdfmake.min.js"></script> <!-- PDFMake library -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.35/vfs_fonts.js"></script>
+  		<script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.35//vfs_fonts.js'></script>	 <!-- PDFMake library fonts-->
 
-        <script>
+	    <script>
 		
-            var app = new Vue({
-                el: '.app',
-                data: {				
+	        var app = new Vue({
+	            el: '.app',
+	            data: {				
 					db : {
 						// 1.1
 						"oneIdentity": {
@@ -38,15 +38,17 @@
 
 						// 1.2
 						"oneDescription": {
-							"text": "Μεγαλο κειμενο για την περιγραφη της επιχειρησης."
+							"text": "Μεγαλο κειμενο για την περιγραφη της επιχειρησης. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sodales scelerisque tristique."
 						},
 
 						// 2.1
-						"twoManagers": [
-							{"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
-							{"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
-							{"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
-						],
+						"twoTeam": {
+						  "managers": [
+						    {"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
+						    {"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
+						    {"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
+						  ]
+						},
 
 						// 2.2
 						"twoEmployees": {
@@ -110,15 +112,15 @@
 						  "equipmentExpenses": 210000
 						},
 
-						// 4.1
+						///4.1
 						"fourCharacteristics": {//product:true= product , product:false = service
 						  "charList": [
-							{"productID": 1, "productType": false, "name": "Prod1", "directed_to": "Dir1", "innovation_factor": "Inn1",
-							"technology": "Tech1", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
-							{"productID": 2, "productType": false, "name": "Prod2", "directed_to": "Dir2", "innovation_factor": "Inn2",
-							"technology": "Tech1", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
-							{"productID": 3, "productType": false, "name": "Prod3", "directed_to": "Dir2", "innovation_factor": "Inn3",
-							"technology": "Tech1", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
+						    {"productID": 1, "productType": false, "name": "Prod1", "directed_to": "Dir1", "innovation_factor": "Inn1",
+						    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
+						    {"productID": 2, "productType": false, "name": "Prod2", "directed_to": "Dir2", "innovation_factor": "Inn2",
+						    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
+						    {"productID": 3, "productType": false, "name": "Prod3", "directed_to": "Dir2", "innovation_factor": "Inn3",
+						    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
 						  ]
 						},
 
@@ -159,7 +161,7 @@
 
 						// 5.3
 						"fiveNotes": {
-						  "text": "Κειμενο παρατηρησεων."
+						  "text": "Κειμενο παρατηρησεων. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sodales scelerisque tristique."
 						},
 
 						// 6.1
@@ -222,45 +224,135 @@
 
 						// 10
 						"tenConclusion": {
-						  "text": "Κειμενο περιληψης"
+						  "text": "Κειμενο περιληψης. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sodales scelerisque tristique."
 						}
 					} // End db
-                },
+	            },
 				
-                methods: {
-                    ExportFun() {
-						// SECTION 1
-						var sectionOneIdentity = this.db.oneIdentity
-						var sectionOneDescription = this.db.oneDescription
-						
+	            methods: {
+
+					// Functions for dynamic PDFMake content generation based on the json
+
+					twoOneManagersFun() { 
+						managersArray = [] // Array to store the PDFMake content
+						// Loop through the managers object and format the content in PDFMake form
+						for (manager in this.db.twoTeam.managers) {
+							managersArray.push([{text: this.db.twoTeam.managers[manager].name + " " + this.db.twoTeam.managers[manager].surname},
+											    {text: this.db.twoTeam.managers[manager].job}, 
+											    {text: this.db.twoTeam.managers[manager].linkedIn}, " "])
+						}
+						// This loop is equivalent to the above, both work, use whichever suits you
+						// for (var i = 0; i < this.db.twoTeam.managers.length; i++){
+						// 	managersArray.push([{text: this.db.twoTeam.managers[i].name + " " + this.db.twoTeam.managers[i].surname},
+						// 						{text: this.db.twoTeam.managers[i].job}, 
+						// 						{text: this.db.twoTeam.managers[i].linkedIn}, " "])
+						// }
+						return managersArray
+					},
+
+					twoTwoEmployeesFun() { 
+						employeesArray = [] 
+						for (employee in this.db.twoEmployees.employees) {
+							employeesArray.push([{text: this.db.twoEmployees.employees[employee].job}, " "])
+						}
+						return employeesArray
+					},
+					// YOUR FUNCTION HERE, with commas in between the functions
+
+					// Functions end
+
+	                exportFun() {
+						var db = this.db // Local db variable, QOL 
+
 						// PDFMake code here
 						var docDefinition = {
-						content:['Section 1',
-								'Business Identity:',
-								{
-									// to treat a paragraph as a bulleted list, set an array of items under the ul key
-									ul: [
-										sectionOneIdentity.bpID,
-										sectionOneIdentity.name,
-										sectionOneIdentity.date,
-										sectionOneIdentity.legalForm,
-										sectionOneIdentity.orderOfBusiness,
-										sectionOneIdentity.clients
-										// { text: 'Item 4', bold: true },
-									]
-								}
-								]
-						};
-						
-						// Download the PDF
-						pdfMake.createPdf(docDefinition).download('businessPlan.pdf'); // TODO add business name to filename?
-						
-                    }
-                }
-            })
-            
-        </script>
+							// Content of the pdf document
+							content: [
+								// Section 1.1
+								// This content element is a complicated one, with extra "tags" like bold, underline, etc. Notice it is inside curly brackets.
+								{text: "1.1 Ταυτότητα Επιχείρησης:", style: "sectionHeader"},
+							
+								" ", // Whitespace
+								
+								// This content element is a simple string element, no need for curly brackets, just comma after it.
+								"Όνομα επιχείρησης: " 		 + db.oneIdentity.name,
+								// Date is converted into string and sliced to get proper format
+								"Ημερομηνία δημιουργίας: "   + String(db.oneIdentity.date).slice(6) + "/" + String(db.oneIdentity.date).slice(4, 6) + 
+														 "/" + String(db.oneIdentity.date).slice(0, 4),
+								"Νομική μορφή: " 		     + db.oneIdentity.legalForm,
+								"Τύπος επιχείρησης: "        + db.oneIdentity.orderOfBusiness,
 
-    </body>
+								" ", // Whitespace
+
+								"Πελάτες: ",
+								// Prints clients array in an numbered list, dynamic based on the array
+								// Due to the "ol" tag, it needs curly brackets. Equivalent to {ol: [firstItem, secondItem]} syntax.
+								{ol: db.oneIdentity.clients}, 
+
+								" "," ", // 2 whitespaces between sections
+
+								// Section 1.2
+								{text: "1.2 Περιγραφή Επιχείρησης:", style: "sectionHeader"},
+
+								" ", // Whitespace
+								// Simple string element coming straight from db
+								db.oneDescription,
+
+								" "," ", // 2 whitespaces between sections
+
+								// Section 2.1
+								{text: "2.1 Ομάδα Διοίκησης:", style: "sectionHeader"},
+
+								" ", // Whitespace
+
+								{ol: this.twoOneManagersFun()}, // Call dynamic content creation function for managers
+
+								" "," ", // 2 whitespaces between sections
+								
+								//  Section 2.2
+								{text: "2.2 Προσωπικό:", style: "sectionHeader"},
+
+								" ", // Whitespace
+
+								{ol: this.twoTwoEmployeesFun()},
+	 
+								// TODO Section 2.3
+	 
+								// TODO Section 2.4
+	 
+								// TODO Section 3.1
+	 
+								// TODO Section 3.2
+	 
+								// TODO Section 3.3
+
+								// YOUR CONTENT HERE, with commas between stuff as above
+								// Check here for help: http://pdfmake.org/#/gettingstarted , https://www.javascripting.com/view/pdfmake
+
+
+								// Your content end
+							], // Content array end
+
+							styles: {
+							    sectionHeader: {
+							      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+							    },
+							    anotherStyle: {
+							      italics: true,
+							      alignment: 'right'
+							    }
+							  }
+						} // docDefinition end
+						
+						// Download the PDF, named after the business name given in section 1.1
+						pdfMake.createPdf(docDefinition).download(db.oneIdentity.name + "BusinessPlan.pdf");
+						
+	                } // ExportFun end
+	            }
+	        }) // app = Vue({ end
+	        
+	    </script>
+
+	</body>
 	
 </html>
