@@ -1,135 +1,17 @@
 <!DOCTYPE html>
 <html>
-
+  
 <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/s4.css">
 
     <style>
-        /* APP */
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: initial;
-            align-items: stretch;
-            min-height: 100vh;
-        }
-        /* HEADER */
-        .head {
-            background-color: rgb(30, 33, 51);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            ;
-        }
-        .head__logo {
-            margin-left: 20px;
-        }
-        .head__export {
-            color: #fff;
-            display: flex;
-            margin-right: 100px;
-            align-items: center;
-        }
-        .head__avatar {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .head__export p {
-            margin-left: 5px;
-            font-size: 20px;
-        }
-        .head__export i {}
-        /* FOOTER */
-        footer {
-            background-color: rgb(203, 202, 202);
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .foot__back {
-            margin-right: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-        .foot__next {
-            margin-left: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-        .foot__pagination {
-            font-size: 20px;
-            font-weight: 600;
-            color: black;
-        }
-        main {
-            overflow-y: scroll;            
-            flex-grow: 1;
-        }
-        .main_container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-        }
-        nav {
-            background-color: rgb(30, 33, 51);
-            width: 350px;
-        }
-        /* SECTIONS MENU */
-        .sections-menu {}
-        .sections-menu ul {
-            list-style: none;
-            margin: 0;
-        }
-        .sections-menu ul li {
-            padding: 15px;
-            position: relative;
-            width: 350px;
-            border-top: 1px solid black;
-            background-color: rgb(30, 33, 51);
-        }
-        .sections-menu ul li {
-            border-right: 5px solid rgb(61, 65, 90);
-        }
-        .sections-menu ul ul {
-            opacity: 0;
-            position: absolute;
-            visibility: hidden;
-            left: 100%;
-            top: -2%;
-            background-color: rgb(40, 44, 63);
-        }
-        .sections-menu ul ul li {
-            background-color: rgb(79, 84, 115);
-            width: 250px;
-        }
-        .sections-menu ul li:hover ul {
-            opacity: 1;
-            visibility: visible;
-        }
-        .sections-menu ul li a {
-            color: white;
-        }
         /* BASIC ELEMENTS */
+
         .basic_button {
             background-color: rgb(24, 146, 105);
             width: 100px;
@@ -138,55 +20,7 @@
             justify-content: center;
             align-items: center;
         }
-        .Instructions {
-            margin-left: 850px;
-            margin-top: 20px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-        .add__member {
-            font-family: "Open Sans";
-            margin-left: 40px;
-            font-size: 30px;
-            color: rgb(61, 65, 90);
-            
-        }
-        .same__line{
-            
-            width: 180px;
-            height: 30px;
-            margin: 20px;
-            border: 1px solid transparent;
-            display: inline-block;
-        }
-        input[type=text], select {
-            width: 110%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            color:#cbcaca
-}
-#plus__member{
-    margin:20px;
-    padding:0px;
-    white-space:nowrap;
-    width:auto;
-    overflow:visible;
-    border: 0;
-    background: transparent;
-}
-    
     </style>
-   
-
 </head>
 
 <body>
@@ -196,10 +30,10 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <img src="export.png" alt="export">
+            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="man.png" alt="Avatar">
+        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
     </header>
 
 
@@ -315,9 +149,64 @@
                 </ul>
             </div>
         </nav>
+    <main>
+            <div class="row1">
+                    <button class="btn" id="odhgies" >ΟΔΗΓΙΕΣ</button>
+            </div>
+            <div class="container_main">
+                <div class="row1">
+                    <div class="row2">
+                        ΠΛΗΡΟΦΟΡΙΕΣ ΕΞΟΠΛΙΣΜΟΥ
+                    </div>
+                    <div class="row3">
+                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                        <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
+                    </div>
+                </div>    
+                <div class="row1">
+                    <div class="row1">
+                                <input class="input_1" type="text" name="" value="ΕΙΔΗ ΕΞΟΠΛΙΣΜΟΥ" >
+                    </div>  
+                </div>
+                <div class="row1">
+                    <div class="row2">
+                        <input class="input_1" type="text" name="" value="ΤΟΠΟΣ ΕΓΚΤΑΣΤΑΣΗΣ" >
+                    </div>
+                    <div class="row3">
+                        <input class="input_1" type="text" name="" value="ΤΜΗΜΑ ΕΠΙΧΕΙΡΗΣΗΣ">
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="row3"> 
+                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                        <label for="styled-checkbox-1">Νέο</label>
+                    </div>
+                    <div class="row3">
+                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                        <label for="styled-checkbox-1">Μεταχειρισμένο</label>
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="row4">
+                        Ημερομηνία Απόκτησης
+                    </div>
+                    <div class="row3">
+                        <input class="input_1" type="text" name="" value="ΜΗΝΑΣ">
+                    </div>
+                    <div class="row3">
+                        <input class="input_1" type="text" name="" value="ΕΤΟΣ" >
 
-        <main>
-           <svg id="gantt"></svg>
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="row5">
+                        <button class="btn" style="float:left;margin-left:0%" id="PLUS" >+</button>
+                    </div>
+                    <div class="row5">
+                        <button class="btn" style="float:right" id="MINUS" >-</button>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
@@ -329,18 +218,6 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-
-
-        <!-- Import Gantt Library Here -->
-         <script src="moment.js"></script>
-         <script src="snap.svg-min.js"></script>
-         <script src="frappe-gantt.min.js"> </script>
-         <script src="logic.js"> </script>
-       
-
-        
-        
-
 </body>
 
 </html>
