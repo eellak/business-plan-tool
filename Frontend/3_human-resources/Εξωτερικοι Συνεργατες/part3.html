@@ -83,8 +83,6 @@
         main {
 
             flex-grow: 1;
-            overflow-y: scroll;
-
         }
 
         .main_container {
@@ -156,7 +154,7 @@
         .add__member {
             font-family: "Open Sans";
             margin-left: 40px;
-            font-size: 20px;
+            font-size: 30px;
             color: rgb(61, 65, 90);
             
 
@@ -165,13 +163,13 @@
             
             width: 180px;
             height: 30px;
-            margin-left: 160px;
+            margin: 10px;
             border: 1px solid transparent;
             display: inline-block;
 
         }
+        
         input[type=text], select {
-            color:#cbcaca ;
             width: 110%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -179,9 +177,9 @@
             border-radius: 4px;
             box-sizing: border-box;
             text-align: center;
+            color:#cbcaca 
 
 }
-
 #plus__member{
     margin:20px;
     padding:0px;
@@ -191,31 +189,17 @@
     border: 0;
     background: transparent;
 }
-hr{
-    margin-top: -4px;
-    margin-left: 120px;
-    background-color: #f0f0f0;
-    width: 600px;
-    float: center;
-    border-top: 1px solid #8c8b8b; 
+.dutyof{
+    text-align: center;
+    margin-left: 60px;
+    width:500px;
+    height: 20px;
 }
-.Calculate{
-    margin-left: 800px;
-    margin-top: -30px;
-    background-color: #299858 ;
-    color: white;
-    width: 150px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: none;
+    
 
-}
-.yearlycost{
-    margin-left: 110px;
-    margin-bottom: -50px;
-}
+
+
+
 
 
 
@@ -357,58 +341,62 @@ hr{
 
             <button class="Instructions">ΟΔΗΓΙΕΣ</button>
             <span class="add__member">
-                <label>ΘΕΣΗ ΕΡΓΑΣΙΑΣ-ΟΝΟΜΑ ΕΡΓΑΖΟΜΕΝΟΥ</label><br>
+                <label>1. Προσθέστε Συνεργάτη</label><br>
                 <div class="same__line">
-                  <form class="payment">
-                      <input type="text" name="payment" placeholder="ΠΟΣΟ ΑΜΟΙΒΗΣ">
+                  <form class="fname">
+                      <input type="text" name="fname" placeholder="ΟΝΟΜΑ">
                   </form>
                 </div>
                 <div class="same__line">
-                    <form class="bonus">
-                      <input type="text" name="bonus" placeholder="BONUS">
-                    </form>                    
+                    <form class="sname">
+                      <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ">
+                    </form>
                 </div>
-                
-                    <label class="yearlycost">ΕΤΗΣΙΟ ΚΟΣΤΟΣ</label>
-                
-                <br><br>
-                
-                    <form class="typeofpay" action="">
-                        <label class="radios" for="daypay" style="margin: 150px">
-                            <input type="radio" class="radio" name="typeofpay" value="daypay" id="daypay">Ημερομίσθιο
-                        </label>
-                            
-
-                        
-                   <label class="radios" for="monthpay" style="margin: 100px">
-                        <input type="radio" class="radio" name="typeofpay" value="monthpay" id="monthpay">Μισθός
-                    </label>
-                                         
+                <div class="same__line">
+                    <form class="duty">
+                        <input type="text" name="sname" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ">
                     </form>
-
-                    <hr>
-
-
-                    <form class="xtime" action="" style="margin-top: -20px">
-                        <label class="radios" for="fulltime" style="margin: 150px">
-                            <input type="radio" class="radio" name="xtime" value="fulltime" id="fulltime">Πλήρης Απασχόληση
-                        </label>
-                            
-
-                        
-                   <label class="radios" for="partime" style="margin: 20px">
-                        <input type="radio" class="radio" name="xtime" value="partime" id="partime">Μερική Απασχόληση
-                    </label>
-                                         
+                </div>
+                <div class="same__line">
+                    <img src="link.png" alt="link">
+                </div><br>
+                <div class="same__line">
+                    <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
+                </div>
+                <div class="same__line">
+                    <form class="monthstart" style="margin-left: 20px">
+                        <input type="text" name="monthstart" placeholder="ΜΗΝΑΣ">
                     </form>
-                    <button class="Calculate">ΥΠΟΛΟΓΙΣΕ</button>
+                </div>
+                <div class="same__line">
+                    <form class="yearstart">
+                        <input type="text" name="yearstart" placeholder="ΧΡΟΝΟΣ">
+                    </form>
+                </div><br>
+                <div class="same__line">
+                    <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
+                </div>
+                <div class="same__line">
+                    <form class="monthend" style="margin-left: 20px">
+                        <input type="text" name="monthend" placeholder="ΜΗΝΑΣ">
+                    </form>
+                </div>
+                <div class="same__line">
+                    <form class="yearend">
+                        <input type="text" name="yearend" placeholder="ΧΡΟΝΟΣ">
+                    </form>
+                </div><br>
+                <div class="duty">
+                    <form class="dutyof" > 
+                        <input type="text" name="dutyof" placeholder="ΚΑΘΗΚΟΝΤΑ">
+                    </form>
+                </div>
 
-                    
-                
-                    
-              
+
                 <br>
-                <button name="plus__member" id="plus__member" style="margin-top: -40px"><img src="plus.png" alt="plus"></button>
+
+
+                <button name="plus__member" id="plus__member"><img src="plus.png" alt="plus"></button>
                 
             </span>
 
@@ -426,4 +414,3 @@ hr{
 </body>
 
 </html>
-
