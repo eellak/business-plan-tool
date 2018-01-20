@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
-        
+        /* APP */
         body {
             display: flex;
             flex-direction: column;
@@ -82,6 +82,7 @@
         }
         main {
             overflow-y: scroll;            
+            
             flex-grow: 1;
         }
         .main_container {
@@ -131,14 +132,14 @@
         }
         /* BASIC ELEMENTS */
         .basic_button {
-            background-color: rgb(25, 145, 105);
+            background-color: rgb(24, 146, 105);
             width: 100px;
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-}
-        .instructions {
+        }
+        .Instructions {
             margin-left: 850px;
             margin-top: 20px;
             background-color: rgb(41, 152, 88);
@@ -150,7 +151,51 @@
             align-items: center;
             border-style: none;
         }
-        
+        .container {
+             position:relative;
+             left:40px;
+             top:50px;
+             height:300px;
+             width:1450px;
+             overflow:auto;
+             background-color:white;
+             color:white;
+             padding:10px;"
+        }
+        .add__member {
+            font-family: "Open Sans";
+            margin-left: 40px;
+            font-size: 30px;
+            color: rgb(61, 65, 90);
+            
+        }
+        .same__line{
+            
+            width: 180px;
+            height: 30px;
+            margin: 20px;
+            border: 1px solid transparent;
+            display: inline-block;
+        }
+        input[type=text], select {
+            width: 110%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color:#cbcaca
+}
+#plus__member{
+    margin:20px;
+    padding:0px;
+    white-space:nowrap;
+    width:auto;
+    overflow:visible;
+    border: 0;
+    background: transparent;
+}
+    
     </style>
    
 
@@ -163,8 +208,8 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
-            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p>ΕΞΑΓΩΓΗ</p>
+            <img src="export.png" alt="export">
+            <p>Export</p>
         </div>
         <img class="head__avatar" src="man.png" alt="Avatar">
     </header>
@@ -284,9 +329,10 @@
         </nav>
 
         <main>
-           <button class="instructions">ΟΔΗΓΙΕΣ</button>
-
-           <svg id="gantt"></svg>
+            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+            <div class= "container">
+                <svg id="gantt"></svg>
+            </div>
         </main>
     </div>
 
@@ -294,7 +340,7 @@
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
         <span class="foot__pagination">
-            <p>1/1</p>
+            <p>1/2</p>
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
@@ -304,12 +350,7 @@
          <script src="moment.js"></script>
          <script src="snap.svg-min.js"></script>
          <script src="frappe-gantt.min.js"> </script>
-         <script src="logic.js"> </script>
-       
-
-        
-        
-
+         <script src="logic.js"> </script>      
 </body>
 
 </html>
