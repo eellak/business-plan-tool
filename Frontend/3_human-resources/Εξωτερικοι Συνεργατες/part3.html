@@ -81,10 +81,10 @@
             color: black;
         }
         main {
-            overflow-y: scroll;            
-            
+
             flex-grow: 1;
         }
+
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -151,32 +151,24 @@
             align-items: center;
             border-style: none;
         }
-        .container {
-             position:relative;
-             left:40px;
-             top:50px;
-             height:300px;
-             width:1450px;
-             overflow:auto;
-             background-color:white;
-             color:white;
-             padding:10px;"
-        }
         .add__member {
             font-family: "Open Sans";
             margin-left: 40px;
             font-size: 30px;
             color: rgb(61, 65, 90);
             
+
         }
         .same__line{
             
             width: 180px;
             height: 30px;
-            margin: 20px;
+            margin: 10px;
             border: 1px solid transparent;
             display: inline-block;
+
         }
+        
         input[type=text], select {
             width: 110%;
             padding: 12px 20px;
@@ -184,7 +176,9 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            color:#cbcaca
+            text-align: center;
+            color:#cbcaca 
+
 }
 #plus__member{
     margin:20px;
@@ -195,7 +189,21 @@
     border: 0;
     background: transparent;
 }
+.dutyof{
+    text-align: center;
+    margin-left: 60px;
+    width:500px;
+    height: 20px;
+}
     
+
+
+
+
+
+
+
+
     </style>
    
 
@@ -329,10 +337,69 @@
         </nav>
 
         <main>
+            
+
             <button class="Instructions">ΟΔΗΓΙΕΣ</button>
-            <div class= "container">
-                <svg id="gantt"></svg>
-            </div>
+            <span class="add__member">
+                <label>1. Προσθέστε Συνεργάτη</label><br>
+                <div class="same__line">
+                  <form class="fname">
+                      <input type="text" name="fname" placeholder="ΟΝΟΜΑ">
+                  </form>
+                </div>
+                <div class="same__line">
+                    <form class="sname">
+                      <input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ">
+                    </form>
+                </div>
+                <div class="same__line">
+                    <form class="duty">
+                        <input type="text" name="sname" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ">
+                    </form>
+                </div>
+                <div class="same__line">
+                    <img src="link.png" alt="link">
+                </div><br>
+                <div class="same__line">
+                    <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
+                </div>
+                <div class="same__line">
+                    <form class="monthstart" style="margin-left: 20px">
+                        <input type="text" name="monthstart" placeholder="ΜΗΝΑΣ">
+                    </form>
+                </div>
+                <div class="same__line">
+                    <form class="yearstart">
+                        <input type="text" name="yearstart" placeholder="ΧΡΟΝΟΣ">
+                    </form>
+                </div><br>
+                <div class="same__line">
+                    <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
+                </div>
+                <div class="same__line">
+                    <form class="monthend" style="margin-left: 20px">
+                        <input type="text" name="monthend" placeholder="ΜΗΝΑΣ">
+                    </form>
+                </div>
+                <div class="same__line">
+                    <form class="yearend">
+                        <input type="text" name="yearend" placeholder="ΧΡΟΝΟΣ">
+                    </form>
+                </div><br>
+                <div class="duty">
+                    <form class="dutyof" > 
+                        <input type="text" name="dutyof" placeholder="ΚΑΘΗΚΟΝΤΑ">
+                    </form>
+                </div>
+
+
+                <br>
+
+
+                <button name="plus__member" id="plus__member"><img src="plus.png" alt="plus"></button>
+                
+            </span>
+
         </main>
     </div>
 
@@ -344,13 +411,6 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-
-
-        <!-- Import Gantt Library Here -->
-         <script src="moment.js"></script>
-         <script src="snap.svg-min.js"></script>
-         <script src="frappe-gantt.min.js"> </script>
-         <script src="logic.js"> </script>      
 </body>
 
 </html>
