@@ -151,7 +151,42 @@
             align-items: center;
             border-style: none;
         }
-     
+        .modal {
+            display: hidden;
+            position: fixed;
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: scroll;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+}
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
      /*
 
 
@@ -363,7 +398,18 @@
         <main>
             
 
-            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+       
+        <button id="Instructions2" class="Instructions" @click="showInstructions()" >ΟΔΗΓΙΕΣ</button>
+            <div id="myInstructions2" class="modal">
+                <div class="modal-content">
+                 <span class="close">&times;</span>
+                    <p>Ένα οργανόγραμμα είναι απλοποιημένη σχηματική απεικόνιση της οργανικής δομής ή των λειτουργιών μιας επιχείρησης, ενός οργανισμού. Εδώ χρησιμοποιούμε την οργανική δομή. Συγκεκριμένα,
+                    το εργαλείο μας λαμβάνει αυτόματα από την προηγούμενη καρτέλα που συμπληρώσατε τις Διοικητικές θέσεις. Έτσι, δημιουργεί μια βασική μορφή με τους CEO,CFO,CTO κτλ που επιλέξατε. Για να προσθέσετε κάποιον
+                    εργαζόμενο επιλέγετε το αντίστοιχο πλαίσιο/τμήμα στο οποίο θέλετε να τον εντάξετε, πληκτρολογείτε το όνομά του στο πεδίο "Όνομα νέου υπαλλήλου" και πατάτε το "προσθήκη". Στην περίπτωση που θέλετε να διαγράψετε κάποιον κόμβο/υπάλληλο, τον επιλέγετε και πατάτε διαγραφή. Όταν ολοκληρώσετε με τους νέους υπαλλήλους πατάτε το κουμπί "Export". #ΘΑ ΓΙΝΟΥΝ ΑΝΑΒΑΘΜΙΣΕΙΣ.#</p>
+                </div>
+            </div>
+
+        
 
             <!--
                 ORG
@@ -619,6 +665,12 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import our logic file -->
+    <script src="logic.js"></script>
+
 </body>
 
 </html>
