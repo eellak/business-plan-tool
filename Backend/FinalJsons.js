@@ -112,36 +112,36 @@
 
 //Team 4.3
 "RunningCost": { //supports GET
-"FacultyCosts": [ //each facultyCost supports GET,POST,PUT,DELETE
-    {
-        "FacultyId": 1,
-        "Cost": 55252
-    },
-    {
-        "FacultyId": 2,
-        "Cost": 321354
-    },
-    {
-        "FacultyId": 3,
-        "Cost": 654321
-    }
-],
-"EquipmentCosts": [ //each equipmentCost supports GET,POST,PUT,DELETE
-    {
-        "EquipmentId": 1,
-        "Cost": 321321
-    },
-    {
-        "EquipmentId": 2,
-        "Cost": 123456
-    },
-    {
-        "EquipmentId": 3,
-        "Cost": 3321
-    }
-],
-"FacultyExpenses": 1030927,
-"EquipmentExpenses": 448098
+    "FacultyCosts": [ //each facultyCost supports GET,POST,PUT,DELETE
+        {
+            "FacultyId": 1,
+            "Cost": 55252
+        },
+        {
+            "FacultyId": 2,
+            "Cost": 321354
+        },
+        {
+            "FacultyId": 3,
+            "Cost": 654321
+        }
+    ],
+    "EquipmentCosts": [ //each equipmentCost supports GET,POST,PUT,DELETE
+        {
+            "EquipmentId": 1,
+            "Cost": 321321
+        },
+        {
+            "EquipmentId": 2,
+            "Cost": 123456
+        },
+        {
+            "EquipmentId": 3,
+            "Cost": 3321
+        }
+    ],
+    "FacultyExpenses": 1030927,
+    "EquipmentExpenses": 448098
 }
 
 //Team 5.1, 5.2, 5.3 (for teams wanting only some attributes, appropriate consumers must be made)
