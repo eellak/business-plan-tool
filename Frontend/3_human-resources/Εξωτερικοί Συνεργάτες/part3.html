@@ -84,7 +84,6 @@
             overflow-y: scroll;
             flex-grow: 1;
         }
-
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -157,7 +156,6 @@
             font-size: 30px;
             color: rgb(61, 65, 90);
             
-
         }
         .same__line{
             
@@ -166,7 +164,6 @@
             margin: 10px;
             border: 1px solid transparent;
             display: inline-block;
-
         }
         
         input[type=text], select {
@@ -177,8 +174,7 @@
             border-radius: 4px;
             box-sizing: border-box;
             text-align: center;
-            color:#cbcaca 
-
+            
 }
 #plus__member{
     margin:20px;
@@ -195,15 +191,46 @@
     width:500px;
     height: 20px;
 }
-    
+    ::placeholder { 
+   color:    #cbcaca;
+}
 
+        .modal {
+    display: hidden;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: scroll;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
 
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-
-
-
-
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
     </style>
    
 
@@ -339,7 +366,15 @@
         <main>
             
 
-            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+            <button id="Instructions3" class="Instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
+            <div id="myInstructions3" class="modal">
+                <div class="modal-content">
+                 <span class="close">&times;</span>
+                    <p>Αρχικά, κλικάρετε το συμβολο + για να εμφανιστούν τα πεδία για τον πρώτο εξωτερικό συνεργάτη. Συμπληρώνετε τα απαραίτητα όνομα και επίθετο στα αντίστοιχα πεδία,
+                    ενώ στο τρίτο συμπληρώνετε την ειδίκευση του συνεργάτη. Χρησιμοποιείτε το συμβολάκι της αλυσίδας ώστε να προσθέσετε το LinkedIn του. Έπειτα, προσθέτετε το διάστημα (από-έως) για το οποίο αυτός θα απασχολείται.
+                    Τελος συμπληρώνετε επιγραμματικά τα καθήκοντα του στο τελευταίο πεδίο. Επαναλαμβάνετε τα προηγούμενα βήματα μέχρι να συμπληρώσετε όλους τους εξ. συνεργάτες και τέλος πατάτε το κουμπί αποθήκευσης ώστε να αποθηκευτούν όλες οι αλλαγές σας.</p>
+                </div>
+            </div>
             <div class="add__member">
                 <label>1. Προσθέστε Συνεργάτη</label><br>
                 <div class="add__member-row" v-for="p in externalPartners">
