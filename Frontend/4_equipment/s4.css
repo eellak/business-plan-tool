@@ -1,3 +1,154 @@
+/* APP */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+.head {
+    background-color: rgb(30, 33, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    ;
+}
+
+.head__logo {
+    margin-left: 20px;
+}
+
+.head__export {
+    color: #fff;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
+
+
+.head__avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.head__export p {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.head__export i {}
+
+
+/* FOOTER */
+
+footer {
+    background-color: rgb(203, 202, 202);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot__back {
+    margin-right: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__next {
+    margin-left: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__pagination {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+nav {
+    background-color: rgb(30, 33, 51);
+    width: 350px;
+}
+
+
+/* SECTIONS MENU */
+
+.sections-menu {}
+
+.sections-menu ul {
+    list-style: none;
+    margin: 0;
+}
+
+.sections-menu ul li {
+    padding: 15px;
+    position: relative;
+    width: 350px;
+    border-top: 1px solid black;
+    background-color: rgb(30, 33, 51);
+}
+
+.sections-menu ul li {
+    border-right: 5px solid rgb(61, 65, 90);
+}
+
+.sections-menu ul ul {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    left: 100%;
+    top: -2%;
+    background-color: rgb(40, 44, 63);
+}
+
+.sections-menu ul ul li {
+    background-color: rgb(79, 84, 115);
+    width: 250px;
+}
+
+.sections-menu ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sections-menu ul li a {
+    color: white;
+}
+
 .row1 {
     width: 100%;
     float:left ;
@@ -5,6 +156,7 @@
     min-height: 1px;
     text-align: center;
     margin-top: 30px;
+    height:auto;
 }
 .row2 {
     width: 70%;
@@ -12,7 +164,7 @@
     position: relative;
     min-height: 1px;
     text-align: left;
-    height: 100%;
+    height: auto;
 }
 .row3 {
     width: 30%;
@@ -20,7 +172,7 @@
     position: relative;
     min-height: 1px;
     text-align: center;
-    height: 100%;
+    height: auto;
 }
 .row4 {
     width: 40%;
@@ -28,7 +180,16 @@
     position: relative;
     min-height: 1px;
     text-align: center;
-    height: 100%;
+    height: auto;
+}
+.row5_1 {
+    border-right: 1px solid #000000;
+    width: 50%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    height: auto;
 }
 .row5 {
     width: 50%;
@@ -36,7 +197,15 @@
     position: relative;
     min-height: 1px;
     text-align: center;
-    height: 100%;
+    height: auto;
+}
+.row6 {
+    width: 20%;
+    float:left ;
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    height: auto;
 }
 .container_main{
     height: 100%;
@@ -49,8 +218,8 @@
 }
 .btn{
     color: #fff;
-    background-color: ##299858;
-    border-color: ##299858;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
     display: inline-block;
     padding: 6px 12px;
     font-weight: 400;
@@ -64,6 +233,22 @@
     box-sizing: border-box; 
     margin-left:60%;
     margin-top:20px;
+}
+.btn_right{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: visible;
+    box-sizing: border-box; 
 }
 .input_1{
     text-align: center;
