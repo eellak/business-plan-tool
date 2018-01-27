@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>    
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $('.has-sub').click(function(){
+                event.preventDefault();
+                $(this).toggleClass('tap');
+            });
+        });
+    </script>
 
     <style>
         /* BASIC ELEMENTS */
@@ -39,9 +48,9 @@
     <div class="main_container">
         <nav>
             <div class="sections-menu">
-                <ul>
-                    <li>
-                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                <ul class="sections-menu-ul">
+                    <li class="has-sub">
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΤΑΥΤΟΤΗΤΑ</a>
@@ -51,8 +60,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                    <li class="has-sub">
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
@@ -68,8 +77,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
@@ -82,8 +91,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
@@ -96,8 +105,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΑΝΑΛΥΣΗ SWOT</a>
@@ -110,8 +119,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                    <li class="has-sub">
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
@@ -121,8 +130,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
