@@ -1,34 +1,31 @@
 var app = new Vue({
     el: 'main',
     data: {
+      selected: {id: '', title: '', value: ''},
       actions: [ 
-        {id: '1', title: 'Ενεργεια1', implementationCost: 60},
-        {id: '2', title: 'Ενεργεια2', implementationCost: 60},
-        {id: '3', title: 'Ενεργεια3', implementationCost: 60},
-        {id: '4', title: 'Ενεργεια4', implementationCost: 60}
+        {id: '1', title: 'Ενεργεια1', value: '60'},
+        {id: '2', title: 'Ενεργεια2', value: '80'},
+        {id: '3', title: 'Ενεργεια3', value: '90'},
+        {id: '4', title: 'Ενεργεια4', value: '100'}
       ],
+      actionsSelected: [],
     },
     methods: {
-      add(){
-          var action = `<div class="actions-container">
-                          <br/>
-                          <select class="userInput">
-                              <option>` 
-                              + a.title + 
-                              `</option>
-                          </select>
-                          <p class="userInput" id="B"  type="text" name="cost" placeholder="COST">
-                      </div>
-                      `;
-          $(".actions").append(action)
-      },
       create() {
-        var newAction = { id: '1', title: 'Ενεργεια1', implementationCost: 60}
-        this.actions.push(newAction)
+        
+        var pickAction = {id: '', title: '', value: ''}
+        this.actionsSelected.push(pickAction)
+        console.log("pickAction", pickAction)
+        console.log("selected",this.selected)
+        console.log("actionsSelected",this.actionsSelected)
+        /* this.actions.pop(pickAction) */
       },
       save() {
           console.log('Οι actions που αποθηκεύτηκαν είναι:')
           console.log(this.actions)
+      },
+      check(){
+        congole.log("selected",selected)
       }
     }
 })
@@ -54,3 +51,18 @@ var app = new Vue({
 // 1. Add + button
 // 2. Validation of two actions checked
 // 3. Calculations
+
+/* add(){
+  action = `<div class="actions-container">
+                  <br/>
+                  <select class="userInput" v-model="a">
+                      <option v-for="a in actions" v-bind:value="a.title" > 
+                      {{ a.title }}
+                      </option>s
+                  </select>
+                  <p class="userInput" id="B"  type="text" name="cost" placeholder="COST">
+              </div>
+              `; 
+    this.actions.push(action) 
+    $(".actions").append(action) 
+   /* this.acions.push(".actions") }*/

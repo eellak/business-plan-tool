@@ -1,0 +1,54 @@
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
+U:\My Documents\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+U:\My Documents\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+U:\My Documents\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+U:\My Documents\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
+G:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+G:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+G:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+G:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
+F:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.deps.json
+F:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.dll
+F:\Business Plan Tool\Backend\Models\bin\Debug\netstandard2.0\Models.pdb
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csprojResolveAssemblyReference.cache
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.dll
+F:\Business Plan Tool\Backend\Models\obj\Debug\netstandard2.0\Models.pdb
