@@ -15,15 +15,21 @@
 
 //2.1
 "twoTeam": {
-  "managers": {
+  "managers": [
     {"id": 1,  "name": "Manager1",  "surname": "hisSurname1",  "job": "Job1",  "linkedIn": "www1"},
     {"id": 2,  "name": "Manager2",  "surname": "hisSurname2",  "job": "Job2",  "linkedIn": "www2"},
     {"id": 3,  "name": "Manager3",  "surname": "hisSurname3",  "job": "Job3",  "linkedIn": "www3"}
-  }
-
+  ]
 }
 
-//2.2 empty
+//2.2
+"twoEmployees": {
+  "employees": [
+    {"id": 1, "job": "Πωλητής" },
+    {"id": 2, "job": "Λογιστής" },
+    {"id": 3, "job": "Καθαριστής" },
+  ]
+}
 
 //2.3
 "twoPartners": {
@@ -32,7 +38,6 @@
     {"id": 2, "name": "Partner2", "surName": "hisSurname2", "expertise": "Exp2", "linkedIn": "www2", "from": 20171114, "until": 20190910, "duties": "Περιγραφη καθηκοντων 2"},
     {"id": 3, "name": "Partner3", "surName": "hisSurname3", "expertise": "Exp3", "linkedIn": "www3", "from": 20121115, "until": 20290920, "duties": "Περιγραφη καθηκοντων 3"}
   ]
-
 }
 
 //2.4
@@ -83,11 +88,11 @@
 "fourCharacteristics": {//product:true= product , product:false = service
   "charList": [
     {"productID": 1, "productType": false, "name": "Prod1", "directed_to": "Dir1", "innovation_factor": "Inn1",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp1", "price": 212331, "description": "Desc1"},
     {"productID": 2, "productType": false, "name": "Prod2", "directed_to": "Dir2", "innovation_factor": "Inn2",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp2", "price": 26631, "description": "Desc2"},
     {"productID": 3, "productType": false, "name": "Prod3", "directed_to": "Dir2", "innovation_factor": "Inn3",
-    "technology": "Tech1", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
+    "technology": "Tech1", "certificate": "Certificate", "license": "Licence1", "competition": "Comp3", "price": 2121, "description": "Desc3"}
   ]
 }
 
