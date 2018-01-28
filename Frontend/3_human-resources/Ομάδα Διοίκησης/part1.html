@@ -84,7 +84,6 @@
             overflow-y: scroll;            
             flex-grow: 1;
         }
-
         .main_container {
             flex-grow: 1;
             display: flex;
@@ -157,7 +156,6 @@
             font-size: 30px;
             color: rgb(61, 65, 90);
             
-
         }
         .same__line{
             
@@ -166,7 +164,6 @@
             margin: 20px;
             border: 1px solid transparent;
             display: inline-block;
-
         }
         input[type=text], select {
             width: 110%;
@@ -175,27 +172,59 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            color:#cbcaca
+            
+        }
+        #plus__member{
+            margin:20px;
+            padding:0px;
+            white-space:nowrap;
+            width:auto;
+            overflow:visible;
+            border: 0;
+            background: transparent;
+        }
 
-}
-#plus__member{
-    margin:20px;
-    padding:0px;
-    white-space:nowrap;
-    width:auto;
-    overflow:visible;
-    border: 0;
-    background: transparent;
-}
     
+        ::placeholder { 
+           color:    #cbcaca;
+        }
 
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: scroll;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        }
 
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
 
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-
-
-
-
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
    
 
@@ -331,7 +360,15 @@
         <main>
             
 
-            <button class="Instructions">ΟΔΗΓΙΕΣ</button>
+            <button id="Instructions1" class="Instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
+            <div id="myInstructions1" class="modal">
+                <div class="modal-content">
+                 <span class="close">&times;</span>
+                    <p>Αρχικά κλικάρετε το συμβολο + για να εμφανιστούν τα πεδία για το πρώτο διοικητικό μέλος. Συμπληρώνετε τα απαραίτητα όνομα και επίθετο στα αντίστοιχα πεδία,
+                    ενώ στο τρίτο πεδίο επιλέγετε την θέση που κατέχει το άτομο στην εταιρεία (οι επιλογές θα εμπλουτιστούν). Χρησιμοποιείτε το συμβολάκι της αλυσίδας ώστε να προσθέσετε, εάν επιθυμείτε, το LinkedIn του κάθε μέλους (to be implemented).
+                    Επαναλαμβάνετε τα προηγούμενα βήματα μέχρι να συμπληρώσετε όλες τις θέσεις διοίκησης και τέλος πατάτε το κουμπί αποθήκευσης ώστε να αποθηκευτούν όλες οι αλλαγές σας.</p>
+                </div>
+            </div>
             <div class="add__member">
                 <label>1. Προσθέστε Μέλος</label><br>
                 <div class="add__member-row" v-for="m in managers">
@@ -346,7 +383,7 @@
                         </form>
                     </div>
                     <div class="same__line">
-                        <form class="duty">
+                        <form class="duty" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ">
                             <!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
                             <select v-model="m.job">
                                 <option v-for="o in jobOptions"> {{ o }} </option>
