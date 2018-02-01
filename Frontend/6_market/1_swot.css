@@ -16,7 +16,6 @@
 	font-weight: bold;
 }
 
-
 h1 {
 	text-align: center;
 	font-style: italic;
@@ -24,7 +23,9 @@ h1 {
 	font-weight: bold;
 }
 
-
+strong {
+	font-size: 2em;
+}
 
 .factors {
 	font-weight: bold;
@@ -35,10 +36,7 @@ h1 {
 	font-style: italic;
 	font-size: 1em;
 	font-weight: bold;
-
-
 }
-
 
 .examtextclass {
 	font-size: 0.875em;
@@ -53,7 +51,6 @@ h1 {
 	width: 400px;
 	text-align: justify;
 }
-
 
 .stef {
 	width: 100%;
@@ -70,6 +67,7 @@ h1 {
 	margin-left: 10%;
 	margin-right: 10%;
 	text-align: center;
+	padding: 3%;
 }
 
 .stef tr td label {
@@ -86,7 +84,7 @@ h1 {
 }
 
 .hiddenDiv {
-	display: none; 
+	display: none;
 	text-align: center;
 	margin: 40px;
 }
@@ -108,3 +106,26 @@ h1 {
 	padding-left: 5%;
 }
 
+.icons {
+	margin-top: 1%;
+	width: 100%;
+}
+
+.deleteIcon {
+	display:inline-flex;
+	float: right;
+}
+
+.addIcon {
+	display:inline-block;
+	float: left;
+}
+
+.advices {
+	text-align: center;
+}
+
+.adviceIcons {
+	display: inline-flex;
+	padding: 2%
+}
