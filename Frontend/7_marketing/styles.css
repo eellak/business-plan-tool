@@ -179,11 +179,11 @@ input[type=text] {
 }
 
 
-.half {  
+.half {
     width :45%;
     float: left;
 	margin: 0;
-   
+
 }
 .button1 {
     background-color: #299858;
@@ -197,4 +197,31 @@ input[type=text] {
     font-size: 20px;
     width: 15%;
     position: relative
+}
+
+
+.hiddenDiv {
+	display: none;
+  float: left;
+  padding: 10px;
+}
+
+.hiddenDiv div {
+    padding: 10px;
+    margin: 50px;
+    margin-bottom: 25px;
+	border: 2px solid black;
+	width: 600px;
+}
+
+.first {
+    padding-left: 0%;
+    text-decoration-line: underline;
+	text-align: center;
+	margin: auto;
+}
+
+.odigies {
+    text-align: left;
+    padding-left: 5%;
 }
