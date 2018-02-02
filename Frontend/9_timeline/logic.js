@@ -1,20 +1,62 @@
-var startActions = [
-    {"actionID": 1 , "name": "Ενεργεια1", "actionCost": 56},
-    {"actionID": 2 , "name": "Ενεργεια2", "actionCost": 54},
-    {"actionID": 3 , "name": "Ενεργεια3", "actionCost": 7}
-]
+var app = new Vue({
+    
+    el: '#milestones' ,
 
-var gantt = new Gantt("#gantt", startActions, {
-	on_click: function (task) {
-        console.log(task);
+    data: {
+
+        tasksIDs: [] ,
+        tasksNames: [] ,
+        start: [] ,
+        end: []
     },
-    on_date_change: function(task, start, end) {
-        console.log(task, start, end);
+
+/*need from Faculty: ID, Start_date
+            Equipment: ID, EquipType, Acquisition_date
+            MarketingAction: ID, Title, ImplementationTime
+            StartAction: ID, Name */
+
+
+    created(){
+        this.loadActions()
     },
-    on_progress_change: function(task, progress) {
-        console.log(task, progress);
-    },
-    on_view_change: function(mode) {
-        console.log(mode);
-    } })
-gantt.change_view_mode('Month') 
+
+    methods: {
+        loadActions() {
+           axios.get('http://localhost:52800/api/equipment').then(response => {
+               //header("Access-Control-Allow-Origin","*")
+               for (i=0; i< response.data.length; i++) {
+                   this.tasksIDs.push(response.data.ID)
+                   this.tasksNames.push(response.data.EquipType)
+                   this.start.push(response.data.Acquisition_date)
+                   this.end.push(response.data.Acquisition_date)
+
+
+               }
+
+           })
+        }
+    }
+    
+
+} ) 
+
+var tasks = []
+
+for (i=0; i<app.tasksIDs.length; i++) {
+    
+    tasks[i]= {
+        id: app.tasksIDs[i],
+        name: app.tasksNames[i],
+        start: app.start[i],
+        end: app.end[i],
+        progress: 10
+
+  }
+
+}
+
+//var gantt = new Gantt("#gantt", tasks)
+//gantt.change_view_mode('Month')
+
+
+ 
