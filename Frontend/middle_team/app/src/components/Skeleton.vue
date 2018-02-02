@@ -27,6 +27,14 @@
                         </router-link>
                       </ul>
                     </li>
+                    <li>
+                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <ul>
+                        <router-link to="/market-general" tag="li" class="">
+                          <a>Γενικές</a>
+                        </router-link>
+                      </ul>
+                    </li>
                     <!-- <li>
                         <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
                         <ul>
