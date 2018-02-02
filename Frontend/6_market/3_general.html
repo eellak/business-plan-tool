@@ -8,7 +8,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="0_skeleton.css">
 	<link rel="stylesheet" type="text/css" href="3_general.css">
-    
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -233,8 +235,8 @@
 					<p>6. Νομοθετικές διατάξεις</p>
 				</div>
             </div>
-            <textarea class="general" placeholder="Συμπλήρωσε . . ."></textarea>
-            <button id="confirm" class="button">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+            <textarea class="general" placeholder="Συμπλήρωσε . . ." v-model="notes">{{notes}}</textarea>
+            <button id="confirm" class="button" v-on:click="saveData">ΕΠΙΒΕΒΑΙΩΣΗ</button>
         </main>
     </div>
 
@@ -260,6 +262,7 @@
             }
         }
     </script>
+    <script src="3_general.js"></script>
 </body>
 
 </html>
