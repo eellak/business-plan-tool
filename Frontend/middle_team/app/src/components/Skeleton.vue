@@ -1,42 +1,24 @@
 <template>
   <div class="skeleton">
-
+  <body>
     <header class="head">
         <div class="head__logo">
-            <!--<img src="../assets/logo.png" alt="Logo">-->
+            <img src="Logo.png" alt="Logo">
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p @click="exportFunction()">Export</p>
+            <p>Export</p>
         </div>
-        <img class="head__avatar" src="../assets/elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
     </header>
+
 
     <div class="main_container">
         <nav>
             <div class="sections-menu">
-                <ul>
-                    <li>
-                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
-                      <ul>
-                        <router-link to="/2a-identity" tag="li" class="">
-                          <a>ΤΑΥΤΟΤΗΤΑ</a>
-                        </router-link>
-                        <router-link to="/2b-description" tag="li" class="">
-                          <a>ΠΕΡΙΓΡΑΦΗ</a>
-                        </router-link>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
-                      <ul>
-                        <router-link to="/market-general" tag="li" class="">
-                          <a>Γενικές</a>
-                        </router-link>
-                      </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                <ul class="sections-menu-ul">
+                    <li class="has-sub">
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΤΑΥΤΟΤΗΤΑ</a>
@@ -46,8 +28,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                    <li class="has-sub">
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
@@ -63,8 +45,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
@@ -77,8 +59,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
@@ -91,8 +73,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΑΝΑΛΥΣΗ SWOT</a>
@@ -105,8 +87,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                    <li class="has-sub">
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
@@ -116,8 +98,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                    <li class="has-sub">
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ<span class="sub-arrow"></span></a>
                         <ul>
                             <li>
                                 <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
@@ -138,16 +120,17 @@
                     </li>
                     <li>
                         <a href="">ΣΥΝΟΨΗ</a>
-                    </li> -->
+                    </li>
 
                 </ul>
             </div>
         </nav>
 
         <main>
-            <router-view/>
+            <!-- YOUR CODE HERE -->
         </main>
     </div>
+
 
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
@@ -156,13 +139,11 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-    
+      </body>
   </div>
 </template>
 
 <script>
-import { store } from '../store'
-
 export default {
   name: 'Skeleton',
   data () {
@@ -170,10 +151,13 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  methods: {
-    exportFunction(){
-      console.log(this.$store.state.description)
-    }
+  mounted(){
+              $(document).ready(function(e) {
+            $('.has-sub').click(function(){
+                event.preventDefault();
+                $(this).toggleClass('tap');
+            });
+        });
   }
 }
 </script>
@@ -181,155 +165,136 @@ export default {
 <style>
         /* APP */
 
-        .skeleton {
-            display: flex;
-            flex-direction: column;
-            justify-content: initial;
-            align-items: stretch;
-            min-height: 100vh;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: stretch;
+    min-height: 100vh;
+}
 
 
-        /* HEADER */
+/* HEADER */
 
-        .head {
-            background-color: rgb(30, 33, 51);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            ;
-        }
+.head {
+    background-color: rgb(30, 33, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    ;
+}
 
-        .head__logo {
-            margin-left: 20px;
-        }
+.head__logo {
+    margin-left: 20px;
+}
 
-        .head__export {
-            color: #fff;
-            display: flex;
-            margin-right: 100px;
-            align-items: center;
-        }
-
-
-        .head__avatar {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        .head__export p {
-            margin-left: 5px;
-            font-size: 20px;
-        }
-
-        .head__export i {}
+.head__export {
+    color: #fff;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
 
 
-        /* FOOTER */
+.head__avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
 
-        footer {
-            background-color: rgb(203, 202, 202);
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.head__export p {
+    margin-left: 5px;
+    font-size: 20px;
+}
 
-        .foot__back {
-            margin-right: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-
-        .foot__next {
-            margin-left: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-
-        .foot__pagination {
-            font-size: 20px;
-            font-weight: 600;
-            color: black;
-        }
+.head__export i {}
 
 
-        main {
-            flex-grow: 1;
-        }
+/* FOOTER */
 
-        .main_container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-        }
+footer {
+    background-color: rgb(203, 202, 202);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        nav {
-            background-color: rgb(30, 33, 51);
-            width: 350px;
-        }
+.foot__back {
+    margin-right: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__next {
+    margin-left: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__pagination {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
 
 
-        /* SECTIONS MENU */
+main {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
 
-        .sections-menu {}
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
 
-        .sections-menu ul {
-            list-style: none;
-            margin: 0;
-        }
+nav {
+    background-color: rgb(30, 33, 51);
+    width: 350px;
+}
 
-        .sections-menu ul li {
-            padding: 15px;
-            position: relative;
-            width: 350px;
-            border-top: 1px solid black;
-            background-color: rgb(30, 33, 51);
-        }
 
-        .sections-menu ul li {
-            border-right: 5px solid rgb(61, 65, 90);
-        }
+/* SECTIONS MENU */
 
-        .sections-menu ul ul {
-            opacity: 0;
-            position: absolute;
-            visibility: hidden;
-            left: 100%;
-            top: -2%;
-            background-color: rgb(40, 44, 63);
-        }
-
-        .sections-menu ul ul li {
-            background-color: rgb(79, 84, 115);
-            width: 250px;
-        }
-
-        .sections-menu ul li:hover ul {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .sections-menu ul li a {
-            color: white;
-        }
-
+.sections-menu-ul ul{
+    background-color: rgb(40, 44, 63);
+}
+.sections-menu-ul ul{
+display: none;
+}
+.sections-menu-ul li.tap ul{
+display: block;
+}
+.sections-menu a{
+    border-top: 1px solid black;
+    padding: 10px 0 10px 20px;
+    display: block;
+}
+.sections-menu .sub-arrow:after{
+    content: '\203A';
+    float:right;
+    margin-right: 20px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
 
         /* BASIC ELEMENTS */
 
