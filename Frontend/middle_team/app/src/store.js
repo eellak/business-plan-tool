@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    count: 0,
     description: {
         "ID": 1,
         "IdentityId": 1,
@@ -13,11 +12,13 @@ export const store = new Vuex.Store({
     }
 
   },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
+
+  actions: {
+  },
+
+  mutations:{
+  },
+
+  getters:{
   }
 })
-
-
