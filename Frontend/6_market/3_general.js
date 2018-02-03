@@ -42,6 +42,7 @@ new Vue({
                 if (obj != null) {
                   that.notes = obj.Text;
                 }
+                console.log(response)
             })
             .catch(function (error) {
                 console.log(error)

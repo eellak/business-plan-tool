@@ -67,6 +67,7 @@ new Vue({
             Vue.set(that.spots, 2, obj.Opportunities);
             Vue.set(that.spots, 3, obj.Threats);
           }
+          console.log(response)
       })
       .catch(function (error) {
           console.log(error)
