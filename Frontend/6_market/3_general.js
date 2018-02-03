@@ -1,4 +1,4 @@
-var url = "localhost:52800";
+var url = "http://localhost:52800";
 var businessPlanId = 1;
 new Vue({
     el: 'main',
