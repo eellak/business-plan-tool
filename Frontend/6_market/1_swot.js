@@ -55,17 +55,17 @@ new Vue({
           }
         }
     },
-    created: function() {
+    mounted: function() {
       var that = this;
       axios.get(url +"/api/swot/" + this.businessPlanId)
       .then(function (response) {
-          var obj =response.data;
+          var obj = response.data;
           that.myObj = obj;
           if (obj != null) {
-            that.spots[0] = obj.Strong;
-            that.spots[1] = obj.Weak;
-            that.spots[2] = obj.Opportunities;
-            that.spots[3] = obj.Threats;
+            Vue.set(that.spots, 0, obj.Strong);
+            Vue.set(that.spots, 1, obj.Weak);
+            Vue.set(that.spots, 2, obj.Opportunities);
+            Vue.set(that.spots, 3, obj.Threats);
           }
       })
       .catch(function (error) {
