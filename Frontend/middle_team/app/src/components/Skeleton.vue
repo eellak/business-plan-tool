@@ -7,7 +7,7 @@
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p @click="exportFunction()">Export</p>
+            <button @click="exportFunction()">Export</button>
         </div>
         <img class="head__avatar" src="../assets/elvis.jpg" alt="Avatar">
     </header>
@@ -163,6 +163,10 @@
 <script>
 import { store } from '../store'
 
+import pdfMake from "pdfmake/build/pdfmake"
+import pdfFonts from "pdfmake/build/vfs_fonts"
+pdfMake.vfs = pdfFonts.pdfMake.vfs
+
 export default {
   name: 'Skeleton',
   data () {
@@ -171,10 +175,51 @@ export default {
     }
   },
   methods: {
+    // This function returns a parsed date from the db form(YYYYMMDD) 
+    // into proper form with slashes(DD/MM/YYYY)
+  	dateParser(date){
+  		return String(date).slice(6) + "/" 
+	 			+ String(date).slice(4, 6) + "/"
+	 			+ String(date).slice(0, 4)
+  	},
     exportFunction(){
-      console.log(this.$store.state.description)
-    }
-  }
+      var db = this.$store.state 
+      // PDFMake code here
+			var docDefinition = {
+				// Content of the pdf document
+				content: [
+					// Section 1
+					{text: "Επιχειρηματικό Μοντέλο", style: "sectionHeader"},
+					" ",
+					// Subsection 1.1
+					// This content element is a complicated one, with extra "tags" like bold, underline, etc., all contained into the style. 
+					// Notice it is inside curly brackets.
+					{text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
+					" ", // Newline
+					// This content element is a simple string element, no need for curly brackets, just comma after it.
+					"Όνομα επιχείρησης: " 		 + db["Identity"].Name,
+					"Ημερομηνία δημιουργίας: " + this.dateParser(db["Identity"].Date),
+					"Νομική μορφή: " 		       + db["Identity"].LegalForm,
+					"Τύπος επιχείρησης: "      + db["Identity"].OrderOfBusiness,
+          
+				], // Content array end
+
+				styles: {
+				    sectionHeader: {
+				      bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
+				    },
+				    subSectionHeader: {
+				      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+				    }
+				  }
+
+			} // docDefinition end
+			
+			// Download the PDF, named after the business name given in section 1.1
+			pdfMake.createPdf(docDefinition).download(db["Identity"].Name + "BusinessPlan.pdf");
+    } // exportFunction end		
+    
+  } // methods end
 }
 </script>
 
