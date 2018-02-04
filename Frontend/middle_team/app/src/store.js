@@ -15,19 +15,11 @@ export const store = new Vuex.Store({
 			"OrderOfBusiness": "Πανεπιστημιο",
 		},
 		
-		"IdentityClient": {
-				"ID": 1,
-				"BusinessPlanId": 1,
-				"Name": "identity 1",
-				"Date": 20180108,
-				"LegalForm": "legal form 2",
-				"OrderOfBusiness": "order of business 2",
-				"Clients": [
-					{"ID": 1, "IdentityId": 1, "Name": "client 1"},
-					{"ID": 2, "IdentityId": 1, "Name": "client 2"},
-					{"ID": 3, "IdentityId": 1, "Name": "client 3"}
-				]
-		},
+		clients: [
+			{"ID": 1, "IdentityId": 1, "Name": "client 1"},
+			{"ID": 2, "IdentityId": 1, "Name": "client 2"},
+			{"ID": 3, "IdentityId": 1, "Name": "client 3"}
+		],
 		
 		//Team 2.2
 		"Description": {
