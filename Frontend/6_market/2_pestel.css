@@ -5,7 +5,7 @@ padding: 10px;
 
 textarea {
 	resize: none;
-	border-color: #3366ff;;
+	border-color: rgb(40, 150, 90);
 }
 
 .hidden>div {
@@ -34,7 +34,7 @@ div.text_container {
 .button {
 
 	 margin-right:50%;
-	 background-color: #3366ff;
+	 background-color: rgb(40, 150, 90);
 	 font-style: italic;
 	 font-weight: bold;
 }
@@ -80,7 +80,7 @@ h1 {
 #confirm {
 	float: right;
 	margin-right: 20px;
-	background-color: #3366ff;
+	background-color: rgb(40, 150, 90);
 	font-style: italic;
 	font-weight: bold;
 }
