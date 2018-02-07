@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>BP Tool</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <style>
+
+        /* BASIC ELEMENTS */
+
+        .basic_button {
+            background-color: rgb(24, 146, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+    <header class="head">
+
+        <div class="head__logo">
+
+            <img src="Logo.png" alt="Logo">
+
+        </div>
+
+        <div class="head__export">
+
+            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+
+            <p>Export</p>
+
+        </div>
+
+        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+
+    </header>
+
+
+
+
+
+    <div class="main_container">
+
+            <nav>
+                    <div class="sections-menu">
+                        <ul>
+                            <li>
+                                <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                                <ul>
+                                    <li>
+                                        <a href="tautotita.html">ΤΑΥΤΟΤΗΤΑ</a>
+                                    </li>
+                                    <li>
+                                        <a href="perigrafi.html">ΠΕΡΙΓΡΑΦΗ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                                <ul>
+                                    <li>
+                                        <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+                            </li>
+                            <li>
+                                <a href="sinopsi.html">ΣΥΝΟΨΗ</a>
+                            </li>
+        
+                        </ul>
+                    </div>
+            </nav>
+
+        <main>
+            <!-- INSTRUCTIONS -->
+                <!-- instruction script -->
+            <script type="text/x-template" id="modal-template">
+                <transition name="modal">
+                <div class="modal-mask">
+                    <div class="modal-wrapper">
+                    <div class="modal-container">
+            
+                        <div class="modal-header">
+                        <slot name="header"></slot>
+                        </div>
+            
+                        <div class="modal-body">
+                        <slot name="body"></slot>
+                        </div>
+            
+                        <div class="modal-footer">
+                        <slot name="footer">
+                            <button class="modal-default-button" @click="$emit('close')">
+                            OK
+                            </button>
+                        </slot>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </transition>
+            </script>
+                <!-- instruction html -->
+            <div id="instr">
+                <button id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
+                <modal v-if="showModal" @close="showModal = false">
+                <h3 slot="header">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
+                <p slot="body"> 
+                    Σε αυτή την ενότητα καταγράφονται όλες οι δαπάνες οι οποίες θα γίνονται σε ετήσια βάση απο την 
+                    επιχείρηση με σκοπό την εξασφάλιση της βιωσημότητας της.
+                    Συμπληρώστε τα πλαίσια με τις δαπάνες που επιθυμείτε καθώς και το ετήσιο κόστος της κάθε μίας.
+                    Έπειτα πιέστε το πλήκτρο υπολογισμού για να δείτε το Συνολικό Κόστος Λειτουργίας.
+                    Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
+                </p>
+                </modal>
+            </div>
+
+            <!-- MAIN BODY -->
+            <div id="userArea">
+                    <h1 id="pageHeader">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</h1>
+                    <br/>
+                    <div v-for="s in selections" >
+                        <my-select></my-select> 
+                    </div>
+                    <button id="addButton" @click="create()" >+</button> <br/>
+                    <div v-if="showCalculate">
+                        <button id="calculateButton" @click="calculate()">ΥΠΟΛΟΓΙΣΕ</button>
+                        <label id="result">{{ result }}</label>
+                    </div>
+            </div>
+
+        </main>
+    </div>
+    
+    <footer class="foot">
+        <button class="foot__back" onclick="location.href='1_startUpCost.html';">ΠΙΣΩ</button>
+        <span class="foot__pagination">
+            <p>2/3</p>
+        </span>
+        <button id="foot__next" onclick="location.href='3_deadCenter.html';">ΜΠΡΟΣΤΑ</button>
+    </footer>
+
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Import jQuery.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Import our logic file -->
+    <script src="logic2.js"></script>
+
+</body>
+
+
+
+</html>

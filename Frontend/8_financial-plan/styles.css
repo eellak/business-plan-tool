@@ -1,0 +1,539 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* APP */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+.head {
+    background-color: rgb(30, 33, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    ;
+}
+
+.head__logo {
+    margin-left: 20px;
+}
+
+.head__export {
+    color: #fff;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
+
+
+.head__avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.head__export p {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: rgb(203, 202, 202);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot__back {
+    margin-left: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+#foot__next {
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__pagination {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+nav {
+    background-color: rgb(30, 33, 51);
+    width: 350px;
+}
+
+
+/* SECTIONS MENU */
+
+.sections-menu {}
+
+.sections-menu ul {
+    list-style: none;
+    margin: 0;
+}
+
+.sections-menu ul li {
+    padding: 15px;
+    position: relative;
+    width: 350px;
+    border-top: 1px solid black;
+    background-color: rgb(30, 33, 51);
+}
+
+.sections-menu ul li {
+    border-right: 5px solid rgb(61, 65, 90);
+}
+
+.sections-menu ul ul {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    left: 100%;
+    top: -2%;
+    background-color: rgb(40, 44, 63);
+}
+
+.sections-menu ul ul li {
+    background-color: rgb(79, 84, 115);
+    width: 250px;
+}
+
+.sections-menu ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sections-menu ul li a {
+    color: white;
+}
+
+
+
+
+/*.................new...............*/
+.top_card{
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 800px;
+}
+
+.my_card{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.my_card_head {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    font-size: 15pt;
+}/* APP */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+.head {
+    background-color: rgb(30, 33, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    ;
+}
+
+.head__logo {
+    margin-left: 20px;
+}
+
+.head__export {
+    color: #fff;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
+
+
+.head__avatar {
+
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.head__export p {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.head__export i {}
+
+
+/* FOOTER */
+
+footer {
+    background-color: rgb(203, 202, 202);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot__back {
+    margin-right: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    cursor: pointer;
+}
+
+.foot__next {
+    margin-left: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+
+.foot__pagination {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+nav {
+    background-color: rgb(30, 33, 51);
+    width: 350px;
+}
+
+/*---QUESTIONS---*/
+#userArea{
+
+	backround-color:#fff;
+    overflow-y: scroll;
+    /* padding: 10px; */
+    /* margin: 10px; */
+
+}
+h5{
+	position:relative;
+	top:20px;
+	font-size:20px;
+	}
+
+h4{
+	font-size: 40px;
+	color: #cbcaca;
+	overflow-y: hidden;
+	font-family: "Open Sans";
+	color:#1e2133;
+	backround-color:#fff;
+	position:absolute;
+	top:102px;
+	left:568px;
+	height:866px;
+	width:1334px;
+	bottom:100px;
+}
+
+h5{
+	
+	position:relative;
+	top:20px;
+	left:83px;
+	font-size:20px;
+	}
+
+
+.column1{
+    position: relative;
+    margin-right: 10px;
+}	
+.column2{
+	position: relative;
+    margin-left: 10px;
+}
+
+
+button{
+	font-family:"Source Sans Pro";
+	position:fixed;
+	position:relative;
+	width:217px;
+	height:65px;
+	background-color:#299858 ; 
+	font-size: 25px;
+    color:#fff;
+	
+}
+
+/* MAIN */
+#pageHeader{
+    position:relative;
+    margin-left:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
+#instructions{
+	height:68px;
+	width:172px;
+	position:absolute;
+	top:45px;
+	left:1081px;
+}
+#addButton{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top:25px;
+    margin-left:50px;
+}
+#selectionLabel{
+    position:relative;
+    margin-top:10px;
+    margin-left:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+
+}
+#valueLabel{
+    position: relative;
+    margin-left: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+}
+#userInput{
+	
+	position:relative;
+	background-color: #fff;
+
+    margin-top:50px;
+    margin-left:50px;
+
+	width:200px;
+	height:50px;
+	text-align: center;
+	text-indent: 20px;
+	font-size:25px;
+	
+}
+
+#minusButton{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top:25px;
+    margin-left:50px;
+}
+
+#calculateButton{
+	position:relative;
+    margin-top:50px;
+    margin-left: 50px;
+}
+#result{
+	position:relative;
+    margin-left:100px;
+	text-align: center;
+	font-size:25px;
+}
+
+#product{
+	color:#1e2133
+}
+
+placeholder{
+	color:#cbcaca
+}
+
+
+#hdeadCenter{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#add{
+
+	position:relative;
+	top:30px;
+	
+}
+/* --- MODAL --- */
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    width: 94%;
+    margin: 0px auto;
+    padding: 20px 30px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    float: right;
+    width: 10%;
+    height: 10%;
+}
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#show-modal{
+	height:68px;
+	width:172px;
+	position:absolute;
+	top:45px;
+	left:1081px;
+}
+  
+/* deadCenter */
+
+.userSelection{
+    position:relative;
+	background-color: #fff;
+	top:10px;
+	left:px;
+
+	top:0px;
+	left:83px;
+
+	width:393px;
+	height:66px;
+	text-align: left;
+	text-indent: 20px;
+	font-size:25px;
+}
+
+#minusTableButton{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top:55px;
+    margin-left:150px;
+}
+
+#selectionTableLabel{
+    position:absolute;
+    margin-top:40px;
+    margin-bottom: 0px;
+    margin-left:80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    text-decoration: underline;
+    text-shadow:2px 2px 12px grey;
+
+}
