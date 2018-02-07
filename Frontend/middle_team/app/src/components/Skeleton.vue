@@ -195,10 +195,10 @@ export default {
 					{text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
 					" ", // Newline
 					// This content element is a simple string element, no need for curly brackets, just comma after it.
-					"Όνομα επιχείρησης: " 		 + db["identity"][0].Name,
-					"Ημερομηνία δημιουργίας: " + this.dateParser(db["identity"][0].Date),
-					"Νομική μορφή: " 		       + db["identity"][0].LegalForm,
-					"Τύπος επιχείρησης: "      + db["identity"][0].OrderOfBusiness
+					"Όνομα επιχείρησης: " 		 + db.identity[0].Name,
+					"Ημερομηνία δημιουργίας: " + this.dateParser(db.identity[0].Date),
+					"Νομική μορφή: " 		       + db.identity[0].LegalForm,
+					"Τύπος επιχείρησης: "      + db.identity[0].OrderOfBusiness
 					
 				], // Content array end
 
@@ -214,7 +214,7 @@ export default {
 			} // docDefinition end
 			
 			// Download the PDF, named after the business name given in section 1.1
-			pdfMake.createPdf(docDefinition).download(db["identity"][0].Name + "BusinessPlan.pdf");
+			pdfMake.createPdf(docDefinition).download(db.identity[0].Name + "BusinessPlan.pdf");
     } // ExportFun end		
   }
 }
