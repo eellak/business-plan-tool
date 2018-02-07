@@ -138,7 +138,19 @@
         </nav>
 
         <main>
-                <button class="button1">ΟΔΗΓΙΕΣ</button>
+            <button id="button1" class="button1" onclick="instr()" >ΟΔΗΓΙΕΣ</button>
+
+                <div id="hidden_div" class="hiddenDiv">
+    				<div id="odigies">
+                            <p class="first">Βοηθητικές οδηγίες για υλοποίηση στρατηγικής marketing:</p>
+                            <p>1. Στόχος είναι το χαμηλό κόστος χωρίς μεγάλες σπατάλες.</p>
+                            <p>2. Να ανταποκρίνεται σε πραγματικές συνθήκες ανταγωνισμού αγοράς.</p>
+                            <p>3. Να είναι σαφείς, σύντομες και όχι μακροσκελείς οι αναφορές. </p>
+                            <p>4. Να λαμβάνονται υπ όψη οι απαιτήσεις των καταναλωτών.</p>
+                            <p>5. Αναλυτική περιγραφή λαθών για να μην επαναληφθούν στο μέλλον.</p>
+    				</div>
+                </div>
+
             <form class="strategy_form">
                 <label>1. Ποιά κανάλια προβολής θα χρησιμοποιήσετε για την προώθηση του προϊόντος/υπηρεσίας σας;<br>
                     <input type="text" name="kanalia_probolis" placeholder="ΚΑΝΑΛΙΑ ΠΡΟΒΟΛΗΣ"></label><br><br>
@@ -162,6 +174,26 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+    <script type="text/javascript">
+        var y = document.getElementById("hidden_div");
+		      y.style.display = 'none';
+		function instr(){
+            var x = document.getElementById("hidden_div");
+            var w = document.getElementById("button1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                w.style.backgroundColor ='#12492a';
+
+
+            } else {
+                x.style.display = "none";
+                w.style.backgroundColor ='#299858';
+
+            }
+        }
+        </script>
+
 </body>
 
 </html>

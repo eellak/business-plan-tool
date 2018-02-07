@@ -3,11 +3,11 @@
 
     <header class="head">
         <div class="head__logo">
-            <img src="../assets/logo.png" alt="Logo">
+            <!--<img src="../assets/logo.png" alt="Logo">-->
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p>Export</p>
+            <p @click="exportFunction()">Export</p>
         </div>
         <img class="head__avatar" src="../assets/elvis.jpg" alt="Avatar">
     </header>
@@ -24,6 +24,14 @@
                         </router-link>
                         <router-link to="/2b-description" tag="li" class="">
                           <a>ΠΕΡΙΓΡΑΦΗ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <ul>
+                        <router-link to="/market-general" tag="li" class="">
+                          <a>Γενικές</a>
                         </router-link>
                       </ul>
                     </li>
@@ -153,11 +161,18 @@
 </template>
 
 <script>
+import { store } from '../store'
+
 export default {
   name: 'Skeleton',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    exportFunction(){
+      console.log(this.$store.state.description)
     }
   }
 }
