@@ -161,30 +161,28 @@
 </template>
 
 <script>
-import { store } from '../store'
 
 import pdfMake from "pdfmake/build/pdfmake"
 import pdfFonts from "pdfmake/build/vfs_fonts"
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 export default {
-  name: 'Skeleton',
+ 	name: 'Skeleton',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   },
   methods: {
-    // This function returns a parsed date from the db form(YYYYMMDD) 
-    // into proper form with slashes(DD/MM/YYYY)
+  	// This function returns a parsed date from the db form(YYYYMMDD) into proper form with slashes(DD/MM/YYYY)
   	dateParser(date){
   		return String(date).slice(6) + "/" 
 	 			+ String(date).slice(4, 6) + "/"
 	 			+ String(date).slice(0, 4)
   	},
     exportFunction(){
-      var db = this.$store.state 
-      // PDFMake code here
+    	var db = this.$store.state
+			// PDFMake code here
 			var docDefinition = {
 				// Content of the pdf document
 				content: [
@@ -197,11 +195,11 @@ export default {
 					{text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
 					" ", // Newline
 					// This content element is a simple string element, no need for curly brackets, just comma after it.
-					"Όνομα επιχείρησης: " 		 + db["Identity"].Name,
-					"Ημερομηνία δημιουργίας: " + this.dateParser(db["Identity"].Date),
-					"Νομική μορφή: " 		       + db["Identity"].LegalForm,
-					"Τύπος επιχείρησης: "      + db["Identity"].OrderOfBusiness,
-          
+					"Όνομα επιχείρησης: " 		 + db.identity[0].Name,
+					"Ημερομηνία δημιουργίας: " + this.dateParser(db.identity[0].Date),
+					"Νομική μορφή: " 		       + db.identity[0].LegalForm,
+					"Τύπος επιχείρησης: "      + db.identity[0].OrderOfBusiness
+					
 				], // Content array end
 
 				styles: {
@@ -216,10 +214,9 @@ export default {
 			} // docDefinition end
 			
 			// Download the PDF, named after the business name given in section 1.1
-			pdfMake.createPdf(docDefinition).download(db["Identity"].Name + "BusinessPlan.pdf");
-    } // exportFunction end		
-    
-  } // methods end
+			pdfMake.createPdf(docDefinition).download(db.identity[0].Name + "BusinessPlan.pdf");
+    } // ExportFun end		
+  }
 }
 </script>
 
