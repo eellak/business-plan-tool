@@ -1,4 +1,3 @@
-﻿
 <!DOCTYPE html>
 <html>
 
@@ -7,19 +6,9 @@
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        /* BASIC ELEMENTS */
-        .basic_button {
-            background-color: rgb(24, 146, 105);
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -32,7 +21,7 @@
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="avatar.jpg" alt="Avatar">
     </header>
 
 
@@ -150,62 +139,113 @@
         </nav>
 
         <main>
-           
+            <button id="button1" class="button1" onclick="instr()" >ΟΔΗΓΙΕΣ</button>
 
-<block id="userArea">
-<title>Νεκρο Σημειο</title>
-<link href="Untitled-2.css" rel="stylesheet" type="text/css">
-<header></header>
-	
-<div>
-	<h5 id="a"> Διαλέξτε προιόν</h5> 
-	<select id="product" class="userInput">  <option  disabled selected>ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ</option></select>
-	</div>
-	
-<div><h5 id="b"> Ποιό είναι το κόστος?</h5>
-	<input class="userInput"    type="text" name="productCost" placeholder="ΚΟΣΤΟΣ ΠΑΡΑΓΩΓΗΣ"><br>
-	</div>	
-		
-<div><h5  id="c"> Ποιά είναι η τιμή πώλησης?</h5>
-	<input class="userInput" id="inputC"  type="text" name="salesPrice" placeholder="ΤΙΜΗ ΠΩΛΗΣΗΣ"><br>
-	</div> 
-	
-<div><h5 id="d"> Ποιό είναι το ετήσιο κόστος?</h5>
-<input class="userInput"    type="text" name="yearlyIncome" placeholder="ΕΤΗΣΙΟ ΣΤΑΘΕΡΟ ΚΟΣΤΟΣ"><br> 
-	</div> 
-	
-<div><h5 id="e"> Ποιός είναι ο αριθμός πωλήσεων?</h5>
-<input class="userInput" id="inputE"  type="text" name="salesCount" placeholder="ΑΡΙΘΜΟΣ ΠΩΛΗΣΕΩΝ"><br>
-	</div> 
-	
-	
-	<div>
-	<button id="calculate"> ΥΠΟΛΟΓΙΣΕ</button>
-	<input id="result"  placeholder="ΝΕΚΡΟ ΣΗΜΕΙΟ ΠΡΟΙΟΝΤΩΣ" disabled>
-	</div>
-	
-	<button id="instructions"> ΟΔΗΓΙΕΣ</button>
-	<div id="instructions">Σε αυτή την ενότητα υπολογίζεται το Νεκρό Σημείο των προιόντων.Δηλαδή, το σημείο στο οποίο το ύψος των πωλήσεων έχει συνολικά έσοδα ίσα με τα συνολικά έξοδα.
-		Συμπληρώστε τα απαραίτητα πεδία και πατήστε το πλήκτρο για τον υπολογισμό του Νεκρού Σημείου. Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
-	      </div>
-	
-<input id="add" type="image" src="add.png" alt="add" />
-		
-</block>
+                <div id="hidden_div" class="hiddenDiv">
+    				<div id="odigies">
+                            <p class="first">Βοηθητικές οδηγίες για τη σωστή περιγραφή ενεργειών marketing:</p>
+                            <p>1. Αναλυτική περιγραφή την ενέργειας marketing.</p>
+                            <p>2. Σωστός και σαφής υπολογισμός του κόστους κάθε ενέργειας.</p>
+                            <p>3. Σε περίπτωση επανάληψης, αναφέρετε αναλυτικά κάθε πότε θα συμβαίνει η ενέργεια. </p>
+                            <p>4. Το συνολικό κόστος υπάρχει σε περίπτωση επανάληψης. Τότε πρέπει να γίνει υπολογισμός του συνολικού κόστους της ενέργειας ανάλογα με την εκάστοτε επανάληψη.</p>
+    				</div>
+                </div>
+            <div id = "root">
+            <form class="strategy_form">
+                <label>1. Ποιά ενέργεια θα πράξετε για την προώθηση του προιόντος/υπηρεσίας σας;<br>
+                    <input id="input" type="text" name="energeia" placeholder="ΕΝΕΡΓΕΙΑ" v-model="mytitle"></label>
+                <br><br>
+               <div class="half">
+                   <label>2. Ποίος έιναι ο αναμενόμενος χρόνος υλοποίησής;
+                       <input id="input" type="text" name="xronos_ulipoihshs" placeholder="ΧΡΟΝΟΣ ΥΛΟΠΟΙΗΣΗΣ" v-model="myimplementationTime">
+                  </label>
+                    <br><br>
+                        <label>4. Ποιό είναι το προβλεπόμενο κόστος υλοποίησης;
+                       <input  id="input" type="text" name="kostos_ulopoisis" placeholder="ΚΟΣΤΟΣ ΥΛΟΠΟΙΗΣΗΣ" v-model="myimplementationCost">
+                    </label>
+
+                   </div>
 
 
+                <div class="half">
+                    <label>3. Πόσο συχνά θα επαναλμβάνεται αυτή η ενέργεια;
+                            <input id="input" type="text" name="syxnotita" placeholder="ΣΥΧΝΟΤΗΤΑ" v-model="myfrequency">
+                            </label>
+                    <br><br>
+                    <label>5. Ποιό είναι το προβλεπόμενο συνολικό κόστος;
+                        <input  id="input" type="text" name="sunoliko_kostos" placeholder="ΣΥΝΟΛΙΚΟ ΚΟΣΤΟΣ(επανάληψη)" v-model="mytotalCost">
+                    </label>
+                    <button v-on:click="postData">Save Data</button>
+                </div>
+              </div>
+
+
+
+            </form>
 
         </main>
     </div>
 
+<script>
+new Vue({
+  el: '#root',
+  data: {
+    mytitle:'',
+    myimplementationTime:'',
+    myfrequency: '',
+    myimplementationCost: '',
+    mytotalCost:''
+  },
+  methods:{
+    postData(){
+        axios.post(`http://jsonplaceholder.typicode.com/posts`, {
+                            Title: this.title,
+                            ImplementationTime: this.myimplementationTime,
+                            Frequency: this.myfrequency,
+                            ImplementationCost: this.myimplementationCost,
+                            TotalCost: this.mytotalCost })
+                      .then(function (response) {
+                          console.log(response);
+                      })
+                      .catch(function (error) {
+                          console.log(error);
+                      });
+
+    }
+  }
+
+
+  }
+});
+</script>
 
     <footer class="foot">
-        <button class="foot__back">ΠΙΣΩ</button>
+        <button class="foot__back">ΠΡΟΗΓΟΥΜΕΝΟ</button>
         <span class="foot__pagination">
-            <p>1/2</p>
+            <p>2/2</p>
         </span>
-        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+        <button class="foot__next">ΕΠΟΜΕΝΟ</button>
     </footer>
+
+    <script type="text/javascript">
+        var y = document.getElementById("hidden_div");
+		      y.style.display = 'none';
+		function instr(){
+            var x = document.getElementById("hidden_div");
+            var w = document.getElementById("button1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                w.style.backgroundColor ='#12492a';
+
+
+            } else {
+                x.style.display = "none";
+                w.style.backgroundColor ='#299858';
+
+            }
+        }
+        </script>
+
 </body>
 
 </html>

@@ -151,6 +151,7 @@
             justify-content: center;
             align-items: center;
             border-style: none;
+            cursor: pointer;
         }
         .container {
             position:static;
@@ -349,7 +350,14 @@
            <!-- Modal content -->
            <div class="modal-content">
            <span class="close">&times;</span>
-           <p>Πιάσε με το ποντίκι τις άκρες απο κάθε ενέργεια και σύρε τις ανάλογα για να διαμορφώσεις το χρονικό διάστημα που θες να εκτείνεται η κάθε ενέργεια.
+           <p>
+            -Πιάσε με το ποντίκι τις άκρες απο κάθε ενέργεια και σύρε τις ανάλογα για να διαμορφώσεις το χρονικό διάστημα που θες να εκτείνεται η κάθε ενέργεια. 
+           </p>
+           <p>
+            -Μπορείς να σύρεις και την ενέργεια όπως είναι πιάνοντας τη με το ποντίκι και κρατώντας το παρατεταμένα όση ώρα μετατοπίζεις την ενέργεια.
+           </p>
+           <p>
+            -Κάνοντας κλικ με το ποντίκι στο όνομα κάθε ενέργειας, εμφανίζονται πληροφορίες σχετικά με τη διάρκεια της. Για να τις αποκρύψεις, απλώς κάνε κλικ σε οποιοδήποτε άλλο σημείο του χρονοδιαγράμματος.
            </p>
            </div>
            <div id="milestones">
@@ -397,9 +405,9 @@
 
 
         <!-- Import Gantt Library Here -->
-         <script src="moment.js"></script>
-         <script src="snap.svg-min.js"></script>
-         <script src="frappe-gantt.min.js"> </script>
+         <script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/frappe-gantt@0.0.7/dist/frappe-gantt.min.js"></script>
          <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
          <script src="logic.js"> </script>
