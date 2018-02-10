@@ -175,11 +175,10 @@
                     <label>5. Ποιό είναι το προβλεπόμενο συνολικό κόστος;
                         <input  id="input" type="text" name="sunoliko_kostos" placeholder="ΣΥΝΟΛΙΚΟ ΚΟΣΤΟΣ(επανάληψη)" v-model="mytotalCost">
                     </label>
-                    <button v-on:click="postData">Save Data</button>
+
                 </div>
+                <button id="Submitbtn" v-on:click="postData">Save Data</button>
               </div>
-
-
 
             </form>
 
@@ -210,11 +209,8 @@ new Vue({
                       .catch(function (error) {
                           console.log(error);
                       });
-
     }
   }
-
-
   }
 });
 </script>
@@ -236,12 +232,9 @@ new Vue({
             if (x.style.display === "none") {
                 x.style.display = "block";
                 w.style.backgroundColor ='#12492a';
-
-
             } else {
                 x.style.display = "none";
                 w.style.backgroundColor ='#299858';
-
             }
         }
         </script>
