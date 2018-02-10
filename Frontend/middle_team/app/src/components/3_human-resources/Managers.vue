@@ -1,5 +1,5 @@
 <template>
-	<div class="managers">
+	<div class="managers karanasos">
 		<button id="Instructions1" class="Instructions managers__instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
 		<div id="myInstructions1" class="modal managers__modal">
 			<div class="modal-content">
