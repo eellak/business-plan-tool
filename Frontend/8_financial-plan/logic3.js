@@ -9,7 +9,8 @@ Vue.component('modal', {
                 {"productID": 1 , "deadSpot":"Νεκρο σημειο1"},
                 {"productID": 2 , "deadSpot":"Νεκρο σημειο2"},
                 {"productID": 3 , "deadSpot":"Νεκρο σημειο3"}
-              ]
+              ],
+        inputDSpots: [],
   }
   
   Vue.component('my-table',{
@@ -40,13 +41,15 @@ Vue.component('modal', {
                           <td>\
                               <div class="column1">\
                                   <h5> Ποιο είναι το κόστος?</h5><br/>\
-                                  <input class="userSelection"    type="text" name="productCost" placeholder="ΚΟΣΤΟΣ ΠΑΡΑΓΩΓΗΣ"><br>\
+                                  <input class="userSelection" v-model.number="inputDSpot.cost" @change="checkInput(0)" placeholder="ΚΟΣΤΟΣ ΠΑΡΑΓΩΓΗΣ"><br/>\
+                                  <span class="number-notice" v-if="inputWarnings[0]">Προσοχή: Μόνο ακέραιους αριθμούς!</span>\
                               </div>\
                           </td>\
                           <td>\
                               <div class="column2">\
                                   <h5> Ποια είναι η τιμή πώλησης?</h5> <br/>\
-                                  <input class="userSelection" id="inputC"  type="text" name="salesPrice" placeholder="ΤΙΜΗ ΠΩΛΗΣΗΣ"><br>\
+                                  <input class="userSelection" v-model.number="inputDSpot.saleAmount" @change="checkInput(1)" placeholder="ΤΙΜΗ ΠΩΛΗΣΗΣ"><br>\
+                                  <span class="number-notice" v-if="inputWarnings[1]">Προσοχή: Μόνο ακέραιους αριθμούς!</span>\
                               </div>\
                           </td>\
                       </tr>\
@@ -54,13 +57,15 @@ Vue.component('modal', {
                           <td>\
                               <div class="column1">\
                                   <h5> Ποιο είναι το ετήσιο σταθερό κόστος?</h5> <br/>\
-                                  <input class="userSelection" id="inputE"  type="text" name="salesCount" placeholder="ΕΤΗΣΙΟ ΣΤΑΘΕΡΟ ΚΟΣΤΟΣ"><br>\
+                                  <input class="userSelection" v-model.number="inputDSpot.yearCost" @change="checkInput(2)" placeholder="ΕΤΗΣΙΟ ΣΤΑΘΕΡΟ ΚΟΣΤΟΣ"><br>\
+                                  <span class="number-notice" v-if="inputWarnings[2]">Προσοχή: Μόνο ακέραιους αριθμούς!</span>\
                               </div>\
                           </td>\
                           <td>\
                               <div class="column2">\
                                   <h5> Ποιος είναι ο αριθμός πωλήσεων?</h5> <br/>\
-                                  <input class="userSelection" id="inputE"  type="text" name="salesCount" placeholder="ΑΡΙΘΜΟΣ ΠΩΛΗΣΕΩΝ"><br>\
+                                  <input class="userSelection" v-model.number="inputDSpot.salesNumber" @change="checkInput(3)" placeholder="ΑΡΙΘΜΟΣ ΠΩΛΗΣΕΩΝ"><br>\
+                                  <span class="number-notice" v-if="inputWarnings[3]">Προσοχή: Μόνο ακέραιους αριθμούς!</span>\
                               </div>\
                           </td>\
                       </tr>\
@@ -72,16 +77,19 @@ Vue.component('modal', {
                 </div>',
         data: function(){
                 return {
-                  show_div: true,
-                  pick: '',
+                  show_div: true, //false: patontas to button afairesis gia na fygei to tab
+                  pick: '', //epilogi tou select
                   actions: temp.dsList,
                   kcounter: temp.counter++,
-                  show_select:true,
-                  result: '---'
+                  show_select:true, //false: otan ginei epilogh tou deadspot
+                  result: '---', //arxiko calculate
+                  inputDSpot: {}, //ta input tou kathe shmeiou
+                  propInput: ['cost','saleAmount','yearCost','salesNumber'], //ta properties tou inputDSpot: {}
+                  inputWarnings: [false,false,false,false] //to array me ta flag gia ta notifications
                 }
           },
         methods:{
-            test: function(event){
+            test: function(event){//afairei to tab kai gyrnaei to pick stis diathesimes epiloges
               if(this.pick!=''){
                   temp.dsList.push(this.pick)
                   for(var i = 0; i < temp.picker.length ; i++){
@@ -93,7 +101,8 @@ Vue.component('modal', {
                 this.show_div = false;
                 temp.counter--
             },
-            emitare: function(a,k){ //a: h energia
+            emitare: function(a,k){ //epilegei nekro shmeio kai to afairei ap tis diathesimes epiloges
+              //a: h energia
                 if(parseInt(a.productID)>=0){
                   //oti epilegete svinete apo to select
                   for(var i=0;i<temp.dsList.length;i++){
@@ -116,16 +125,36 @@ Vue.component('modal', {
                   }
                 }
             },
-            calculate: function(event){
-              var sum = 0
-              for(var i = 0 ; i < temp.picker.length;i++){
-                // sum = sum + parseInt(temp.picker[i].value)
+            calculate: function(event){ //ypologismos nekrou shmeiou
+              var oLength = Object.keys(this.inputDSpot).length;
+
+              try{
+                if(this.pick == '') throw "Επιλέξτε νεκρό σημείο."
+                if(this.inputDSpot.saleAmount - this.inputDSpot.cost == 0) throw "Λάθος τιμές εισαγωγής."
+                if(this.inputDSpot.yearCost<0) throw "Λάθος ετήσιο κόστος."
+                if( oLength == 4){
+                  temp.inputDSpots.push(this.inputDSpot)
+                  var calcDeadPoint = this.inputDSpot.yearCost/(this.inputDSpot.saleAmount - this.inputDSpot.cost)//calculate nekro shmeio
+                  this.result = calcDeadPoint.toFixed(1) //mexri ena dekadiko psifio
+                }
+                if(oLength <4 && oLength > 0) throw "Συμπληρώστε και τα υπόλοιπα πεδία."
+                if(oLength==0) throw "---"
+              }catch(err){
+                this.result = err
               }
-              if(sum!=0){
-                this.result = sum
+            },
+            checkInput : function(field){ //elexei tis isagwges twn input
+              var prop = this.propInput[field]
+              var inputValue = this.inputDSpot[prop]
+              
+              if(!isNaN(inputValue)){
+                this.inputWarnings[field] = false
               }else{
-                this.result = '---'
+                //var prop = Object.keys(this.inputDSpot)[field]
+                delete this.inputDSpot[prop] //delete to prop apo to object otan den einai num
+                this.inputWarnings[field] = true //vgazei warning 
               }
+
             },
         }
   })
