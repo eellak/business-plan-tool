@@ -1,7 +1,7 @@
 <template>
-	<div class="managers"> !!!test karanasos!!!!
-		<button id="Instructions1" class="Instructions managers__instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
-		<div id="myInstructions1" class="modal managers__modal">
+	<div class="managers">
+		<button class="managers__instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
+		<div id="modal__instructions" class="managers__modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<p>Αρχικά κλικάρετε το συμβολο + για να εμφανιστούν τα πεδία για το πρώτο διοικητικό μέλος. Συμπληρώνετε τα απαραίτητα όνομα και επίθετο στα αντίστοιχα πεδία,
@@ -9,36 +9,32 @@
 				Επαναλαμβάνετε τα προηγούμενα βήματα μέχρι να συμπληρώσετε όλες τις θέσεις διοίκησης και τέλος πατάτε το κουμπί αποθήκευσης ώστε να αποθηκευτούν όλες οι αλλαγές σας.</p>
 			</div>
 		</div>
-		<div class="add__member managers__block">
+		<div class="managers__block">
 			<label>Προσθέστε Μέλος</label><br>
-			<div class="add__member-row managers__row" v-for="m in managers" v-bind:key="m.id">
-				<div class="same__line">
-					<form class="fname">
+			<div class="managers__row" v-for="m in managers" v-bind:key="m.id">
+				<div class="managers__information">
 						<input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.Name">
-					</form>
 				</div>
-				<div class="same__line">
-					<form class="sname">
+				<div class="managers__information">
 						<input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.Surname">
-					</form>
 				</div>
-				<div class="same__line">
-					<form class="duty" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ">
+				<div class="managers__information">
 						<!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
 						<select v-model="m.Job">
 							<option v-for="o in jobOptions" v-bind:key="o"> {{ o }} </option>
 						</select>
-					</form>
 				</div>
-				<div class="same__line">
+				<div class="managers__information">
 					<img src="../../assets/link-button.png" alt="link">
 				</div><br>
 			</div>
-			<button name="plus__member" id="plus__member" @click="create()">
+			<button class="managers__add" @click="create()">
 				<img src="../../assets/plus-button.png" alt="plus">
 			</button>
 		</div>
-		<button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
+		<div class="managers__bottomlayout">
+		<button class="managers__save" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
+		</div>
 	</div>
 </template>
 
@@ -63,8 +59,8 @@ export default {
 			this.$store.commit('')
 		},
 		showInstructions() {
-			var modal = document.getElementById("myInstructions1");
-			var btn = document.getElementById("Instructions1");
+			var btn = document.getElementsByClassName("managers__instructions");
+			var modal = document.getElementById("modal__instructions");
 			var span = document.getElementsByClassName("close")[0];
 
 			modal.style.display = "block";
@@ -93,7 +89,19 @@ export default {
 	justify-content: center;
 	align-items: center;
 }
-.Instructions {
+.managers__instructions {
+	margin-left: 1400px;
+	margin-top: 20px;
+	background-color: rgb(41, 152, 88);
+	color: white;
+	width: 100px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-style: none;
+}
+.managers__save {
 	margin-left: 850px;
 	margin-top: 20px;
 	background-color: rgb(41, 152, 88);
@@ -105,15 +113,14 @@ export default {
 	align-items: center;
 	border-style: none;
 }
-.add__member {
+.managers__block {
 	font-family: "Open Sans";
 	margin-left: 40px;
 	font-size: 30px;
 	color: rgb(61, 65, 90);
 	
 }
-.same__line{
-	
+.managers__information{
 	width: 180px;
 	height: 30px;
 	margin: 20px;
@@ -129,7 +136,7 @@ input[type=text], select {
 	box-sizing: border-box;
 	
 }
-#plus__member{
+.managers__add{
 	margin:20px;
 	padding:0px;
 	white-space:nowrap;
@@ -138,13 +145,17 @@ input[type=text], select {
 	border: 0;
 	background: transparent;
 }
+.managers__bottomlayout{
+	margin-top: 525px;
+	background-color:rgb(70, 70, 70);
+}
 
 
 ::placeholder { 
 	color:    #cbcaca;
 }
 
-.modal {
+.managers__modal {
 display: none;
 position: fixed;
 z-index: 1; 
