@@ -360,6 +360,7 @@ button{
     height: 50px;
     margin-top:25px;
     margin-left:50px;
+    margin-bottom:20px;
 }
 #selectionLabel{
     position:relative;
@@ -476,6 +477,8 @@ placeholder{
     float: right;
     width: 10%;
     height: 10%;
+    margin-bottom: 10px;
+
 }
 
 .modal-enter {
@@ -518,6 +521,17 @@ placeholder{
 	font-size:25px;
 }
 
+.number-notice{
+    position: relative;
+    margin-top:0px;
+    margin-bottom: 0px;
+    margin-left:80px;
+    padding: 0%;
+    font-size: 10px;
+    color: red;
+
+}
+
 #minusTableButton{
     position: relative;
     width: 50px;
@@ -531,9 +545,10 @@ placeholder{
     margin-top:40px;
     margin-bottom: 0px;
     margin-left:80px;
+    margin-right: 5px;
+    word-wrap: unset;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 50px;
-    text-decoration: underline;
     text-shadow:2px 2px 12px grey;
 
 }
