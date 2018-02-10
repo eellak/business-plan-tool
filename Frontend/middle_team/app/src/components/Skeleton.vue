@@ -33,6 +33,9 @@
                         <router-link to="/managers" tag="li" class="">
                           <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
                         </router-link>
+                        <router-link to="/partners" tag="li" class="">
+                          <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                        </router-link>
                       </ul>
                     </li>
                     <li>

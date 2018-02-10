@@ -44,7 +44,6 @@ export default {
 	data() {
 		return {
 			managers: this.$store.getters.managers,
-			// managers: [],
 			jobOptions: ['CEO', 'CTO', 'CFO'],
 		}
   	},
