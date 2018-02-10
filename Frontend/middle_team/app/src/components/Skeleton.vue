@@ -36,6 +36,9 @@
                         <router-link to="/partners" tag="li" class="">
                           <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
                         </router-link>
+                        <router-link to="/humancosts" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        </router-link>
                       </ul>
                     </li>
                     <li>
