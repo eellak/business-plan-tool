@@ -12,32 +12,41 @@ new Vue({
     },
     methods: {
       saveData: function() {
-        for(i=0; i<numberOfFactors; i++){
-          if (this.myObj[i] == null) {
-            this.myObj[i] = {
-              "ID": i+1,
-              "BusinessPlanId": this.businessPlanId,
-              "Description": this.descriptions[i],
-              "Example": this.examples[i]
-            }
-            axios.post(url +"/api/factor",this.myObj[i])
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+        for(i=0; i<this.numberOfFactors; i++){
+          tempObj = {
+            "ID": i+1,
+            "BusinessPlanId": this.businessPlanId,
+            "Description": this.descriptions[i],
+            "Example": this.examples[i]
           }
-          else {
-            axios.put(url +"/api/factor/" + this.businessPlanId + "/" + i+1,this.myObj[i])
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+          if(!this.equals(tempObj,this.myObj[i])){
+            if (this.myObj[i] == null) {
+              axios.post(url +"/api/factor",tempObj)
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            }
+            else {
+              axios.put(url +"/api/factor/" + this.businessPlanId + "/" + i+1,tempObj)
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            }
+            this.myObj[i] = tempObj;
           }
         }
+      },
+      equals: function (objectA, objectB) {
+        if(JSON.stringify(objectA) === JSON.stringify(objectB)){
+          return true;
+        }
+        return false;
       }
     },
     beforeMount: function() {
