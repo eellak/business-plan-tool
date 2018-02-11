@@ -1,7 +1,7 @@
 <template>
 	<div class="humancosts">
-			<button class="Instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
-            <div id="myInstructions1" class="modal">
+			<button class="Instructions humancosts__instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
+            <div id="modal__instructions" class="humancosts__modal">
                 <div class="modal-content">
                  <span class="close">&times;</span>
                     <p>Αρχικά πατήστε στο εικονίδιο με δεικτή + έτσι ώστε να εμφανιστεί ο εργαζόμενος και η θέση του. 
@@ -105,10 +105,10 @@ export default {
 		},
 		showInstructions() {
 
-			var modal = document.getElementById("myInstructions1");
+            // Get the button that opens the modal
+			var btn = document.getElementsByClassName("humancosts__instructions");
 
-			// Get the button that opens the modal
-			var btn = document.getElementById("Instructions");
+			var modal = document.getElementById("modal__instructions");
 
 			// Get the <span> element that closes the modal		
 			var span = document.getElementsByClassName("close")[0];
@@ -154,6 +154,18 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .humancosts__instructions {
+        margin-left: 850px;
+        margin-top: 20px;
+        background-color: rgb(41, 152, 88);
+        color: white;
+        width: 100px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-style: none;
     }
     .Instructions {
         margin-left: 850px;
@@ -221,7 +233,7 @@ export default {
     }
 
 
-      .modal {
+    .humancosts__modal {
     display: none; /* Hidden by default */
     position: fixed;
     z-index: 1; 
