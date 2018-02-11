@@ -17,18 +17,18 @@
             <div class="sections-menu">
                 <ul>
                     <li>
-                      <a href="">2. ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
                       <ul>
-                        <router-link to="/2a-identity" tag="li" class="">
+                        <router-link to="/identity" tag="li" class="">
                           <a>ΤΑΥΤΟΤΗΤΑ</a>
                         </router-link>
-                        <router-link to="/2b-description" tag="li" class="">
+                        <router-link to="/description" tag="li" class="">
                           <a>ΠΕΡΙΓΡΑΦΗ</a>
                         </router-link>
                       </ul>
                     </li>
-                     <li>
-                      <a href="">3.ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                    <li>
+                      <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
                       <ul>
                         <router-link to="/managers" tag="li" class="">
                           <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
@@ -42,121 +42,78 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="">6. ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <a href="">ΕΓΚΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
                       <ul>
-                        <router-link to="/market-swot" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ SWOT</a>
+                        <router-link to="/faculties" tag="li" class="">
+                          <a>ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
                         </router-link>
-                        <router-link to="/market-general" tag="li" class="">
-                          <a>Γενικές</a>
+                        <router-link to="/equipment" tag="li" class="">
+                          <a>ΕΞΟΠΛΙΣΜΟΣ</a>
+                        </router-link>
+                        <router-link to="/running-cost" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
                         </router-link>
                       </ul>
                     </li>
-                    <!-- <li>
-                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
-                            </li>
-                        </ul>
+                    <li>
+                      <a href="">ΠΡΟΪΌΝΤΑ</a>
+                      <ul>
+                        <router-link to="/characteristics" tag="li" class="">
+                          <a>ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
+                        </router-link>
+                        <router-link to="/copyrights" tag="li" class="">
+                          <a>ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                        </router-link>
+                        <router-link to="/revenues" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                        </router-link>
+                      </ul>
                     </li>
                     <li>
-                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
-                            </li>
-                        </ul>
+                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <ul>
+                        <router-link to="/swot" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ SWOT</a>
+                        </router-link>
+                        <router-link to="/pestel-factors" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ PESTEL</a>
+                        </router-link>
+                        <router-link to="/market-note" tag="li" class="">
+                          <a>ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                        </router-link>
+                      </ul>
                     </li>
                     <li>
-                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
-                            </li>
-                        </ul>
+                      <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                      <ul>
+                        <router-link to="/strategy" tag="li" class="">
+                          <a>ΣΤΡΑΤΗΓΙΚΗ</a>
+                        </router-link>
+                        <router-link to="/marketing-actions" tag="li" class="">
+                          <a>ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                        </router-link>
+                      </ul>
                     </li>
                     <li>
-                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
-                            </li>
-                        </ul>
+                      <a href="">ΧΡΗΜΑΤΟΟΙΚΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                      <ul>
+                        <router-link to="/start-actions" tag="li" class="">
+                          <a>ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                        </router-link>
+                        <router-link to="/function-cost" tag="li" class="">
+                          <a>ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                        </router-link>
+                        <router-link to="/dead-spot" tag="li" class="">
+                          <a>ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                        </router-link>
+                      </ul>
                     </li>
                     <li>
-                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
-                            </li>
-                            <li>
-                                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
-                            </li>
-                        </ul>
+                      <router-link to="/timeline" tag="a" class="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</router-link>
                     </li>
                     <li>
-                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
-                        <ul>
-                            <li>
-                                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
-                            </li>
-                        </ul>
+                      <router-link to="/timeline" tag="a" class="">ΣΥΝΟΨΗ</router-link>
                     </li>
-                    <li>
-                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
-                    </li>
-                    <li>
-                        <a href="">ΠΑΡΑΡΤΗΜΑ</a>
-                    </li>
-                    <li>
-                        <a href="">ΣΥΝΟΨΗ</a>
-                    </li> -->
-
                 </ul>
             </div>
         </nav>
