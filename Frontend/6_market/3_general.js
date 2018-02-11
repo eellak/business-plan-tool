@@ -9,11 +9,12 @@ new Vue({
     },
     methods: {
         saveData: function() {
+          tempObj = {
+            "BusinessPlanId": this.businessPlanId,
+            "Text": this.notes
+          }
+          if(!this.equals(tempObj,this.myObj)){
             if (this.myObj == null) {
-              this.myObj = {
-                "BusinessPlanId": this.businessPlanId,
-                "Text": this.notes
-              }
               axios.post(url +"/api/note",this.myObj)
               .then(function (response) {
                 console.log(response);
@@ -31,7 +32,15 @@ new Vue({
                 console.log(error);
               });
             }
+            this.myObj = tempObj;
+          }
         },
+        equals: function (objectA, objectB) {
+          if(objectA.Text === objectB.Text){
+            return true;
+          }
+          return false;
+        }
     },
     created: function() {
             var that = this;
