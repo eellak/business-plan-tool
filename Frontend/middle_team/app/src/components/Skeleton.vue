@@ -17,7 +17,7 @@
             <div class="sections-menu">
                 <ul>
                     <li>
-                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                      <a href="">2. ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
                       <ul>
                         <router-link to="/2a-identity" tag="li" class="">
                           <a>ΤΑΥΤΟΤΗΤΑ</a>
@@ -27,8 +27,22 @@
                         </router-link>
                       </ul>
                     </li>
+                     <li>
+                      <a href="">3.ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                      <ul>
+                        <router-link to="/managers" tag="li" class="">
+                          <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                        </router-link>
+                        <router-link to="/partners" tag="li" class="">
+                          <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                        </router-link>
+                        <router-link to="/humancosts" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        </router-link>
+                      </ul>
+                    </li>
                     <li>
-                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <a href="">6. ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
                       <ul>
                         <router-link to="/market-general" tag="li" class="">
                           <a>Γενικές</a>
@@ -340,7 +354,7 @@ export default {
         .sections-menu ul li {
             padding: 15px;
             position: relative;
-            width: 350px;
+            /* width: 350px; */
             border-top: 1px solid black;
             background-color: rgb(30, 33, 51);
         }

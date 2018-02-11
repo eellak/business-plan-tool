@@ -200,56 +200,6 @@
 
             <!-- MAIN BODY -->
             <div id="userArea">
-                <!--<div>
-                        <table>
-                        <tr>
-                            <td>
-                                <div class="column1">
-                                    <h5 id="a"> Διαλέξτε προιόν</h5> <br/>
-                                    <select id="product" class="userSelection">  
-                                        <option  v-for="p in deadSpots" v-bind:class="p">
-                                            {{ p.deadSpot }}
-                                        </option>
-                                    </select>  
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="column1">
-                                    <h5> Ποιο είναι το κόστος?</h5><br/>
-                                    <input class="userSelection"    type="text" name="productCost" placeholder="ΚΟΣΤΟΣ ΠΑΡΑΓΩΓΗΣ"><br>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="column2">
-                                    <h5> Ποια είναι η τιμή πώλησης?</h5> <br/>
-                                    <input class="userSelection" id="inputC"  type="text" name="salesPrice" placeholder="ΤΙΜΗ ΠΩΛΗΣΗΣ"><br>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="column1">
-                                    <h5> Ποιο είναι το ετήσιο σταθερό κόστος?</h5> <br/>
-                                    <input class="userSelection" id="inputE"  type="text" name="salesCount" placeholder="ΕΤΗΣΙΟ ΣΤΑΘΕΡΟ ΚΟΣΤΟΣ"><br>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="column2">
-                                    <h5> Ποιος είναι ο αριθμός πωλήσεων?</h5> <br/>
-                                    <input class="userSelection" id="inputE"  type="text" name="salesCount" placeholder="ΑΡΙΘΜΟΣ ΠΩΛΗΣΕΩΝ"><br>
-                                </div>
-                            </td>
-                        </tr>
-                    </table> 
-                    <button id="addButton" onclick="">+</button>
-                    <div style="margin-top: 50px;">
-                            <button id="calculate"> ΥΠΟΛΟΓΙΣΕ</button>
-                            <label id="result">ΝΕΚΡΟ ΣΗΜΕΙΟ</label>
-                    </div>
-                </div>-->
-
                 <h1 id="pageHeader">ΝΕΚΡΟ ΣΗΜΕΙΟ</h1>
                 <br/>
                 <div v-for="s in selections" >
