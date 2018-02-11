@@ -12,33 +12,30 @@ new Vue({
     },
     methods: {
         saveData: function() {
-          tempObj = {
-            "Strong": this.spots[0],
-            "Weak": this.spots[1],
-            "Opportunities": this.spots[2],
-            "Threats": this.spots[3],
-            "BusinessPlanId": this.businessPlanId
+          if (this.myObj == null) {
+            this.myObj = {
+              "Strong": this.spots[0],
+              "Weak": this.spots[1],
+              "Opportunities": this.spots[2],
+              "Threats": this.spots[3],
+              "BusinessPlanId": this.businessPlanId
+            }
+            axios.post(url +"/api/swot",this.myObj)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           }
-          if(!this.equals(this.myObj,tempObj)){
-            if (this.myObj == null) {
-              axios.post(url +"/api/swot",tempObj)
-              .then(function (response) {
-                console.log(response);
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-            }
-            else {
-              axios.put(url +"/api/swot/" + this.businessPlanId,tempObj)
-              .then(function (response) {
-                console.log(response);
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-            }
-            this.myObj = tempObj;
+          else {
+            axios.put(url +"/api/swot/" + this.businessPlanId,this.myObj)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           }
         },
         equals: function (objectA, objectB) {
