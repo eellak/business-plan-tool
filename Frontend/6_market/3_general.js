@@ -15,7 +15,7 @@ new Vue({
           }
           if(!this.equals(tempObj,this.myObj)){
             if (this.myObj == null) {
-              axios.post(url +"/api/note",this.myObj)
+              axios.post(url +"/api/note",tempObj)
               .then(function (response) {
                 console.log(response);
               })
@@ -24,7 +24,7 @@ new Vue({
               });
             }
             else {
-              axios.put(url +"/api/note/" + this.businessPlanId,this.myObj)
+              axios.put(url +"/api/note/" + this.businessPlanId,tempObj)
               .then(function (response) {
                 console.log(response);
               })
