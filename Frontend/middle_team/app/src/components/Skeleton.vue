@@ -215,7 +215,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    ;
+    border-bottom: 0.1px solid black;
 }
 .head__logo {
     margin-left: 20px;
