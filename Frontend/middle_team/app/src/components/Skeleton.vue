@@ -17,7 +17,7 @@
             <div class="sections-menu">
                 <ul>
                     <li>
-                      <a href="">2. ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
                       <ul>
                         <router-link to="/2a-identity" tag="li" class="">
                           <a>ΤΑΥΤΟΤΗΤΑ</a>
@@ -27,26 +27,9 @@
                         </router-link>
                       </ul>
                     </li>
-                     <li>
-                      <a href="">3.ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
-                      <ul>
-                        <router-link to="/managers" tag="li" class="">
-                          <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
-                        </router-link>
-                        <router-link to="/partners" tag="li" class="">
-                          <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
-                        </router-link>
-                        <router-link to="/humancosts" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
-                        </router-link>
-                      </ul>
-                    </li>
                     <li>
-                      <a href="">6. ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                      <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
                       <ul>
-                        <router-link to="/market-swot" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ SWOT</a>
-                        </router-link>
                         <router-link to="/market-general" tag="li" class="">
                           <a>Γενικές</a>
                         </router-link>
@@ -193,10 +176,145 @@ export default {
   methods: {
   	// This function returns a parsed date from the db form(YYYYMMDD) into proper form with slashes(DD/MM/YYYY)
   	dateParser(date){
-  		return String(date).slice(6) + "/" 
-	 			+ String(date).slice(4, 6) + "/"
-	 			+ String(date).slice(0, 4)
+  		return String(date).slice(6) + "/" // Slice DD, 6-end
+	 			+ String(date).slice(4, 6) + "/" // Slice MM, 4-5
+	 			+ String(date).slice(0, 4)			 // Slice YYYY, 0-3
   	},
+
+  	// Functions for dynamic PDFMake content generation based on the json
+
+		clientsFun(db) { 
+			var clientsArray = [] 			// Array to store the PDFMake content
+			var clientsObj = db["clients"]	// Store the object in a local variable
+
+			// Loop through the clients array and format the content in PDFMake form
+			for (var i = 0; i < clientsObj.length; i++){
+				clientsArray.push([//{text: "ID: " 			+ clientsObj[i].ID},
+								   				 {text: "Όνοματεπώνυμο: " + clientsObj[i].Name}, " "]) // Append each element of the list
+			}
+
+			return clientsArray
+		},
+
+		managersFun(db) { 
+			var managersArray = []
+			var managersObj = db["managers"]
+
+			for (var i = 0; i < managersObj.length; i++){
+				managersArray.push([//{text: "ID: " 			 + managersObj[i].ID},
+												    {text: "Όνοματεπώνυμο: " + managersObj[i].Name + " " + managersObj[i].Surname},
+												    {text: "Θέση εργασίας: " + managersObj[i].Job},
+												    {text: "LinkedIn: " 	   + managersObj[i].LinkedIn}, " "])
+			}
+
+			return managersArray
+		},
+
+		employeesFun(db) { 
+			var employeesArray = []
+			var employeesObj = db["employees"]
+
+			for (var i = 0; i < employeesObj.length; i++){
+				employeesArray.push([{text: "ID: " 			 + employeesObj[i].ID},
+								    				 {text: "Θέση εργασίας: " + employeesObj[i].Job}, " "])
+			}
+
+			return employeesArray
+		},
+
+		partnersFun(db) { 
+			var partnersArray = []
+			var partnersObj = db["partners"]
+
+			for (var i = 0; i < partnersObj.length; i++){
+				partnersArray.push([//{text: "ID: " 			     + partnersObj[i].ID},
+												    {text: "Όνοματεπώνυμο: " + partnersObj[i].Name + " " + partnersObj[i].SurName},
+												    {text: "Εξειδίκευση: "   + partnersObj[i].Expertise},
+												    {text: "LinkedIn: " 	   + partnersObj[i].LinkedIn},
+												    {text: "Από: " 				   + this.dateParser(partnersObj[i].From)},
+												    {text: "Έως: "           + this.dateParser(partnersObj[i].Until)},
+												    {text: "Καθήκοντα: "     + partnersObj[i].Duties}, " "])
+			}
+
+			return partnersArray
+		},
+
+		employeesCostFun(db){
+			var costArray = []
+			var costObj = db["employeeSalaries"]
+
+			for (var i = 0; i < costObj.length; i++){
+				costArray.push([{text: "ID εργαζόμενου: "    + costObj[i].EmployeeID},
+										    {text: "Ποσό αμοιβής: "      + costObj[i].Salary},
+										    {text: "Bonus: "    				 + costObj[i].Bonus},
+										    {text: "Είδος απασχόλησης: " + costObj[i].Employment_type}, " "])
+			}
+
+			return costArray
+		},
+
+		facultiesFun(db){
+			var facultiesArray = []
+			var facultiesObj = db["faculties"]
+
+			for (var i = 0; i < facultiesObj.length; i++){
+				facultiesArray.push([{text: "ID: "    						    + facultiesObj[i].ID},
+												     {text: "Διεύθυνση: "             + facultiesObj[i].Adress},
+												     {text: "Λειτουργία χώρου ως: "   + facultiesObj[i].Usage},
+												     {text: "Έκταση: " 						    + facultiesObj[i].M2 + " τετραγωνικά μέτρα"},
+												     {text: "Είδος ιδιοκτησίας: "     + facultiesObj[i].Ownership_type},
+												     {text: "Έναρξη δραστηριότητας: " + this.dateParser(facultiesObj[i].Start_date)}, " "])
+			}
+
+			return facultiesArray
+		},
+
+		equipmentFun(db){
+			var equipmentArray = []
+			var equipmentObj = db["equipment"]
+
+			for (var i = 0; i < equipmentObj.length; i++){
+
+				var priorUse = "null"
+				if (equipmentObj[i].Firsthand) priorUse = "νέο"
+				else priorUse = "μεταχειρισμένο"
+
+				equipmentArray.push([{text: "ID: "    						    + equipmentObj[i].ID},
+												     {text: "Είδος εξοπλισμού: "     + equipmentObj[i].EquipType},
+												     {text: "Τόπος εγκατάστασης: "   + equipmentObj[i].Address},
+												     {text: "Τμήμα επιχείρησης: " 	 + equipmentObj[i].Division},
+												     {text: "Προηγούμενη χρήση: "    + priorUse},
+												     {text: "Ημερομηνία απόκτησης: " + this.dateParser(equipmentObj[i].Acquisition_date)}, " "])
+			}
+
+			return equipmentArray
+		},
+
+		facultyCostFun(db){
+			var facultyCostArray = []
+			var facultyCostObj = db["runningCost"][0]["FacultyCosts"]
+
+			for (var i = 0; i < facultyCostObj.length; i++){
+				facultyCostArray.push([{text: "ID εγκατάστασης: "	    + facultyCostObj[i].FacultyId},
+												     	 {text: "Κόστος εγκατάστασης: " + facultyCostObj[i].Cost + "€"}, " "])
+			}
+
+			return facultyCostArray
+		},
+
+		equipmentCostFun(db){
+			var equipmentCostArray = []
+			var equipmentCostObj = db["runningCost"][0]["EquipmentCosts"]
+
+			for (var i = 0; i < equipmentCostObj.length; i++){
+				equipmentCostArray.push([{text: "ID εξοπλισμού: "     + equipmentCostObj[i].EquipmentId}, 
+										         		 {text: "Κόστος εξοπλισμού: " + equipmentCostObj[i].Cost + "€"}, " "])
+			}
+
+			return equipmentCostArray
+		},
+
+
     exportFunction(){
     	var db = this.$store.state
 			// PDFMake code here
@@ -212,26 +330,87 @@ export default {
 					{text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
 					" ", // Newline
 					// This content element is a simple string element, no need for curly brackets, just comma after it.
-					"Όνομα επιχείρησης: " 		 + db.identity[0].Name,
-					"Ημερομηνία δημιουργίας: " + this.dateParser(db.identity[0].Date),
-					"Νομική μορφή: " 		       + db.identity[0].LegalForm,
-					"Τύπος επιχείρησης: "      + db.identity[0].OrderOfBusiness
-					
+					"Όνομα επιχείρησης: " 	   + db["identity"][0].Name,
+					"Ημερομηνία δημιουργίας: " + this.dateParser(db["identity"][0].Date),
+					"Νομική μορφή: " 		   		 + db["identity"][0].LegalForm,
+					"Τύπος επιχείρησης: "      + db["identity"][0].OrderOfBusiness,
+					" ",
+					"Πελάτες: ",
+					" ",
+					// Due to the "ol" tag, it needs curly brackets. Equivalent to {ol: [firstItem, secondItem]} syntax.
+					{ol: this.clientsFun(db)},
+					" "," ", // 2 newlines between sections/subsections
+					// Subsection 1.2
+					{text: "1.2 Περιγραφή Επιχείρησης:", style: "subSectionHeader"},
+					" ",
+					// Simple string element coming straight from db
+					db["description"][0].Text,
+					" "," ",
+					// Section 2
+					{text: "Ανθρώπινο Δυναμικό", style: "sectionHeader"},
+					" ",
+					// Subsection 2.1
+					{text: "2.1 Ομάδα Διοίκησης:", style: "subSectionHeader"},
+					" ",
+					{ol: this.managersFun(db)}, // Call dynamic content creation function for managers
+					" "," ",
+					// Subsection 2.2
+					{text: "2.2 Προσωπικό:", style: "subSectionHeader"},
+					" ",
+					{ol: this.employeesFun(db)},
+					" "," ",
+					// Subsection 2.3
+					{text: "2.3 Ανάλυση Κόστους Προσωπικού:", style: "subSectionHeader"},
+					" ",
+					{ol: this.employeesCostFun(db)},
+					" "," ",
+					// Subsection 2.4
+					{text: "2.4 Εξωτερικοί Συνεργάτες:", style: "subSectionHeader"},
+					" ",
+					{ol: this.partnersFun(db)},
+					" "," ",
+					// Section 3
+					{text: "Εγκαταστάσεις - Εξοπλισμός", style: "sectionHeader"},
+					" ",
+					// Subsection 3.1
+					{text: "3.1 Τόπος Εγκατάστασης:", style: "subSectionHeader"},
+					" ",
+					{ol: this.facultiesFun(db)},
+					" "," ",
+					// Subsection 3.2
+					{text: "3.2 Εξοπλισμός:", style: "subSectionHeader"},
+					" ",
+					{ol: this.equipmentFun(db)},
+					" "," ",
+					// Subsection 3.3
+					{text: "3.3 Ανάλυση Κόστους:", style: "subSectionHeader"},
+					" ",
+					{text: "Κόστος εγκαταστάσεων:", bold: true},
+					" ",
+					{ol: this.facultyCostFun(db)},
+					{text: "Συνολικό κόστος εγκαταστάσεων: " + String(db["runningCost"][0].FacultyExpenses) + "€", bold: true},
+					" ",
+					{text: "Κόστος εξοπλισμού:", bold: true},
+					" ",
+					{ol: this.equipmentCostFun(db)},
+					{text: "Συνολικό κόστος εξοπλισμού: " + String(db["runningCost"][0].EquipmentExpenses) + "€", bold: true},
+					" "," ",
+
+
 				], // Content array end
 
 				styles: {
-				    sectionHeader: {
-				      bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
-				    },
-				    subSectionHeader: {
-				      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
-				    }
-				  }
-
+			    sectionHeader: {
+			      bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
+			    },
+			    subSectionHeader: {
+			      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+			    }
+			  }
 			} // docDefinition end
-			
+				
 			// Download the PDF, named after the business name given in section 1.1
-			pdfMake.createPdf(docDefinition).download(db.identity[0].Name + "BusinessPlan.pdf");
+			pdfMake.createPdf(docDefinition).download(db["identity"][0].Name + "BusinessPlan.pdf");
     } // ExportFun end		
   }
 }
@@ -357,7 +536,7 @@ export default {
         .sections-menu ul li {
             padding: 15px;
             position: relative;
-            /* width: 350px; */
+            width: 350px;
             border-top: 1px solid black;
             background-color: rgb(30, 33, 51);
         }
