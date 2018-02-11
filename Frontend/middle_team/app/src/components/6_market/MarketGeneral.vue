@@ -19,7 +19,7 @@
 
 <script>
 export default {
-	name: 'Six-General',
+	name: 'MarketGeneral',
 	data() {
 		return {
 			url: 'localhost:52800',

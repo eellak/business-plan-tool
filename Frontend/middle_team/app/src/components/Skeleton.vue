@@ -44,6 +44,9 @@
                     <li>
                       <a href="">6. ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
                       <ul>
+                        <router-link to="/market-swot" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ SWOT</a>
+                        </router-link>
                         <router-link to="/market-general" tag="li" class="">
                           <a>Γενικές</a>
                         </router-link>
