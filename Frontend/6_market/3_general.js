@@ -36,7 +36,7 @@ new Vue({
           }
         },
         equals: function (objectA, objectB) {
-          if(objectA.Text === objectB.Text){
+          if(JSON.stringify(objectA) === JSON.stringify(objectB)){
             return true;
           }
           return false;
