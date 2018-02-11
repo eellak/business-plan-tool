@@ -103,8 +103,6 @@ export default {
 			}*/
 
 		},
-
-
 		showInstructions() {
 
 			var modal = document.getElementById("myInstructions1");
@@ -129,7 +127,6 @@ export default {
 				}
 			}
 		},
-
 		calculate() {
 			var totalCost = 0;
 			for (var i=0 ; i < this.costs.length ; i++ ) {
@@ -225,7 +222,7 @@ export default {
 
 
       .modal {
-    display: hidden; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed;
     z-index: 1; 
     padding-top: 100px; /* Location of the box */
