@@ -42,7 +42,7 @@ new Vue({
           return false;
         }
     },
-    created: function() {
+    mounted: function() {
             var that = this;
             axios.get(url +"/api/note/" + this.businessPlanId)
             .then(function (response) {
