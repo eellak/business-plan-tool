@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BP Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: initial;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+        /* HEADER */
+        .head {
+            background-color: rgb(30, 33, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            ;
+        }
+        .head__logo {
+            margin-left: 20px;
+        }
+        .head__export {
+            color: #fff;
+            display: flex;
+            margin-right: 100px;
+            align-items: center;
+        }
+        .head__avatar {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .head__export p {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+        .head__export i {}
+        /* FOOTER */
+        footer {
+            background-color: rgb(203, 202, 202);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .foot__back {
+            margin-right: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .foot__next {
+            margin-left: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+        .foot__pagination {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+        }
+        main {
+            overflow-y: scroll;            
+            flex-grow: 1;
+        }
+        
+        .main_container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        nav {
+            background-color: rgb(30, 33, 51);
+            width: 350px;
+        }
+        /* SECTIONS MENU */
+        .sections-menu {}
+        .sections-menu ul {
+            list-style: none;
+            margin: 0;
+        }
+        .sections-menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 350px;
+            border-top: 1px solid black;
+            background-color: rgb(30, 33, 51);
+        }
+        .sections-menu ul li {
+            border-right: 5px solid rgb(61, 65, 90);
+        }
+        .sections-menu ul ul {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 100%;
+            top: -2%;
+            background-color: rgb(40, 44, 63);
+        }
+        .sections-menu ul ul li {
+            background-color: rgb(79, 84, 115);
+            width: 250px;
+        }
+        .sections-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sections-menu ul li a {
+            color: white;
+        }
+        /* BASIC ELEMENTS */
+        .basic_button {
+            background-color: rgb(25, 145, 105);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .instructions {
+            margin-left: 850px;
+            margin-top: 20px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+            cursor: pointer;
+        }
+        .container {
+            position:static;
+            margin-left:80px;
+            margin-top:80px;
+            height:600px;
+            width:1450px;
+            overflow:auto;
+            background-color:white;
+            color:white;
+            padding:10px;
+        }
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        }
+
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+}
+       
+    </style>
+   
+
+</head>
+
+<body>
+
+    <header class="head">
+        <div class="head__logo">
+            <img src="Logo.png" alt="Logo">
+        </div>
+        <div class="head__export">
+            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
+            <p>ΕΞΑΓΩΓΗ</p>
+        </div>
+        <img class="head__avatar" src="man.png" alt="Avatar">
+    </header>
+
+
+    <div class="main_container">
+        <nav>
+            <div class="sections-menu">
+                <ul>
+                    <li>
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
+                            </li>
+                            <li>
+                                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
+                            </li>
+                            <li>
+                                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
+                        <ul>
+                            <li>
+                                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
+                            </li>
+                            <li>
+                                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
+                        <ul>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                            </li>
+                            <li>
+                                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="">ΠΑΡΑΡΤΗΜΑ</a>
+                    </li>
+                    <li>
+                        <a href="">ΣΥΝΟΨΗ</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+
+
+           <button class="instructions" id="myBtn" >ΟΔΗΓΙΕΣ</button>
+           <div class="container">
+                <svg id="gantt"></svg>
+           </div>
+
+
+           <!-- The Modal -->
+           <div id="myModal" class="modal">
+
+           <!-- Modal content -->
+           <div class="modal-content">
+           <span class="close">&times;</span>
+           <p>
+            -Πιάσε με το ποντίκι τις άκρες απο κάθε ενέργεια και σύρε τις ανάλογα για να διαμορφώσεις το χρονικό διάστημα που θες να εκτείνεται η κάθε ενέργεια. 
+           </p>
+           <p>
+            -Μπορείς να σύρεις και την ενέργεια όπως είναι πιάνοντας τη με το ποντίκι και κρατώντας το παρατεταμένα όση ώρα μετατοπίζεις την ενέργεια.
+           </p>
+           <p>
+            -Κάνοντας κλικ με το ποντίκι στο όνομα κάθε ενέργειας, εμφανίζονται πληροφορίες σχετικά με τη διάρκεια της. Για να τις αποκρύψεις, απλώς κάνε κλικ σε οποιοδήποτε άλλο σημείο του χρονοδιαγράμματος.
+           </p>
+           </div>
+           <div id="milestones">
+           </div> 
+           <script>
+
+           // Get the modal
+           var modal = document.getElementById('myModal');
+
+           // Get the button that opens the modal
+           var btn = document.getElementById("myBtn");
+
+           // Get the <span> element that closes the modal
+           var span = document.getElementsByClassName("close")[0];
+
+           // When the user clicks the button, open the modal 
+           btn.onclick = function() {
+           modal.style.display = "block";
+           }
+
+           // When the user clicks on <span> (x), close the modal
+           span.onclick = function() {
+           modal.style.display = "none";
+           }
+
+           // When the user clicks anywhere outside of the modal, close it
+           window.onclick = function(event) {
+           if (event.target == modal) {
+           modal.style.display = "none";
+           }
+           }
+           </script>
+
+        </main>
+    </div>
+
+
+    <footer class="foot">
+        <button class="foot__back">ΠΙΣΩ</button>
+        <span class="foot__pagination">
+            <p>1/1</p>
+        </span>
+        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+    </footer>
+
+
+        <!-- Import Gantt Library Here -->
+         <script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/frappe-gantt@0.0.7/dist/frappe-gantt.min.js"></script>
+         <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+         <script src="logic.js"> </script>
+
+        
+        
+
+</body>
+
+</html>
