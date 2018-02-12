@@ -68,5 +68,20 @@ namespace ContactManager.Controllers
             }
             return null;
         }
+
+        // DELETE api/factor/1
+        public Factor[] Delete(int id)
+        {
+            var data = facService.SearchId(id);
+            if (data.Count > 0)
+            {
+                if (facService.DeleteId(id))
+                {
+                    return data.ToArray();
+                }
+
+            }
+            return null;
+        }
     }
 }

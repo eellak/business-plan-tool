@@ -39,6 +39,12 @@ namespace DBconnection
         }
 
 
+        public bool DeleteId(int businessPlanId)
+        {
+            sql = "DELETE FROM pestel WHERE business_plans_bpID='" + businessPlanId + "'";
+            return EditTable();
+        }
+
 
         public List<Factor> ShowAllItems()
         {
