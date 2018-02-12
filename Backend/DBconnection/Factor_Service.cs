@@ -25,9 +25,9 @@ namespace DBconnection
           return EditTable();
         }
 
-        public bool Edit(Factor fct)
+        public bool Edit(int id, Factor fct)
         {
-            sql = "UPDATE pestel SET description='" + fct.Description + "',example='" + fct.Example + "' WHERE factorID='" + fct.ID + "' AND business_plans_bpID='" + fct.BusinessPlanId + "'";
+            sql = "UPDATE pestel SET business_plans_bpID='" + id + "', description='" + fct.Description + "',example='" + fct.Example + "' WHERE factorID='" + fct.ID + "' AND business_plans_bpID='" + fct.BusinessPlanId + "'";
             return EditTable();
         }
 

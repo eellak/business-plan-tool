@@ -48,11 +48,11 @@ namespace ContactManager.Controllers
         // PUT api/factor/5
         public Factor Put(int id, Factor newFactor)
         {
-            newFactor.BusinessPlanId = id;
-            if (facService.SearchFactor(id,newFactor.ID).Count > 0)
+            if (facService.SearchFactor(newFactor.BusinessPlanId,newFactor.ID).Count > 0)
             {
-                if (facService.Edit(newFactor))
+                if (facService.Edit(id, newFactor))
                 {
+                    newFactor.BusinessPlanId = id;
                     return newFactor;
                 }
             }
