@@ -13,98 +13,98 @@
     </header>
 
     <div class="main_container">
-        <nav>
+          <nav>
             <div class="sections-menu">
                 <ul class="sections-menu-ul">
                     <li class="has-sub">
                         <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/identity" tag="li" class="">
-                          <a>ΤΑΥΤΟΤΗΤΑ</a>
+                        <router-link to="/identity" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΤΑΥΤΟΤΗΤΑ</a>
                         </router-link>
-                        <router-link to="/description" tag="li" class="">
-                          <a>ΠΕΡΙΓΡΑΦΗ</a>
+                        <router-link to="/description" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΠΕΡΙΓΡΑΦΗ</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/managers" tag="li" class="">
-                          <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                        <router-link to="/managers" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
                         </router-link>
-                        <router-link to="/partners" tag="li" class="">
-                          <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                        <router-link to="/partners" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
                         </router-link>
-                        <router-link to="/humancosts" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        <router-link to="/humancosts" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/faculties" tag="li" class="">
-                          <a>ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                        <router-link to="/faculties" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
                         </router-link>
-                        <router-link to="/equipment" tag="li" class="">
-                          <a>ΕΞΟΠΛΙΣΜΟΣ</a>
+                        <router-link to="/equipment" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΕΞΟΠΛΙΣΜΟΣ</a>
                         </router-link>
-                        <router-link to="/running-cost" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        <router-link to="/running-cost" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/characteristics" tag="li" class="">
-                          <a>ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
+                        <router-link to="/characteristics" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
                         </router-link>
-                        <router-link to="/copyrights" tag="li" class="">
-                          <a>ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                        <router-link to="/copyrights" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
                         </router-link>
-                        <router-link to="/revenues" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                        <router-link to="/revenues" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/swot" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ SWOT</a>
+                        <router-link to="/swot" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΑΝΑΛΥΣΗ SWOT</a>
                         </router-link>
-                        <router-link to="/pestel-factors" tag="li" class="">
-                          <a>ΑΝΑΛΥΣΗ PESTEL</a>
+                        <router-link to="/pestel-factors" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΑΝΑΛΥΣΗ PESTEL</a>
                         </router-link>
-                        <router-link to="/market-note" tag="li" class="">
-                          <a>ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                        <router-link to="/market-note" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/strategy" tag="li" class="">
-                          <a>ΣΤΡΑΤΗΓΙΚΗ</a>
+                        <router-link to="/strategy" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΣΤΡΑΤΗΓΙΚΗ</a>
                         </router-link>
-                        <router-link to="/marketing-actions" tag="li" class="">
-                          <a>ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                        <router-link to="/marketing-actions" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
                         </router-link>
                       </ul>
                     </li>
                     <li class="has-sub">
                         <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/start-actions" tag="li" class="">
-                          <a>ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                        <router-link to="/start-actions" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
                         </router-link>
-                        <router-link to="/function-cost" tag="li" class="">
-                          <a>ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                        <router-link to="/function-cost" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
                         </router-link>
-                        <router-link to="/dead-spot" tag="li" class="">
-                          <a>ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                        <router-link to="/dead-spot" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
                         </router-link>
                       </ul>
                     </li>
@@ -316,13 +316,21 @@ display: block;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
 }
-        /* BASIC ELEMENTS */
-        .basic_button {
-            background-color: rgb(24, 146, 105);
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.activeSection{
+  background-color:rgb(79, 84, 115);
+}
+.subSection{
+  margin-left:10px;
+}
+
+  /* BASIC ELEMENTS */
+
+  .basic_button {
+  background-color: rgb(24, 146, 105);
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
     </style>
