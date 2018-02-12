@@ -161,7 +161,7 @@
             font-color:rgb(40, 44, 63);
           }
         </style>
-        <section class="top_card">
+        <section class="top_card" class="tautotita__instructions">
             <button class="foot__back" onclick="myFunction()">ΟΔΗΓΙΕΣ</button>
         </section>
 
@@ -180,8 +180,7 @@
   				}
   			</script>
 
-		 <!-- Evala id sti forma gia na ta pairnei katw i js -->
-		 <form id="form">
+		 <form id="form" name="Tautotita_form" class="tautotita__block">
 			<section class="my_card">
         <div class="my_card_head"> 1.Τόπος Εγκατάστασης </div>
 				<div class="my_card_body"> <input type="text" name="location" id="location" value="" placeholder="Θεσσαλονίκη" style="width: 80%; font-size:15pt;"></div>
@@ -190,7 +189,7 @@
 			<section class="my_card">
 				<div class="my_card_head">2.Περίοδος έναρξης δραστηριότητας για νέες επιχειρήσεις/ έτος ίδρυσης για υφιστάμενες επιχειρήσεις<br></div>
 				<div class="styled-select slate">
-        <select id="dokimi" name="month" id="month">
+				<select name="month" id="month">
 					<option value="January">Ιανουάριος</option>
 					<option value="February">Φεβρουάριος</option>
 					<option value="March">Μάρτιος</option>
@@ -221,19 +220,19 @@
 
 			<section class="my_card">
 				<div class="my_card_head">3.Νομική Μορφή<br></div>
-				<div class="my_card_body">
-          <div class="styled-select slate">
-					<select name="legal type" id="legal type">
-					<option value="Single">Ατομική</option>
-					<option value="ΟΕ">ΟΕ</option>
-					<option value="Cooperative">Συνεταιριστική</option>
-					<option value="Anonimus">Ανώνυμη</option>
-					</select>
-        </div>
-				</div>
+					<div class="my_card_body">
+						<div class="styled-select slate" name="legal_type">
+							<select name="legal type" id="legal type">
+							<option value="Single">Ατομική</option>
+							<option value="ΟΕ">ΟΕ</option>
+							<option value="Cooperative">Συνεταιριστική</option>
+							<option value="Anonimus">Ανώνυμη</option>
+							</select>
+						</div>
+					</div>
 			</section>
 
-			<section class="my_card">
+			<section class="my_card" name="bus_type">
 					<div class="my_card_head"><legend>4. Τύπος Επιχείρησης</legend></div>
 
 						<div>
@@ -258,17 +257,17 @@
 						</div>
 						<div>
 							<input type="checkbox" id="distributor" name="distributor" value="distributor">
-							<label for="distributor">Distributor</label>
+							<label for="distributor">Εμπορικός Αντιπρόσωπος</label>
 						</div>
 						<div>
 							<input type="checkbox" id="other1" name="other1" value="other1">
-							<label for="other1">Other</label>
+							<label for="other1">Άλλο</label>
 							<input type="text" id="otherValue1" name="otherVal1">
 						</div>
 
 			</section>
 
-			<section class="my_card">
+			<section class="my_card" name="customers">
 				<div class="my_card_head"><legend>5.Πελάτες</legend></div>
 
 						<div>
@@ -281,33 +280,45 @@
 						</div>
 						<div>
 							  <input type="checkbox" id="other2" name="other2" value="other2">
-							  <label for="other2">Other</label>
+							  <label for="other2">Άλλο</label>
 							  <input type="text" id="otherValue2" name="otherVal2">
 						</div>
 
 			</section>
 
 		</form>
+		
+		
   </main>
 </div>
 
+  
+  <script>
+	function validateForm() {
+		var loc = document.forms["Tautotita_form"]["location"].value;
+		var m = document.getElementById("month");
+		var mon = e.options[m.selectedIndex].value;
+		var y = document.getElementById("year");
+		var year = e.options[m.selectedIndex].value;
+		var l = document.getElementById("legal type");
+		var leg = e.options[m.selectedIndex].value;
+		var typ = document.forms["Tautotita_form"]["bus_type"].value;
+		var cus = document.forms["Tautotita_form"]["customers"].value;
 
+		if (loc == "") {
+			alert("Name must be filled out");
+        return false;
+		}
+		else{
+			alert(mon);
+		}
+	}
+	</script>
 
-  <!--fortwnei to jquery ston kwdika gia na douleuei i submit tou katw script -->
-		<script
-		  src="https://code.jquery.com/jquery-3.2.1.min.js"
-		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-		  crossorigin="anonymous">
-		</script>
-
-		<script>
-			function formSubmit(){
-				console.log("log")
-				$("#form").submit()
-        location.href='perigrafi.html';
-			}
-		</script>
-
+	<section class="top_card"  class="tautotita__save">
+            <button class="foot__back" onclick="validateForm()">Αποθήκευση</button>
+    </section>
+  
 
 	  <footer class="foot">
 		  <button class="foot__back" onclick="location.href='skeleton.html';">ΠΙΣΩ</button>
