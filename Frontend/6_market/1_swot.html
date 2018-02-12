@@ -239,10 +239,10 @@
                 <strong>Δυνατά Σημεία</strong>
               </label>
               <div class="icons">
-                <div class="leftIcon">
-                  <img src="img/previous.png"v-on:click="decreaseIndex(0)">
+                <div class="leftIcon" v-if="adviceIndex[0] > 0">
+                  <img src="img/previous.png" v-on:click="decreaseIndex(0)">
                 </div>
-                <div class="rightIcon">
+                <div class="rightIcon" v-if="adviceIndex[0] < advices[0].length -1">
                   <img src="img/next.png" v-on:click="increaseIndex(0)">
                 </div>
               </div>
@@ -262,10 +262,10 @@
                 <strong>Αδύνατα Σημεία</strong>
               </label>
               <div class="icons">
-                <div class="leftIcon">
+                <div class="leftIcon" v-if="adviceIndex[1] > 0">
                   <img src="img/previous.png"v-on:click="decreaseIndex(1)">
                 </div>
-                <div class="rightIcon">
+                <div class="rightIcon" v-if="adviceIndex[1] < advices[1].length -1">
                   <img src="img/next.png" v-on:click="increaseIndex(1)">
                 </div>
               </div>
@@ -288,10 +288,10 @@
                 <strong>Ευκαιρίες</strong>
               </label>
               <div class="icons">
-                <div class="leftIcon">
+                <div class="leftIcon" v-if="adviceIndex[2] > 0">
                   <img src="img/previous.png"v-on:click="decreaseIndex(2)">
                 </div>
-                <div class="rightIcon">
+                <div class="rightIcon" v-if="adviceIndex[2] < advices[2].length -1">
                   <img src="img/next.png" v-on:click="increaseIndex(2)">
                 </div>
               </div>
@@ -311,10 +311,10 @@
                 <strong>Απειλές</strong>
               </label>
               <div class="icons">
-                <div class="leftIcon">
+                <div class="leftIcon" v-if="adviceIndex[3] > 0">
                   <img src="img/previous.png"v-on:click="decreaseIndex(3)">
                 </div>
-                <div class="rightIcon">
+                <div class="rightIcon" v-if="adviceIndex[3] < advices[3].length -1">
                   <img src="img/next.png" v-on:click="increaseIndex(3)">
                 </div>
               </div>
