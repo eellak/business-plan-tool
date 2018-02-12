@@ -8,7 +8,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="0_skeleton.css">
 	<link rel="stylesheet" type="text/css" href="2_pestel.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -218,12 +219,12 @@
                 </ul>
             </div>
         </nav>
-        
+
         <main>
 			<h1>ΑΝΑΛΥΣΗ PESTEL</h1>
-			
+
 			<!-- ΠΟΛΙΤΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
             <FIELDSET class="set">
 				<LEGEND class="factors"><strong>ΠΟΛΙΤΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset" >
@@ -231,12 +232,12 @@
 					<TD>
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
-						<textarea placeholder="Παράγοντες που καθορίζουν το μέγεθος στο οποίο επηρεάζεται η δραστηριότητα της επιχείρησης από πολιτικούς παράγοντες." 
-						class="desctextclass"id="description1"></textarea>
+						<textarea placeholder="Παράγοντες που καθορίζουν το μέγεθος στο οποίο επηρεάζεται η δραστηριότητα της επιχείρησης από πολιτικούς παράγοντες."
+						class="desctextclass"id="description1" v-model="descriptions[0]">{{descriptions[0]}}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea placeholder="Φορολογία, δασμολογία, ..."class="examtextclass"id="examples1"></textarea>
+						<textarea placeholder="Φορολογία, δασμολογία, ..."class="examtextclass"id="examples1" v-model="examples[0]">{{examples[0]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn1" class="button">Συμβουλή!</button>
@@ -244,13 +245,13 @@
 								<p>Ποια είναι η πολιτική κατάσταση της χώρας και πως αυτή μπορεί να επηρεάσει τον κλάδο;</p>
 							</div>
 						</div>
-					
+
 				</TABLE>
 			</FIELDSET>
 			<br>
 			<br>
 			<!-- ΟΙΚΟΝΟΜΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
 			<FIELDSET class="set">
 				<LEGEND class="factors" ><strong>ΟΙΚΟΝΟΜΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset">
@@ -258,25 +259,25 @@
 					<TD>
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
-						<textarea placeholder="Παράγοντες που καθορίζουν κατά πόσο η οικονομική κατάσταση έχει άμεσο αντίκτυπο στην δραστηριότητα της επιχείρησης." 
-						class="desctextclass" id="description2"></textarea>
+						<textarea placeholder="Παράγοντες που καθορίζουν κατά πόσο η οικονομική κατάσταση έχει άμεσο αντίκτυπο στην δραστηριότητα της επιχείρησης."
+						class="desctextclass" id="description2" v-model="descriptions[1]">{{descriptions[1]}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea <textarea placeholder="Πληθωρισμός, νομισματική πολιτική, άμεσες ξένες επενδύσεις, ..." class="examtextclass" id="examples2"></textarea>
+						<textarea placeholder="Πληθωρισμός, νομισματική πολιτική, άμεσες ξένες επενδύσεις, ..." class="examtextclass" id="examples2" v-model="examples[1]">{{examples[1]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn1" class="button">Συμβουλή!</button>
 							<div>
 								<p>Ποιοι είναι οι επικρατέστεροι οικονομικοί παράγοντες;</p>
 							</div>
-						</div>					
+						</div>
 				</TABLE>
 			</FIELDSET>
 			<br>
 			<br>
 			<!-- ΚΟΙΝΩΝΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
 			<FIELDSET class="set">
 				<LEGEND class="factors" ><strong>ΚΟΙΝΩΝΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset" >
@@ -284,12 +285,12 @@
 					<TD>
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
-						<textarea placeholder="Παράγοντες που αφορούν το κοινωνικό περιβάλλον της αγοράς στην οποία δραστηριοποιείται η επιχείρηση." 
-						class="desctextclass" id="description3"></textarea>
+						<textarea placeholder="Παράγοντες που αφορούν το κοινωνικό περιβάλλον της αγοράς στην οποία δραστηριοποιείται η επιχείρηση."
+						class="desctextclass" id="description3" v-model="descriptions[2]">{{descriptions[2]}}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea placeholder="Τάσεις της μόδας, δημογραφικά χαρακτηριστικά, ..." class="examtextclass" id="examples3"></textarea>
+						<textarea placeholder="Τάσεις της μόδας, δημογραφικά χαρακτηριστικά, ..." class="examtextclass" id="examples3" v-model="examples[2]">{{examples[2]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn3" class="button">Συμβουλή!</button>
@@ -297,13 +298,13 @@
 								<p> Πόση σημασία έχει η κουλτούρα στον συγκεκριμένο κλάδο και ποιοι παράγοντες καθορίζουν την κουλτούρα αυτή;</p>
 							</div>
 						</div>
-					
+
 				</TABLE>
 			</FIELDSET>
 			<br>
 			<br>
 			<!-- ΤΕΧΝΟΛΟΓΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
 			<FIELDSET class="set">
 				<LEGEND class="factors"><strong>ΤΕΧΝΟΛΟΓΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset">
@@ -312,11 +313,11 @@
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
 						<textarea placeholder="Παράγοντες που μπορεί να δώσουν τεχνολογικές λύσεις και αλλαγές στον τρόπο που λειτουργεί ο κλάδος της επιχείρησης. Επηρεάζουν είτε θετικά είτε αρνητικά."
-						class="desctextclass" id="description4"></textarea>
+						class="desctextclass" id="description4" v-model="descriptions[3]">{{descriptions[3]}}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea placeholder="Aυτοματισμοί, έρευνα και ανάπτυξη, επίγνωση του κόσμου σχετικά με τις τεχνολογικές εξελίξεις, ..." class="examtextclass" id="examples4"></textarea>
+						<textarea placeholder="Aυτοματισμοί, έρευνα και ανάπτυξη, επίγνωση του κόσμου σχετικά με τις τεχνολογικές εξελίξεις, ..." class="examtextclass" id="examples4" v-model="examples[3]">{{examples[3]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn4" class="button">Συμβουλή!</button>
@@ -324,13 +325,13 @@
 								<p>Ποιες τεχνολογικές καινοτομίες προβλέπεται ότι θα εμφανιστούν και πως αυτές μπορούν να επηρεάσουν τον κλάδο;</p>
 							</div>
 						</div>
-					
+
 				</TABLE>
 			</FIELDSET>
 			<br>
 			<br>
 			<!-- ΝΟΜΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
 			<FIELDSET class="set">
 				<LEGEND class="factors" ><strong>ΝΟΜΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset" >
@@ -339,11 +340,11 @@
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
 						<textarea placeholder="Παράγοντες που έχουν να κάνουν με το εξωτερικό νομοθετικό πλαίσιο και με τον εσωτερικό κανονισμό της επιχείρησης"
-						class="desctextclass" id="description5"></textarea>
+						class="desctextclass" id="description5" v-model="descriptions[4]">{{descriptions[4]}}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea placeholder="Εργασιακή νομοθεσία, προστασία καταναλωτή, προδιαγραφές ποιότητας και ασφάλειας, ..." class="examtextclass" id="examples5"></textarea>
+						<textarea placeholder="Εργασιακή νομοθεσία, προστασία καταναλωτή, προδιαγραφές ποιότητας και ασφάλειας, ..." class="examtextclass" id="examples5" v-model="examples[4]">{{examples[4]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn5" class="button">Συμβουλή!</button>
@@ -351,13 +352,13 @@
 								<p>Ποια είναι η σχετική νομοθεσία με τον κλάδο;</p>
 							</div>
 						</div>
-					
+
 				</TABLE>
 			</FIELDSET>
 			<br>
 			<br>
 			<!-- ΠΕΡΙΒΑΛΛΟΝΤΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ-->
-			
+
 			<FIELDSET class="set">
 				<LEGEND class="factors" ><strong>ΠΕΡΙΒΑΛΛΟΝΤΙΚΟΙ ΠΑΡΑΓΟΝΤΕΣ</strong></LEGEND>
 				<TABLE class="contentset" >
@@ -366,11 +367,11 @@
 						<LABEL class="contenttitles" for="description">ΠΕΡΙΓΡΑΦΗ</LABEL>
 						<TD>
 						<textarea placeholder="Παράγοντες που καθορίζονται από το περιβάλλον"
-						class="desctextclass" id="description6"></textarea>
+						class="desctextclass" id="description6" v-model="descriptions[5]">{{descriptions[5]}}</textarea>
 					<TD>
 					<LABEL class="contenttitles" for="examples">ΠΑΡΑΔΕΙΓΜΑΤΑ</LABEL>
 					<TD>
-						<textarea placeholder="Κλίμα/Καιρός, γεωγραφική θέση, κλιματική αλλαγή, ..." class="examtextclass" id="examples6"></textarea>
+						<textarea placeholder="Κλίμα/Καιρός, γεωγραφική θέση, κλιματική αλλαγή, ..." class="examtextclass" id="examples6" v-model="examples[5]">{{examples[5]}}</textarea>
 					<TD>
 						<div class="text_container">
 						<button id="btn6" class="button">Συμβουλή!</button>
@@ -378,17 +379,19 @@
 								<p>Ποιες είναι οι περιβαλλοντικές ανησυχίες για τον κλάδο;</p>
 							</div>
 						</div>
-					
+
 				</TABLE>
 			</FIELDSET>
-			<br>
-			<br>
-			
-			
-			
+      <br>
+      <button id="confirm" class="button" v-on:click="saveData">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+      <br>
+      <br>
+
+
+
         </main>
     </div>
-    
+
 
 
 
@@ -401,7 +404,7 @@
         <button class="foot__next" onclick="nextPage()">ΜΠΡΟΣΤΑ</button>
     </footer>
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-    
+
     <script type="text/javascript">
 		$(document).ready(function(){
 			$('.text_container').addClass("hidden");
@@ -417,15 +420,16 @@
 				}
 			});
 		});
-		
+
 		function previousPage(){
 			window.location.href = "1_swot.html";
 		}
-		
+
 		function nextPage(){
 			window.location.href = "3_general.html";
 		}
 </script>
+<script src="2_pestel.js"></script>
 </body>
 
 </html>

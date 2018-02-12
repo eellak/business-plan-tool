@@ -1,0 +1,647 @@
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\DatabaseTexnologia\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\DatabaseTexnologia\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\DatabaseTexnologia\obj\Debug\DatabaseTexnologia.exe
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\DatabaseTexnologia\obj\Debug\DatabaseTexnologia.pdb
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\DatabaseTexnologia\obj\Debug\DatabaseTexnologia.exe.config
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+C:\Users\VeneTheo\Desktop\working projects\C# projects\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+U:\My Documents\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+U:\My Documents\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+U:\My Documents\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+U:\My Documents\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+U:\My Documents\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+C:\Users\user\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+C:\Users\lenovo\Desktop\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+G:\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+G:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+G:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+G:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+G:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll.config
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\DBconnection.pdb
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\Microsoft.Win32.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\netstandard.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.AppContext.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Concurrent.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.NonGeneric.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Collections.Specialized.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ComponentModel.TypeConverter.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Console.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Data.Common.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Contracts.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Debug.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Process.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.StackTrace.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tools.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.TraceSource.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Diagnostics.Tracing.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Drawing.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Dynamic.Runtime.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Calendars.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Globalization.Extensions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Compression.ZipFile.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.FileSystem.Watcher.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.IsolatedStorage.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.MemoryMappedFiles.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.Pipes.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Expressions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Parallel.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Linq.Queryable.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Http.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NameResolution.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.NetworkInformation.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Ping.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Requests.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Security.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.Sockets.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebHeaderCollection.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.Client.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Net.WebSockets.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ObjectModel.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Extensions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Reflection.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Reader.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.ResourceManager.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Resources.Writer.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Extensions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Handles.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Numerics.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Formatters.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Json.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Runtime.Serialization.Xml.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Claims.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Csp.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.Principal.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Security.SecureString.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.Encoding.Extensions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Text.RegularExpressions.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Overlapped.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Tasks.Parallel.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Thread.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.ThreadPool.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Threading.Timer.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.ValueTuple.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.ReaderWriter.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XDocument.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlDocument.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XmlSerializer.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\System.Xml.XPath.XDocument.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.dll
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\Models.pdb
+F:\Business Plan Tool\Backend\DBconnection\bin\Debug\MySql.Data.xml
+F:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+F:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+F:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.dll
+F:\Business Plan Tool\Backend\DBconnection\obj\Debug\DBconnection.pdb
