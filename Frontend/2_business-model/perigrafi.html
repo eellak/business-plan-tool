@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
-    <!--Grammi 8 -9 mipws prepei na fugei???-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -161,7 +160,7 @@
           }
         </style>
 
-        <section class="top_card">
+        <section class="top_card" class="perigrafi__instructions">
             <button class="foot__back" onclick="myFunction()">ΟΔΗΓΙΕΣ</button>
         </section>
 
@@ -182,22 +181,41 @@
         </script>
 
 
-        <form>
+        <form name="Perigrafi_Form"  class="perigrafi__block">
           <section class="my_card">
             <div class="my_card_head"><p> Περιγραφή του επιχειρηματικού μοντέλου:</p></div>
-            <textarea id="location" cols="120" rows="30"></textarea>
+            <textarea id="location"  name="perigrafi_text" cols="120" rows="30"></textarea>
           </section>
         </form>
 
     </main>
   </div>
+  
+   <script>
+	function validateForm() {
+		var x = document.forms["Perigrafi_Form"]["perigrafi_text"].value;
+		if (x == "") {
+			alert("Name must be filled out");
+        return false;
+		}
+		else{
+			alert(x);
+		}
+	}
+	</script>
+	
+	<section class="top_card"  class="perigrafi__save">
+            <button class="foot__back" onclick="validateForm()">Αποθήκευση</button>
+    </section>
+  
+  
 
   <footer class="foot">
       <button class="foot__back" onclick="location.href='tautotita.html';">ΠΙΣΩ</button>
       <span class="foot__pagination">
           <p>2/2</p>
       </span>
-      <button class="foot__next" onclick="location.href='sinopsi.html';">ΜΠΡΟΣΤΑ</button>
+      <button class="foot__next" onclick="location.href='../3_human-resources/3.1 Ομάδα Διοίκησης/part1.html';">ΜΠΡΟΣΤΑ</button>
   </footer>
   </body>
 

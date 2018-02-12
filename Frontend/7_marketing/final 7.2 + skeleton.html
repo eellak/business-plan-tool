@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,18 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* BASIC ELEMENTS */
-        .basic_button {
-            background-color: rgb(24, 146, 105);
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -32,7 +21,7 @@
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
             <p>Export</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="avatar.jpg" alt="Avatar">
     </header>
 
 
@@ -150,83 +139,106 @@
         </nav>
 
         <main>
-            <!-- INSTRUCTIONS -->
-                        <!-- instruction script -->
-            <script type="text/x-template" id="modal-template">
-                <transition name="modal">
-                <div class="modal-mask">
-                    <div class="modal-wrapper">
-                    <div class="modal-container">
-            
-                        <div class="modal-header">
-                        <slot name="header"></slot>
-                        </div>
-            
-                        <div class="modal-body">
-                        <slot name="body"></slot>
-                        </div>
-            
-                        <div class="modal-footer">
-                        <slot name="footer">
-                            <button class="modal-default-button" @click="$emit('close')">
-                            OK
-                            </button>
-                        </slot>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </transition>
-            </script>
-                <!-- instruction html -->
-            <div id="instr">
-                <button id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
-                <modal v-if="showModal" @close="showModal = false">
-                <h3 slot="header">ΝΕΚΡΟ ΣΗΜΕΙΟ</h3>
-                <p slot="body"> 
-                    Σε αυτή την ενότητα υπολογίζεται το Νεκρό Σημείο των προιόντων.Δηλαδή, το σημείο στο 
-                    οποίο το ύψος των πωλήσεων έχει συνολικά έσοδα ίσα με τα συνολικά έξοδα.
-                    Συμπληρώστε τα απαραίτητα πεδία και πατήστε το πλήκτρο για τον υπολογισμό του Νεκρού Σημείου. 
-                    Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
-                </p>
-                </modal>
+            <button id="button1" class="button1" onclick="instr()" >ΟΔΗΓΙΕΣ</button>
 
-            
-            
-            
-            </div>
-            
-            </script>
-
-            <!-- MAIN BODY -->
-            <div id="userArea">
-                <h1 id="pageHeader">ΝΕΚΡΟ ΣΗΜΕΙΟ</h1>
-                <br/>
-                <div v-for="s in selections" >
-                    <my-table></my-table> 
+                <div id="hidden_div" class="hiddenDiv">
+    				<div id="odigies">
+                            <p class="first">Βοηθητικές οδηγίες για τη σωστή περιγραφή ενεργειών marketing:</p>
+                            <p>1. Αναλυτική περιγραφή την ενέργειας marketing.</p>
+                            <p>2. Σωστός και σαφής υπολογισμός του κόστους κάθε ενέργειας.</p>
+                            <p>3. Σε περίπτωση επανάληψης, αναφέρετε αναλυτικά κάθε πότε θα συμβαίνει η ενέργεια. </p>
+                            <p>4. Το συνολικό κόστος υπάρχει σε περίπτωση επανάληψης. Τότε πρέπει να γίνει υπολογισμός του συνολικού κόστους της ενέργειας ανάλογα με την εκάστοτε επανάληψη.</p>
+    				</div>
                 </div>
-                <button id="addButton" @click="create()" >+</button> <br/>
-            </div>
-            
+            <div id = "root">
+            <form class="strategy_form">
+                <label>1. Ποιά ενέργεια θα πράξετε για την προώθηση του προιόντος/υπηρεσίας σας;<br>
+                    <input id="input" type="text" name="energeia" placeholder="ΕΝΕΡΓΕΙΑ" v-model="mytitle"></label>
+                <br><br>
+               <div class="half">
+                   <label>2. Ποίος έιναι ο αναμενόμενος χρόνος υλοποίησής;
+                       <input id="input" type="text" name="xronos_ulipoihshs" placeholder="ΧΡΟΝΟΣ ΥΛΟΠΟΙΗΣΗΣ" v-model="myimplementationTime">
+                  </label>
+                    <br><br>
+                        <label>4. Ποιό είναι το προβλεπόμενο κόστος υλοποίησης;
+                       <input  id="input" type="text" name="kostos_ulopoisis" placeholder="ΚΟΣΤΟΣ ΥΛΟΠΟΙΗΣΗΣ" v-model="myimplementationCost">
+                    </label>
+
+                   </div>
+
+
+                <div class="half">
+                    <label>3. Πόσο συχνά θα επαναλμβάνεται αυτή η ενέργεια;
+                            <input id="input" type="text" name="syxnotita" placeholder="ΣΥΧΝΟΤΗΤΑ" v-model="myfrequency">
+                            </label>
+                    <br><br>
+                    <label>5. Ποιό είναι το προβλεπόμενο συνολικό κόστος;
+                        <input  id="input" type="text" name="sunoliko_kostos" placeholder="ΣΥΝΟΛΙΚΟ ΚΟΣΤΟΣ(επανάληψη)" v-model="mytotalCost">
+                    </label>
+
+                </div>
+                <button id="Submitbtn" v-on:click="postData">Save Data</button>
+              </div>
+
+            </form>
+
         </main>
     </div>
 
+<script>
+new Vue({
+  el: '#root',
+  data: {
+    mytitle:'',
+    myimplementationTime:'',
+    myfrequency: '',
+    myimplementationCost: '',
+    mytotalCost:''
+  },
+  methods:{
+    postData(){
+        axios.post(`http://jsonplaceholder.typicode.com/posts`, {
+                            Title: this.title,
+                            ImplementationTime: this.myimplementationTime,
+                            Frequency: this.myfrequency,
+                            ImplementationCost: this.myimplementationCost,
+                            TotalCost: this.mytotalCost })
+                      .then(function (response) {
+                          console.log(response);
+                      })
+                      .catch(function (error) {
+                          console.log(error);
+                      });
+    }
+  }
+  }
+});
+</script>
 
     <footer class="foot">
-            <button class="foot__back" onclick="location.href='2_operatingCost.html';">ΠΙΣΩ</button>
-            <span class="foot__pagination">
-                <p>3/3</p>
-            </span>
-            <button id="foot__next" onclick="">ΜΠΡΟΣΤΑ</button>
+        <button class="foot__back">ΠΡΟΗΓΟΥΜΕΝΟ</button>
+        <span class="foot__pagination">
+            <p>2/2</p>
+        </span>
+        <button class="foot__next">ΕΠΟΜΕΝΟ</button>
     </footer>
 
-    <!-- Import Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- Import jQuery.js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Import our logic file -->
-    <script src="logic3.js"></script>
+    <script type="text/javascript">
+        var y = document.getElementById("hidden_div");
+		      y.style.display = 'none';
+		function instr(){
+            var x = document.getElementById("hidden_div");
+            var w = document.getElementById("button1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                w.style.backgroundColor ='#12492a';
+            } else {
+                x.style.display = "none";
+                w.style.backgroundColor ='#299858';
+            }
+        }
+        </script>
+
 </body>
 
 </html>
-

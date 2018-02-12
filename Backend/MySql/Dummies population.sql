@@ -68,9 +68,9 @@ insert into market_analysis_notes (business_plans_bpID,text) values ('2','note 2
 insert into marketing (business_plans_bpID,title,implementation,frequency,implementationCost,totalCost) values ('1','marketing action 1','43214','32','12351','904358');
 insert into marketing (business_plans_bpID,title,implementation,frequency,implementationCost,totalCost) values ('2','marketing action 2','41234','321','1432598','9311358');
 insert into marketing (business_plans_bpID,title,implementation,frequency,implementationCost,totalCost) values ('3','marketing action 3','49530','132','13124','93458');
-insert into pestel (business_plans_bpID,description,example) values ('1','pestel 1','example 1');
-insert into pestel (business_plans_bpID,description,example) values ('3','pestel 2','example 2');
-insert into pestel (business_plans_bpID,description,example) values ('2','pestel 3','example 3');
+insert into pestel (business_plans_bpID,factorID,description,example) values ('1','1','pestel 1','example 1');
+insert into pestel (business_plans_bpID,factorID,description,example) values ('1','2','pestel 2','example 2');
+insert into pestel (business_plans_bpID,factorID,description,example) values ('1','3','pestel 3','example 3');
 insert into roles (role_name) values ('role 1');
 insert into roles (role_name) values ('role 2');
 insert into roles (role_name) values ('role 3');
