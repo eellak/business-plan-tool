@@ -83,11 +83,11 @@ CREATE TABLE Market_Analysis_Notes (
 
 
 CREATE TABLE PESTEL (
-  factorID INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  factorID INTEGER UNSIGNED  NOT NULL ,
   business_plans_bpID INTEGER UNSIGNED  NOT NULL  ,
   description VARCHAR(120)  NULL  ,
   example VARCHAR(120)  NULL    ,
-PRIMARY KEY(factorID),
+PRIMARY KEY(business_plans_bpID,factorID),
   FOREIGN KEY(business_plans_bpID)
     REFERENCES business_plans(bpID)
       ON DELETE CASCADE
@@ -405,7 +405,3 @@ PRIMARY KEY(clientID, identity_identityID),
     REFERENCES identity(identityID)
       ON DELETE CASCADE
       ON UPDATE CASCADE);
-
-
-
-
