@@ -18,6 +18,7 @@ new Vue({
               axios.post(url +"/api/note",tempObj)
               .then(function (response) {
                 console.log(response);
+                alert("Αποθηκεύτηκε Επιτυχώς!");
               })
               .catch(function (error) {
                 console.log(error);
@@ -27,12 +28,16 @@ new Vue({
               axios.put(url +"/api/note/" + this.businessPlanId,tempObj)
               .then(function (response) {
                 console.log(response);
+                alert("Αποθηκεύτηκε Επιτυχώς!");
               })
               .catch(function (error) {
                 console.log(error);
               });
             }
             this.myObj = tempObj;
+          }
+          else {
+            alert("Δεν έγινε καμία αλλαγή!");
           }
         },
         equals: function (objectA, objectB) {

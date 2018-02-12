@@ -12,6 +12,7 @@ new Vue({
     },
     methods: {
       saveData: function() {
+        var saved = false;
         for(i=0; i<this.numberOfFactors; i++){
           tempObj = {
             "ID": i+1,
@@ -20,6 +21,7 @@ new Vue({
             "Example": this.examples[i]
           }
           if(!this.equals(tempObj,this.myObj[i])){
+            saved = true;
             if (this.myObj[i] == null) {
               axios.post(url +"/api/factor", tempObj)
               .then(function (response) {
@@ -40,6 +42,12 @@ new Vue({
             }
             this.myObj[i] = tempObj;
           }
+        }
+        if(saved){
+          alert("Αποθηκεύτηκε Επιτυχώς!");
+        }
+        else {
+          alert("Δεν έγινε καμία αλλαγή!");
         }
       },
       equals: function (objectA, objectB) {

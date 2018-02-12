@@ -23,6 +23,7 @@ new Vue({
             axios.post(url +"/api/swot",this.myObj)
             .then(function (response) {
               console.log(response);
+              alert("Αποθηκεύτηκε Επιτυχώς!");
             })
             .catch(function (error) {
               console.log(error);
@@ -32,6 +33,7 @@ new Vue({
             axios.put(url +"/api/swot/" + this.businessPlanId,this.myObj)
             .then(function (response) {
               console.log(response);
+              alert("Αποθηκεύτηκε Επιτυχώς!");
             })
             .catch(function (error) {
               console.log(error);
