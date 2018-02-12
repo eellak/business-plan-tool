@@ -112,22 +112,18 @@ strong {
 	cursor: pointer;
 }
 
-.deleteIcon {
+.rightIcon {
 	display:inline-flex;
 	float: right;
 }
 
-.addIcon {
+.leftIcon {
 	display:inline-block;
 	float: left;
 }
 
 .advices {
 	text-align: center;
-}
-
-.adviceIcons {
-	display: inline-flex;
-	padding: 2%;
-	cursor: pointer;
+	margin-top: -1%;
+	padding-bottom: 2%;
 }

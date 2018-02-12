@@ -238,21 +238,21 @@
               <label>
                 <strong>Δυνατά Σημεία</strong>
               </label>
-              <h4 class="advices" >{{advices[0][adviceIndex[0]]}}</h4>
-              <div class="adviceIcons">
-                <div >
+              <div class="icons">
+                <div class="leftIcon">
                   <img src="img/previous.png"v-on:click="decreaseIndex(0)">
                 </div>
-                <div >
+                <div class="rightIcon">
                   <img src="img/next.png" v-on:click="increaseIndex(0)">
                 </div>
               </div>
+              <h4 class="advices" >{{advices[0][adviceIndex[0]]}}</h4>
               <textarea  v-for="i in spots[0].length" v-model="spots[0][i-1]">{{spots[0][i-1]}}</textarea>
               <div class="icons">
-                <div class="addIcon">
+                <div class="leftIcon">
                   <img  src="img/add.png"v-on:click="addSpot(0)">
                 </div>
-                <div class="deleteIcon">
+                <div class="rightIcon">
                   <img src="img/delete.png" v-on:click="removeSpot(0)">
                 </div>
               </div>
@@ -261,21 +261,21 @@
               <label>
                 <strong>Αδύνατα Σημεία</strong>
               </label>
-              <h4 class="advices" >{{advices[1][adviceIndex[1]]}}</h4>
-              <div class="adviceIcons">
-                <div >
+              <div class="icons">
+                <div class="leftIcon">
                   <img src="img/previous.png"v-on:click="decreaseIndex(1)">
                 </div>
-                <div >
+                <div class="rightIcon">
                   <img src="img/next.png" v-on:click="increaseIndex(1)">
                 </div>
               </div>
+              <h4 class="advices" >{{advices[1][adviceIndex[1]]}}</h4>
               <textarea  v-for="i in spots[1].length" v-model="spots[1][i-1]">{{spots[1][i-1]}}</textarea>
               <div class="icons">
-                <div class="addIcon">
+                <div class="leftIcon">
                   <img  src="img/add.png"v-on:click="addSpot(1)">
                 </div>
-                <div class="deleteIcon">
+                <div class="rightIcon">
                   <img src="img/delete.png" v-on:click="removeSpot(1)">
                 </div>
               </div>
@@ -287,21 +287,21 @@
               <label>
                 <strong>Ευκαιρίες</strong>
               </label>
-              <h4 class="advices" >{{advices[2][adviceIndex[2]]}}</h4>
-              <div class="adviceIcons">
-                <div >
+              <div class="icons">
+                <div class="leftIcon">
                   <img src="img/previous.png"v-on:click="decreaseIndex(2)">
                 </div>
-                <div >
+                <div class="rightIcon">
                   <img src="img/next.png" v-on:click="increaseIndex(2)">
                 </div>
               </div>
+              <h4 class="advices" >{{advices[2][adviceIndex[2]]}}</h4>
               <textarea  v-for="i in spots[2].length" v-model="spots[2][i-1]">{{spots[2][i-1]}}</textarea>
               <div class="icons">
-                <div class="addIcon">
+                <div class="leftIcon">
                   <img  src="img/add.png"v-on:click="addSpot(2)">
                 </div>
-                <div class="deleteIcon">
+                <div class="rightIcon">
                   <img src="img/delete.png" v-on:click="removeSpot(2)">
                 </div>
               </div>
@@ -310,21 +310,21 @@
               <label>
                 <strong>Απειλές</strong>
               </label>
-              <h4 class="advices" >{{advices[3][adviceIndex[3]]}}</h4>
-              <div class="adviceIcons">
-                <div >
+              <div class="icons">
+                <div class="leftIcon">
                   <img src="img/previous.png"v-on:click="decreaseIndex(3)">
                 </div>
-                <div >
+                <div class="rightIcon">
                   <img src="img/next.png" v-on:click="increaseIndex(3)">
                 </div>
               </div>
+              <h4 class="advices" >{{advices[3][adviceIndex[3]]}}</h4>
               <textarea  v-for="i in spots[3].length" v-model="spots[3][i-1]">{{spots[3][i-1]}}</textarea>
               <div class="icons">
-                <div class="addIcon">
+                <div class="leftIcon">
                   <img  src="img/add.png"v-on:click="addSpot(3)">
                 </div>
-                <div class="deleteIcon">
+                <div class="rightIcon">
                   <img src="img/delete.png" v-on:click="removeSpot(3)">
                 </div>
               </div>
