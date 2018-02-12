@@ -1,137 +1,119 @@
 <template>
   <div class="skeleton">
-
+  <body>
     <header class="head">
         <div class="head__logo">
-            <img src="../assets/logo.png" alt="Logo">
+            <img src="../assets/Logo.png" alt="Logo">
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p>Export</p>
+            <button @click="exportFunction()">Export</button>
         </div>
-        <img class="head__avatar" src="../assets/elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="../assets/avatar.png" alt="Avatar">
     </header>
 
     <div class="main_container">
         <nav>
             <div class="sections-menu">
-                <ul>
-                    <li>
-                      <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
+                <ul class="sections-menu-ul">
+                    <li class="has-sub">
+                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ<span class="sub-arrow"></span></a>
                       <ul>
-                        <router-link to="/2a-identity" tag="li" class="">
+                        <router-link to="/identity" tag="li" class="">
                           <a>ΤΑΥΤΟΤΗΤΑ</a>
                         </router-link>
-                        <router-link to="/2b-description" tag="li" class="">
+                        <router-link to="/description" tag="li" class="">
                           <a>ΠΕΡΙΓΡΑΦΗ</a>
                         </router-link>
                       </ul>
                     </li>
-                    <!-- <li>
-                        <a href="">ΕΠΙΧΕΙΡΗΜΑΤΙΚΟ ΜΟΝΤΕΛΟ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΤΑΥΤΟΤΗΤΑ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΕΡΙΓΡΑΦΗ</a>
-                            </li>
-                        </ul>
+                    <li class="has-sub">
+                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/managers" tag="li" class="">
+                          <a>ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                        </router-link>
+                        <router-link to="/partners" tag="li" class="">
+                          <a>ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
+                        </router-link>
+                        <router-link to="/humancosts" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/faculties" tag="li" class="">
+                          <a>ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
+                        </router-link>
+                        <router-link to="/equipment" tag="li" class="">
+                          <a>ΕΞΟΠΛΙΣΜΟΣ</a>
+                        </router-link>
+                        <router-link to="/running-cost" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/characteristics" tag="li" class="">
+                          <a>ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ</a>
+                        </router-link>
+                        <router-link to="/copyrights" tag="li" class="">
+                          <a>ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
+                        </router-link>
+                        <router-link to="/revenues" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/swot" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ SWOT</a>
+                        </router-link>
+                        <router-link to="/pestel-factors" tag="li" class="">
+                          <a>ΑΝΑΛΥΣΗ PESTEL</a>
+                        </router-link>
+                        <router-link to="/market-note" tag="li" class="">
+                          <a>ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/strategy" tag="li" class="">
+                          <a>ΣΤΡΑΤΗΓΙΚΗ</a>
+                        </router-link>
+                        <router-link to="/marketing-actions" tag="li" class="">
+                          <a>ΕΝΕΡΓΕΙΕΣ MARKETING</a>
+                        </router-link>
+                      </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ<span class="sub-arrow"></span></a>
+                      <ul>
+                        <router-link to="/start-actions" tag="li" class="">
+                          <a>ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
+                        </router-link>
+                        <router-link to="/function-cost" tag="li" class="">
+                          <a>ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
+                        </router-link>
+                        <router-link to="/dead-spot" tag="li" class="">
+                          <a>ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
+                        </router-link>
+                      </ul>
                     </li>
                     <li>
-                        <a href="">ΑΝΘΡΩΠΙΝΟ ΔΥΝΑΜΙΚΟ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΡΟΣΩΠΙΚΟ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
-                            </li>
-                        </ul>
+                      <router-link to="/timeline" tag="a" class="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</router-link>
                     </li>
                     <li>
-                        <a href="">ΕΓΚΑΤΑΣΤΑΣΕΙΣ - ΕΞΟΠΛΙΣΜΟΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΤΟΠΟΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΞΟΠΛΙΣΜΟΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΚΟΣΤΟΥΣ</a>
-                            </li>
-                        </ul>
+                      <router-link to="/timeline" tag="a" class="">ΣΥΝΟΨΗ</router-link>
                     </li>
-                    <li>
-                        <a href="">ΠΡΟΪΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΠΡΟΙΟΝΤΑ - ΥΠΗΡΕΣΙΕΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ ΕΣΟΔΩΝ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">ΑΝΑΛΥΣΗ ΑΓΟΡΑΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ SWOT</a>
-                            </li>
-                            <li>
-                                <a href="">ΑΝΑΛΥΣΗ PESTEL</a>
-                            </li>
-                            <li>
-                                <a href="">ΓΕΝΙΚΕΣ ΠΑΡΑΤΗΡΗΣΕΙΣ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">ΣΤΡΑΤΗΓΙΚΗ MARKETING</a>
-                        <ul>
-                            <li>
-                                <a href="">ΣΤΡΑΤΗΓΙΚΗ</a>
-                            </li>
-                            <li>
-                                <a href="">ΕΝΕΡΓΕΙΕΣ MARKETING</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">ΧΡΗΜΑΤΟΙΚΟΝΟΜΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ</a>
-                        <ul>
-                            <li>
-                                <a href="">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</a>
-                            </li>
-                            <li>
-                                <a href="">ΝΕΚΡΟ ΣΗΜΕΙΟ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</a>
-                    </li>
-                    <li>
-                        <a href="">ΠΑΡΑΡΤΗΜΑ</a>
-                    </li>
-                    <li>
-                        <a href="">ΣΥΝΟΨΗ</a>
-                    </li> -->
-
                 </ul>
             </div>
         </nav>
@@ -148,176 +130,193 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-    
+      </body>
   </div>
 </template>
 
 <script>
+import pdfMake from "pdfmake/build/pdfmake"
+import pdfFonts from "pdfmake/build/vfs_fonts"
+pdfMake.vfs = pdfFonts.pdfMake.vfs
 export default {
-  name: 'Skeleton',
+ 	name: 'Skeleton',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+    mounted(){
+              $(document).ready(function(e) {
+            $('.has-sub').click(function(){
+                event.preventDefault();
+                $(this).toggleClass('tap');
+            });
+        });
+  },
+  methods: {
+  	// This function returns a parsed date from the db form(YYYYMMDD) into proper form with slashes(DD/MM/YYYY)
+  	dateParser(date){
+  		return String(date).slice(6) + "/" 
+	 			+ String(date).slice(4, 6) + "/"
+	 			+ String(date).slice(0, 4)
+  	},
+    exportFunction(){
+    	var db = this.$store.state
+			// PDFMake code here
+			var docDefinition = {
+				// Content of the pdf document
+				content: [
+					// Section 1
+					{text: "Επιχειρηματικό Μοντέλο", style: "sectionHeader"},
+					" ",
+					// Subsection 1.1
+					// This content element is a complicated one, with extra "tags" like bold, underline, etc., all contained into the style. 
+					// Notice it is inside curly brackets.
+					{text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
+					" ", // Newline
+					// This content element is a simple string element, no need for curly brackets, just comma after it.
+					"Όνομα επιχείρησης: " 		 + db.identity[0].Name,
+					"Ημερομηνία δημιουργίας: " + this.dateParser(db.identity[0].Date),
+					"Νομική μορφή: " 		       + db.identity[0].LegalForm,
+					"Τύπος επιχείρησης: "      + db.identity[0].OrderOfBusiness
+					
+				], // Content array end
+				styles: {
+				    sectionHeader: {
+				      bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
+				    },
+				    subSectionHeader: {
+				      bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+				    }
+				  }
+			} // docDefinition end
+			
+			// Download the PDF, named after the business name given in section 1.1
+			pdfMake.createPdf(docDefinition).download(db.identity[0].Name + "BusinessPlan.pdf");
+    } // ExportFun end		
   }
 }
 </script>
 
 <style>
-        /* APP */
+/* APP */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: stretch;
+    min-height: 100vh;
+}
 
-        .skeleton {
-            display: flex;
-            flex-direction: column;
-            justify-content: initial;
-            align-items: stretch;
-            min-height: 100vh;
-        }
+/* HEADER */
+.head {
+    background-color: rgb(30, 33, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 0.1px solid black;
+}
+.head__logo {
+    margin-left: 20px;
+}
+.head__export {
+    color: #fff;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
+.head__avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.head__export p {
+    margin-left: 5px;
+    font-size: 20px;
+}
+.head__export i {}
+/* FOOTER */
+footer {
+    background-color: rgb(203, 202, 202);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot__back {
+    margin-right: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+.foot__next {
+    margin-left: 30px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+}
+.foot__pagination {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+main {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+nav {
+    background-color: rgb(30, 33, 51);
+    width: 350px;
+}
 
-
-        /* HEADER */
-
-        .head {
-            background-color: rgb(30, 33, 51);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            ;
-        }
-
-        .head__logo {
-            margin-left: 20px;
-        }
-
-        .head__export {
-            color: #fff;
-            display: flex;
-            margin-right: 100px;
-            align-items: center;
-        }
-
-
-        .head__avatar {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        .head__export p {
-            margin-left: 5px;
-            font-size: 20px;
-        }
-
-        .head__export i {}
-
-
-        /* FOOTER */
-
-        footer {
-            background-color: rgb(203, 202, 202);
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .foot__back {
-            margin-right: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-
-        .foot__next {
-            margin-left: 30px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-
-        .foot__pagination {
-            font-size: 20px;
-            font-weight: 600;
-            color: black;
-        }
-
-
-        main {
-            flex-grow: 1;
-        }
-
-        .main_container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-        }
-
-        nav {
-            background-color: rgb(30, 33, 51);
-            width: 350px;
-        }
-
-
-        /* SECTIONS MENU */
-
-        .sections-menu {}
-
-        .sections-menu ul {
-            list-style: none;
-            margin: 0;
-        }
-
-        .sections-menu ul li {
-            padding: 15px;
-            position: relative;
-            width: 350px;
-            border-top: 1px solid black;
-            background-color: rgb(30, 33, 51);
-        }
-
-        .sections-menu ul li {
-            border-right: 5px solid rgb(61, 65, 90);
-        }
-
-        .sections-menu ul ul {
-            opacity: 0;
-            position: absolute;
-            visibility: hidden;
-            left: 100%;
-            top: -2%;
-            background-color: rgb(40, 44, 63);
-        }
-
-        .sections-menu ul ul li {
-            background-color: rgb(79, 84, 115);
-            width: 250px;
-        }
-
-        .sections-menu ul li:hover ul {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .sections-menu ul li a {
-            color: white;
-        }
-
-
+/* SECTIONS MENU */
+.sections-menu-ul{
+list-style-type: none;
+padding-left:0px;
+}
+.sections-menu-ul ul{
+display: none;
+list-style-type: none;
+background-color: rgb(40, 44, 63);
+padding-left:10px;
+}
+.sections-menu-ul li.tap ul{
+display: block;
+}
+.sections-menu a{
+    padding: 10px 0 10px 20px;
+    display: block;
+    color:rgb(202, 202, 203);
+    padding-left:15px;
+    text-decoration:none;
+}
+.sections-menu .sub-arrow:after{
+    content: '\203A';
+    float:right;
+    margin-right: 20px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
         /* BASIC ELEMENTS */
-
         .basic_button {
             background-color: rgb(24, 146, 105);
             width: 100px;
