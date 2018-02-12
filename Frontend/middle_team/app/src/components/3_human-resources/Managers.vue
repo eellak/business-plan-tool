@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="managers__block">
-			<label>Προσθέστε Μέλος</label><br>
+			<label>Ομάδα διοίκησης</label><br>
 			<div class="managers__row" v-for="m in managers" v-bind:key="m.id">
 				<div class="managers__information">
 						<input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.Name">
@@ -19,14 +19,18 @@
 						<input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.Surname">
 				</div>
 				<div class="managers__information">
-						<!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
-						<select v-model="m.Job">
+						<input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.Job">
+						<!-- <select v-model="m.Job">
 							<option v-for="o in jobOptions" v-bind:key="o"> {{ o }} </option>
-						</select>
+						</select> -->
 				</div>
 				<div class="managers__information">
-					<img src="../../assets/link-button.png" alt="link">
-				</div><br>
+					<!-- <img src="../../assets/link-button.png" alt="link"> -->
+					<input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.LinkedIn">
+				</div>
+				<p class="managers__delete" style="font-size: 0.5em;" @click="deleteManager($event)">-Διαγραφή</p>		
+				<p class="managers__id" style="font-size: 0.1em;display:hidden;">{{ m.id }}</p> 
+							<!-- SOS the id needs to be in CAPITAL = ID -->
 			</div>
 			<button class="managers__add" @click="create()">
 				<img src="../../assets/plus-button.png" alt="plus">
@@ -39,14 +43,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+
 export default {
 	name: 'Managers',
 	data() {
 		return {
-			managers: this.$store.getters.managers,
 			jobOptions: ['CEO', 'CTO', 'CFO'],
 		}
-  	},
+	  },
+	created() {
+		this.$store.dispatch('getManagers')
+	},
 	methods: {
 		create() {
 			var newManager = { name: '', surName: '', job: '', linkedIn: '' }
@@ -56,6 +65,10 @@ export default {
 			console.log('Οι managers που αποθηκεύτηκαν είναι:')
 			console.log(this.managers)
 			this.$store.commit('')
+		},
+		deleteManager(event) {
+			var idToDelete = event.target.nextElementSibling.innerText; console.log(idToDelete)
+			this.$store.dispatch('deleteManager', idToDelete)
 		},
 		showInstructions() {
 			var btn = document.getElementsByClassName("managers__instructions");
@@ -74,7 +87,10 @@ export default {
 				}
 			}
 		},
-	}
+	},
+	computed: {
+		...mapGetters(['managers'])
+	},
 }
 </script>
 
@@ -120,7 +136,7 @@ export default {
 	
 }
 .managers__information{
-	width: 180px;
+	/* width: 180px; */
 	height: 30px;
 	margin: 20px;
 	border: 1px solid transparent;
