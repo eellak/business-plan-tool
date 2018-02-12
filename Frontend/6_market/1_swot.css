@@ -109,6 +109,7 @@ strong {
 .icons {
 	margin-top: 1%;
 	width: 100%;
+	cursor: pointer;
 }
 
 .deleteIcon {
@@ -127,5 +128,6 @@ strong {
 
 .adviceIcons {
 	display: inline-flex;
-	padding: 2%
+	padding: 2%;
+	cursor: pointer;
 }
