@@ -11,7 +11,7 @@
 		</div>
 		<div class="managers__block">
 			<label>Ομάδα διοίκησης</label><br>
-			<div class="managers__row" v-for="m in managers" v-bind:key="m.id">
+			<div class="managers__row" v-for="m in managers" v-bind:key="m.ID">
 				<div class="managers__information">
 						<input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.Name">
 				</div>
@@ -63,7 +63,6 @@ export default {
 		createManager(event) {
 			var max = this.managers.length - 1
 			this.$store.dispatch('createManager', this.managers[max])
-
 		},
 		deleteManager(event) {
 			var idToDelete = event.target.nextElementSibling.innerText; console.log(idToDelete)
@@ -90,7 +89,7 @@ export default {
 	},
 	computed: {
 		...mapGetters(['managers'])
-	},
+	}
 }
 </script>
 

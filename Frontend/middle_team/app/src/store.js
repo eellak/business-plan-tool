@@ -50,10 +50,7 @@ export const store = new Vuex.Store({
 			],
 
 			//Team 3.3
-			partners: [
-				{"ID": 1, "BusinessPlanId": 1, "Name": "partner name 1", "SurName": "partner surname 1", "Expertise": "expertise 1", "LinkedIn": "linked 1", "From": 20181101, "Until": 20180120, "Duties": "duty 1"},
-				{"ID": 2, "BusinessPlanId": 1, "Name": "partner name 2", "SurName": "partner surname 1", "Expertise": "expertise 2", "LinkedIn": "linked 2", "From": 20180329, "Until": 20180815, "Duties": "duty 2"}
-			],	
+			partners: [],	
 
 			//Team 3.4
 			employeeSalaries: [
@@ -230,6 +227,26 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " manager from the /manager endpoint. ", err)
 				})
 		},
+		// Human resources 3.2
+		getPartners: function ({ commit }) {
+			axios.get(serverUrl + "/partner")
+				.then(function (response)
+				{
+					commit('GET_PARTNERS', response.data)
+				})
+				.catch(function (err) {
+				})
+		},
+		createPartner: function ({ commit }, payload) {
+			axios.post(serverUrl + "/partner", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_PARTNER', payload)
+				})
+				.catch(function (err) {
+				})
+		},
 	},
 
 	mutations:{
@@ -253,11 +270,22 @@ export const store = new Vuex.Store({
 				}
 			}
 		},
+
+		GET_PARTNERS: (state, payload) => {
+			state.partners = payload
+		},		
+		CREATE_PARTNER: (state, payload) => {
+			state.partners.pop()
+			state.partners.push(payload)
+		},
 	},
 
 	getters:{
 		managers: state => {
 			return state.managers
+		},
+		partners: state => {
+			return state.partners
 		},
 	}
 })

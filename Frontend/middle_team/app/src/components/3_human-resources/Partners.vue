@@ -10,43 +10,26 @@
 			</div>
 		</div>
 		<div class="partners__block">
-			<label>1. Προσθέστε Συνεργάτη</label><br>
-			<div class="partners__row" v-for="p in externalPartners" v-bind:key="p.id">
+			<label>Εξωτερικοί συνεργάτες</label><br>
+			<div class="partners__row" v-for="p in partners" v-bind:key="p.ID">
 				<div class="partners__details">
-					<input type="text" placeholder="ΟΝΟΜΑ" v-model="p.name">
-				</div>
-				<div class="partners__details">
-					<input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.surName">
-				</div>
-				<div class="partners__details">
-						<input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.expertise">
-				</div>
-				<div class="partners__details">
-					<img src="../../assets/link-button.png" alt="link">
-				</div><br>
-				<div class="partners__details">
-					<label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
-				</div>
-				<div class="partners__details">
-					<form class="monthstart" style="margin-left: 20px">
-						<input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.from">
-					</form>
-				</div><br>
-				<div class="partners__details">
-					<label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
-				</div>
-				<div class="partners__details">
-					<form class="monthend" style="margin-left: 20px">
-						<input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.until">
-					</form>
-				</div><br>
-				<div class="duty">
-					<form class="dutyof" > 
-						<input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.duties">
-					</form>
+                    <div class="partners__one">
+                        <input type="text" placeholder="ΟΝΟΜΑ" v-model="p.Name">
+                        <input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.SurName">
+                        <input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.Expertise">
+                    </div>
+
+                    <div class="partners__second">
+                        <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.From">
+                        <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.Until">
+                        <input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.Duties" @keyup.enter="createPartner()">
+                    </div>
+					<!-- <img src="../../assets/link-button.png" alt="link"> -->
+					<!-- <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label> -->
+					<!-- <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label> -->
 				</div>
 			</div>
-			<button class="partners__add" @click="create()">
+			<button class="partners__add" @click="addRow()">
                 <img src="../../assets/plus-button.png" alt="plus">
             </button>
 		</div>
@@ -57,22 +40,28 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+
 export default {
 	name: 'Partners',
 	data() {
 		return {
-			externalPartners: []
 		}
-  	},
+      },
+    created() {
+       this.$store.dispatch('getPartners')
+	},
 	methods: {
-	  create() {
-        var newPartner = { name: '', surName: '', expertise: '', linkedIn: '', from: '', until: '', duties: '' }
-        this.externalPartners.push(newPartner)
-      },
-      save() {
-        console.log('Οι εξωτερικοί συνεργάτες που αποθηκεύτηκαν είναι:')
-        console.log(this.externalPartners)
-      },
+        addRow() {
+            var newPartner = { Name: '', SurName: '', Expertise: '', LinkedIn: '', From: '', Until: '', Duties: '', BusinessPlanId: 1 }
+            this.partners.push(newPartner)
+        },
+        createPartner() {
+            var max = this.partners.length - 1
+            this.$store.dispatch('createPartner', this.partners[max])
+
+        },
       showInstructions() {
         // Get the button that opens the modal
         var btn = document.getElementsByClassName("partners__instructions");
@@ -100,6 +89,9 @@ export default {
             }
         }
     	},
+    },
+    computed: {
+		...mapGetters(['partners'])
 	}
 }
 </script>
@@ -151,23 +143,23 @@ export default {
     font-size: 30px;
      color: rgb(61, 65, 90);      
 }
-.partners__details{
-            
+.partners__details {
     width: 180px;
     height: 30px;
     margin: 10px;
     border: 1px solid transparent;
-    display: inline-block;
 }
+    .partners__one, .partners__second {
+        display: flex;
+    }
         
 input[type=text], select {
-    width: 110%;
     padding: 12px 20px;
-    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    text-align: center;        
+    text-align: center;  
+    margin: 5px 10px;      
 }
 .partners__add{
     margin:20px;
