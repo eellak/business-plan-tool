@@ -193,7 +193,7 @@ export const store = new Vuex.Store({
 					commit('GET_MANAGERS', response.data)
 				})
 				.catch(function (err) {
-					console.log("Couldn't fetch managers from the /manager endpoint. ", err)
+					console.log(err)
 				})
 		},
 		createManager: function ({ commit }, payload) {
@@ -204,37 +204,28 @@ export const store = new Vuex.Store({
 					commit('CREATE_MANAGER', payload)
 				})
 				.catch(function (err) {
-					console.log("Couldn't create manager from the /manager endpoint. \n", err)
+					console.log(err)
 				})
-		},
-		editManager: function ({ commit }, payload) {
-			axios.put(serverUrl + "/manager" + payload.id, payload.manager)
-				.then(function (response)
-				{
-					commit('EDIT_MANAGER', payload.manager)
-				})
-				.catch(function (err) {
-					console.log("Couldn't edit manager from the /manager endpoint. \n", err)
-				})
-		},
-		deleteManager: function ({ commit }, payload) {
-			axios.delete(serverUrl + "/manager/" + payload)
+			},
+			deleteManager: function ({ commit }, payload) {
+				axios.delete(serverUrl + "/manager/" + payload)
 				.then(function (response)
 				{
 					commit('DELETE_MANAGER', payload)
 				})
 				.catch(function (err) {
-					console.log("Couldn't delete " + payload + " manager from the /manager endpoint. ", err)
+					console.log(err)
 				})
-		},
-		// Human resources 3.2
-		getPartners: function ({ commit }) {
-			axios.get(serverUrl + "/partner")
+			},
+			// Human resources 3.2
+			getPartners: function ({ commit }) {
+				axios.get(serverUrl + "/partner")
 				.then(function (response)
 				{
 					commit('GET_PARTNERS', response.data)
 				})
 				.catch(function (err) {
+					console.log(err)
 				})
 		},
 		createPartner: function ({ commit }, payload) {
@@ -245,6 +236,7 @@ export const store = new Vuex.Store({
 					commit('CREATE_PARTNER', payload)
 				})
 				.catch(function (err) {
+					console.log(err)					
 				})
 		},
 	},
@@ -254,10 +246,7 @@ export const store = new Vuex.Store({
 			state.managers = payload
 		},		
 		CREATE_MANAGER: (state, payload) => {
-			state.managers.pop()
-			state.managers.push(payload)
-		},
-		EDIT_MANAGER: (state, payload) => {
+			// state.managers.pop()
 			state.managers.push(payload)
 		},
 		DELETE_MANAGER: (state, payload) => {
@@ -265,7 +254,7 @@ export const store = new Vuex.Store({
 			console.log('state.managers: ', state.managers)
 			for (var i=0, l = state.managers.length; i < l; i++) {
 				if (state.managers[i].ID === payload) {
-					console.log("id: ", ID)
+					console.log("id: ", state.managers[i].ID)
 					state.managers.splice(i, 1)
 				}
 			}

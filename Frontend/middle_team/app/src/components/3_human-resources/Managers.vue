@@ -63,6 +63,7 @@ export default {
 		createManager(event) {
 			var max = this.managers.length - 1
 			this.$store.dispatch('createManager', this.managers[max])
+			this.managers.pop()
 		},
 		deleteManager(event) {
 			var idToDelete = event.target.nextElementSibling.innerText; console.log(idToDelete)
