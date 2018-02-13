@@ -1,6 +1,7 @@
 <template>
 	<div class="synopsis">
 		<h1>{{ title }}</h1>
+		<div class="orestis">Orestiiss</div>
 	</div>
 </template>
 
@@ -27,5 +28,8 @@ export default {
 </script>
 
 <style scoped>
+
+	.orestis {
+	}
 
 </style>

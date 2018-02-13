@@ -26,13 +26,12 @@
 				</div>
 				<div class="managers__information">
 					<!-- <img src="../../assets/link-button.png" alt="link"> -->
-					<input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.LinkedIn">
+					<input type="text" name="sname" placeholder="LINKEDIN" v-model="m.LinkedIn" @keyup.enter="createManager($event)">
 				</div>
 				<p class="managers__delete" style="font-size: 0.5em;" @click="deleteManager($event)">-Διαγραφή</p>		
-				<p class="managers__id" style="font-size: 0.1em;display:hidden;">{{ m.id }}</p> 
-							<!-- SOS the id needs to be in CAPITAL = ID -->
+				<p class="managers__id" style="font-size: 0.1em;display:hidden;">{{ m.ID }}</p> 
 			</div>
-			<button class="managers__add" @click="create()">
+			<button class="managers__add" @click="addRow()">
 				<img src="../../assets/plus-button.png" alt="plus">
 			</button>
 		</div>
@@ -57,17 +56,18 @@ export default {
 		this.$store.dispatch('getManagers')
 	},
 	methods: {
-		create() {
-			var newManager = { name: '', surName: '', job: '', linkedIn: '' }
+		addRow() {
+			var newManager = { Name: '', Surname: '', Job: '', LinkedIn: '', BusinessPlanId: 1 }
 			this.managers.push(newManager)
 		},
-		save() {
-			console.log('Οι managers που αποθηκεύτηκαν είναι:')
-			console.log(this.managers)
-			this.$store.commit('')
+		createManager(event) {
+			var max = this.managers.length - 1
+			this.$store.dispatch('createManager', this.managers[max])
+
 		},
 		deleteManager(event) {
 			var idToDelete = event.target.nextElementSibling.innerText; console.log(idToDelete)
+			idToDelete = parseInt(idToDelete)
 			this.$store.dispatch('deleteManager', idToDelete)
 		},
 		showInstructions() {
@@ -205,6 +205,12 @@ background-color: rgba(0,0,0,0.4);
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+
+/* TRUMPS */
+input[type="text"]:disabled {
+    background: #fff;
 }
 
 </style>

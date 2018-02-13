@@ -3,8 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const serverUrl = 'http://localhost:3000'
-// const serverUrl = 'http://play-trinity.com/theo/bplantool/api/'
+// const serverUrl = 'http://localhost:3000'
+const serverUrl = 'http://play-trinity.com/theo/bplantool/api'
 
 export const store = new Vuex.Store({
 	state: {
@@ -38,8 +38,7 @@ export const store = new Vuex.Store({
 			}],
 			
 			//Team 3.1
-			managers: [
-			],
+			managers: [],
 
 			//Team 3.2
 			employees: [
@@ -201,9 +200,10 @@ export const store = new Vuex.Store({
 				})
 		},
 		createManager: function ({ commit }, payload) {
-			axios.post(serverUrl + "/manager")
-				.then(function (response)
-				{
+			axios.post(serverUrl + "/manager", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
 					commit('CREATE_MANAGER', payload)
 				})
 				.catch(function (err) {
@@ -237,6 +237,7 @@ export const store = new Vuex.Store({
 			state.managers = payload
 		},		
 		CREATE_MANAGER: (state, payload) => {
+			state.managers.pop()
 			state.managers.push(payload)
 		},
 		EDIT_MANAGER: (state, payload) => {
@@ -244,10 +245,11 @@ export const store = new Vuex.Store({
 		},
 		DELETE_MANAGER: (state, payload) => {
 			console.log("payload: ", payload)
-			for (var i=0, l = state.managers; i < l; i++) {
-				if (state.managers[i].id === payload) {
-					console.log("id: ", id)
-					// state.managers.splice(i, 1)
+			console.log('state.managers: ', state.managers)
+			for (var i=0, l = state.managers.length; i < l; i++) {
+				if (state.managers[i].ID === payload) {
+					console.log("id: ", ID)
+					state.managers.splice(i, 1)
 				}
 			}
 		},

@@ -1,6 +1,6 @@
 <template>
   <div class="skeleton">
-  <body>
+  <!-- <body> -->
     <header class="head">
         <div class="head__logo">
             <img src="../assets/Logo.png" alt="Logo">
@@ -112,7 +112,7 @@
                       <router-link to="/timeline" tag="a" class="">ΧΡΟΝΟΔΙΑΓΡΑΜΜΑ</router-link>
                     </li>
                     <li>
-                      <router-link to="/timeline" tag="a" class="">ΣΥΝΟΨΗ</router-link>
+                      <router-link to="/synopsis" tag="a" class="">ΣΥΝΟΨΗ</router-link>
                     </li>
                 </ul>
             </div>
@@ -130,7 +130,7 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-      </body>
+      <!-- </body> -->
   </div>
 </template>
 
