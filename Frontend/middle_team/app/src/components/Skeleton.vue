@@ -5,10 +5,10 @@
         <div class="head__logo">
             <img src="../assets/Logo.png" alt="Logo">
         </div>
-        <div class="head__export">
+        <div class="head__export"  @click="exportFunction()">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p @click="exportFunction()">Export</p>
+            <p>Export</p>
         </div>
         <img class="head__avatar" src="../assets/avatar.png" alt="Avatar">
     </header>
