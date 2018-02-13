@@ -9,45 +9,18 @@ const serverUrl = 'http://play-trinity.com/theo/bplantool/api'
 export const store = new Vuex.Store({
 	state: {
 			//Team 2.1 
-			identity: [{
-				"Id": 1,
-				"BusinessPlanId": 1,
-				"Name": "ΑΠΘ",
-				"Date": 20180108,
-				"LegalForm": "Α.Ε.",
-				"OrderOfBusiness": "Πανεπιστημιο",
-			}],
+			identity: [],
 			
-			clients: [
-				{"ID": 1, "IdentityId": 1, "Name": "client 1"},
-				{"ID": 2, "IdentityId": 1, "Name": "client 2"},
-				{"ID": 3, "IdentityId": 1, "Name": "client 3"}
-			],
+			clients: [],
 			
 			//Team 2.2
-			description: [{
-					"ID": 1,
-					"IdentityId": 1,
-					"Text": "Μεγαλο κειμενο για την περιγραφη της επιχειρησης. Lorem ipsum dolor sit amet, \
-							consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus \
-							aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat \
-							quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum \
-							leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent \
-							taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. \
-							Maecenas sodales scelerisque tristique."
-			}],
+			description: [],
 			
 			//Team 3.1
 			managers: [],
 
 			//Team 3.2
-			employees: [
-				{"ID": 1, "BusinessPlanId": 1, "Job": "job 3"},
-				{"ID": 2, "BusinessPlanId": 1, "Job": "job 3"},
-				{"ID": 3, "BusinessPlanId": 1, "Job": "job 4"},
-				{"ID": 4, "BusinessPlanId": 1, "Job": "job 5"},
-				{"ID": 5, "BusinessPlanId": 1, "Job": "job 5"}
-			],
+			employees: [],
 
 			//Team 3.3
 			partners: [],	
@@ -185,7 +158,133 @@ export const store = new Vuex.Store({
 	},
 
 	actions: {
-		// Human resources 3.1
+		// Identity 2.1,  Categories based on FinalJsons.js
+		getIdentity: function ({ commit }) {
+			axios.get(serverUrl + "/identity")
+				.then(function (response)
+				{
+					commit('GET_IDENTITY', response.data)
+				})
+				.catch(function (err) {
+					console.log("Couldn't fetch identity from the /identity endpoint. ", err)
+				})
+		},
+		createIdentity: function ({ commit }, payload) {
+			axios.post(serverUrl + "/identity", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_IDENTITY', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't create identity from the /identity endpoint. \n", err)
+				})
+		},
+		editIdentity: function ({ commit }, payload) {
+			axios.put(serverUrl + "/identity" + payload.id, payload.identity)
+				.then(function (response)
+				{
+					commit('EDIT_IDENTITY', payload.identity)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit identity from the /identity endpoint. \n", err)
+				})
+		},
+		deleteIdentity: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/identity/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_IDENTITY', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " identity from the /identity endpoint. ", err)
+				})
+		},
+		// Clients 2.1
+		getClients: function ({ commit }) {
+			axios.get(serverUrl + "/client")
+				.then(function (response)
+				{
+					commit('GET_CLIENTS', response.data)
+				})
+				.catch(function (err) {
+					console.log("Couldn't fetch clients from the /client endpoint. ", err)
+				})
+		},
+		createClient: function ({ commit }, payload) {
+			axios.post(serverUrl + "/client", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_CLIENT', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't create client from the /client endpoint. \n", err)
+				})
+		},
+		editClient: function ({ commit }, payload) {
+			axios.put(serverUrl + "/client" + payload.id, payload.client)
+				.then(function (response)
+				{
+					commit('EDIT_CLIENT', payload.client)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit client from the /client endpoint. \n", err)
+				})
+		},
+		deleteClient: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/client/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_CLIENT', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " client from the /client endpoint. ", err)
+				})
+		},
+		// Description 2.2
+		getDescription: function ({ commit }) {
+			axios.get(serverUrl + "/description")
+				.then(function (response)
+				{
+					commit('GET_DESCRIPTION', response.data)
+				})
+				.catch(function (err) {
+					console.log("Couldn't fetch description from the /description endpoint. ", err)
+				})
+		},
+		createDescription: function ({ commit }, payload) {
+			axios.post(serverUrl + "/description", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_DESCRIPTION', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't create description from the /description endpoint. \n", err)
+				})
+		},
+		editDescription: function ({ commit }, payload) {
+			axios.put(serverUrl + "/description" + payload.id, payload.description)
+				.then(function (response)
+				{
+					commit('EDIT_DESCRIPTION', payload.description)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit description from the /description endpoint. \n", err)
+				})
+		},
+		deleteDescription: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/description/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_DESCRIPTION', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " description from the /description endpoint. ", err)
+				})
+		},
+		// Managers 3.1
 		getManagers: function ({ commit }) {
 			axios.get(serverUrl + "/manager")
 				.then(function (response)
@@ -227,7 +326,8 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " manager from the /manager endpoint. ", err)
 				})
 		},
-		// Human resources 3.2
+		// Employees 3.2
+		// Partners 3.3	
 		getPartners: function ({ commit }) {
 			axios.get(serverUrl + "/partner")
 				.then(function (response)
@@ -235,6 +335,7 @@ export const store = new Vuex.Store({
 					commit('GET_PARTNERS', response.data)
 				})
 				.catch(function (err) {
+					console.log("Couldn't fetch partners from the /partner endpoint. ", err)
 				})
 		},
 		createPartner: function ({ commit }, payload) {
@@ -245,11 +346,118 @@ export const store = new Vuex.Store({
 					commit('CREATE_PARTNER', payload)
 				})
 				.catch(function (err) {
+					console.log("Couldn't create partner from the /partner endpoint. \n", err)
 				})
 		},
+		editPartner: function ({ commit }, payload) {
+			axios.put(serverUrl + "/partner" + payload.id, payload.partner)
+				.then(function (response)
+				{
+					commit('EDIT_PARTNER', payload.partner)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit partner from the /partner endpoint. \n", err)
+				})
+		},
+		deletePartner: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/partner/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_PARTNER', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " partner from the /partner endpoint. ", err)
+				})
+		},
+		// Employee Salaries 3.4
+		// Faculties 4.1
+		// Equipment 4.2
+		// RunningCost 4.3
+		// RunningCost - FacultyCosts 4.3
+		// RunningCost - EquipmentCosts 4.3
+		// Products 5
+		// SWOT 6.1
+		// PESTEL - Factors 6.2
+		// Notes 6.3
+		// Strategy 7.1
+		// MarketingActions 7.2
+		// StartActions 8.1
+		// FunctionCost 8.2
+		// FunctionCost - Functions 8.2
+		// Deadspots 8.3
+		// Links 9
+		// Conclusion 1.1
 	},
 
 	mutations:{
+
+		// Identity 2.1,  Categories based on FinalJsons.js
+		GET_IDENTITY: (state, payload) => {
+			state.identity = payload
+		},		
+		CREATE_IDENTITY: (state, payload) => {
+			state.identity.pop()
+			state.identity.push(payload)
+		},
+		EDIT_IDENTITY: (state, payload) => {
+			state.identity.push(payload)
+		},
+		DELETE_IDENTITY: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.identity: ', state.identity)
+			for (var i=0, l = state.identity.length; i < l; i++) {
+				if (state.identity[i].ID === payload) {
+					console.log("id: ", ID)
+					state.identity.splice(i, 1)
+				}
+			}
+		},
+
+		// Clients 2.1
+		GET_CLIENTS: (state, payload) => {
+			state.clients = payload
+		},		
+		CREATE_CLIENT: (state, payload) => {
+			state.clients.pop()
+			state.clients.push(payload)
+		},
+		EDIT_CLIENT: (state, payload) => {
+			state.clients.push(payload)
+		},
+		DELETE_CLIENT: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.clients: ', state.clients)
+			for (var i=0, l = state.clients.length; i < l; i++) {
+				if (state.clients[i].ID === payload) {
+					console.log("id: ", ID)
+					state.clients.splice(i, 1)
+				}
+			}
+		},
+
+		// Description 2.2
+		GET_DESCRIPTION: (state, payload) => {
+			state.description = payload
+		},		
+		CREATE_DESCRIPTION: (state, payload) => {
+			state.description.pop()
+			state.description.push(payload)
+		},
+		EDIT_DESCRIPTION: (state, payload) => {
+			state.description.push(payload)
+		},
+		DELETE_DESCRIPTION: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.description: ', state.description)
+			for (var i=0, l = state.description.length; i < l; i++) {
+				if (state.description[i].ID === payload) {
+					console.log("id: ", ID)
+					state.description.splice(i, 1)
+				}
+			}
+		},
+
+		// Managers 3.1
 		GET_MANAGERS: (state, payload) => {
 			state.managers = payload
 		},		
@@ -271,6 +479,9 @@ export const store = new Vuex.Store({
 			}
 		},
 
+		// Employees 3.2
+
+		// Partners 3.3	
 		GET_PARTNERS: (state, payload) => {
 			state.partners = payload
 		},		
@@ -278,14 +489,81 @@ export const store = new Vuex.Store({
 			state.partners.pop()
 			state.partners.push(payload)
 		},
+		EDIT_PARTNER: (state, payload) => {
+			state.partners.push(payload)
+		},
+		DELETE_PARTNER: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.partners: ', state.partners)
+			for (var i=0, l = state.partners.length; i < l; i++) {
+				if (state.partners[i].ID === payload) {
+					console.log("id: ", ID)
+					state.partners.splice(i, 1)
+				}
+			}
+		},
+		// Employee Salaries 3.4
+		// Faculties 4.1
+		// Equipment 4.2
+		// RunningCost 4.3
+		// RunningCost - FacultyCosts 4.3
+		// RunningCost - EquipmentCosts 4.3
+		// Products 5
+		// SWOT 6.1
+		// PESTEL - Factors 6.2
+		// Notes 6.3
+		// Strategy 7.1
+		// MarketingActions 7.2
+		// StartActions 8.1
+		// FunctionCost 8.2
+		// FunctionCost - Functions 8.2
+		// Deadspots 8.3
+		// Links 9
+		// Conclusion 1.1
 	},
 
 	getters:{
+		// Identity 2.1,  Categories based on FinalJsons.js
+		identity: state => {
+			return state.identity
+		},
+		// Clients 2.1
+		clients: state => {
+			return state.clients
+		},
+		// Description 2.2
+		description: state => {
+			return state.description
+		},
+		// Managers 3.1
 		managers: state => {
 			return state.managers
 		},
+		// Employees 3.2
+		employees: state => {
+			return state.employees
+		},
+		// Partners 3.3	
 		partners: state => {
 			return state.partners
 		},
+		// Employee Salaries 3.4
+		// Faculties 4.1
+		// Equipment 4.2
+		// RunningCost 4.3
+		// RunningCost - FacultyCosts 4.3
+		// RunningCost - EquipmentCosts 4.3
+		// Products 5
+		// SWOT 6.1
+		// PESTEL - Factors 6.2
+		// Notes 6.3
+		// Strategy 7.1
+		// MarketingActions 7.2
+		// StartActions 8.1
+		// FunctionCost 8.2
+		// FunctionCost - Functions 8.2
+		// Deadspots 8.3
+		// Links 9
+		// Conclusion 1.1
 	}
 })
