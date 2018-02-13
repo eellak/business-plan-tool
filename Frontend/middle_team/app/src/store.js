@@ -3,6 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+// const serverUrl = 'http://localhost:3000'
+const serverUrl = 'http://play-trinity.com/theo/bplantool/api'
+
 export const store = new Vuex.Store({
 	state: {
 			//Team 2.1 
@@ -35,9 +38,7 @@ export const store = new Vuex.Store({
 			}],
 			
 			//Team 3.1
-			managers: [
-				{"ID": 1, "BusinessPlanId": 1, "Name": "manager name1", "Surname": "manager surname 1", "Job": "job 1", "LinkedIn": "linked 1"},
-			],
+			managers: [],
 
 			//Team 3.2
 			employees: [
@@ -49,10 +50,7 @@ export const store = new Vuex.Store({
 			],
 
 			//Team 3.3
-			partners: [
-				{"ID": 1, "BusinessPlanId": 1, "Name": "partner name 1", "SurName": "partner surname 1", "Expertise": "expertise 1", "LinkedIn": "linked 1", "From": 20181101, "Until": 20180120, "Duties": "duty 1"},
-				{"ID": 2, "BusinessPlanId": 1, "Name": "partner name 2", "SurName": "partner surname 1", "Expertise": "expertise 2", "LinkedIn": "linked 2", "From": 20180329, "Until": 20180815, "Duties": "duty 2"}
-			],	
+			partners: [],	
 
 			//Team 3.4
 			employeeSalaries: [
@@ -187,17 +185,107 @@ export const store = new Vuex.Store({
 	},
 
 	actions: {
+		// Human resources 3.1
+		getManagers: function ({ commit }) {
+			axios.get(serverUrl + "/manager")
+				.then(function (response)
+				{
+					commit('GET_MANAGERS', response.data)
+				})
+				.catch(function (err) {
+					console.log("Couldn't fetch managers from the /manager endpoint. ", err)
+				})
+		},
+		createManager: function ({ commit }, payload) {
+			axios.post(serverUrl + "/manager", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_MANAGER', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't create manager from the /manager endpoint. \n", err)
+				})
+		},
+		editManager: function ({ commit }, payload) {
+			axios.put(serverUrl + "/manager" + payload.id, payload.manager)
+				.then(function (response)
+				{
+					commit('EDIT_MANAGER', payload.manager)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit manager from the /manager endpoint. \n", err)
+				})
+		},
+		deleteManager: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/manager/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_MANAGER', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " manager from the /manager endpoint. ", err)
+				})
+		},
+		// Human resources 3.2
+		getPartners: function ({ commit }) {
+			axios.get(serverUrl + "/partner")
+				.then(function (response)
+				{
+					commit('GET_PARTNERS', response.data)
+				})
+				.catch(function (err) {
+				})
+		},
+		createPartner: function ({ commit }, payload) {
+			axios.post(serverUrl + "/partner", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_PARTNER', payload)
+				})
+				.catch(function (err) {
+				})
+		},
 	},
 
 	mutations:{
+		GET_MANAGERS: (state, payload) => {
+			state.managers = payload
+		},		
 		CREATE_MANAGER: (state, payload) => {
-			state.uploadUrl = payload
+			state.managers.pop()
+			state.managers.push(payload)
+		},
+		EDIT_MANAGER: (state, payload) => {
+			state.managers.push(payload)
+		},
+		DELETE_MANAGER: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.managers: ', state.managers)
+			for (var i=0, l = state.managers.length; i < l; i++) {
+				if (state.managers[i].ID === payload) {
+					console.log("id: ", ID)
+					state.managers.splice(i, 1)
+				}
+			}
+		},
+
+		GET_PARTNERS: (state, payload) => {
+			state.partners = payload
+		},		
+		CREATE_PARTNER: (state, payload) => {
+			state.partners.pop()
+			state.partners.push(payload)
 		},
 	},
 
 	getters:{
 		managers: state => {
 			return state.managers
+		},
+		partners: state => {
+			return state.partners
 		},
 	}
 })

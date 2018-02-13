@@ -1,7 +1,7 @@
 <template>
 	<div class="partners">
-		<button id="Instructions3" class="Instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
-		<div id="myInstructions3" class="modal">
+		<button class="partners__instructions" @click="showInstructions()">ΟΔΗΓΙΕΣ</button>
+		<div id="modal__instructions" class="partners__modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<p>Αρχικά, κλικάρετε το συμβολο + για να εμφανιστούν τα πεδία για τον πρώτο εξωτερικό συνεργάτη. Συμπληρώνετε τα απαραίτητα όνομα και επίθετο στα αντίστοιχα πεδία,
@@ -9,78 +9,59 @@
 				Τελος συμπληρώνετε επιγραμματικά τα καθήκοντα του στο τελευταίο πεδίο. Επαναλαμβάνετε τα προηγούμενα βήματα μέχρι να συμπληρώσετε όλους τους εξ. συνεργάτες και τέλος πατάτε το κουμπί αποθήκευσης ώστε να αποθηκευτούν όλες οι αλλαγές σας.</p>
 			</div>
 		</div>
-		<div class="add__member">
-			<label>1. Προσθέστε Συνεργάτη</label><br>
-			<div class="add__member-row" v-for="p in externalPartners" v-bind:key="p.id">
-				<div class="same__line">
-				<form class="fname">
-					<input type="text" placeholder="ΟΝΟΜΑ" v-model="p.name">
-				</form>
-				</div>
-				<div class="same__line">
-					<form class="sname">
-					<input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.surName">
-					</form>
-				</div>
-				<div class="same__line">
-					<form class="duty">
-						<input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.expertise">
-					</form>
-				</div>
-				<div class="same__line">
-					<img src="../../assets/link-button.png" alt="link">
-				</div><br>
-				<div class="same__line">
-					<label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label>
-				</div>
-				<div class="same__line">
-					<form class="monthstart" style="margin-left: 20px">
-						<input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.from">
-					</form>
-				</div><br>
-				<div class="same__line">
-					<label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label>
-				</div>
-				<div class="same__line">
-					<form class="monthend" style="margin-left: 20px">
-						<input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.until">
-					</form>
-				</div><br>
-				<div class="duty">
-					<form class="dutyof" > 
-						<input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.duties">
-					</form>
+		<div class="partners__block">
+			<label>Εξωτερικοί συνεργάτες</label><br>
+			<div class="partners__row" v-for="p in partners" v-bind:key="p.ID">
+				<div class="partners__details">
+                        <input type="text" placeholder="ΟΝΟΜΑ" v-model="p.Name">
+                        <input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.SurName">
+                        <input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.Expertise">
+                        <input type="text" placeholder="ΑΠΟ" v-model="p.From">
+                        <input type="text" placeholder="ΕΩΣ" v-model="p.Until">
+                        <input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.Duties" @keyup.enter="createPartner()">
+					<!-- <img src="../../assets/link-button.png" alt="link"> -->
+					<!-- <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label> -->
+					<!-- <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label> -->
 				</div>
 			</div>
-			<button name="plus__member" id="plus__member" @click="create()"><img src="../../assets/plus-button.png" alt="plus"></button>
-			<button class="Instructions" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
+			<button class="partners__add" @click="addRow()">
+                <img src="../../assets/plus-button.png" alt="plus">
+            </button>
 		</div>
+        <div class="partners__bottomlayout">
+        <button class="partners__save" @click="save()">ΑΠΟΘΗΚΕΥΣΗ</button>
+        </div>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+
 export default {
 	name: 'Partners',
 	data() {
 		return {
-			externalPartners: []
 		}
-  	},
+      },
+    created() {
+       this.$store.dispatch('getPartners')
+	},
 	methods: {
-	  create() {
-        var newPartner = { name: '', surName: '', expertise: '', linkedIn: '', from: '', until: '', duties: '' }
-        this.externalPartners.push(newPartner)
-      },
-      save() {
-        console.log('Οι εξωτερικοί συνεργάτες που αποθηκεύτηκαν είναι:')
-        console.log(this.externalPartners)
-      },
+        addRow() {
+            var newPartner = { Name: '', SurName: '', Expertise: '', LinkedIn: '', From: '', Until: '', Duties: '', BusinessPlanId: 1 }
+            this.partners.push(newPartner)
+        },
+        createPartner() {
+            var max = this.partners.length - 1
+            this.$store.dispatch('createPartner', this.partners[max])
+        },
       showInstructions() {
-        // Get the modal
-        var modal = document.getElementById("myInstructions3");
-
         // Get the button that opens the modal
-        var btn = document.getElementById("Instructions3");
+        var btn = document.getElementsByClassName("partners__instructions");
+
+        // Get the modal
+        var modal = document.getElementById("modal__instructions");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
@@ -102,59 +83,80 @@ export default {
             }
         }
     	},
+    },
+    computed: {
+		...mapGetters(['partners'])
 	}
 }
 </script>
 
 <style scoped>
         /* BASIC ELEMENTS */
-        .basic_button {
-            background-color: rgb(24, 146, 105);
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .Instructions {
-            margin-left: 850px;
-            margin-top: 20px;
-            background-color: rgb(41, 152, 88);
-            color: white;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-style: none;
-        }
-        .add__member {
-            font-family: "Open Sans";
-            margin-left: 40px;
-            font-size: 30px;
-            color: rgb(61, 65, 90);
-            
-        }
-        .same__line{
-            
-            width: 180px;
-            height: 30px;
-            margin: 10px;
-            border: 1px solid transparent;
-            display: inline-block;
-        }
-        
-        input[type=text], select {
-            width: 110%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            text-align: center;
-            
+.basic_button {
+    background-color: rgb(24, 146, 105);
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#plus__member{
+.partners__instructions {
+    margin-left: 850px;
+    margin-top: 20px;
+    background-color: rgb(41, 152, 88);
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    }
+.partners__save {
+	margin-left: 850px;
+	margin-top: 20px;
+	background-color: rgb(41, 152, 88);
+	color: white;
+	width: 100px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-style: none;
+}
+.partners__row{
+    margin-top: 50px;
+}
+.partners__bottomlayout{
+	margin-top: 525px;
+	background-color:rgb(70, 70, 70);
+}
+.partners__block {
+    font-family: "Open Sans";
+     margin-left: 40px;
+    font-size: 30px;
+     color: rgb(61, 65, 90);      
+}
+.partners__details {
+    display: flex;
+    width: 180px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid transparent;
+}
+    .partners__one, .partners__second {
+        display: flex;
+    }
+        
+input[type=text], select {
+    padding: 22px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;  
+    margin: 5px 5px;     
+}
+.partners__add{
     margin:20px;
     padding:0px;
     white-space:nowrap;
@@ -173,7 +175,7 @@ export default {
    color:    #cbcaca;
 }
 
-        .modal {
+    .partners__modal {
     display: none;
     position: fixed;
     z-index: 1; 
