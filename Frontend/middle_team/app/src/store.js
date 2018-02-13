@@ -200,6 +200,7 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " identity from the /identity endpoint. ", err)
 				})
 		},
+
 		// Clients 2.1
 		getClients: function ({ commit }) {
 			axios.get(serverUrl + "/client")
@@ -242,6 +243,7 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " client from the /client endpoint. ", err)
 				})
 		},
+
 		// Description 2.2
 		getDescription: function ({ commit }) {
 			axios.get(serverUrl + "/description")
@@ -284,6 +286,7 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " description from the /description endpoint. ", err)
 				})
 		},
+
 		// Managers 3.1
 		getManagers: function ({ commit }) {
 			axios.get(serverUrl + "/manager")
@@ -307,7 +310,7 @@ export const store = new Vuex.Store({
 				})
 		},
 		editManager: function ({ commit }, payload) {
-			axios.put(serverUrl + "/manager" + payload.id, payload.manager)
+			axios.put(serverUrl + "/manager/" + payload.id, payload.manager)
 				.then(function (response)
 				{
 					commit('EDIT_MANAGER', payload.manager)
@@ -326,7 +329,50 @@ export const store = new Vuex.Store({
 					console.log("Couldn't delete " + payload + " manager from the /manager endpoint. ", err)
 				})
 		},
+
 		// Employees 3.2
+		getEmployees: function ({ commit }) {
+			axios.get(serverUrl + "/employee")
+				.then(function (response)
+				{
+					commit('GET_EMPLOYEES', response.data)
+				})
+				.catch(function (err) {
+					console.log("Couldn't fetch employee from the /employee endpoint. ", err)
+				})
+		},
+		createEmployees: function ({ commit }, payload) {
+			axios.post(serverUrl + "/employee", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_EMPLOYEE', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't create employee from the /employee endpoint. \n", err)
+				})
+		},
+		editEmployees: function ({ commit }, payload) {
+			axios.put(serverUrl + "/employee" + payload.id, payload.employee)
+				.then(function (response)
+				{
+					commit('EDIT_EMPLOYEE', payload.employee)
+				})
+				.catch(function (err) {
+					console.log("Couldn't edit employee from the /employee endpoint. \n", err)
+				})
+		},
+		deleteEmployees: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/employee/" + payload)
+				.then(function (response)
+				{
+					commit('DELETE_EMPLOYEE', payload)
+				})
+				.catch(function (err) {
+					console.log("Couldn't delete " + payload + " employee from the /employee endpoint. ", err)
+				})
+		},
+
 		// Partners 3.3	
 		getPartners: function ({ commit }) {
 			axios.get(serverUrl + "/partner")
@@ -480,6 +526,26 @@ export const store = new Vuex.Store({
 		},
 
 		// Employees 3.2
+		GET_EMPLOYEES: (state, payload) => {
+			state.employee = payload
+		},		
+		CREATE_EMPLOYEE: (state, payload) => {
+			state.employee.pop()
+			state.employee.push(payload)
+		},
+		EDIT_EMPLOYEE: (state, payload) => {
+			state.employee.push(payload)
+		},
+		DELETE_EMPLOYEE: (state, payload) => {
+			console.log("payload: ", payload)
+			console.log('state.employee: ', state.employee)
+			for (var i=0, l = state.employee.length; i < l; i++) {
+				if (state.employee[i].ID === payload) {
+					console.log("id: ", ID)
+					state.employee.splice(i, 1)
+				}
+			}
+		},
 
 		// Partners 3.3	
 		GET_PARTNERS: (state, payload) => {
