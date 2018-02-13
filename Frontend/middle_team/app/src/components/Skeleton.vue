@@ -146,11 +146,13 @@ export default {
     }
   },
     mounted(){
-              $(document).ready(function(e) {
-            $('.has-sub').click(function(){
-                event.preventDefault();
-                $(this).toggleClass('tap');
-            });
+        $('.has-sub').click(function(){
+          event.preventDefault();
+          $(this).toggleClass('tap');
+        });
+        
+        $('.subSection').click(function(){
+          $(this).closest('.has-sub').toggleClass('tap');               
         });
   },
   methods: {
@@ -207,7 +209,6 @@ body {
     align-items: stretch;
     min-height: 100vh;
 }
-
 /* HEADER */
 .head {
     background-color: rgb(30, 33, 51);
@@ -286,7 +287,6 @@ nav {
     background-color: rgb(30, 33, 51);
     width: 350px;
 }
-
 /* SECTIONS MENU */
 .sections-menu-ul{
 list-style-type: none;
@@ -296,7 +296,7 @@ padding-left:0px;
 display: none;
 list-style-type: none;
 background-color: rgb(40, 44, 63);
-padding-left:10px;
+padding-left:0px;
 }
 .sections-menu-ul li.tap ul{
 display: block;
@@ -319,12 +319,10 @@ display: block;
 .activeSection{
   background-color:rgb(79, 84, 115);
 }
-.subSection{
-  margin-left:10px;
+a.subSection{
+  padding-left:25px;
 }
-
   /* BASIC ELEMENTS */
-
   .basic_button {
   background-color: rgb(24, 146, 105);
   width: 100px;
