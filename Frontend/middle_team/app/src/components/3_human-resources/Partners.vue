@@ -13,17 +13,12 @@
 			<label>Εξωτερικοί συνεργάτες</label><br>
 			<div class="partners__row" v-for="p in partners" v-bind:key="p.ID">
 				<div class="partners__details">
-                    <div class="partners__one">
                         <input type="text" placeholder="ΟΝΟΜΑ" v-model="p.Name">
                         <input type="text" placeholder="ΕΠΙΘΕΤΟ" v-model="p.SurName">
                         <input type="text" placeholder="ΕΞΕΙΔΙΚΕΥΣΗ" v-model="p.Expertise">
-                    </div>
-
-                    <div class="partners__second">
-                        <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.From">
-                        <input type="text" placeholder="ΗΜΕΡΟΜΗΝΙΑ" v-model="p.Until">
+                        <input type="text" placeholder="ΑΠΟ" v-model="p.From">
+                        <input type="text" placeholder="ΕΩΣ" v-model="p.Until">
                         <input type="text" placeholder="ΚΑΘΗΚΟΝΤΑ" v-model="p.Duties" @keyup.enter="createPartner()">
-                    </div>
 					<!-- <img src="../../assets/link-button.png" alt="link"> -->
 					<!-- <label class="from" style="margin: 70px;font-size: 20px">ΑΠΟ</label> -->
 					<!-- <label class="until" style="margin: 70px;font-size: 20px">ΕΩΣ</label> -->
@@ -60,7 +55,6 @@ export default {
         createPartner() {
             var max = this.partners.length - 1
             this.$store.dispatch('createPartner', this.partners[max])
-
         },
       showInstructions() {
         // Get the button that opens the modal
@@ -131,7 +125,7 @@ export default {
 	border-style: none;
 }
 .partners__row{
-    -webkit-margin-after: 50px;
+    margin-top: 50px;
 }
 .partners__bottomlayout{
 	margin-top: 525px;
@@ -144,6 +138,7 @@ export default {
      color: rgb(61, 65, 90);      
 }
 .partners__details {
+    display: flex;
     width: 180px;
     height: 30px;
     margin: 10px;
@@ -154,12 +149,12 @@ export default {
     }
         
 input[type=text], select {
-    padding: 12px 20px;
+    padding: 22px 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;  
-    margin: 5px 10px;      
+    margin: 5px 5px;     
 }
 .partners__add{
     margin:20px;
