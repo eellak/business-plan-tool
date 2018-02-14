@@ -124,17 +124,20 @@ export default {
 		calculate() {
 			var totalCost = 0;
 			for (var i=0 ; i < this.costs.length ; i++ ) {
-				if (this.costs[i].paymentType === "monthpay") 
+
+				if (this.costs[i].paymentType === "monthpay")
 					totalCost += parseInt(this.costs[i].payment) * 14 + parseInt(this.costs[i].bonus);
-				else if (this.costs[i].paymentType === "daypay") 
-					if (this.costs[i].workType === "fulltime") 
+				else if (this.costs[i].paymentType === "daypay")
+					if (this.costs[i].workType === "fulltime")
 						totalCost += parseInt(this.costs[i].payment) * 300 + parseInt(this.costs[i].bonus);
-				    else //if workType is partTime{
+				    else{
+					    totalCost += parseInt(this.costs[i].payment) * 150 + parseInt(this.costs[i].bonus);
+				}
 			this.calculatedCostLabel = totalCost + '€';
-			console.log(totalCost);	
+			console.log(totalCost);
 			}
-		}
-	}
+        }
+    }
 }
 </script>
 
