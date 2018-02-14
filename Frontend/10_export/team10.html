@@ -1,4 +1,4 @@
-<!doctype>
+﻿<!doctype>
 <html>
 
 	<head>
@@ -528,22 +528,48 @@
 								// Section 5.1
 								{text: "5.1 Ανάλυση SWOT:", style: "subSectionHeader"},
 								" ",
-								{text: "5.1.1 Δυνατά:", style: "subSectionHeader"},								
+								{columns: [
+									{
+										width: '50%',
+										stack: [
+											"Δυνατά: ",
+											{
+												ul: this.db.fiveSWOT.strong
+											}
+										]
+									},
+									{
+										width: '50%',
+										stack: [
+											"Αδύναμα: ",
+											{
+												ul: this.db.fiveSWOT.weak
+											}
+										]
+									},
+								]},
 								" ",
-								{ol: this.db.fiveSWOT.strong},
-								" ",
-								{text: "5.1.2 Αδύνατα:", style: "subSectionHeader"},
-								" ",
-								{ol: this.db.fiveSWOT.weak},
-								" ",
-								{text: "5.1.3 Ευκαιρίες:", style: "subSectionHeader"},
-								" ",
-								{ol: this.db.fiveSWOT.opportunities},								
-								" ",
-								{text: "5.1.4 Απειλές:", style: "subSectionHeader"},
-								" ",
-								{ol: this.db.fiveSWOT.threats},								
-	 							" "," ",
+								{columns: [
+									{
+										width: '50%',
+										stack: [
+											"Ευκαιρίες: ",
+											{
+												ul: this.db.fiveSWOT.opportunities
+											}
+										]
+									},
+									{
+										width: '50%',
+										stack: [
+											"Απειλές: ",
+											{
+												ul: this.db.fiveSWOT.threats
+											}
+										]
+									}
+								]},
+								" ",
 								// Section 5.2
 								{text: "5.2 Ανάλυση PESTEL:", style: "subSectionHeader"},
 								" ",

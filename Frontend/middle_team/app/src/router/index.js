@@ -4,6 +4,7 @@ import Synopsis from '@/components/1_synopsis/Synopsis'
 import Identity from '@/components/2_business-model/Identity'
 import Description from '@/components/2_business-model/Description'
 import Managers from '@/components/3_human-resources/Managers'
+import Employees from '@/components/3_human-resources/Employees'
 import Partners from '@/components/3_human-resources/Partners'
 import HumanCosts from '@/components/3_human-resources/HumanCosts'
 import Faculties from '@/components/4_equipment/Faculties'
@@ -33,6 +34,7 @@ export default new Router({
     { path: '/description', name: 'Description', component: Description },
     // 3. Human resources
     { path: '/managers', name: 'Managers', component: Managers },
+    { path: '/employees', name: 'Employees', component: Employees },
     { path: '/partners', name: 'Partners', component: Partners },
     { path: '/humancosts', name: 'HumanCosts', component: HumanCosts },
     // 4. Equipment
