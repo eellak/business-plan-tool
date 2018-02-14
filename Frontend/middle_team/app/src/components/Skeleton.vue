@@ -1,6 +1,6 @@
 <template>
   <div class="skeleton">
-  <!-- <body> -->
+  <body>
     <header class="head">
         <div class="head__logo">
             <img src="../assets/Logo.png" alt="Logo">
@@ -134,7 +134,7 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-      <!-- </body> -->
+  </body>
   </div>
 </template>
 
