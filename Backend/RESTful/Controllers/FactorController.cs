@@ -25,12 +25,12 @@ namespace ContactManager.Controllers
         }
 
         // GET api/factor/5
-        public Factor Get(int id)
+        public Factor[] Get(int id)
         {
             var data = facService.SearchId(id);
             if (data.Count > 0)
             {
-                return data.ElementAt(0);
+                return data.ToArray();
             }
             return null;
         }
@@ -40,7 +40,6 @@ namespace ContactManager.Controllers
         {
             if (facService.Insert(fac))
             {
-                fac.ID = Program.GetLastId();
                 return fac;
             }
             return null;
@@ -49,29 +48,38 @@ namespace ContactManager.Controllers
         // PUT api/factor/5
         public Factor Put(int id, Factor newFactor)
         {
-            newFactor.ID = id;
-            if (facService.SearchId(id).Count > 0)
+            if (facService.SearchFactor(newFactor.BusinessPlanId,newFactor.ID).Count > 0)
             {
-                if (facService.Edit(newFactor))
+                if (facService.Edit(id, newFactor))
                 {
+                    newFactor.BusinessPlanId = id;
                     return newFactor;
                 }
             }
             return null;
         }
 
-        // DELETE api/factor/5
-        public Factor Delete(int id)
+        // DELETE api/factor
+        public Factor Delete(Factor factor)
         {
-            Factor oldFactor = new Factor();
+            if (facService.DeleteId(factor.BusinessPlanId,factor.ID))
+            {
+                return factor;
+            }
+            return null;
+        }
+
+        // DELETE api/factor/1
+        public Factor[] Delete(int id)
+        {
             var data = facService.SearchId(id);
             if (data.Count > 0)
             {
-                oldFactor.SetFactor(data.ElementAt(0));
                 if (facService.DeleteId(id))
                 {
-                    return oldFactor;
+                    return data.ToArray();
                 }
+
             }
             return null;
         }

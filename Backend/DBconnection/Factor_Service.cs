@@ -21,23 +21,29 @@ namespace DBconnection
 
         public bool Insert(Factor fct)
         {
-            sql = "INSERT INTO pestel (business_plans_bpID, description, example) VALUES ('" + fct.BusinessPlanId + "' , '" + fct.Description + "' , '" + fct.Example + "')";
-            return EditTable();
+          sql = "INSERT INTO pestel (business_plans_bpID, factorID, description, example) VALUES ('" + fct.BusinessPlanId + "', '" + fct.ID + "', '" + fct.Description + "' , '" + fct.Example + "')";
+          return EditTable();
         }
 
-        public bool Edit(Factor fct)
+        public bool Edit(int id, Factor fct)
         {
-            sql = "UPDATE pestel SET business_plans_bpID='" + fct.BusinessPlanId + "',description='" + fct.Description + "',example='" + fct.Example + "' WHERE factorID='" + fct.ID + "'";
+            sql = "UPDATE pestel SET business_plans_bpID='" + id + "', description='" + fct.Description + "',example='" + fct.Example + "' WHERE factorID='" + fct.ID + "' AND business_plans_bpID='" + fct.BusinessPlanId + "'";
             return EditTable();
         }
 
 
-        public bool DeleteId(int id)
+        public bool DeleteId(int businessPlanId,int factorId)
         {
-            sql = "DELETE FROM pestel WHERE factorID ='" + id + "'";
+            sql = "DELETE FROM pestel WHERE business_plans_bpID='" + businessPlanId + "' AND factorID ='" + factorId + "'";
             return EditTable();
         }
 
+
+        public bool DeleteId(int businessPlanId)
+        {
+            sql = "DELETE FROM pestel WHERE business_plans_bpID='" + businessPlanId + "'";
+            return EditTable();
+        }
 
 
         public List<Factor> ShowAllItems()
@@ -49,7 +55,13 @@ namespace DBconnection
 
         public List<Factor> SearchId(int id)
         {
-            sql = "SELECT * FROM pestel WHERE factorID='" + id + "'";
+            sql = "SELECT * FROM pestel WHERE business_plans_bpID='" + id + "' ORDER BY factorID";
+            return search();
+        }
+
+        public List<Factor> SearchFactor(int businessPlanId, int factorId)
+        {
+            sql = "SELECT * FROM pestel WHERE business_plans_bpID='" + businessPlanId + "' AND factorID='"+ factorId +"'";
             return search();
         }
 

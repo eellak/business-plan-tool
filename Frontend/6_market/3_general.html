@@ -8,7 +8,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="0_skeleton.css">
 	<link rel="stylesheet" type="text/css" href="3_general.css">
-    
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -233,8 +235,8 @@
 					<p>6. Νομοθετικές διατάξεις</p>
 				</div>
             </div>
-            <textarea class="general" placeholder="Συμπλήρωσε . . ."></textarea>
-            <button id="confirm" class="button">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+            <textarea class="general" placeholder="Συμπλήρωσε . . ." v-model="notes">{{notes}}</textarea>
+            <button id="confirm" class="button" v-on:click="saveData">ΕΠΙΒΕΒΑΙΩΣΗ</button>
         </main>
     </div>
 
@@ -242,7 +244,7 @@
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
         <span class="foot__pagination">
-            <p>1/2</p>
+            <p>3/3</p>
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
@@ -259,7 +261,17 @@
                 x.style.display = "none";
             }
         }
+	
+	
+	function previousPage(){
+		window.location.href = "2_pestel.html";
+	}
+
+	function nextPage(){
+		window.location.href = ""; // insert next page here
+	}
     </script>
+    <script src="3_general.js"></script>
 </body>
 
 </html>

@@ -252,6 +252,7 @@ footer {
     justify-content: center;
     align-items: center;
     border-style: none;
+	cursor: pointer;
 }
 
 .foot__pagination {
@@ -410,3 +411,4 @@ nav {
    height: 34px;
    width: 268px;
 }
+

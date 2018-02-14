@@ -67,6 +67,7 @@ footer {
     justify-content: center;
     align-items: center;
     border-style: none;
+	cursor: pointer;
 }
 
 .foot__next {
@@ -79,6 +80,7 @@ footer {
     justify-content: center;
     align-items: center;
     border-style: none;
+	cursor: pointer;
 }
 
 .foot__pagination {
