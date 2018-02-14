@@ -26,135 +26,51 @@ export const store = new Vuex.Store({
 			partners: [],	
 
 			//Team 3.4
-			employeeSalaries: [
-				{"EmployeeID": 1, "Salary": 1500, "Bonus": 100, "Employment_type": "employ type 1"},
-				{"EmployeeID": 2, "Salary": 1500, "Bonus": 100, "Employment_type": "employ type 1"},
-				{"EmployeeID": 3, "Salary": 3000, "Bonus": 200, "Employment_type": "employ type 2"},
-				{"EmployeeID": 4, "Salary": 5000, "Bonus": 300, "Employment_type": "employ type 1"},
-				{"EmployeeID": 5, "Salary": 5000, "Bonus": 300, "Employment_type": "employ type 1"},
-			],
+			employeeSalaries: [],
 
 			//Team 4.1
-			faculties: [
-				{"ID": 1, "BusinessPlanId": 1, "Adress": "address 1", "Usage": "usage 1", "M2": 200, "Ownership_type": "type 1", "Start_date": 20180203},
-				{"ID": 2, "BusinessPlanId": 1, "Adress": "address 2", "Usage": "usage 2", "M2": 3000, "Ownership_type": "type 1", "Start_date": 20180110},
-				{"ID": 3, "BusinessPlanId": 1, "Adress": "address 3", "Usage": "usage 3", "M2": 1500, "Ownership_type": "type 2", "Start_date": 20180310},
-			],
+			faculties: [],
 
 			//Team 4.2
-			equipment: [ // Firsthand is flag, 0:false, 1:true
-				{"ID": 1, "BusinessPlanId": 1, "EquipType": "equipment type 1", "Address": "address 1", "Division": "div 1", "Firsthand": 1, "Acquisition_date": 20180110},
-				{"ID": 2, "BusinessPlanId": 1, "EquipType": "equipment type 1", "Address": "address 1", "Division": "div 1", "Firsthand": 0, "Acquisition_date": 20180201},
-				{"ID": 3, "BusinessPlanId": 1, "EquipType": "equipment type 2", "Address": "address 2", "Division": "div 2", "Firsthand": 0, "Acquisition_date": 20180315}
-			],
+			equipment: [],
 
 			//Team 4.3
-			runningCost: [{
-					"FacultyCosts": [{"FacultyId": 1, "Cost": 55252},
-									{"FacultyId": 2, "Cost": 321354},
-									{"FacultyId": 3, "Cost": 654321}],
-					"EquipmentCosts": [{"EquipmentId": 1, "Cost": 321321},
-									{"EquipmentId": 2, "Cost": 123456},
-									{"EquipmentId": 3, "Cost": 3321}],
-					"FacultyExpenses": 1030927,
-					"EquipmentExpenses": 448098
-			}], 
+			runningCost: [], 
 
 			//Team 5.1, 5.2, 5.3 (for teams wanting only some attributes, appropriate consumers must be made)
-			products: [ //ProductType: 0=false=service, 1=true=product
-				{"ID": 1, "BusinessPlanId": 1, "ProductType": false, "Name": "service 1", "Directed_to": "dir1", "Innovation_factor": "fac1", "Technology": "tec1", "License": "lic1", "Competition": "comp1", "Price": 100, "Description": "desc1", "Copyright": "cpr1", "Certificate": null, "ProductCost": 30, "NumProduct": 1, "PercentageIncome": 50},
-				{"ID": 2, "BusinessPlanId": 1, "ProductType": true, "Name": "product 1", "Directed_to": "dir1", "Innovation_factor": "fac2", "Technology": "tec1", "License": "lic2", "Competition": "comp2", "Price": 200, "Description": "desc2", "Copyright": "cpr2", "Certificate": null, "ProductCost": 60, "NumProduct": 2, "PercentageIncome": 50},
-				{"ID": 3, "BusinessPlanId": 1, "ProductType": true, "Name": "product 2", "Directed_to": "dir2", "Innovation_factor": "fac1", "Technology": "tec2", "License": "lic3", "Competition": "comp3", "Price": 150, "Description": "desc3", "Copyright": "cpr3", "Certificate": null, "ProductCost": 50, "NumProduct": 3, "PercentageIncome": 50}
-			],
+			products: [],
 
 			//Team 6.1
-			swot: [{"Strong": ["strong 1", "strong 2", "strong 3"],
-					"Weak": ["weak 1", "weak 2", "weak 3"],
-					"Opportunities": ["opportunity 1", "opportunity 2", "opportunity 3"],
-					"Threats": ["threat 1", "threat 2", "threat 3"],
-					"BusinessPlanId": 1
-			}],
+			swot: [],
 
 			//Team 6.2, PESTEL
-			factors: [
-				{"ID": 1, "BusinessPlanId": 1, "Description": "pestel desc 1", "Example": "example 1"},
-				{"ID": 2, "BusinessPlanId": 1, "Description": "pestel desc 2", "Example": "example 2"},
-				{"ID": 3, "BusinessPlanId": 1, "Description": "pestel desc 3", "Example": "example 3"}
-			],
+			factors: [],
 
 			//Team 6.3
-			note: [{ 
-				"BusinessPlanId": 1,
-				"Text": "note 1 Lorem ipsum dolor sit amet, \
-						consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus \
-						aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat \
-						quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum \
-						leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent \
-						taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. \
-						Maecenas sodales scelerisque tristique."
-			}],
+			note: [],
 
 			//Team 7.1
-			strategy: [{
-				"BusinessPlanId": 1,
-				"Promotion": "promo 1",
-				"Contribution": "contribution 1",
-				"MarketEntry": "entry 1",
-				"PublicRelations": "relation 1",
-				"Avoid": "avoidance 1"
-			}],
+			strategy: [],
 
 			//Team 7.2
-			marketingActions: [
-				{"ID": 1, "BusinessPlanId": 1, "Title": "marketing action 1", "ImplementationTime": 12351, "Frequency": 32, "ImplementationCost": 15000, "TotalCost": 30000},
-				{"ID": 2, "BusinessPlanId": 1, "Title": "marketing action 2", "ImplementationTime": 4634, "Frequency": 10, "ImplementationCost": 5000, "TotalCost": 20000},
-				{"ID": 3, "BusinessPlanId": 1, "Title": "marketing action 3", "ImplementationTime": 876, "Frequency": 2, "ImplementationCost": 1000, "TotalCost": 3000}
-			],
+			marketingActions: [],
 
 			//Team 8.1
-			startActions: [
-				{"ID": 1, "BusinessPlanId": 1, "Name": "action 1", "ActionCost": 100},    
-				{"ID": 2, "BusinessPlanId": 1, "Name": "action 2", "ActionCost": 200},
-				{"ID": 3, "BusinessPlanId": 1, "Name": "action 3", "ActionCost": 300},
-			],
+			startActions: [],
 
 			//Team 8.2
-			functionCost: [{
-				"Functions": [
-					{"ID": 1, "BusinessPlanId": 1, "Name": "start function 1", "FunctionCost": 59592},
-					{"ID": 2, "BusinessPlanId": 3, "Name": "start function 2", "FunctionCost": 292},
-					{"ID": 3, "BusinessPlanId": 2, "Name": "start function 3", "FunctionCost": 59}
-				],
-				"FunctionsTotalCost": 59943
-			}],
+			functionCost: [],
 
 			//Team 8.3
-			deadspots: [
-				{"ProductID": 1, "BusinessPlanId": 1, "Spot": "dead1"},
-				{"ProductID": 2, "BusinessPlanId": 1, "Spot": "dead2"},
-				{"ProductID": 3, "BusinessPlanId": 1, "Spot": "dead3"},
-			],
+			deadspots: [],
 
 			// Team 9 Gantt chart ???
 
 			// Appendix: Upload functionality
-			links: [
-				{"ID": 1, "BusinessPlanId": 1, "URL": "url 1", "Title": "title 1", "Section": "section 1"},
-				{"ID": 2, "BusinessPlanId": 1, "URL": "url 2", "Title": "title 2", "Section": "section 2"},
-				{"ID": 3, "BusinessPlanId": 1, "URL": "url 3", "Title": "title 3", "Section": "section 3"},
-			],
+			links: [],
 
 			//Team 1.1
-			conclusion: [{
-					"BussinesPlanId": 1,
-					"Text": "conclusion 1 Lorem ipsum dolor sit amet, \
-							consectetur adipiscing elit. Sed gravida eget diam nec rhoncus. Phasellus luctus \
-							aliquam arcu, eget finibus tellus blandit eget. Nunc porta orci dolor, eu placerat \
-							quam consequat ut. Sed nibh mauris, dictum et feugiat vitae, facilisis elementum \
-							leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent \
-							taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. \
-							Maecenas sodales scelerisque tristique."
-			}]
+			conclusion: []
 	},
 
 	actions: {
@@ -358,40 +274,599 @@ export const store = new Vuex.Store({
 		},
 
 		// Employee Salaries 3.4
+		getEmployeeSalaries: function ({ commit }) {
+			axios.get(serverUrl + "/employeeSalary")
+			.then(function (response)
+			{
+				commit('GET_EMPLOYEE_SALARIES', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createEmployeeSalary: function ({ commit }, payload) {
+			axios.post(serverUrl + "/employeeSalary", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_EMPLOYEE_SALARY', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteEmployeeSalary: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/employeeSalary/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_EMPLOYEE_SALARY', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Faculties 4.1
+		getFaculties: function ({ commit }) {
+			axios.get(serverUrl + "/faculty")
+			.then(function (response)
+			{
+				commit('GET_FACULTIES', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createFaculty: function ({ commit }, payload) {
+			axios.post(serverUrl + "/faculty", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_FACULTY', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteFaculty: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/faculty/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_FACULTY', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Equipment 4.2
+		getEquipment: function ({ commit }) {
+			axios.get(serverUrl + "/equipment")
+			.then(function (response)
+			{
+				commit('GET_EQUIPMENT', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createEquipment: function ({ commit }, payload) {
+			axios.post(serverUrl + "/equipment", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_EQUIPMENT', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteEquipment: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/equipment/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_EQUIPMENT', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// RunningCost 4.3
+		getRunningCosts: function ({ commit }) {
+			axios.get(serverUrl + "/runningCost")
+			.then(function (response)
+			{
+				commit('GET_RUNNING_COSTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createRunningCost: function ({ commit }, payload) {
+			axios.post(serverUrl + "/runningCost", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_RUNNING_COST', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteRunningCost: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/runningCost/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_RUNNING_COST', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// RunningCost - FacultyCosts 4.3
+		getFacultyCosts: function ({ commit }) {
+			axios.get(serverUrl + "/facultyCost")
+			.then(function (response)
+			{
+				commit('GET_FACULTY_COSTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createFacultyCost: function ({ commit }, payload) {
+			axios.post(serverUrl + "/facultyCost", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_FACULTY_COST', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteFacultyCost: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/facultyCost/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_FACULTY_COST', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// RunningCost - EquipmentCosts 4.3
+		getEquipmentCosts: function ({ commit }) {
+			axios.get(serverUrl + "/equipmentCost")
+			.then(function (response)
+			{
+				commit('GET_EQUIPMENT_COSTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createEquipmentCost: function ({ commit }, payload) {
+			axios.post(serverUrl + "/equipmentCost", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_EQUIPMENT_COST', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteEquipmentCost: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/equipmentCost/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_EQUIPMENT_COST', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Products 5
+		getProducts: function ({ commit }) {
+			axios.get(serverUrl + "/product")
+			.then(function (response)
+			{
+				commit('GET_PRODUCTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createProduct: function ({ commit }, payload) {
+			axios.post(serverUrl + "/product", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_PRODUCT', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteProduct: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/product/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_PRODUCT', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+
 
 		// SWOT 6.1
+		getSWOTS: function ({ commit }) {
+			axios.get(serverUrl + "/swot")
+			.then(function (response)
+			{
+				commit('GET_SWOTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createSWOT: function ({ commit }, payload) {
+			axios.post(serverUrl + "/swot", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_SWOT', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteSWOT: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/swot/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_SWOT', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// PESTEL - Factors 6.2
+		getFactors: function ({ commit }) {
+			axios.get(serverUrl + "/factor")
+			.then(function (response)
+			{
+				commit('GET_FACTORS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createFactor: function ({ commit }, payload) {
+			axios.post(serverUrl + "/factor", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_FACTOR', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteFactor: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/factor/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_FACTOR', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
-		// Notes 6.3
+		// Note 6.3
+		getNotes: function ({ commit }) {
+			axios.get(serverUrl + "/note")
+			.then(function (response)
+			{
+				commit('GET_NOTES', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createNote: function ({ commit }, payload) {
+			axios.post(serverUrl + "/note", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_NOTE', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteNote: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/note/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_NOTE', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Strategy 7.1
+		getStrategies: function ({ commit }) {
+			axios.get(serverUrl + "/strategy")
+			.then(function (response)
+			{
+				commit('GET_STRATEGIES', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createStrategy: function ({ commit }, payload) {
+			axios.post(serverUrl + "/strategy", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_STRATEGY', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteStrategy: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/strategy/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_STRATEGY', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// MarketingActions 7.2
+		getMarketingActions: function ({ commit }) {
+			axios.get(serverUrl + "/marketingAction")
+			.then(function (response)
+			{
+				commit('GET_MARKETING_ACTIONS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createMarketingAction: function ({ commit }, payload) {
+			axios.post(serverUrl + "/marketingAction", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_MARKETING_ACTION', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteMarketingAction: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/marketingAction/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_MARKETING_ACTION', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// StartActions 8.1
+		getStartActions: function ({ commit }) {
+			axios.get(serverUrl + "/startAction")
+			.then(function (response)
+			{
+				commit('GET_START_ACTIONS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createStartAction: function ({ commit }, payload) {
+			axios.post(serverUrl + "/startAction", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_START_ACTION', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteStartAction: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/startAction/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_START_ACTION', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// FunctionCost 8.2
+		getFunctionCosts: function ({ commit }) {
+			axios.get(serverUrl + "/functionCost")
+			.then(function (response)
+			{
+				commit('GET_FUNCTION_COSTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createFunctionCost: function ({ commit }, payload) {
+			axios.post(serverUrl + "/functionCost", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_FUNCTION_COST', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteFunctionCost: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/functionCost/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_FUNCTION_COST', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// FunctionCost - Functions 8.2
+		getFunctions: function ({ commit }) {
+			axios.get(serverUrl + "/function")
+			.then(function (response)
+			{
+				commit('GET_FUNCTIONS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createFunction: function ({ commit }, payload) {
+			axios.post(serverUrl + "/function", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_FUNCTION', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteFunction: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/function/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_FUNCTION', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Deadspots 8.3
+		getDeadspots: function ({ commit }) {
+			axios.get(serverUrl + "/deadspot")
+			.then(function (response)
+			{
+				commit('GET_DEADSPOTS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createDeadspot: function ({ commit }, payload) {
+			axios.post(serverUrl + "/deadspot", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_DEADSPOT', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteDeadspot: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/deadspot/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_DEADSPOT', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Links 9
+		getLinks: function ({ commit }) {
+			axios.get(serverUrl + "/link")
+			.then(function (response)
+			{
+				commit('GET_LINKS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createLink: function ({ commit }, payload) {
+			axios.post(serverUrl + "/link", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_LINK', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteLink: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/link/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_LINK', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 
 		// Conclusion 1.1
+		getConclusions: function ({ commit }) {
+			axios.get(serverUrl + "/conclusion")
+			.then(function (response)
+			{
+				commit('GET_CONCLUSIONS', response.data)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
+		createConclusion: function ({ commit }, payload) {
+			axios.post(serverUrl + "/conclusion", payload)
+			.then(function (response)
+			{
+					console.log("payload of create: ", payload)
+					commit('CREATE_CONCLUSION', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
+		deleteConclusion: function ({ commit }, payload) {
+			axios.delete(serverUrl + "/conclusion/" + payload)
+			.then(function (response)
+			{
+				commit('DELETE_CONCLUSION', payload)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+		},
 	},
 
 	mutations:{
@@ -490,40 +965,274 @@ export const store = new Vuex.Store({
 		},
 
 		// Employee Salaries 3.4
+		GET_EMPLOYEE_SALARIES: (state, payload) => {
+			state.employeeSalaries = payload
+		},		
+		CREATE_EMPLOYEE_SALARY: (state, payload) => {
+			state.employeeSalaries.push(payload)
+		},
+		DELETE_EMPLOYEE_SALARY: (state, payload) => {
+			for (var i=0, l = state.employeeSalaries.length; i < l; i++) {
+				if (state.employeeSalaries[i].ID === payload) {
+					state.employeeSalaries.splice(i, 1)
+				}
+			}
+		},
 
 		// Faculties 4.1
+		GET_FACULTIES: (state, payload) => {
+			state.faculties = payload
+		},		
+		CREATE_FACULTY: (state, payload) => {
+			state.faculties.push(payload)
+		},
+		DELETE_FACULTY: (state, payload) => {
+			for (var i=0, l = state.faculties.length; i < l; i++) {
+				if (state.faculties[i].ID === payload) {
+					state.faculties.splice(i, 1)
+				}
+			}
+		},
 
 		// Equipment 4.2
+		GET_EQUIPMENT: (state, payload) => {
+			state.equipment = payload
+		},		
+		CREATE_EQUIPMENT: (state, payload) => {
+			state.equipment.push(payload)
+		},
+		DELETE_EQUIPMENT: (state, payload) => {
+			for (var i=0, l = state.equipment.length; i < l; i++) {
+				if (state.equipment[i].ID === payload) {
+					state.equipment.splice(i, 1)
+				}
+			}
+		},
 
 		// RunningCost 4.3
+		GET_RUNNING_COSTS: (state, payload) => {
+			state.runningCost = payload
+		},		
+		CREATE_RUNNING_COST: (state, payload) => {
+			state.runningCost.push(payload)
+		},
+		DELETE_RUNNING_COST: (state, payload) => {
+			for (var i=0, l = state.runningCost.length; i < l; i++) {
+				if (state.runningCost[i].ID === payload) {
+					state.runningCost.splice(i, 1)
+				}
+			}
+		},
 
 		// RunningCost - FacultyCosts 4.3
+		GET_FACULTY_COSTS: (state, payload) => {
+			state.runningCost[0].FacultyCosts = payload
+		},		
+		CREATE_FACULTY_COST: (state, payload) => {
+			state.runningCost[0].FacultyCosts.push(payload)
+		},
+		DELETE_FACULTY_COST: (state, payload) => {
+			for (var i=0, l = state.runningCost[0].FacultyCosts.length; i < l; i++) {
+				if (state.runningCost[0].FacultyCosts[i].ID === payload) {
+					state.runningCost[0].FacultyCosts.splice(i, 1)
+				}
+			}
+		},
 
 		// RunningCost - EquipmentCosts 4.3
+		GET_EQUIPMENT_COSTS: (state, payload) => {
+			state.runningCost[0].EquipmentCosts = payload
+		},		
+		CREATE_EQUIPMENT_COST: (state, payload) => {
+			state.runningCost[0].EquipmentCosts.push(payload)
+		},
+		DELETE_EQUIPMENT_COST: (state, payload) => {
+			for (var i=0, l = state.runningCost[0].EquipmentCosts.length; i < l; i++) {
+				if (state.runningCost[0].EquipmentCosts[i].ID === payload) {
+					state.runningCost[0].EquipmentCosts.splice(i, 1)
+				}
+			}
+		},
 
 		// Products 5
+		GET_PRODUCTS: (state, payload) => {
+			state.products = payload
+		},		
+		CREATE_PRODUCT: (state, payload) => {
+			state.products.push(payload)
+		},
+		DELETE_PRODUCT: (state, payload) => {
+			for (var i=0, l = state.products.length; i < l; i++) {
+				if (state.products[i].ID === payload) {
+					state.products.splice(i, 1)
+				}
+			}
+		},
 
 		// SWOT 6.1
+		GET_SWOTS: (state, payload) => {
+			state.swot = payload
+		},		
+		CREATE_SWOT: (state, payload) => {
+			state.swot.push(payload)
+		},
+		DELETE_SWOT: (state, payload) => {
+			for (var i=0, l = state.swot.length; i < l; i++) {
+				if (state.swot[i].ID === payload) {
+					state.swot.splice(i, 1)
+				}
+			}
+		},
 
 		// PESTEL - Factors 6.2
+		GET_FACTORS: (state, payload) => {
+			state.factors = payload
+		},		
+		CREATE_FACTOR: (state, payload) => {
+			state.factors.push(payload)
+		},
+		DELETE_FACTOR: (state, payload) => {
+			for (var i=0, l = state.factors.length; i < l; i++) {
+				if (state.factors[i].ID === payload) {
+					state.factors.splice(i, 1)
+				}
+			}
+		},
 
 		// Notes 6.3
+		GET_NOTES: (state, payload) => {
+			state.note = payload
+		},		
+		CREATE_NOTE: (state, payload) => {
+			state.note.push(payload)
+		},
+		DELETE_NOTE: (state, payload) => {
+			for (var i=0, l = state.note.length; i < l; i++) {
+				if (state.note[i].ID === payload) {
+					state.note.splice(i, 1)
+				}
+			}
+		},
 
 		// Strategy 7.1
+		GET_STRATEGIES: (state, payload) => {
+			state.strategy = payload
+		},		
+		CREATE_STRATEGY: (state, payload) => {
+			state.strategy.push(payload)
+		},
+		DELETE_STRATEGY: (state, payload) => {
+			for (var i=0, l = state.strategy.length; i < l; i++) {
+				if (state.strategy[i].ID === payload) {
+					state.strategy.splice(i, 1)
+				}
+			}
+		},
 
 		// MarketingActions 7.2
+		GET_MARKETING_ACTIONS: (state, payload) => {
+			state.marketingActions = payload
+		},		
+		CREATE_MARKETING_ACTION: (state, payload) => {
+			state.marketingActions.push(payload)
+		},
+		DELETE_MARKETING_ACTION: (state, payload) => {
+			for (var i=0, l = state.marketingActions.length; i < l; i++) {
+				if (state.marketingActions[i].ID === payload) {
+					state.marketingActions.splice(i, 1)
+				}
+			}
+		},
 
 		// StartActions 8.1
+		GET_START_ACTIONS: (state, payload) => {
+			state.startActions = payload
+		},		
+		CREATE_START_ACTION: (state, payload) => {
+			state.startActions.push(payload)
+		},
+		DELETE_START_ACTION: (state, payload) => {
+			for (var i=0, l = state.startActions.length; i < l; i++) {
+				if (state.startActions[i].ID === payload) {
+					state.startActions.splice(i, 1)
+				}
+			}
+		},
 
 		// FunctionCost 8.2
+		GET_FUNCTION_COSTS: (state, payload) => {
+			state.functionCost = payload
+		},		
+		CREATE_FUNCTION_COST: (state, payload) => {
+			state.functionCost.push(payload)
+		},
+		DELETE_FUNCTION_COST: (state, payload) => {
+			for (var i=0, l = state.functionCost.length; i < l; i++) {
+				if (state.functionCost[i].ID === payload) {
+					state.functionCost.splice(i, 1)
+				}
+			}
+		},
 
 		// FunctionCost - Functions 8.2
+		GET_FUNCTIONS: (state, payload) => {
+			state.functionCost[0].Functions = payload
+		},		
+		CREATE_FUNCTION: (state, payload) => {
+			state.functionCost[0].Functions.push(payload)
+		},
+		DELETE_FUNCTION: (state, payload) => {
+			for (var i=0, l = state.functionCost[0].Functions.length; i < l; i++) {
+				if (state.functionCost[0].Functions[i].ID === payload) {
+					state.functionCost[0].Functions.splice(i, 1)
+				}
+			}
+		},
 
 		// Deadspots 8.3
+		GET_DEADSPOTS: (state, payload) => {
+			state.deadspots = payload
+		},		
+		CREATE_DEADSPOT: (state, payload) => {
+			state.deadspots.push(payload)
+		},
+		DELETE_DEADSPOT: (state, payload) => {
+			for (var i=0, l = state.deadspots.length; i < l; i++) {
+				if (state.deadspots[i].ID === payload) {
+					state.deadspots.splice(i, 1)
+				}
+			}
+		},
 
 		// Links 9
+		GET_LINKS: (state, payload) => {
+			state.links = payload
+		},		
+		CREATE_LINK: (state, payload) => {
+			state.links.push(payload)
+		},
+		DELETE_LINK: (state, payload) => {
+			for (var i=0, l = state.links.length; i < l; i++) {
+				if (state.links[i].ID === payload) {
+					state.links.splice(i, 1)
+				}
+			}
+		},
 
 		// Conclusion 1.1
+		GET_CONCLUSIONS: (state, payload) => {
+			state.conclusion = payload
+		},		
+		CREATE_CONCLUSION: (state, payload) => {
+			state.conclusion.push(payload)
+		},
+		DELETE_CONCLUSION: (state, payload) => {
+			for (var i=0, l = state.conclusion.length; i < l; i++) {
+				if (state.conclusion[i].ID === payload) {
+					state.conclusion.splice(i, 1)
+				}
+			}
+		},
 	},
 
 	getters:{
