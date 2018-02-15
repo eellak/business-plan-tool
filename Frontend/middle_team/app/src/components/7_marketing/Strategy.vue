@@ -1,5 +1,5 @@
 <template>
- <div class="marketing-actions"
+ <div class="marketing-actions">
 						<button id="button1" class="button1" v-on:click="instr">ΟΔΗΓΙΕΣ</button>
 
 								<div id="hidden_div" class="hiddenDiv">
@@ -51,8 +51,8 @@
         myfrequency: '',
         myimplementationCost: '',
         mytotalCost:''
-      },
-			title: this.$options.name
+      }
+			// title: this.$options.name
 		},
 
    mounted(){
@@ -258,11 +258,11 @@
  }
  /* QUESTIONS */
 
- @font-face {
+ /* @font-face {
 		font-family: OpenSans;
 		src: url(sansation_bold.woff);
 		font-weight: bold;
- }
+ } */
  .basic_button {
 						background-color: rgb(24, 146, 105);
 						width: 100px;

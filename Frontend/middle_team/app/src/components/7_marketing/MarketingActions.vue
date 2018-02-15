@@ -65,8 +65,8 @@
         myfrequency: '',
         myimplementationCost: '',
         mytotalCost:''
-      },
-			title: this.$options.name
+      }
+			// title: this.$options.name
 		},
 
    mounted(){
@@ -272,11 +272,11 @@
  }
  /* QUESTIONS */
 
- @font-face {
+ /* @font-face {
 		font-family: OpenSans;
-		src: url(sansation_bold.woff);
+		/* src: url(sansation_bold.woff);
 		font-weight: bold;
- }
+ } */
  .basic_button {
 						background-color: rgb(24, 146, 105);
 						width: 100px;
