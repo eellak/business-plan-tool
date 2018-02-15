@@ -1292,15 +1292,15 @@ export const store = new Vuex.Store({
 
 		// RunningCost - FacultyCosts 4.3
 		// Returns only the facultyCosts array from inside the first (0th) runningCost
-		facultyCosts: state => {
-			return state.runningCost[0].FacultyCosts 
-		},
+		// facultyCosts: state => {
+		// 	return state.runningCost[0].FacultyCosts 
+		// },
 
 		// RunningCost - EquipmentCosts 4.3
 		// Returns only the equipmentCosts array from inside the first (0th) runningCost		
-		equipmentCosts: state => {
-			return state.runningCost[0].EquipmentCosts
-		},
+		// equipmentCosts: state => {
+		// 	return state.runningCost[0].EquipmentCosts
+		// },
 
 		// Products 5
 		products: state => {
@@ -1346,9 +1346,9 @@ export const store = new Vuex.Store({
 
 		// FunctionCost - Functions 8.2
 		// Returns only the functions array from inside the first (0th) functionCost resource
-		functions: state => {
-			return state.functionCost[0].Functions
-		},
+		// functions: state => {
+		// 	return state.functionCost[0].Functions
+		// },
 
 		// Deadspots 8.3
 		deadspots: state => {
