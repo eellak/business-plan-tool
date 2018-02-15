@@ -623,6 +623,7 @@ body {
     display: flex;
     margin-right: 100px;
     align-items: center;
+    cursor: pointer;
 }
 .head__avatar {
     height: 70px;
