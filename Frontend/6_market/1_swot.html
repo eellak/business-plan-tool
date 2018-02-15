@@ -19,7 +19,7 @@
             <img src="img/myLogo.png" alt="Logo">
         </div>
         <div class="head_export">
-                <img src="img/export.png">
+                <img src="img/export.png" alt="Export">
                 <p>ΕΞΑΓΩΓΗ</p>
             </div>
         <img class="head__avatar" src="img/avatar.png" alt="Avatar">
@@ -240,20 +240,20 @@
               </label>
               <div class="icons">
                 <div class="leftIcon" v-if="adviceIndex[0] > 0">
-                  <img src="img/previous.png" v-on:click="decreaseIndex(0)">
+                  <img src="img/previous.png" alt="PREVIOUS" v-on:click="decreaseIndex(0)">
                 </div>
                 <div class="rightIcon" v-if="adviceIndex[0] < advices[0].length -1">
-                  <img src="img/next.png" v-on:click="increaseIndex(0)">
+                  <img src="img/next.png" alt="NEXT" v-on:click="increaseIndex(0)">
                 </div>
               </div>
               <h4 class="advices" >{{advices[0][adviceIndex[0]]}}</h4>
               <textarea  v-for="i in spots[0].length" v-model="spots[0][i-1]">{{spots[0][i-1]}}</textarea>
               <div class="icons">
                 <div class="leftIcon">
-                  <img  src="img/add.png"v-on:click="addSpot(0)">
+                  <img  src="img/add.png" alt="ADD" v-on:click="addSpot(0)">
                 </div>
                 <div class="rightIcon">
-                  <img src="img/delete.png" v-on:click="removeSpot(0)">
+                  <img src="img/delete.png" alt="DELETE" v-on:click="removeSpot(0)">
                 </div>
               </div>
             </td>
@@ -263,20 +263,20 @@
               </label>
               <div class="icons">
                 <div class="leftIcon" v-if="adviceIndex[1] > 0">
-                  <img src="img/previous.png"v-on:click="decreaseIndex(1)">
+                  <img src="img/previous.png" alt="PREVIOUS" v-on:click="decreaseIndex(1)">
                 </div>
                 <div class="rightIcon" v-if="adviceIndex[1] < advices[1].length -1">
-                  <img src="img/next.png" v-on:click="increaseIndex(1)">
+                  <img src="img/next.png" alt="NEXT" v-on:click="increaseIndex(1)">
                 </div>
               </div>
               <h4 class="advices" >{{advices[1][adviceIndex[1]]}}</h4>
               <textarea  v-for="i in spots[1].length" v-model="spots[1][i-1]">{{spots[1][i-1]}}</textarea>
               <div class="icons">
                 <div class="leftIcon">
-                  <img  src="img/add.png"v-on:click="addSpot(1)">
+                  <img  src="img/add.png" alt="ADD" v-on:click="addSpot(1)">
                 </div>
                 <div class="rightIcon">
-                  <img src="img/delete.png" v-on:click="removeSpot(1)">
+                  <img src="img/delete.png" alt="DELETE" v-on:click="removeSpot(1)">
                 </div>
               </div>
             </td>
@@ -289,20 +289,20 @@
               </label>
               <div class="icons">
                 <div class="leftIcon" v-if="adviceIndex[2] > 0">
-                  <img src="img/previous.png"v-on:click="decreaseIndex(2)">
+                  <img src="img/previous.png" alt="PREVIOUS" v-on:click="decreaseIndex(2)">
                 </div>
                 <div class="rightIcon" v-if="adviceIndex[2] < advices[2].length -1">
-                  <img src="img/next.png" v-on:click="increaseIndex(2)">
+                  <img src="img/next.png" alt="NEXT" v-on:click="increaseIndex(2)">
                 </div>
               </div>
               <h4 class="advices" >{{advices[2][adviceIndex[2]]}}</h4>
               <textarea  v-for="i in spots[2].length" v-model="spots[2][i-1]">{{spots[2][i-1]}}</textarea>
               <div class="icons">
                 <div class="leftIcon">
-                  <img  src="img/add.png"v-on:click="addSpot(2)">
+                  <img  src="img/add.png" alt="ADD" v-on:click="addSpot(2)">
                 </div>
                 <div class="rightIcon">
-                  <img src="img/delete.png" v-on:click="removeSpot(2)">
+                  <img src="img/delete.png" alt="DELETE" v-on:click="removeSpot(2)">
                 </div>
               </div>
             </td>
@@ -312,20 +312,20 @@
               </label>
               <div class="icons">
                 <div class="leftIcon" v-if="adviceIndex[3] > 0">
-                  <img src="img/previous.png"v-on:click="decreaseIndex(3)">
+                  <img src="img/previous.png" alt="PREVIOUS" v-on:click="decreaseIndex(3)">
                 </div>
                 <div class="rightIcon" v-if="adviceIndex[3] < advices[3].length -1">
-                  <img src="img/next.png" v-on:click="increaseIndex(3)">
+                  <img src="img/next.png" alt="NEXT" v-on:click="increaseIndex(3)">
                 </div>
               </div>
               <h4 class="advices" >{{advices[3][adviceIndex[3]]}}</h4>
               <textarea  v-for="i in spots[3].length" v-model="spots[3][i-1]">{{spots[3][i-1]}}</textarea>
               <div class="icons">
                 <div class="leftIcon">
-                  <img  src="img/add.png"v-on:click="addSpot(3)">
+                  <img  src="img/add.png" alt="ADD" v-on:click="addSpot(3)">
                 </div>
                 <div class="rightIcon">
-                  <img src="img/delete.png" v-on:click="removeSpot(3)">
+                  <img src="img/delete.png" alt="DELETE" v-on:click="removeSpot(3)">
                 </div>
               </div>
             </td>
@@ -358,7 +358,7 @@
 
 
 		function previousPage(){
-			window.location.href = ""; // insert previous page here
+			window.location.href = "1_swot.html"; // insert previous page here
 		}
 
 		function nextPage(){
