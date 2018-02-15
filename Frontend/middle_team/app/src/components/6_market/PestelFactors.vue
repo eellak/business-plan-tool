@@ -311,10 +311,10 @@ export default {
 	}
 
 	div.text_container {
-		width: 350px;
+		width: 300px;
 		height:200px;
 		margin-left: 5px;
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
 	.button {
@@ -365,8 +365,8 @@ export default {
 	}
 
 	#confirm {
-		float: right;
 		margin-right: 20px;
+		float: right;
 		background-color: rgb(40, 150, 90);
 		font-style: italic;
 		font-weight: bold;

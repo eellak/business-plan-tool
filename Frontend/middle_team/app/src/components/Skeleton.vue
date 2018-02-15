@@ -5,7 +5,7 @@
         <div class="head__logo">
             <img src="../assets/Logo.png" alt="Logo">
         </div>
-        <div class="head__export"  @click="exportFunction()">
+        <div class="head__export" @click="exportFunction()">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
             <p>Export</p>
@@ -149,6 +149,33 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
+  created() {
+    this.$store.dispatch('getManagers')
+    this.$store.dispatch('getIdentities')
+    this.$store.dispatch('getDescriptions')
+    this.$store.dispatch('getClients')
+    this.$store.dispatch('getManagers')
+    this.$store.dispatch('getEmployees')
+    this.$store.dispatch('getPartners')
+    this.$store.dispatch('getEmployeeSalaries')
+    this.$store.dispatch('getFaculties')
+    this.$store.dispatch('getEquipment')
+    this.$store.dispatch('getRunningCosts')
+    // this.$store.dispatch('getFacultyCosts')
+    // this.$store.dispatch('getEquipmentCosts')
+    this.$store.dispatch('getProducts')
+    this.$store.dispatch('getSWOTS')
+    this.$store.dispatch('getFactors')
+    this.$store.dispatch('getNotes')
+    this.$store.dispatch('getStrategies')
+    this.$store.dispatch('getMarketingActions')
+    this.$store.dispatch('getStartActions')
+    this.$store.dispatch('getFunctionCosts')
+    // this.$store.dispatch('getFunctions')
+    this.$store.dispatch('getDeadspots')
+    this.$store.dispatch('getLinks')
+    this.$store.dispatch('getConclusions')
+  },
     mounted(){
         $('.has-sub').click(function(){
           event.preventDefault();
@@ -245,7 +272,7 @@ export default {
 
       for (var i = 0; i < facultiesObj.length; i++){
         facultiesArray.push([{text: "ID: "                    + facultiesObj[i].ID},
-                             {text: "Διεύθυνση: "             + facultiesObj[i].Adress},
+                             {text: "Διεύθυνση: "             + facultiesObj[i].Address},
                              {text: "Λειτουργία χώρου ως: "   + facultiesObj[i].Usage},
                              {text: "Έκταση: "                + facultiesObj[i].M2 + " τετραγωνικά μέτρα"},
                              {text: "Είδος ιδιοκτησίας: "     + facultiesObj[i].Ownership_type},
@@ -278,7 +305,7 @@ export default {
 
     facultyCostFun(db){
       var facultyCostArray = []
-      var facultyCostObj = db["runningCost"][0]["FacultyCosts"]
+      var facultyCostObj = db.runningCost.FacultyCosts
 
       for (var i = 0; i < facultyCostObj.length; i++){
         facultyCostArray.push([{text: "ID εγκατάστασης: "     + facultyCostObj[i].FacultyId},
@@ -290,7 +317,7 @@ export default {
 
     equipmentCostFun(db){
       var equipmentCostArray = []
-      var equipmentCostObj = db["runningCost"][0]["EquipmentCosts"]
+      var equipmentCostObj = db.runningCost.EquipmentCosts
 
       for (var i = 0; i < equipmentCostObj.length; i++){
         equipmentCostArray.push([{text: "ID εξοπλισμού: "     + equipmentCostObj[i].EquipmentId}, 
@@ -384,7 +411,7 @@ export default {
 
     functionCostFun(db) { 
       var functionCostArray = []
-      var functionCostObj = db["functionCost"][0].Functions
+      var functionCostObj = db.functionCost.Functions
 
       for (var i = 0; i < functionCostObj.length; i++){
         functionCostArray.push([//{text: "ID: "                 + functionCostObj[i].ID},
@@ -493,12 +520,12 @@ export default {
           {text: "Κόστος εγκαταστάσεων:", bold: true},
           " ",
           {ol: this.facultyCostFun(db)},
-          {text: "Συνολικό κόστος εγκαταστάσεων: " + String(db["runningCost"][0].FacultyExpenses) + "€", bold: true},
+          {text: "Συνολικό κόστος εγκαταστάσεων: " + String(db.runningCost.FacultyExpenses) + "€", bold: true},
           " ",
           {text: "Κόστος εξοπλισμού:", bold: true},
           " ",
           {ol: this.equipmentCostFun(db)},
-          {text: "Συνολικό κόστος εξοπλισμού: " + String(db["runningCost"][0].EquipmentExpenses) + "€", bold: true},
+          {text: "Συνολικό κόστος εξοπλισμού: " + String(db.runningCost.EquipmentExpenses) + "€", bold: true},
           " "," ",
           // Section 4
           {text: "Προϊόντα - Υπηρεσίες", style: "sectionHeader"},
@@ -558,7 +585,7 @@ export default {
           {text: "7.2 Κόστος Λειτουργίας:", style: "subSectionHeader"},
           " ", 
           {ol: this.functionCostFun(db)},
-          {text: "Συνολικό κόστος λειτουργίας: " + String(db["functionCost"][0].FunctionsTotalCost) + "€", bold: true},
+          {text: "Συνολικό κόστος λειτουργίας: " + String(db.functionCost.FunctionsTotalCost) + "€", bold: true},
           " "," ",
           // Subsection 7.3
           {text: "7.3 Νεκρά σημεία:", style: "subSectionHeader"},
@@ -623,6 +650,7 @@ body {
     display: flex;
     margin-right: 100px;
     align-items: center;
+    cursor: pointer;
 }
 .head__avatar {
     height: 70px;
