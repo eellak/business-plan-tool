@@ -1,6 +1,6 @@
 <template>
   <div class="skeleton">
-  <!-- <body> -->
+  <body>
     <header class="head">
         <div class="head__logo">
             <img src="../assets/Logo.png" alt="Logo">
@@ -33,6 +33,9 @@
                       <ul>
                         <router-link to="/managers" tag="li" class="" active-class="activeSection">
                           <a class="subSection">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
+                        </router-link>
+                        <router-link to="/employees" tag="li" class="" active-class="activeSection">
+                          <a class="subSection">ΠΡΟΣΩΠΙΚΟ</a>
                         </router-link>
                         <router-link to="/partners" tag="li" class="" active-class="activeSection">
                           <a class="subSection">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
@@ -131,7 +134,7 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
-      <!-- </body> -->
+  </body>
   </div>
 </template>
 
@@ -620,6 +623,7 @@ body {
     display: flex;
     margin-right: 100px;
     align-items: center;
+    cursor: pointer;
 }
 .head__avatar {
     height: 70px;
