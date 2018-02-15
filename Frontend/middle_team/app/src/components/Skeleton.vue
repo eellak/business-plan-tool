@@ -272,7 +272,7 @@ export default {
 
       for (var i = 0; i < facultiesObj.length; i++){
         facultiesArray.push([{text: "ID: "                    + facultiesObj[i].ID},
-                             {text: "Διεύθυνση: "             + facultiesObj[i].Adress},
+                             {text: "Διεύθυνση: "             + facultiesObj[i].Address},
                              {text: "Λειτουργία χώρου ως: "   + facultiesObj[i].Usage},
                              {text: "Έκταση: "                + facultiesObj[i].M2 + " τετραγωνικά μέτρα"},
                              {text: "Είδος ιδιοκτησίας: "     + facultiesObj[i].Ownership_type},
