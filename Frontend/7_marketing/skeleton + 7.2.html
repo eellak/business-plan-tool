@@ -138,7 +138,18 @@
         </nav>
 
         <main>
-            <button class="button1">ΟΔΗΓΙΕΣ</button>
+            <button id="button1" class="button1" onclick="instr()" >ΟΔΗΓΙΕΣ</button>
+
+                <div id="hidden_div" class="hiddenDiv">
+    				<div id="odigies">
+                            <p class="first">Βοηθητικές οδηγίες για τη σωστή περιγραφή ενεργειών marketing:</p>
+                            <p>1. Αναλυτική περιγραφή την ενέργειας marketing.</p>
+                            <p>2. Σωστός και σαφής υπολογισμός του κόστους κάθε ενέργειας.</p>
+                            <p>3. Σε περίπτωση επανάληψης, αναφέρετε αναλυτικά κάθε πότε θα συμβαίνει η ενέργεια. </p>
+                            <p>4. Το συνολικό κόστος υπάρχει σε περίπτωση επανάληψης. Τότε πρέπει να γίνει υπολογισμός του συνολικού κόστους της ενέργειας ανάλογα με την εκάστοτε επανάληψη.</p>
+    				</div>
+                </div>
+
             <form class="strategy_form">
                 <label>1. Ποιά ενέργεια θα πράξετε για την προώθηση του προιόντος/υπηρεσίας σας;<br>
                     <input id="input" type="text" name="energeia" placeholder="ΕΝΕΡΓΕΙΑ"></label>
@@ -178,6 +189,26 @@
         </span>
         <button class="foot__next">ΕΠΟΜΕΝΟ</button>
     </footer>
+
+    <script type="text/javascript">
+        var y = document.getElementById("hidden_div");
+		      y.style.display = 'none';
+		function instr(){
+            var x = document.getElementById("hidden_div");
+            var w = document.getElementById("button1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                w.style.backgroundColor ='#12492a';
+
+
+            } else {
+                x.style.display = "none";
+                w.style.backgroundColor ='#299858';
+
+            }
+        }
+        </script>
+
 </body>
 
 </html>
