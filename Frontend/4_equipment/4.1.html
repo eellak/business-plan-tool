@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/s4.css">
-
+    <link rel="stylesheet" href="styles.css">
+    
+    
     <style>
         /* BASIC ELEMENTS */
 
@@ -23,7 +24,6 @@
 </head>
 
 <body>
-
     <header class="head">
         <div class="head__logo">
             <img src="Logo.png" alt="Logo">
@@ -34,7 +34,6 @@
         </div>
         <img class="head__avatar" src="elvis.jpg" alt="Avatar">
     </header>
-
 
     <div class="main_container">
         <nav>
@@ -144,76 +143,169 @@
                     <li>
                         <a href="">ΣΥΝΟΨΗ</a>
                     </li>
-
                 </ul>
             </div>
         </nav>
 
-        <main>
-            <div class="row1">
-                    <button class="btn" id="odhgies" >ΟΔΗΓΙΕΣ</button>
-            </div>
-            <div class="container_main">
-                <div class="row1">
-                    <div class="row2">
-                        ΠΛΗΡΟΦΟΡΙΕΣ ΕΓΚΑΤΑΣΤΑΣΗΣ
-                    </div>
-                    <div class="row3">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
-                    </div>
-                </div>    
-                <div class="row1">
-                    <div class="row1">
-                                <input class="input_1" type="text" name="" value="ΔΙΕΥΘΥΝΣΗ ΕΓΚΑΤΑΣΤΑΣΗΣ (ΟΛΟΓΡΑΦΩΣ)" >
-                    </div>  
-                </div>
-                <div class="row1">
-                    <div class="row2">
-                        <input class="input_1" type="text" name="" value="ΛΕΙΤΟΥΡΓΙΑ ΧΩΡΟΥ ΩΣ" >
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΕΚΤΑΣΗ τ.μ.">
-                    </div>
-                </div>
-                <div class="row1">
-                    <div class="row3"> 
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Αγορά</label>
-                    </div>
-                    <div class="row3">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Ενοικίαση</label>
-                    </div>
-                    <div class="row4">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Παραχώρηση χώρου</label>    
-                    </div>
-                </div>
-                <div class="row1">
-                    <div class="row4">
-                        Έναρξη Δραστηριότητας
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΜΗΝΑΣ">
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΕΤΟΣ" >
+        
 
+        <main>
+            <!-- INSTRUCTIONS -->
+            <!-- instruction script -->
+            <script type="text/x-template" id="modal-template">
+                <transition name="modal">
+                    <div class="modal-mask">
+                        <div class="modal-wrapper">
+                            <div class="modal-container">
+
+                                <div class="modal-header">
+                                    <slot name="header"></slot>
+                                </div>
+
+                                <div class="modal-body">
+                                    <slot name="body"></slot>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <slot name="footer">
+                                        <button class="modal-default-button" @click="$emit('close')">
+                                            OK
+                                        </button>
+                                    </slot>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </transition>
+            </script>
+            <!-- instruction html -->
+            </script>
+
+            <!-- MAIN BODY -->
+            <div id="userArea">
+                <div id="instructions_test">
                 <div class="row1">
-                    <div class="row5">
-                        <button class="btn" style="float:left;margin-left:0%" id="PLUS" >+</button>
-                    </div>
-                    <div class="row5">
-                        <button class="btn" style="float:right" id="MINUS" >-</button>
-                    </div>
+                    <button class="btn_right" style="float:right;" id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
+                    <modal v-if="showModal" @close="showModal = false">
+                        <h3 slot="header">ΠΛΗΡΟΦΟΡΙΕΣ ΕΓΚΑΤΑΣΤΑΣΗΣ</h3>
+                        <p slot="body">
+                            Συμπληρώστε κατάλληλα τα πεδία.
+                        </br>
+                            Στη συνέχεια πατήστε submit για να γίνει αποθήκευση των δεδομένων σας.
+                        </br>    
+                            Τέλος επιλέξτε το πλήκτρο "ΜΠΡΟΣTA" για να προχωρήσετε παρακάτω.
+                        </p>
+                    </modal>
                 </div>
-            </div>
+                </div>
+                <div class="container_main">
+                    <div id="db_test">
+                    <div class="row1">
+                        <div class="row2">
+                            ΠΛΗΡΟΦΟΡΙΕΣ ΕΓΚΑΤΑΣΤΑΣΗΣ
+                        </div>
+                        <div class="row3">
+                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                            <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
+                        </div>
+                    </div>
+                    <div class="row1">
+                        <div class="row1">
+                            <textarea class="input_1" placeholder="ΔΙΕΥΘΥΝΣΗ ΕΓΚΑΤΑΣΤΑΣΗΣ (ΟΛΟΓΡΑΦΩΣ)" v-model="Address"> {{Address}} </textarea>
+                        </div>
+                    </div>
+                    <div class="row1">
+                        <div class="row2">
+                            <textarea class="input_1" placeholder="ΛΕΙΤΟΥΡΓΙΑ ΧΩΡΟΥ ΩΣ" v-model="Usage"> {{Usage}} </textarea>
+                        </div>
+                        <div class="row3">
+                            <textarea class="input_1" placeholder="ΕΚΤΑΣΗ τ.μ." v-model="M2"> {{M2}} </textarea>
+                        </div>
+                    </div>
+
+                    <form action="">
+                        <div class="row1">
+                            <div class="row3">
+                                <input type="radio" class="styled-checkbox" name="usage-type" value="Αγορά" v-model="Ownership_type"> {{Ownership_type}} Αγορά
+                            </div>
+                            <div class="row3">
+                                <input type="radio" class="styled-checkbox" name="usage-type" value="Αγορά" v-model="Ownership_type"> {{Ownership_type}} Ενοικίαση
+                            </div>
+                            <div class="row4">
+                                <input type="radio" class="styled-checkbox" name="usage-type" value="Αγορά" v-model="Ownership_type"> {{Ownership_type}} Παραχώρηση χώρου
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row1">
+                        <div class="row4">
+                            Έναρξη Δραστηριότητας
+                        </div>
+                        <div class="row3">
+                            <textarea class="input_1" placeholder="ΜΗΝΑΣ"></textarea>
+                        </div>
+                        <div class="row3">
+                            <textarea class="input_1" placeholder="ΕΤΟΣ"></textarea>
+                        </div>
+                        <div class="row1">
+                            <input id="Submitbtn" type="button" value="submit" @click="postData()" />
+                        </div>
+                    </div>
+                    </div>
+                
+                </div>
         </main>
     </div>
 
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="instru.js"></script>
+    <script src="db1.js"></script>
+    
+    
+    <!--<script>
+        var app=new Vue({ 
+            el: '#userArea',
+            data: {
+                BusinessPlanId: 1,
+                Address: '',
+                Usage: '',
+                M2: null,
+                Ownership_type: '',
+                Start_date: null,
+                showModal:false,
+                selections:[]
+            },
+            methods: {
+                postData() {
+                    console.log(this.Address)
+                    axios.post('http://play-trinity.com/theo/bplantool/api/faculty', {
+                        "BusinessPlanId": this.BusinessPlanId,
+                        "Address": this.address,
+                        "Usage": this.usage_2,
+                        "M2":this.M2,
+                        "Ownership_type": this.ownership_type,
+                        "Start_date": this.Start_date
+                        /*"ID": 4,
+                        "BusinessPlanId": 1,
+                        "Address": "sakellaridi 25",
+                        "Usage": "apothiki",
+                        "M2": 1000,
+                        "Ownership_type": "enoikio",
+                        "Start_date": 1012018*/
+                    })
+                        .then(function (response) {
+                            console.log(response.data);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                },
+                test() {
+                    alert("Works");
+                },
+            }
+        })
+    </script>-->
 
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
@@ -222,6 +314,12 @@
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
+    <!-- Import Vue.js 
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Import jQuery.js 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+     Import our logic file 
+    
 </body>
 
 </html>
