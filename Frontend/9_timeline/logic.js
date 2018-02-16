@@ -12,9 +12,9 @@ var app = new Vue({
     },
 
 /*need from Faculty: ID, Adress Start_date
-            Equipment: ID, EquipType, Acquisition_date !!Να τους πω να αλλάξουν τον τρόπο που αναπαριστούν τις ημερομηνίες!!
-            MarketingAction: ID, Title, ImplementationTime ****  http://localhost:52800/api/MarketingAction
-            StartAction: ID, Name   http://localhost:52800/api/StartAction  */
+            Equipment: ID, EquipType, Acquisition_date 
+            MarketingAction: ID, Title, ImplementationTime 
+            StartAction: ID, Name */
 
 
     created(){
