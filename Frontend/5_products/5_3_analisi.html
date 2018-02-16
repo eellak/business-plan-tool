@@ -149,28 +149,32 @@
         (Θα έχετε δυνατότητα να επιστρέψετε σε αυτή τη σελίδα, χρησιμοποιώντας το κουμπί ‘ΠΙΣΩ’)
       </div>
 
+      <!-- <div v-for="p in products" >
+        {{ p.ID }}
+      </div> -->
+
       <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
       <h1>1. 'Ονομα προϊόντος/υπηρεσίας.</h1>
       <form>
-        <select id="dropdown_proionta_2" name="dropdown" @change="showNextFields()" v-model="products">
-                        <option v-for="product in products" v-bind:value="product.name">
-                          {{ product.name }}
-                        </option>
-                    </select>
+        <select id="dropdown_proionta_2" name="dropdown" @change="showNextFields()">
+            <option v-for="product in products">
+              {{ product.Name }}
+            </option>
+        </select>
       </form>
 
-      <div id="analisi">
+      <div id="analisi" v-for="p in products">
         <!--Η κλαση align βαζει τις ερωτησεις τη μια διπλα στην αλλη-->
         <div class="Align">
           <form>
             <h1>2. Κοστολόγηση προϊόντος/υπηρεσίας.</h1>
-            <textarea id="sellPrice" placeholder="Τιμή πώλησης προϊόντος/υπηρεσίας(ατομικά)"></textarea>
+            <textarea id="sellPrice" placeholder="Τιμή πώλησης προϊόντος/υπηρεσίας(ατομικά)" v-model="p.Price"></textarea>
           </form>
 
           <!--Καταγραφή κόστους παραγωγής προϊοντος/υπηρεσίας-->
           <form>
             <h1>3. Κόστος παραγωγής προϊοντος/υπηρεσίας.</h1>
-            <textarea id="productCost" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ"></textarea>
+            <textarea id="productCost" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ" v-model="p.ProductCost"></textarea>
           </form>
         </div>
 
@@ -178,12 +182,12 @@
           <form>
             <!--Καταγραφή προβλεπόμενου αριθμού πωλήσεων 1ου έτους-->
             <h1>4. Προβλεπόμενος αριθμός πωλήσεων 1ου έτους.</h1>
-            <textarea id="numProduct" placeholder="Αριθμός προϊόντων/υπηρεσιών που προβλέπεται να πουλήσει στο πρώτο έτος εισαγωγής του."></textarea>
+            <textarea id="numProduct" placeholder="Αριθμός προϊόντων/υπηρεσιών που προβλέπεται να πουλήσει στο πρώτο έτος εισαγωγής του." v-model="p."numProduct></textarea>
           </form>
           <!--Καταγρα΄φη ποσοστού αύξησης πωλήσεων επόμενων ετών-->
           <form>
             <h1>5. Ποσοστό αύξησης πωλήσεων επόμενων ετών.</h1>
-            <textarea id="percentageIncrease" placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ"></textarea>
+            <textarea id="percentageIncrease" placeholder="ΑΠΑΙΤΗΣΕΙΣ ΑΔΕΙΑΣ" v-model="p.PercentageIncome"></textarea>
           </form>
         </div>
         <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
@@ -204,6 +208,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <script src="./logic.js"></script>
 

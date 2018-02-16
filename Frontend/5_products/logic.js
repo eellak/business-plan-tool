@@ -5,9 +5,16 @@ var app = new Vue({
   },
 
   created() {
-    // REST API GET
+    var that = this
+    axios.get('http://play-trinity.com/theo/bplantool/api/product')
+    .then(function(response) {
+      that.products = response.data
+      console.log(that.products)
+    })
   },
-
+  mounted(){
+    console.log(this.products)
+  },
   methods: {
     tipsButton() {
       var x = document.getElementById("instructions");
@@ -39,7 +46,39 @@ var app = new Vue({
         y.style.display = 'block';
       }
     },
+    // 
+    addProductRow() {
+			var newProduct = {
+        ProductType: '',
+        Name: '',
+        Directed_to: '',
+        Innovation_factor: '',
+        Technology: '',
+        Certificate: '',
+        License: '',
+        Competition: '',
+        Price: '',
+        Description: '',
+        Copyright: '',
+        SellPrice: '',
+        ProductCost: '',
+        NumProduct: '',
+        PercentageIncrease: '',
+        BusinessPlanId: 1 
+      }
 
+			  this.products.push(newProduct)
+		},
+		createProduct(event) {
+      var that = this
+      var max = this.products.length - 1
+      axios.post('http://play-trinity.com/theo/bplantool/api/product', this.products[max])
+        .then(function(response) {
+          that.products.push(response.data)
+        })
+			this.products.pop()
+			// this.$store.dispatch('createManager', this.managers[max])
+		},
     addProduct() {
       var newProduct = {
         productType: '',

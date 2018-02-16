@@ -1,6 +1,29 @@
-Vue.component('modal', {
-  template: '#modal-template' //shoModal:false,
-  })
+Vue.component('modal', {//shoModal:false,
+  template: ` <transition> 
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                  <div class="modal-container">
+
+                      <div class="modal-header">
+                          <h3>ΝΕΚΡΟ ΣΗΜΕΙΟ</h3>
+                      </div>
+
+                      <div class="modal-body">
+                          <p>Σε αυτή την ενότητα υπολογίζεται το Νεκρό Σημείο των προιόντων.Δηλαδή, το σημείο στο 
+                          οποίο το ύψος των πωλήσεων έχει συνολικά έσοδα ίσα με τα συνολικά έξοδα.
+                          Συμπληρώστε τα απαραίτητα πεδία και πατήστε το πλήκτρο για τον υπολογισμό του Νεκρού Σημείου. 
+                          Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
+                          </p>
+                      </div>
+
+                      <div class="modal-footer">
+                          <button class="modal-default-button" @click="$emit('close')">OK</button>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </transition>`
+})
   
   var temp = {
         counter:0, 

@@ -20,7 +20,7 @@
             <img src="img/myLogo.png" alt="Logo">
         </div>
         <div class="head_export">
-                <img src="img/export.png">
+                <img src="img/export.png" alt="Export">
                 <p>ΕΞΑΓΩΓΗ</p>
             </div>
         <img class="head__avatar" src="img/avatar.png" alt="Avatar">
@@ -242,11 +242,11 @@
 
 
     <footer class="foot">
-        <button class="foot__back">ΠΙΣΩ</button>
+        <button class="foot__back" onclick="previousPage()">ΠΙΣΩ</button>
         <span class="foot__pagination">
             <p>3/3</p>
         </span>
-        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+        <button class="foot__next" onclick="nextPage()">ΜΠΡΟΣΤΑ</button>
     </footer>
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 
@@ -268,7 +268,7 @@
 	}
 
 	function nextPage(){
-		window.location.href = ""; // insert next page here
+		window.location.href = "3_general.html"; // insert next page here
 	}
     </script>
     <script src="3_general.js"></script>

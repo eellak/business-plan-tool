@@ -148,14 +148,18 @@
 	      (Θα έχετε δυνατότητα να επιστρέψετε σε αυτή τη σελίδα, χρησιμοποιώντας το κουμπί ‘ΠΙΣΩ’)
 	      </div>
       <!--Επιλογή προιόντος ή υπηρεσίας-->
+      <h2>Τα προϊόντα/υπηρεσίες της επιχείρησης είναι τα παρακάτω:</h2>
+      <div v-for="p in products" style="border: 1px solid black">
+        <p>Όνομα: <strong>{{ p.Name }}</strong></p>
+      </div>
       <div v-for="product in products">
         <h1>1. Επιλέξτε προϊόν/υπηρεσία για προσθήκη.</h1>
         <label class="container">Προϊόντα
-					<input type="radio" checked="checked" name="radio" id="radio_product" v-model=product.productType value="Προϊόν">
+					<input type="radio" checked="checked" name="radio" id="radio_product" v-model=product.ProductType value="Προϊόν">
 					<span class="checkmark"></span>
 				</label>
         <label class="container">Υπηρεσίες
-					<input type="radio" name="radio" id="radio_services"  v-model=product.productType value="Υπηρεσία">
+					<input type="radio" name="radio" id="radio_services"  v-model=product.ProductType value="Υπηρεσία">
 					<span class="checkmark"></span>
 				</label>
 
@@ -164,12 +168,12 @@
           <!--Καταγραφή ονόματος προϊόντος/υπηρεσίας-->
           <form>
             <h1>2. 'Ονομα προϊόντος/υπηρεσίας.</h1>
-            <textarea id="name" placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ" v-model=product.name></textarea>
+            <textarea id="name" placeholder="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ" v-model=product.Name></textarea>
           </form>
           <!--Καταγραφή του που απευθύνεται το προϊόν/υπηρεσία-->
           <form>
             <h1>3. Ομάδα-στόχος.</h1>
-            <textarea id="directed_to" placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ" v-model=product.directed_to></textarea>
+            <textarea id="directed_to" placeholder="ΠΟΥ ΑΠΕΥΘΥΝΕΤΑΙ" v-model=product.Directed_to></textarea>
           </form>
         </div>
 
@@ -177,13 +181,13 @@
           <!--Καταγραφή των στοιχείων καινοτομίας-->
           <form>
             <h1>4. Στοιχεία καινοτομίας/ανταγωνιστικότητας.</h1>
-            <textarea id="innovation_factor" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ" v-model=product.innovation></textarea>
+            <textarea id="innovation_factor" placeholder="ΣΤΟΙΧΕΙΑ ΚΑΙΝΟΤΟΜΙΑΣ" v-model=product.Innovation_factor></textarea>
           </form>
 
           <form>
             <!--Καταγραφή της τεχνολογίας που χρησιμοποιείται-->
             <h1>5. Τεχνολογία στην οποία βασίζεται.</h1>
-            <textarea id="technology" placeholder="ΤΕΧΝΟΛΟΓΙΑ" v-model=product.technology></textarea>
+            <textarea id="technology" placeholder="ΤΕΧΝΟΛΟΓΙΑ" v-model=product.Technology></textarea>
           </form>
         </div>
 
@@ -194,17 +198,17 @@
         </form>
         <!-- Καταγραφή πιστοποιητικού. -->
         <label class="container2">
-					<input type="radio" checked="checked" name="radio2" id="radio_pist_asf" v-model=product.certificate value="Πιστοποιητικό ασφάλειας">
+					<input type="radio" checked="checked" name="radio2" id="radio_pist_asf" v-model=product.Certificate value="Πιστοποιητικό ασφάλειας">
 					<a href="Placeholder link">Πιστοποιητικό ασφάλειας</a><br>
 					<span class="checkmark"></span>
 				</label>
         <label class="container2">
-					<input type="radio" name="radio2" id="radio_iso"  v-model=product.certificate value="ISO">
+					<input type="radio" name="radio2" id="radio_iso"  v-model=product.Certificate value="ISO">
 					<a href="Placeholder link 2">ISO</a><br>
 					<span class="checkmark"></span>
 				</label>
         <label class="container2">
-					<input type="radio" name="radio2" id="radio_kat_pat"  v-model=product.certificate value="Κατοχυρωμένη πατέντα">
+					<input type="radio" name="radio2" id="radio_kat_pat"  v-model=product.Certificate value="Κατοχυρωμένη πατέντα">
 					<a href="Placeholder link 3">Κατοχυρωμένη πατέντα</a>
 					<span class="checkmark"></span>
 				</label>
@@ -213,24 +217,26 @@
         <div class="Align">
           <form>
             <h1>7. Στοιχεία ανταγωνισμού.</h1>
-            <textarea id="competition" placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ" v-model=product.competition></textarea>
+            <textarea id="competition" placeholder="ΑΝΤΑΓΩΝΙΣΜΟΣ" v-model=product.Competition></textarea>
           </form>
 
           <!--Καταγραφή τελικής τιμής-->
           <form>
             <h1>8. Τιμή διάθεσης στον τελικό χρήστη.</h1>
-            <textarea id="price" placeholder="ΤΕΛΙΚΗ ΤΙΜΗ" v-model=product.price></textarea>
+            <textarea id="price" placeholder="ΤΕΛΙΚΗ ΤΙΜΗ" v-model=product.Price></textarea>
           </form>
         </div>
 
         <!--Καταγραφή περιγραφής προϊόντος/υπηρεσίας.-->
         <h1>9. Περιγραφή.</h1>
         <form class=quest58>
-          <textarea id="description" placeholder="ΠΕΡΙΓΡΑΦΗ" v-model=product.description></textarea>
+          <textarea id="description" placeholder="ΠΕΡΙΓΡΑΦΗ" v-model=product.Description @keyup.enter="createProduct()"></textarea>
         </form>
+
+        <hr>
       </div>
       <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-      <button type="submit" class="add" @click="addProduct()"><img src="add32.png"> </button>
+      <button type="submit" class="add" @click="addProductRow()"><img src="add32.png"> </button>
 
     </main>
   </div>
@@ -245,6 +251,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <script src="./logic.js"></script>
 </body>
