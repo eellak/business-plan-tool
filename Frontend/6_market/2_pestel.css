@@ -5,7 +5,7 @@ padding: 10px;
 
 textarea {
 	resize: none;
-	border-color: #3366ff;;
+	border-color: rgb(40, 150, 90);
 }
 
 .hidden>div {
@@ -22,30 +22,30 @@ textarea {
 .set{
 	margin-left:7px;
 	margin-right:7px;
-	
+
 }
 
 div.text_container {
-		width: 400px;
+		width: 350px;
 		height:200px;
 		margin-left: 5px;
 }
 
 .button {
-	 
+
 	 margin-right:50%;
-	 background-color: #3366ff;			 
+	 background-color: rgb(40, 150, 90);
 	 font-style: italic;
 	 font-weight: bold;
 }
 
 main p{
-	
+
 	font-style: italic;
 }
 
-h1 {			
-	
+h1 {
+
 	text-align: center;
 	font-style: italic;
 	font-size: 2.5em;
@@ -57,7 +57,7 @@ h1 {
 	font-size: 1.2em;
 }
 
-.contenttitles{			
+.contenttitles{
 	font-style: italic;
 	font-size: 1em;
 	font-weight: bold;
@@ -77,4 +77,10 @@ h1 {
 	text-align: justify;
 }
 
-
+#confirm {
+	float: right;
+	margin-right: 20px;
+	background-color: rgb(40, 150, 90);
+	font-style: italic;
+	font-weight: bold;
+}
