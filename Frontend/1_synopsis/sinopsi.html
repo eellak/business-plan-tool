@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
-    <!--Grammi 8 -9 mipws prepei na fugei???-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -161,7 +161,7 @@
           }
         </style>
 
-        <section class="top_card">
+		<section class="top_card"  class="synopsis__instructions">
             <button class="foot__back" onclick="myFunction()">ΟΔΗΓΙΕΣ</button>
         </section>
 
@@ -181,23 +181,45 @@
         </script>
 
 
-        <form>
+        <form name="Sinopsis_Form"  class="synopsis__block">
           <section class="my_card">
             <div class="my_card_head"><p> Σύνοψη του επιχειρηματικού σχεδίου:</p></div>
-            <textarea id="location" cols="120" rows="30"></textarea>
-          </section>
+            <textarea id="location" name="sinopsis_text" cols="120" rows="30"></textarea>
+		  </section>
         </form>
 
     </main>
   </div>
 
+  
+  
+  <script>
+	function validateForm() {
+		var x = document.forms["Sinopsis_Form"]["sinopsis_text"].value;
+		if (x == "") {
+			alert("Name must be filled out");
+        return false;
+		}
+		else{
+			alert(x);
+		}
+	}
+	</script>
+	
+	<section class="top_card"  class="synopsis__save">
+            <button class="foot__back" onclick="validateForm()">Αποθήκευση</button>
+    </section>
+  
+  
   <footer class="foot">
-      <button class="foot__back" onclick="location.href='tautotita.html';">ΠΙΣΩ</button>
+      <button class="foot__back" onclick="location.href='../10_export/team10.html';">ΠΙΣΩ</button>
       <span class="foot__pagination">
           <p>1/2</p>
       </span>
-      <button class="foot__next" onclick="location.href='sinopsi.html';">ΜΠΡΟΣΤΑ</button>
+	  <button class="foot__next" >ΜΠΡΟΣΤΑ</button>
+
   </footer>
   </body>
 
   </html>
+
