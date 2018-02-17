@@ -1,6 +1,30 @@
-Vue.component('modal', {
-    template: '#modal-template' //shoModal:false,
-    })
+Vue.component('modal', {//shoModal:false,
+  template: ` <transition> 
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                  <div class="modal-container">
+
+                      <div class="modal-header">
+                          <h3>ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
+                      </div>
+
+                      <div class="modal-body">
+                          <p> Σε αυτή την ενότητα καταγράφονται όλες οι δαπάνες οι οποίες θα γίνονται σε ετήσια βάση απο την 
+                          επιχείρηση με σκοπό την εξασφάλιση της βιωσημότητας της.
+                          Συμπληρώστε τα πλαίσια με τις δαπάνες που επιθυμείτε καθώς και το ετήσιο κόστος της κάθε μίας.
+                          Έπειτα πιέστε το πλήκτρο υπολογισμού για να δείτε το Συνολικό Κόστος Λειτουργίας.
+                          Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
+                          </p>
+                      </div>
+
+                      <div class="modal-footer">
+                          <button class="modal-default-button" @click="$emit('close')">OK</button>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </transition>`
+})
     
     var temp = {
           counter:0, 

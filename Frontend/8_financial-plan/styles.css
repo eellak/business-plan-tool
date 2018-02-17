@@ -109,8 +109,6 @@ nav {
 
 /* SECTIONS MENU */
 
-.sections-menu {}
-
 .sections-menu ul {
     list-style: none;
     margin: 0;
@@ -218,7 +216,6 @@ body {
     font-size: 20px;
 }
 
-.head__export i {}
 
 
 /* FOOTER */
@@ -282,7 +279,7 @@ nav {
 /*---QUESTIONS---*/
 #userArea{
 
-	backround-color:#fff;
+	background-color:#fff;
     overflow-y: scroll;
     /* padding: 10px; */
     /* margin: 10px; */
@@ -300,7 +297,7 @@ h4{
 	overflow-y: hidden;
 	font-family: "Open Sans";
 	color:#1e2133;
-	backround-color:#fff;
+	background-color:#fff;
 	position:absolute;
 	top:102px;
 	left:568px;

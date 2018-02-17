@@ -1,5 +1,28 @@
-Vue.component('modal', {
-template: '#modal-template' //shoModal:false,
+Vue.component('modal', {//shoModal:false,
+    template: ` <transition> 
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                    <div class="modal-container">
+
+                        <div class="modal-header">
+                            <h3>ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</h3>
+                        </div>
+
+                        <div class="modal-body">
+                            <p> Σε αυτή την ενότητα καταγράφονται όλες οι δαπάνες οι οποίες θα πρέπει να πραγματοποιηθούν προκειμένου
+                                να ξεκινήσει η επιχειρηματική δραστηριότητα.Επιλέξτε τα κόστη που σας ενδιαφέρουν (ή προσθέστε κάποιο
+                                επιπλέον) και πιέστε το πλήκτρο υπολογισμού για να δείτε το Συνολικό Κόστος Έναρξης. Στη συνέχεια επιλέξτε
+                                το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
+                            </p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="modal-default-button" @click="$emit('close')">OK</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </transition>`
 })
 
 var temp = {
@@ -15,7 +38,7 @@ var temp = {
 
 Vue.component('my-select',{
       template: '<div v-if="show_div">\
-                  <select id="userInput" v-model:value="pick" key="kcounter"s v-if="show_select">\
+                  <select id="userInput" v-model:value="pick" key="kcounter" v-if="show_select">\
                     <option v-for="a in actions" v-bind:value="a" >{{ a.title}}</option>\
                   </select>\
                   <label id="selectionLabel" v-if="!show_select">{{pick.title}}</label>\
@@ -65,6 +88,7 @@ Vue.component('my-select',{
                 temp.picker.push(a)
                 flag=false
               }
+              console.log(this.pick)
             }
         },
       }
