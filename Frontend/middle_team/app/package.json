@@ -10,10 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "orgchart": "^2.1.1",
+    "pdfmake": "^0.1.35",
     "vue": "^2.5.2",
+    "vue-orgchart": "^1.1.1",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "pdfmake": "^0.1.35"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

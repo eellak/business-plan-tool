@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
     <meta charset="utf-8">
     <title>BP Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/s4.css">
+    <link rel="stylesheet" href="styles.css">
 
     <style>
         /* BASIC ELEMENTS */
-
         .basic_button {
             background-color: rgb(24, 146, 105);
             width: 100px;
@@ -149,75 +147,193 @@
                 </ul>
             </div>
         </nav>
-    <main>
-            <div class="row1">
-                    <button class="btn" id="odhgies" >ΟΔΗΓΙΕΣ</button>
-            </div>
-            <div class="container_main">
-                <div class="row1">
-                    <div class="row2">
-                        ΠΛΗΡΟΦΟΡΙΕΣ ΕΞΟΠΛΙΣΜΟΥ
-                    </div>
-                    <div class="row3">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
-                    </div>
-                </div>    
-                <div class="row1">
-                    <div class="row1">
-                                <input class="input_1" type="text" name="" value="ΕΙΔΗ ΕΞΟΠΛΙΣΜΟΥ" >
-                    </div>  
-                </div>
-                <div class="row1">
-                    <div class="row2">
-                        <input class="input_1" type="text" name="" value="ΤΟΠΟΣ ΕΓΚΤΑΣΤΑΣΗΣ" >
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΤΜΗΜΑ ΕΠΙΧΕΙΡΗΣΗΣ">
-                    </div>
-                </div>
-                <div class="row1">
-                    <div class="row3"> 
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Νέο</label>
-                    </div>
-                    <div class="row3">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                        <label for="styled-checkbox-1">Μεταχειρισμένο</label>
-                    </div>
-                </div>
-                <div class="row1">
-                    <div class="row4">
-                        Ημερομηνία Απόκτησης
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΜΗΝΑΣ">
-                    </div>
-                    <div class="row3">
-                        <input class="input_1" type="text" name="" value="ΕΤΟΣ" >
 
-                    </div>
+        <main>
+           <!-- INSTRUCTIONS -->
+                        <!-- instruction script -->
+                        <script type="text/x-template" id="modal-template">
+                            <transition name="modal">
+                            <div class="modal-mask">
+                                <div class="modal-wrapper">
+                                <div class="modal-container">
+                        
+                                    <div class="modal-header">
+                                    <slot name="header"></slot>
+                                    </div>
+                        
+                                    <div class="modal-body">
+                                    <slot name="body"></slot>
+                                    </div>
+                        
+                                    <div class="modal-footer">
+                                    <slot name="footer">
+                                        <button class="modal-default-button" @click="$emit('close')">
+                                        OK
+                                        </button>
+                                    </slot>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </transition>
+                        </script>
+                            <!-- instruction html -->
+                        </script>
+            
+                        <!-- MAIN BODY -->
+                        <div id="userArea"> 
+                            <div id="instructions_test">
+                            <div class="row1">
+                                    <button class="btn_right" style="float:right;" id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
+                                    <modal v-if="showModal" @close="showModal = false">
+                                    <h3 slot="header">ΕΓΚΑΤΑΣΤΑΣΕΙΣ ΚΑΙ ΕΞΟΠΛΙΣΜΟΣ</h3>
+                                    <p slot="body"> 
+                                            Συμπληρώστε κατάλληλα τα παρακάτω πεδία. Για να προσθέστε εξοπλισμό πατήστε το κουμπί (+).</br> Για να αφαιρέσετε εξοπλισμό πατήστε το κουμπί (-).</br>
+                                        </br>
+                                        Στη συνέχεια πατήστε submit για να γίνει αποθήκευση των δεδομένων σας.
+                                    </br>  
+                                            Τέλος επιλέξτε το πλήκτρο "ΜΠΡΟΣΤΑ" για να προχωρήσετε παρακάτω.
+                                    </p>
+                                    </modal>
+                                </div>
+                            </div>
+            <div class="container_main">
+                   
+                    <div class="row1" id="left">
+                            <div id="equip">
+                            <div class="row1">
+                                    <div class="row1">
+                                            <div class="row2">
+                                            ΠΛΗΡΟΦΟΡΙΕΣ ΕΞΟΠΛΙΣΜΟΥ
+                                            </div>
+                                            <div class="row3">
+                                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
+                                            </div>
+                                                        </div>
+                                                        <div class="row1">
+                                                        <div class="row1">
+                                                        <textarea class="input_1" placeholder="ΕΙΔΗ ΕΞΟΠΛΙΣΜΟΥ"></textarea>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row1">
+                                                         <div class="row2">
+                                                         <textarea class="input_1" placeholder="ΤΟΠΟΣ ΕΓΚΤΑΣΤΑΣΗΣ"></textarea>
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΤΜΗΜΑ ΕΠΙΧΕΙΡΗΣΗΣ"></textarea>
+                                                         </div>
+                                                         </div>
+                                                         <form action="">
+                                                         <div class="row1">
+                                                         <div class="row3"> 
+                                                         <input type="radio" class="styled-checkbox" name="oldness" value="Νέο">Νέο
+                                                         </div>
+                                                         <div class="row3">
+                                                         <input type="radio" class="styled-checkbox" name="oldness" value="Μεταχειρισμένο">Μεταχειρισμένο
+                                                         <div class="row3">
+                                                         </div>
+                                                         </div>
+                                                         </form>
+                                                         <div class="row1">
+                                                         <div class="row4">
+                                                         Ημερομηνία Απόκτησης
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΜΗΝΑΣ"></textarea>
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΕΤΟΣ"></textarea> 
+                                                         </div>
+                                                         </div>
+                                                         
+                                                        </div>
+                            
+                            <my-form v-for="x in range"></my-form>
+                                    
+                                    <button class="btn_right" id="addButton" v-on:click="addForm()">+</button>
+                                    <button class="btn_right" id="addButton" v-on:click="removeForm()">-</button>
+                                  
+                                  
+                                  <script type="text/x-template" id="my-form">                          
+                                    <div class="row1">
+                                    <div class="row1">
+                                            <div class="row2">
+                                            ΠΛΗΡΟΦΟΡΙΕΣ ΕΞΟΠΛΙΣΜΟΥ
+                                            </div>
+                                            <div class="row3">
+                                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-1">Χρήση από την έναρξη</label>
+                                            </div>
+                                                        </div>
+                                                        <div class="row1">
+                                                        <div class="row1">
+                                                        <textarea class="input_1" placeholder="ΕΙΔΗ ΕΞΟΠΛΙΣΜΟΥ" ></textarea>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row1">
+                                                         <div class="row2">
+                                                         <textarea class="input_1" placeholder="ΤΟΠΟΣ ΕΓΚΤΑΣΤΑΣΗΣ" ></textarea>
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΤΜΗΜΑ ΕΠΙΧΕΙΡΗΣΗΣ" ></textarea>
+                                                         </div>
+                                                         </div>
+                                                         <form action="">
+                                                         <div class="row1">
+                                                         <div class="row3"> 
+                                                         <input type="radio" class="styled-checkbox" name="oldness" value="Νέο">Νέο
+                                                         </div>
+                                                         <div class="row3">
+                                                         <input type="radio" class="styled-checkbox" name="oldness" value="Μεταχειρισμένο">Μεταχειρισμένο
+                                                         <div class="row3">
+                                                         </div>
+                                                         </div>
+                                                         </form>
+                                                         <div class="row1">
+                                                         <div class="row4">
+                                                         Ημερομηνία Απόκτησης
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΜΗΝΑΣ" ></textarea>
+                                                         </div>
+                                                         <div class="row3">
+                                                         <textarea class="input_1" placeholder="ΕΤΟΣ" ></textarea>
+                                                         </div>
+                                                         </div>
+                                                         
+                                                        </div>
+                                        </script> 
+                                        <div class="row1">
+                                            <input id="Submitbtn" type="button" value="submit" @click="postData()" />
+                                        </div>
                 </div>
-                <div class="row1">
-                    <div class="row5">
-                        <button class="btn" style="float:left;margin-left:0%" id="PLUS" >+</button>
-                    </div>
-                    <div class="row5">
-                        <button class="btn" style="float:right" id="MINUS" >-</button>
-                    </div>
-                </div>
-            </div>
+</div>
+</div>
         </main>
     </div>
 
 
     <footer class="foot">
-        <button class="foot__back">ΠΙΣΩ</button>
-        <span class="foot__pagination">
-            <p>1/2</p>
-        </span>
-        <button class="foot__next">ΜΠΡΟΣΤΑ</button>
+            <button class="foot__back" onclick="location.href='2_operatingCost.html';">ΠΙΣΩ</button>
+            <span class="foot__pagination">
+                <p>3/3</p>
+            </span>
+            <button id="foot__next" onclick="">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Import jQuery.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Import our logic file -->
+    
+    <script src="instru.js"></script>
+    <!--<script src="4.2.js"></script>-->
+    <script src="db2.js"></script>
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 
 </html>
+

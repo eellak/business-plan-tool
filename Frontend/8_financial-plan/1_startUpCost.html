@@ -162,46 +162,15 @@
 
         <main>
             <!-- INSTRUCTIONS -->
-                <!-- instruction script -->
-            <script type="text/x-template" id="modal-template">
-                <transition name="modal">
-                <div class="modal-mask">
-                    <div class="modal-wrapper">
-                    <div class="modal-container">
             
-                        <div class="modal-header">
-                        <slot name="header"></slot>
-                        </div>
-            
-                        <div class="modal-body">
-                        <slot name="body"></slot>
-                        </div>
-            
-                        <div class="modal-footer">
-                        <slot name="footer">
-                            <button class="modal-default-button" @click="$emit('close')">
-                            OK
-                            </button>
-                        </slot>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </transition>
-            </script>
-                <!-- instruction html -->
             <div id="instr">
-                <button id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
-                <modal v-if="showModal" @close="showModal = false">
-                <h3 slot="header">ΚΟΣΤΟΣ ΕΝΑΡΞΗΣ</h3>
-                <p slot="body"> 
-                    Σε αυτή την ενότητα καταγράφονται όλες οι δαπάνες οι οποίες θα πρέπει να πραγματοποιηθούν προκειμένου 
-                    να ξεκινήσει η επιχειρηματική δραστηριότητα.Επιλέξτε τα κόστη που σας ενδιαφέρουν (ή προσθέστε κάποιο 
-                    επιπλέον) και πιέστε το πλήκτρο υπολογισμού για να δείτε το Συνολικό Κόστος Έναρξης. Στη συνέχεια επιλέξτε 
-                    το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω. 
-                </p>
-                </modal>
+
+                    <button id="show-modal" @click="showModal = !showModal">ΟΔΗΓΙΕΣ</button>
+                    <modal v-if="showModal" @close="showModal = !showModal"></modal>
+    
             </div>
+
+            
 
             <!-- MAIN BODY -->
 
@@ -218,13 +187,11 @@
                 </div>
             </div>
 
-
-
         </main>
 
     </div>
 
-
+    <!-- FOOTER -->
 
     <footer class="foot">
             <button class="foot__back" onclick="">ΠΙΣΩ</button>
@@ -233,6 +200,8 @@
             </span>
             <button id="foot__next" onclick="location.href='2_operatingCost.html'">ΜΠΡΟΣΤΑ</button>
     </footer>
+
+    <!-- LIBS -->
 
         <!-- Import Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>

@@ -6,6 +6,8 @@ import router from './router'
 
 import { store } from './store.js'
 
+import 'vue-orgchart/dist/style.min.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

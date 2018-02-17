@@ -151,52 +151,13 @@
 
         <main>
             <!-- INSTRUCTIONS -->
-                        <!-- instruction script -->
-            <script type="text/x-template" id="modal-template">
-                <transition name="modal">
-                <div class="modal-mask">
-                    <div class="modal-wrapper">
-                    <div class="modal-container">
-            
-                        <div class="modal-header">
-                        <slot name="header"></slot>
-                        </div>
-            
-                        <div class="modal-body">
-                        <slot name="body"></slot>
-                        </div>
-            
-                        <div class="modal-footer">
-                        <slot name="footer">
-                            <button class="modal-default-button" @click="$emit('close')">
-                            OK
-                            </button>
-                        </slot>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </transition>
-            </script>
-                <!-- instruction html -->
             <div id="instr">
-                <button id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
-                <modal v-if="showModal" @close="showModal = false">
-                <h3 slot="header">ΝΕΚΡΟ ΣΗΜΕΙΟ</h3>
-                <p slot="body"> 
-                    Σε αυτή την ενότητα υπολογίζεται το Νεκρό Σημείο των προιόντων.Δηλαδή, το σημείο στο 
-                    οποίο το ύψος των πωλήσεων έχει συνολικά έσοδα ίσα με τα συνολικά έξοδα.
-                    Συμπληρώστε τα απαραίτητα πεδία και πατήστε το πλήκτρο για τον υπολογισμό του Νεκρού Σημείου. 
-                    Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
-                </p>
-                </modal>
 
-            
-            
-            
+                    <button id="show-modal" @click="showModal = !showModal">ΟΔΗΓΙΕΣ</button>
+                    <modal v-if="showModal" @close="showModal = !showModal"></modal>
+    
             </div>
-            
-            </script>
+
 
             <!-- MAIN BODY -->
             <div id="userArea">

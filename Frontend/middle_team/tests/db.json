@@ -1,11 +1,20 @@
 {
   "manager": [
     {
-      "name": "Νικόλαος",
-      "surName": "Δημητρίου",
-      "job": "Καθηγητής",
-      "linkedIn": "www.nikolaos.com",
+      "BusinessPlanId": 1,
+      "Name": "Μήτσος",
+      "Surname": "ααααααα",
+      "Job": "υυυυυυυυ",
+      "LinkedIn": "www.linkedin.gr",
       "id": 1
+    },
+    {
+        "BusinessPlanId": 1,
+        "Name": "aaaaaaaaaaaaaaaiiiiiiiii",
+        "Surname": "ααααααα",
+        "Job": "υυυυυυυυ",
+        "LinkedIn": "www.linkedin.gr",
+        "id": 1
     }
   ]
 }

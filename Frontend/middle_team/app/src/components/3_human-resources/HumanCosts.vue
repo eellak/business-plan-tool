@@ -44,7 +44,7 @@
         <hr>
 
 
-        <form class="xtime" action="" style="margin-top: -20px">
+        <form class="xtime" action="" >
             <label class="radios" for="fulltime" style="margin: 150px">
                 <input type="radio" class="radio" name="xtime" value="fulltime" id="fulltime" v-model="c.workType">Πλήρης Απασχόληση
             </label>
@@ -57,7 +57,7 @@
 
         </form>
     </div>
-    <label class="yearlycost">ΕΤΗΣΙΟ ΚΟΣΤΟΣ</label>
+    <div class="yearlycost"><label>ΕΤΗΣΙΟ ΚΟΣΤΟΣ</label></div>
     <label class="calculatedcost">{{ calculatedCostLabel }} </label>
     <button class="Calculate" @click="calculate()">ΥΠΟΛΟΓΙΣΕ</button>
 
@@ -101,25 +101,19 @@ export default {
 				document.getElementById('plus__member').style.visibility('hidden');
 				document.getElementById('plus__member').disabled = true;
 			}*/
-
 		},
 		showInstructions() {
-
             // Get the button that opens the modal
 			var btn = document.getElementsByClassName("humancosts__instructions");
-
 			var modal = document.getElementById("modal__instructions");
-
 			// Get the <span> element that closes the modal		
 			var span = document.getElementsByClassName("close")[0];
-
 			// When the user clicks the button, open the modal 
 			modal.style.display = "block"
 			// When the user clicks on <span> (x), close the modal
 			span.onclick = function() {
 				modal.style.display = "none"; 
 			}
-
 			// When the user clicks anywhere outside of the modal, close it
 			window.onclick = function(event) {
 			if (event.target == modal) {
@@ -131,17 +125,19 @@ export default {
 			var totalCost = 0;
 			for (var i=0 ; i < this.costs.length ; i++ ) {
 
-				if (this.costs[i].paymentType === "monthpay") 
+				if (this.costs[i].paymentType === "monthpay")
 					totalCost += parseInt(this.costs[i].payment) * 14 + parseInt(this.costs[i].bonus);
-				else if (this.costs[i].paymentType === "daypay") 
-					if (this.costs[i].workType === "fulltime") 
+				else if (this.costs[i].paymentType === "daypay")
+					if (this.costs[i].workType === "fulltime")
 						totalCost += parseInt(this.costs[i].payment) * 300 + parseInt(this.costs[i].bonus);
-				    else //if workType is partTime{
+				    else{
+					    totalCost += parseInt(this.costs[i].payment) * 150 + parseInt(this.costs[i].bonus);
+				}
 			this.calculatedCostLabel = totalCost + '€';
-			console.log(totalCost);	
+			console.log(totalCost);
 			}
-		}
-	}
+        }
+    }
 }
 </script>
 
@@ -168,7 +164,7 @@ export default {
         border-style: none;
     }
     .Instructions {
-        margin-left: 850px;
+        margin-left: 75%;
         margin-top: 20px;
         background-color: rgb(41, 152, 88);
         color: white;
@@ -231,8 +227,6 @@ export default {
         align-items: center;
         border-style: none;
     }
-
-
     .humancosts__modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -246,7 +240,14 @@ export default {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
-
+    .typeofpay{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    }
+    .xtime{
+    margin-bottom: 70px;
+    margin-top: 0px;
+    }
     .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -254,7 +255,6 @@ export default {
     border: 1px solid #888;
     width: 80%;
     }
-
     /* The Close Button */
     .close {
     color: #aaaaaa;
@@ -262,18 +262,15 @@ export default {
     font-size: 28px;
     font-weight: bold;
     }
-
     .close:hover,
     .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
     }
-
-
     .yearlycost{
         margin-left: 75%;
-        margin-bottom: 100px;
+        margin-top: 100px;
     }
     .calculatedcost {
         margin-left: 79%;
@@ -289,5 +286,4 @@ export default {
     ::placeholder {
    color:#cbcaca ;
 };
-
 </style>

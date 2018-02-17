@@ -260,6 +260,7 @@
 
 //Team 8.3
 "Deadspot": { //suports GET,POST,PUT,DELETE
+   "DeadspotID": 1,
    "ProductID": 1,
    "BusinessPlanId": 1,
    "Spot": "dead1"

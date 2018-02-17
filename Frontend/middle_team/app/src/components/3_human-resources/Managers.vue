@@ -10,8 +10,8 @@
 			</div>
 		</div>
 		<div class="managers__block">
-			<label>Προσθέστε Μέλος</label><br>
-			<div class="managers__row" v-for="m in managers" v-bind:key="m.id">
+			<label>Ομάδα διοίκησης</label><br>
+			<div class="managers__row" v-for="m in managers" v-bind:key="m.ID">
 				<div class="managers__information">
 						<input type="text" name="fname" placeholder="ΟΝΟΜΑ" v-model="m.Name">
 				</div>
@@ -19,16 +19,19 @@
 						<input type="text" name="sname" placeholder="ΕΠΙΘΕΤΟ" v-model="m.Surname">
 				</div>
 				<div class="managers__information">
-						<!-- <input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" > -->
-						<select v-model="m.Job">
+						<input type="text" name="sname" placeholder="ΘΕΣΗ ΕΡΓΑΣΙΑΣ" v-model="m.Job">
+						<!-- <select v-model="m.Job">
 							<option v-for="o in jobOptions" v-bind:key="o"> {{ o }} </option>
-						</select>
+						</select> -->
 				</div>
 				<div class="managers__information">
-					<img src="../../assets/link-button.png" alt="link">
-				</div><br>
+					<!-- <img src="../../assets/link-button.png" alt="link"> -->
+					<input type="text" name="sname" placeholder="LINKEDIN" v-model="m.LinkedIn" @keyup.enter="createManager($event)">
+				</div>
+				<p class="managers__delete" style="font-size: 0.5em;" @click="deleteManager($event)">-Διαγραφή</p>		
+				<p class="managers__id" style="font-size: 0.1em;display:hidden;">{{ m.ID }}</p> 
 			</div>
-			<button class="managers__add" @click="create()">
+			<button class="managers__add" @click="addRow()">
 				<img src="../../assets/plus-button.png" alt="plus">
 			</button>
 		</div>
@@ -39,23 +42,33 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+
 export default {
 	name: 'Managers',
 	data() {
 		return {
-			managers: this.$store.getters.managers,
 			jobOptions: ['CEO', 'CTO', 'CFO'],
 		}
-  	},
+	  },
+	created() {
+		this.$store.dispatch('getManagers')
+	},
 	methods: {
-		create() {
-			var newManager = { name: '', surName: '', job: '', linkedIn: '' }
+		addRow() {
+			var newManager = { Name: '', Surname: '', Job: '', LinkedIn: '', BusinessPlanId: 1 }
 			this.managers.push(newManager)
 		},
-		save() {
-			console.log('Οι managers που αποθηκεύτηκαν είναι:')
-			console.log(this.managers)
-			this.$store.commit('')
+		createManager(event) {
+			var max = this.managers.length - 1
+			this.$store.dispatch('createManager', this.managers[max])
+			this.managers.pop()
+		},
+		deleteManager(event) {
+			var idToDelete = event.target.nextElementSibling.innerText; console.log(idToDelete)
+			idToDelete = parseInt(idToDelete)
+			this.$store.dispatch('deleteManager', idToDelete)
 		},
 		showInstructions() {
 			var btn = document.getElementsByClassName("managers__instructions");
@@ -74,6 +87,9 @@ export default {
 				}
 			}
 		},
+	},
+	computed: {
+		...mapGetters(['managers'])
 	}
 }
 </script>
@@ -120,7 +136,7 @@ export default {
 	
 }
 .managers__information{
-	width: 180px;
+	/* width: 180px; */
 	height: 30px;
 	margin: 20px;
 	border: 1px solid transparent;
@@ -189,6 +205,12 @@ background-color: rgba(0,0,0,0.4);
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+
+/* TRUMPS */
+input[type="text"]:disabled {
+    background: #fff;
 }
 
 </style>

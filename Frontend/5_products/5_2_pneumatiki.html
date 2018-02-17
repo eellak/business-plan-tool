@@ -151,18 +151,18 @@
 
       <!--Επιλογή συγκεκριμένου προϊόντος/υπηρεσίας από dropdown menu-->
       <form>
-        <h1>1. Όνομα προϊόντος/υπηρεσίας.</h1>
-        <select id="dropdown_proionta" name="dropdown" @change="showNextDropdown()" v-model="products">
-                    <option v-for="product in products" v-bind:value="product.ID">
-                      {{ product.name }}
-                    </option>
-                </select>
+        <h1>Όνομα προϊόντος/υπηρεσίας.</h1>
+        <select id="dropdown_proionta" name="dropdown" @change="showNextDropdown()">
+          <option v-for="product in products">
+            {{ product.Name }}
+          </option>
+        </select>
       </form>
 
       <!--Επιλογή της πνευματικής ιδιοκτησίας του προϊόντος/υπηρεσίας από dropdown menu-->
       <div id="pneumatiki">
         <form>
-          <h1>2. Επιλέξτε πνευματική ιδιοκτησία.</h1>
+          <h1>Επιλέξτε πνευματική ιδιοκτησία.</h1>
           <select id="dropdown_pneumatiki" name="dropdown">
 						<option value="">1. Πατέντα</option>
 						<option value="">2. Εμπορικό σήμα</option>
@@ -188,6 +188,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <script src="./logic.js"></script>
 

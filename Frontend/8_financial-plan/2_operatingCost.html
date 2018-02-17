@@ -179,46 +179,11 @@
 
         <main>
             <!-- INSTRUCTIONS -->
-                <!-- instruction script -->
-            <script type="text/x-template" id="modal-template">
-                <transition name="modal">
-                <div class="modal-mask">
-                    <div class="modal-wrapper">
-                    <div class="modal-container">
-            
-                        <div class="modal-header">
-                        <slot name="header"></slot>
-                        </div>
-            
-                        <div class="modal-body">
-                        <slot name="body"></slot>
-                        </div>
-            
-                        <div class="modal-footer">
-                        <slot name="footer">
-                            <button class="modal-default-button" @click="$emit('close')">
-                            OK
-                            </button>
-                        </slot>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </transition>
-            </script>
-                <!-- instruction html -->
             <div id="instr">
-                <button id="show-modal" @click="showModal = true">ΟΔΗΓΙΕΣ</button>
-                <modal v-if="showModal" @close="showModal = false">
-                <h3 slot="header">ΚΟΣΤΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
-                <p slot="body"> 
-                    Σε αυτή την ενότητα καταγράφονται όλες οι δαπάνες οι οποίες θα γίνονται σε ετήσια βάση απο την 
-                    επιχείρηση με σκοπό την εξασφάλιση της βιωσημότητας της.
-                    Συμπληρώστε τα πλαίσια με τις δαπάνες που επιθυμείτε καθώς και το ετήσιο κόστος της κάθε μίας.
-                    Έπειτα πιέστε το πλήκτρο υπολογισμού για να δείτε το Συνολικό Κόστος Λειτουργίας.
-                    Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
-                </p>
-                </modal>
+
+                    <button id="show-modal" @click="showModal = !showModal">ΟΔΗΓΙΕΣ</button>
+                    <modal v-if="showModal" @close="showModal = !showModal"></modal>
+    
             </div>
 
             <!-- MAIN BODY -->
