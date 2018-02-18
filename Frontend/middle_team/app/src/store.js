@@ -527,6 +527,17 @@ export const store = new Vuex.Store({
 					console.log(err)					
 				})
 		},
+		putSWOT: function ({ commit }, payload) {
+			axios.put(serverUrl + "/swot/1", payload)
+			.then(function (response)
+			{
+					console.log("payload of put: ", payload)
+					commit('PUT_SWOT', payload)
+				})
+				.catch(function (err) {
+					console.log(err)					
+				})
+		},
 		deleteSWOT: function ({ commit }, payload) {
 			axios.delete(serverUrl + "/swot/" + payload)
 			.then(function (response)
@@ -1075,6 +1086,12 @@ export const store = new Vuex.Store({
 		},		
 		CREATE_SWOT: (state, payload) => {
 			state.swot.push(payload)
+		},
+		PUT_SWOT: (state, payload) => {
+			state.swot[0].Strong = payload.Strong
+			state.swot[0].Weak = payload.Weak
+			state.swot[0].Opportunities = payload.Opportunities
+			state.swot[0].Threats = payload.Threats
 		},
 		DELETE_SWOT: (state, payload) => {
 			for (var i=0, l = state.swot.length; i < l; i++) {
