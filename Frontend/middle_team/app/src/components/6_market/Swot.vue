@@ -110,21 +110,24 @@
         </td>
       </tr>
     </div>
-    <button id="confirm" class="button" v-on:click="saveData">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+    <button v-if="saved > 1" id="confirm" class="button" v-on:click="saveData" >ΕΠΙΒΕΒΑΙΩΣΗ</button>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
+
 export default {
 	name: 'Swot',
 	data() {
 		return {
-			businessPlanId: 1,
-			spots: [[],[],[],[]],
+      businessPlanId: 2,
+      url: 'http://play-trinity.com/theo/bplantool',
+      spots: [[],[],[],[]],
 			adviceIndex: [0,0,0,0],
-			myObj: null,
-			url: 'http://play-trinity.com/theo/bplantool',
       showΙnstructions: false,
+      saved: 0,
       advices: [
 				[
 					"Ποια είναι τα πλεονεκτήματα?",
@@ -153,61 +156,65 @@ export default {
 				]
 			],
 		}
-	},
+  },
+  computed: {
+    ...mapGetters(['swot'])
+  },
+  watch: {
+    swot: function(){ 
+      if(this.swot!= null && typeof(this.swot)!= 'underfined'){
+        this.$set(this.spots, 0, this.swot.Strong);
+        this.$set(this.spots, 1, this.swot.Weak);
+        this.$set(this.spots, 2, this.swot.Opportunities);
+        this.$set(this.spots, 3, this.swot.Threats);
+      }
+      this.saved = 0;
+    },
+    spots: function(){
+      this.saved = this.saved + 1;
+    }
+  },
+  created() {
+    this.$store.dispatch('getSWOTS')
+    .then(function (response) {
+      // console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
 	mounted() {
-		var that = this;
-      	axios.get(this.url +"/api/swot/" + this.businessPlanId)
-      	.then(function (response) {
-        	var obj = response.data;
-			that.myObj = obj;
-			if (obj != null) {
-				that.$set(that.spots, 0, obj.Strong);
-				that.$set(that.spots, 1, obj.Weak);
-				that.$set(that.spots, 2, obj.Opportunities);
-				that.$set(that.spots, 3, obj.Threats);
-			}
-          	console.log(response)
-		})
-		.catch(function (error) {
-			console.log(error)
-		})
-	},
+  },
 	methods: {
 		saveData: function() {
-          if (this.myObj == null) {
-            this.myObj = {
-              "Strong": this.spots[0],
-              "Weak": this.spots[1],
-              "Opportunities": this.spots[2],
-              "Threats": this.spots[3],
-              "BusinessPlanId": this.businessPlanId
-            }
-            axios.post(this.url +"/api/swot",this.myObj)
-            .then(function (response) {
-              console.log(response);
-              alert("Αποθηκεύτηκε Επιτυχώς!");
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          }
-          else {
-            axios.put(this.url +"/api/swot/" + this.businessPlanId,this.myObj)
-            .then(function (response) {
-              console.log(response);
-              alert("Αποθηκεύτηκε Επιτυχώς!");
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          }
-        },
-        equals: function (objectA, objectB) {
-          if(JSON.stringify(objectA) === JSON.stringify(objectB)){
-            return true;
-          }
-          return false;
-        },
+      this.saved = 1;
+      var newObj = {
+          "Strong": this.spots[0],
+          "Weak": this.spots[1],
+          "Opportunities": this.spots[2],
+          "Threats": this.spots[3],
+          "BusinessPlanId": this.businessPlanId
+        }
+      if (this.swot == null || typeof(this.swot) == 'underfined') {
+        this.$store.dispatch("createSWOT",newObj)
+        .then(function (response) {
+          console.log(response);
+          alert("Αποθηκεύτηκε Επιτυχώς!");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+      else {
+        this.$store.dispatch("putSWOT",newObj)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+  },
         addSpot: function (index) {
             this.spots[index].push("");
         },
@@ -229,15 +236,6 @@ export default {
 </script>
 
 <style scoped>
-	.set {
-		margin-left: 7px;
-		margin-right: 7px;
-	}
-
-	.wrapper {
-		text-align: center;
-	}
-
 	.button {
 		float: right;
 		margin-right: 20px;
@@ -262,16 +260,6 @@ export default {
 		font-size: 2em;
 	}
 
-	.factors {
-		font-weight: bold;
-		font-size: 1.2em;
-	}
-
-	.contenttitles {
-		font-style: italic;
-		font-size: 1em;
-		font-weight: bold;
-	}
 
 	.stef {
     width:1300px;
@@ -285,7 +273,7 @@ export default {
 	}
 
 	.stef tr td {
-		width: 40%;
+		width: 600px;
 		margin-left: 10%;
 		margin-right: 10%;
 		text-align: center;
@@ -351,4 +339,7 @@ export default {
     vertical-align:middle;
     padding-top: 3%;
 	}
+  textarea {
+		font-size: 1.3em;
+  }
 </style>
