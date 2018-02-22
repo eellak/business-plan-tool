@@ -34,11 +34,9 @@
                         <router-link to="/managers" tag="li" class="" active-class="activeSection">
                           <a class="subSection">ΟΜΑΔΑ ΔΙΟΙΚΗΣΗΣ</a>
                         </router-link>
-                        
                         <router-link to="/employees" tag="li" class="" active-class="activeSection">
                           <a class="subSection">ΠΡΟΣΩΠΙΚΟ</a>
                         </router-link>
-                        
                         <router-link to="/partners" tag="li" class="" active-class="activeSection">
                           <a class="subSection">ΕΞΩΤΕΡΙΚΟΙ ΣΥΝΕΡΓΑΤΕΣ</a>
                         </router-link>
