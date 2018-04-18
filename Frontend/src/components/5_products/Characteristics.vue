@@ -1,16 +1,6 @@
 <template>
 	<div class="characteristics">
-		<!--Κουμπί για τις οδηγίες με μια μικρή συνάρτηση js κάτω-->
-      <button class="tips" @click="tipsButton()">ΟΔΗΓΙΕΣ</button>
-      <!--Περιεχόμενο που εμφανίζεται με τι πάτημα του κουμπιού-->
-      <div id="instructions">Σε αυτή την ενότητα γίνεται η καταγραφή των προϊόντων/υπηρεσιών που θα προσφέρει η επιχείρηση.<br>
-	      Αρχικά επιλέγετε ανάμεσα σε προϊόν και υπηρεσία, και στη συνέχεια συμπληρώνετε τα χαρακτηριστικά του/της.<br>
-	      Αφού συμπληρώσετε τα πεδία, πατήστε το κουμπί ‘+’ για την καταχώρηση του προϊόντος/υπηρεσίας.<br>
-	      Επιλέξτε το κουμπί ‘ΕΜΠΡΟΣ’ για να μεταβείτε στην επόμενη σελίδα.
-	      (Θα έχετε δυνατότητα να επιστρέψετε σε αυτή τη σελίδα, χρησιμοποιώντας το κουμπί ‘ΠΙΣΩ’)
-	      </div>
-      <!--Επιλογή προιόντος ή υπηρεσίας-->
-      <h2>Τα προϊόντα/υπηρεσίες της επιχείρησης είναι τα παρακάτω:</h2>
+    <h2>Τα προϊόντα/υπηρεσίες της επιχείρησης είναι τα παρακάτω:</h2>
       <div v-for="p in products" style="border: 1px solid black">
         <p>Όνομα: <strong>{{ p.Name }}</strong></p>
       </div>
@@ -98,7 +88,7 @@
         <hr>
       </div>
       <!--Κουμπί καταχώρησης προϊόντος/υπηρεσίας-->
-      <button type="submit" class="add" @click="addProductRow()"><img src="add32.png"> </button>
+      <!-- <button type="submit" class="add" @click="addProductRow()"><img src="add32.png"> </button> -->
 	</div>
 </template>
 
@@ -109,21 +99,220 @@ export default {
 		return {
 			// Here you can write your own variables.
 			// These variables are shown only inside this component.
-			title: this.$options.name
+			title: 'Χαρακτηριστικά προϊοντος',
+      products: [
+        {productType: '',
+        name: '',
+        directed_to: '',
+        innovation_factor: '',
+        technology: '',
+        certificate: '',
+        license: '',
+        competition: '',
+        price: '',
+        description: '',
+        copyright: '',
+        sellPrice: '',
+        productCost: '',
+        numProduct: '',
+        percentageIncrease: ''}
+        ]
 		}
 	},
+  created() {
+    var that = this
+
+    axios.get('http://play-trinity.com/theo/bplantool/api/product')
+    .then(function(response) {
+      that.products = response.data
+      console.log(that.products)
+    })
+  },
 	mounted() {
 		// Here you can write code you want to run,
 		// when this component is loaded.
 	},
 	methods: {
 		// Here you can write your functions.
-		foo() {
+		showNextFields() {
+      var x = document.getElementById("dropdown_proionta_2");
+      var y = document.getElementById("analisi");
+      // or selected == x.selectedIndex to get the first and dont go by string
+      if (0 == x.selectedIndex) {
+        y.style.display = 'none';
+      } else {
+        y.style.display = 'block';
+      }
+    },
+    addProductRow() {
+			var newProduct = {
+        ProductType: '',
+        Name: '',
+        Directed_to: '',
+        Innovation_factor: '',
+        Technology: '',
+        Certificate: '',
+        License: '',
+        Competition: '',
+        Price: '',
+        Description: '',
+        Copyright: '',
+        SellPrice: '',
+        ProductCost: '',
+        NumProduct: '',
+        PercentageIncrease: '',
+        BusinessPlanId: 1 
+      }
+
+      this.products.push(newProduct)
 		},
+		createProduct(event) {
+      var that = this
+      var max = this.products.length - 1
+      axios.post('http://play-trinity.com/theo/bplantool/api/product', this.products[max])
+        .then(function(response) {
+          that.products.push(response.data)
+        })
+			this.products.pop()
+			// this.$store.dispatch('createManager', this.managers[max])
+		},
+    addProduct() {
+      var newProduct = {
+        productType: '',
+        name: '',
+        directed_to: '',
+        innovation_factor: '',
+        technology: '',
+        certificate: '',
+        license: '',
+        competition: '',
+        price: '',
+        description: '',
+        copyright: '',
+        sellPrice: '',
+        productCost: '',
+        numProduct: '',
+        percentageIncrease: ''
+      }
+      this.products.push(newProduct)
+    },
 	}
 }
 </script>
 
 <style scoped>
+select {
+    margin-top: 10px;
+    width: 450px;
+    height: 60px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f1f1f1;
+}
+.quest58 textarea{
+    width: 1000px;
+}
+textarea{
+    margin-top: 10px;
+    width: 450px;
+    height: 80px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+.container {
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 12px;
+    margin-right: 100px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+    background-color: rgb(41, 152, 100);
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+.Align{
+    display: flex;
+}
+form{
+    margin-right:100px;
+}
+.tips{
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    background-color: rgb(41, 152, 100);
+    color: white;
+    width: 153px;
+    height: 52px;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+#instructions {
+    position: fixed;
+    width: 350px;
+    height: 300px;
+    top: 140px;
+    right: 40px;
+    padding: 22px;
+    text-align: left;
+    background-color: lightgrey;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#pneumatiki {
+    display: none;
+}
+
+#analisi {
+    display: none;
+}
+
+.add{
+    border: none;
+    background-color: white;
+    margin: 30px 0px 30px 10px;
+}
 
 </style>
