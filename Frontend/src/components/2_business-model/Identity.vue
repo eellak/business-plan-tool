@@ -6,15 +6,20 @@
 
   			<div id="myDIV">
           <p>Συμπληρώστε τα χαρακτηριστικά ταυτότητας του επιχειρηματικού μοντέλου.</p>
-  			</div>	
+  			</div>
 		<form id="form" name="Tautotita_form" class="tautotita__block">
 			<section class="my_card">
-        <div class="my_card_head"> 1.Τόπος Εγκατάστασης </div>
-				<div class="my_card_body"> <input type="text" name="location" id="location" value="" placeholder="Θεσσαλονίκη" style="width: 80%; font-size:15pt;"></div>
+        <div class="my_card_head"> 1.Επωνυμία Επιχείρησης </div>
+				<el-input placeholder="Επωνυμία" v-model="name"></el-input>
 			</section>
 
+      <section class="my_card">
+        <div class="my_card_head">2.Τόπος Εγκατάστασης</div>
+        <el-input placeholder="Θεσσαλονίκη" v-model="location"></el-input>
+      </section>
+
 			<section class="my_card">
-				<div class="my_card_head">2.Περίοδος έναρξης δραστηριότητας για νέες επιχειρήσεις/ έτος ίδρυσης για υφιστάμενες επιχειρήσεις<br></div>
+				<div class="my_card_head">3.Έτος Έναρξης Δραστηριότητας/Έτος Ίδρυσης:</div>
 				<div class="styled-select slate">
 				<select name="month" id="month">
 					<option value="January">Ιανουάριος</option>
@@ -38,7 +43,7 @@
 			</section>
 
 			<section class="my_card">
-				<div class="my_card_head">3.Νομική Μορφή<br></div>
+				<div class="my_card_head">4.Νομική Μορφή</div>
 					<div class="my_card_body">
 						<div class="styled-select slate" name="legal_type">
 							<select name="legal type" id="legal type">
@@ -55,52 +60,52 @@
 					<div class="my_card_head"><legend>4. Τύπος Επιχείρησης</legend></div>
 
 						<div>
-							<input type="checkbox" id="productive" name="productive" value="productive">
+							<input type="checkbox" id="productive" name="productive" value="productive"/>
 							<label for="productive">Παραγωγική</label>
 						</div>
 						<div>
-							<input type="checkbox" id="retail" name="retail" value="retail">
+							<input type="checkbox" id="retail" name="retail" value="retail"/>
 							<label for="retail">Εμπορική επιχειρήση λιανικής</label>
 						</div>
 						<div>
-							<input type="checkbox" id="wholesale" name="wholesale" value="wholesale">
+							<input type="checkbox" id="wholesale" name="wholesale" value="wholesale"/>
 							<label for="wholesale">Εμπορική επιχειρήση χονδρικής</label>
 						</div>
 						<div>
-							<input type="checkbox" id="service" name="service" value="service">
+							<input type="checkbox" id="service" name="service" value="service"/>
 							<label for="service">Παροχή υπηρεσιών</label>
 						</div>
 						<div>
-							<input type="checkbox" id="franchise" name="franchise" value="franchise">
+							<input type="checkbox" id="franchise" name="franchise" value="franchise"/>
 							<label for="franchise">Franchise</label>
 						</div>
 						<div>
-							<input type="checkbox" id="distributor" name="distributor" value="distributor">
+							<input type="checkbox" id="distributor" name="distributor" value="distributor"/>
 							<label for="distributor">Εμπορικός Αντιπρόσωπος</label>
 						</div>
 						<div>
-							<input type="checkbox" id="other1" name="other1" value="other1">
+							<input type="checkbox" id="other1" name="other1" value="other1"/>
 							<label for="other1">Άλλο</label>
-							<input type="text" id="otherValue1" name="otherVal1">
+							<input type="text" id="otherValue1" name="otherVal1"/>
 						</div>
 
 			</section>
 
 			<section class="my_card" name="customers">
-				<div class="my_card_head"><legend>5.Πελάτες</legend></div>
+				<div class="my_card_head"><legend>6.Πελάτες</legend></div>
 
 						<div>
-							<input type="checkbox" id="private individual" name="private individual" value="private individual">
+							<input type="checkbox" id="private individual" name="private individual" value="private individual"/>
 							<label for="private individual">Ιδιώτες</label>
 						</div>
 						<div>
-							<input type="checkbox" id="companies" name="companies" value="companies">
+							<input type="checkbox" id="companies" name="companies" value="companies"/>
 							<label for="companies">Επιχειρήσεις</label>
 						</div>
 						<div>
-							  <input type="checkbox" id="other2" name="other2" value="other2">
+							  <input type="checkbox" id="other2" name="other2" value="other2"/>
 							  <label for="other2">Άλλο</label>
-							  <input type="text" id="otherValue2" name="otherVal2">
+							  <input type="text" id="otherValue2" name="otherVal2"/>
 						</div>
 
 			</section>
@@ -119,21 +124,22 @@ export default {
 		return {
 			// Here you can write your own variables.
 			// These variables are shown only inside this component.
-			title: this.$options.name
+			title: this.$options.name,
+			location: 'Θεσσαλονίκη'
 		}
 	},
 	mounted() {
 		// Here you can write code you want to run,
 		// when this component is loaded.
-				
-					var start = 1900;
+
+					var start = 1950;
 					var end = new Date().getFullYear();
 					var options = "";
-					for(var year = start ; year <=end; year++){
+					for(var year = start ; year <= end; year++){
 					  options += "<option>"+ year +"</option>";
 					}
 					document.getElementById("year").innerHTML = options;
-				  
+
 	},
 	methods: {
 		// Here you can write your functions.
@@ -200,7 +206,7 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
     font-size: 15pt;
-}		
+}
 /*.................new...............*/
 .welcome{
   display: flex;
@@ -285,5 +291,5 @@ export default {
    font-size: 16px;
    height: 34px;
    width: 268px;
-}  
+}
 </style>
