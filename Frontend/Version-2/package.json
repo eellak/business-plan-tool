@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "element-ui": "^2.3.8",
+    "npm": "^6.0.1",
     "orgchart": "^2.1.1",
     "pdfmake": "^0.1.35",
     "semantic-ui-css": "^2.3.1",

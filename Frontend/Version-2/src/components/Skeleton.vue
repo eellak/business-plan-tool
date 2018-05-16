@@ -39,6 +39,9 @@
                     <li>
                       <router-link to="/synopsis" tag="a" class="">Οικονομικό Πλάνο</router-link>
                     </li>
+                    <li>
+                      <router-link to="/test" tag="a" class="">ExportBeta</router-link>
+                    </li>
                 </ul>
             </div>
           </div>
@@ -584,7 +587,6 @@ body {
     margin-left: 5px;
     font-size: 20px;
 }
-.head__export i {}
 /* FOOTER */
 footer {
     background-color: rgb(203, 202, 202);
@@ -729,7 +731,7 @@ a.subSection{
 }
 
 .main__body_header{
-	text-size:20px;
+	font-size:20px;
 }
 
 .main__footer{
@@ -791,12 +793,12 @@ a.subSection{
 	padding-bottom:10px;
 	padding-top:10px;
 	padding-left:10px;
-	font-color:rgb(30, 33, 51);
+	color:rgb(30, 33, 51);
 }
 
 .instructions_body{
 	padding:15px 15px 15px 15px;
-	font-color:rgb(30, 33, 51);
+	color:rgb(30, 33, 51);
 	font-size:14px;
 }
 
