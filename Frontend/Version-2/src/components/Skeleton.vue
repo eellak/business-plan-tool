@@ -28,10 +28,10 @@
                     <router-link to="/basic-information" tag="a" class="">Βασικά στοιχεία</router-link>
                   </li>
                   <li>
-                    <router-link to="/synopsis" tag="a" class="">Εσωτερική Σύνοψη</router-link>
+                    <router-link to="/internal-analysis" tag="a" class="">Εσωτερική ανάλυση</router-link>
                   </li>
                   <li>
-                    <router-link to="/synopsis" tag="a" class="">Εξωτερική Σύνοψη</router-link>
+                    <router-link to="/synopsis" tag="a" class="">Εξωτερική ανάλυση</router-link>
                   </li>
                     <li>
                       <router-link to="/synopsis" tag="a" class="">Στρατηγική</router-link>

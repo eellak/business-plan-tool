@@ -10,8 +10,10 @@
 
 			<div class="group">
 				<div class="title_of_group">Μέτοχοι της επιχείρησης</div>
-                <div id="input" style="flex-grow:1;margin-right:40px;margin-top:10px;"><el-input placeholder="Βαλαωρίτου 15" v-model="input"></el-input></div>
-                <div class="red_inside_information" onclick="add_input()">+Προσθέστε μέτοχο</div>
+                <div id="input" style="flex-grow:1;margin-right:40px;margin-top:10px;">
+					<el-input class="group-input" placeholder="Βαλαωρίτου 15" v-model="shareholder"></el-input>
+				</div>
+                <button class="red_inside_information" @click="addShareholder()">+Προσθέστε μέτοχο</button>
 			</div>
 			
 
@@ -22,8 +24,8 @@
 			
 				
 				<div class="footer__buttons">
-				<button class="button" @click="validateForm()">BACK</button>
-				<button class="button" @click="validateForm()">NEXT</button>
+				<!-- <button class="button">BACK</button> -->
+				<!-- <button class="button">NEXT</button> -->
 				</div>
 			</div>
 
@@ -38,7 +40,8 @@ export default {
 		return {
 			// Here you can write your own variables.
 			// These variables are shown only inside this component.
-			title: this.$options.name
+			title: this.$options.name,
+			shareholder: ''
 		}
 	},
 	mounted() {
@@ -49,14 +52,14 @@ export default {
 	},
 	methods: {
 		// Here you can write your functions.
-     add_input() { 
-            var myDiv = document.getElementById("input");
+		addShareholder() { 
+			var shareholderInput = document.getElementsByClassName("group-input")[0];
 
-            var divClone = myDiv.cloneNode(true); // the true is for deep cloning
+			var divClone = shareholderInput.cloneNode(true); // the true is for deep cloning
 
-            document.body.appendChild(divClone);
-            divClone = myDiv.cloneNode(true);
-          }
+			shareholderInput.appendChild(divClone);
+			// divClone = shareholderInput.cloneNode(true);
+		}
 	}
 }
 </script>

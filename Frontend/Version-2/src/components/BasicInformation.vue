@@ -2,7 +2,7 @@
 			<div class="main__body">
 
 			<div class="main__header">
-				<h1>ΤΑΥΤΟΤΗΤΑ</h1>
+				<h1>Βασικά στοιχεία</h1>
 			</div>
 
 
@@ -11,39 +11,39 @@
 			<div class="input_group">
 				<div class="title">ΕΠΩΝΥΜΙΑ ΕΤΑΙΡΙΑΣ</div>
 
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Fashion4u" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Fashion4u" ></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΔΙΕΥΘΥΝΣΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Βαλαωρίτου 15" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Βαλαωρίτου 15" ></el-input></div>
 			</div>		
 			<div class="input_group">
 				<div class="title">ΤΗΛΕΦΩΝΑ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="231025344" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="231025344" ></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">EMAIL</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="fashion4u@gmail.com" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="fashion4u@gmail.com" ></el-input></div>
 			</div>	
 			<div class="input_group">
 				<div class="title">WEBSITE</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="www.fashion4u.gr" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="www.fashion4u.gr" ></el-input></div>
 			</div>		
 			<div class="input_group">
 				<div class="title">ΕΡΓΑΣΙΑΚΗ ΦΥΣΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="e-shop προϊόντων ένδυσης" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="e-shop προϊόντων ένδυσης" ></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΙΔΙΟ ΚΕΦΑΛΑΙΟ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="€25.000" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="€25.000" ></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΕΤΟΣ ΙΔΡΥΣΗΣ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="2013" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="2013" ></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΣΤΕΛΕΧΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Κοιλαρίδου Όλγα" v-model="input"></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Κοιλαρίδου Όλγα" ></el-input></div>
 			</div>
 
 
@@ -51,8 +51,8 @@
 			
 				
 				<div class="footer__buttons">
-				<button class="button" @click="validateForm()">BACK</button>
-				<button class="button" @click="validateForm()">NEXT</button>
+				<!-- <button class="button">BACK</button> -->
+				<!-- <button class="button">NEXT</button> -->
 				</div>
 			</div>
 
