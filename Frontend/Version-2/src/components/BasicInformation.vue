@@ -5,9 +5,6 @@
 				<h1>Βασικά στοιχεία</h1>
 			</div>
 
-
-
-
 			<div class="input_group">
 				<div class="title">ΕΠΩΝΥΜΙΑ ΕΤΑΙΡΙΑΣ</div>
 
@@ -46,6 +43,8 @@
 				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Κοιλαρίδου Όλγα" ></el-input></div>
 			</div>
 
+			<longtext :theTitle="'Σύνοψη'"></longtext>
+
 
 		<div class="main__footer">
 			
@@ -61,6 +60,7 @@
 			
 </template>
 <script>
+import Longtext from './custom/Longtext.vue'
 export default {
 	name: 'BasicInformation',
 	data() {
@@ -78,6 +78,9 @@ export default {
 	methods: {
 		// Here you can write your functions.
 
+	},
+	components: {
+		'longtext': Longtext 
 	}
 }
 </script>
@@ -142,12 +145,12 @@ export default {
 	margin-right:20px;
 }
 
-.input_group:hover { 
-	padding: 10px 10px 10px 10px;
-    background-color: rgb(192, 192, 192);
-	border-radius:10px;
+// .input_group:hover { 
+// 	padding: 10px 10px 10px 10px;
+//     background-color: rgb(192, 192, 192);
+// 	border-radius:10px;
 	
-}
+// }
 
 .title{
 	font-size:18px;

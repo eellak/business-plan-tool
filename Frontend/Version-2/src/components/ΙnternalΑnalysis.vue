@@ -5,22 +5,10 @@
 				<h1>Εσωτερική Ανάλυση</h1>
 			</div>
 
-			<div class="longtext">
-				<h3 class="longtext__title">Περιγραφή της επιχείρησης</h3>
-				<p class="longtext__content">Μπλα μπλα μπλα</p>
-				<span class="longtext__addarea">
-					<a class="longtext__addButton" @click="openTextarea($event)">+Συμπληρώστε</a>
-					<el-input class="longtext__textarea" type="textarea"></el-input>	
-				</span>	
-			</div>
+			<longtext :theTitle="'Περιγραφή επιχείρησης'"></longtext>
 
-			<!-- <div class="group">
-				<div class="title_of_group">Μέτοχοι της επιχείρησης</div>
-                <div id="input" style="flex-grow:1;margin-right:40px;margin-top:10px;">
-					<el-input class="group-input" placeholder="Βαλαωρίτου 15" v-model="shareholder"></el-input>
-				</div>
-                <button class="red_inside_information" @click="addShareholder()">+Προσθέστε μέτοχο</button>
-			</div> -->
+			<longtext :theTitle="'Επιλογή τοποθεσίας'"></longtext>
+
 
 			<div class="main__footer">
 				<div class="footer__buttons">
@@ -30,6 +18,7 @@
 	</div>	
 </template>
 <script>
+import Longtext from './custom/Longtext.vue'
 export default {
 	name: 'InternalAnalysis',
 	data() {
@@ -37,7 +26,8 @@ export default {
 			// Here you can write your own variables.
 			// These variables are shown only inside this component.
 			title: this.$options.name,
-			shareholder: ''
+			description: '',
+			longtextIsEditing: false,
 		}
 	},
 	mounted() {
@@ -49,65 +39,23 @@ export default {
 	methods: {
 		openTextarea(ev) {
 			ev.currentTarget.style.display = 'none'
-			ev.currentTarget.parentElement.getElementsByClassName('longtext__textarea')[0].style.display = 'block'
+			this.longtextIsEditing = true
 		},
-		addShareholder() { 
-			var shareholderInput = document.getElementsByClassName("group-input")[0];
-
-			var divClone = shareholderInput.cloneNode(true); // the true is for deep cloning
-
-			shareholderInput.appendChild(divClone);
-			// divClone = shareholderInput.cloneNode(true);
+		saveContent(ev) {
+			this.longtextIsEditing = false
+		},
+		editContent(ev) {
+			ev.currentTarget.style.display = 'none'
+			this.longtextIsEditing = true
 		}
+	},
+	components: {
+		'longtext': Longtext 
 	}
 }
 </script>
 
 <style>
-
-/* ==============================================
-                #LONGTEXT
-================================================= */
-
-.longtext {
-	border-radius: 3px;
-	padding: 10px 15px;
-}
-
-.longtext:hover {
-	border: 1px dashed #47A2D3;
-	background-color: #ECF6FB;
-}
-
-	.longtext__title {
-		font-weight: 300;
-		margin: 0;
-	}
-
-	.longtext__content {
-		display: none;
-	}
-
-	.longtext__addarea {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		cursor: pointer;
-	}
-
-		.longtext__addButton {
-			color: #EB5757;
-			align-self: center;
-		}
-
-		.longtext__textarea {
-			display: none;
-			transition: 0.6s;
-		}
-
-
-
-
 
 /* ==============================================
                 #SHAREHOLDERS
