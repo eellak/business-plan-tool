@@ -20,7 +20,8 @@
      <nav>
       <div>
         <div>
-            <p style="font-size:34px;color:white;margin-top:20px;margin-bottom:30px;margin-left:20px;">BP TOOL</p>
+            <!-- <p style="font-size:34px;color:white;margin-top:20px;margin-bottom:30px;margin-left:20px;">BP TOOL</p> -->
+            <img class="head__logo" src="../assets/logo.png" alt="Logo">
         </div>
             <div class="sections-menu">
                 <ul class="sections-menu-ul">
@@ -31,13 +32,13 @@
                     <router-link to="/internal-analysis" tag="a" class="">Εσωτερική ανάλυση</router-link>
                   </li>
                   <li>
-                    <router-link to="/synopsis" tag="a" class="">Εξωτερική ανάλυση</router-link>
+                    <router-link to="/external-analysis" tag="a" class="">Εξωτερική ανάλυση</router-link>
                   </li>
                     <li>
-                      <router-link to="/synopsis" tag="a" class="">Στρατηγική</router-link>
+                      <router-link to="/strategy" tag="a" class="">Στρατηγική Marketing</router-link>
                     </li>
                     <li>
-                      <router-link to="/synopsis" tag="a" class="">Οικονομικό Πλάνο</router-link>
+                      <router-link to="/financial-plan" tag="a" class="">Οικονομικό Πλάνο</router-link>
                     </li>
                     <li>
                       <router-link to="/test" tag="a" class="">ExportBeta</router-link>
@@ -47,7 +48,7 @@
           </div>
                   <div class="avatar_box">
                   <img class="head__avatar" src="../assets/avatar.png" alt="Avatar">
-                  <p class="avatar_name">Ioannis Stamelos</p>
+                  <p class="avatar_name">Naoum Mylonas</p>
                   </div>
   
         </nav>
@@ -556,7 +557,8 @@ body {
     border-bottom: 0.1px solid black;
 }
 .head__logo {
-    margin: 20px 20px 40px 20px;
+    width: 250px;
+    padding: 5px;
 }
 .head__export {
     color: #fff;
@@ -717,9 +719,8 @@ a.subSection{
 }
 
 .main__header{
-	margin-right:20px;
-	margin-left:20px;
-	text-align:center;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .main__body{
@@ -743,22 +744,6 @@ a.subSection{
     flex-direction: column-reverse;
 }
 
-.input_group{
-	margin-top:10px;
-	margin-bottom:10px;
-	display:flex;
-	align-items: center;
- 	justify-content: center;
-	margin-left:20px;
-	margin-right:20px;
-}
-
-.input_group:hover { 
-	padding: 10px 10px 10px 10px;
-    background-color: rgb(192, 192, 192);
-	border-radius:10px;
-	
-}
 
 .title{
 	font-size:18px;
