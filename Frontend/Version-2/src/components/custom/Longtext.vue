@@ -65,7 +65,6 @@ export default {
 	}
 
 	.longtext__content {
-		width: 850px;
 		font-style: italic;
 	}
 
