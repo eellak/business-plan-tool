@@ -54,12 +54,12 @@
         </nav>
                                                 
         <div style="display:flex;width:100%;">  <!-- ΔΙΑΣΤΑΣΕΙΣ ΟΛΟΥ ΤΟΥ ΠΑΡΑΘΥΡΟΥ --> 
-        <div style="width:250px;height:100%;"></div>      <!-- ΔΙΑΣΤΑΣΕΙΣ ΤΟΥ nav -->
+        <div style="min-width:250px;height:100%;"></div>      <!-- ΔΙΑΣΤΑΣΕΙΣ ΤΟΥ nav -->
 
         <main>
             <router-view/>                            <!-- main -->
         </main>	
-        <div style="width:300px;height:100%;background:blue;"></div>  <!-- ΔΙΑΣΤΑΣΕΙΣ ΤΟΥ right_column -->
+        <div style="min-width:300px;height:100%;background:blue;"></div>  <!-- ΔΙΑΣΤΑΣΕΙΣ ΤΟΥ right_column -->
         </div>
 	
         
