@@ -5,7 +5,19 @@
 				<h1>Εξωτερική Ανάλυση</h1>
 			</div>
 
-			<longtext :theTitle="'Ανάλυση Καταναλωτή'"></longtext>
+			<longtext :theTitle="'Ποια είναι τα βασικά χαρακτηριστικά των καταναλωτών;'"></longtext>
+
+			<longtext :theTitle="'Ανάλυση ανταγωνισμού'"></longtext>
+
+			<longtext :theTitle="'Ανάλυση αγοράς'"></longtext>
+
+			<longtext :theTitle="'Ανάλυση μακροοικονομικού περιβάλλοντος'"></longtext>
+
+			<h3 style="font-weight: 600;margin: 0;">Ανάλυση SWOT</h3>
+			<longtext :theTitle="'Δυνάμεις'"></longtext>
+			<longtext :theTitle="'Αδυναμίες'"></longtext>
+			<longtext :theTitle="'Ευκαιρίες'"></longtext>
+			<longtext :theTitle="'Απειλές'"></longtext>
 
 			<div class="main__footer">
 				<div class="footer__buttons">
@@ -23,6 +35,22 @@ export default {
 			title: this.$options.name,
 			description: '',
 			longtextIsEditing: false,
+			// db
+			// consumerAnalysis: "",
+			// competitionAnalysis: "",
+			// marketAnalysis: [
+			// 	synthesis: '',
+			// 	type: '',
+			// 	competitors: "",
+			// 	perithoriaEisodou: "",
+			// ],
+			// enviromentAnalysis: "",
+			// swot: [
+			// 	strengths: ["nice clothes","low prices","strong marketing"],
+			// 	weaknesses: ["lower quality of clothes"],
+			// 	opportunities: ["opportunity1","opportunity"],
+			// 	threats: ["thrt1"]
+			// ]
 		}
 	},
 	mounted() {

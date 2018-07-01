@@ -5,10 +5,13 @@
 				<h1>Εσωτερική Ανάλυση</h1>
 			</div>
 
+			<longtext :theTitle="'Βασικοί εταίροι της επιχείρησης'"></longtext>
+
 			<longtext :theTitle="'Περιγραφή επιχείρησης'"></longtext>
 
+			<modalproducts :theTitle="'Προϊόντα ή υπηρεσίες που θα προσφέρονται'"></modalproducts>
+			
 			<longtext :theTitle="'Επιλογή τοποθεσίας'"></longtext>
-
 
 			<div class="main__footer">
 				<div class="footer__buttons">
@@ -18,39 +21,42 @@
 	</div>	
 </template>
 <script>
+import ModalProducts from './custom/ModalProducts.vue'
 import Longtext from './custom/Longtext.vue'
 export default {
 	name: 'InternalAnalysis',
 	data() {
 		return {
-			// Here you can write your own variables.
-			// These variables are shown only inside this component.
 			title: this.$options.name,
 			description: '',
-			longtextIsEditing: false,
+			// db
+			// "shareholders": ["John Smith", "Jack Sparrow"],
+			// "description": "description 1",
+			// "products": [
+			// 	{
+			// 	"id": 1,
+			// 	"isProduct": true,
+			// 		"name": "kenzo leather jacket",
+			// 		"details":"2012 fall-winter collection"
+			// 	},
+			// 	{
+			// 		"id": 2,
+			// 		"isProduct": false,
+			// 		"name": "e-shop",
+			// 		"details":"provides the ability for users to shop online"
+			// 	}
+			// ],
+			// "location": "Thessaloniki Greece"
 		}
 	},
 	mounted() {
-		// Here you can write code you want to run,
-        // when this component is loaded.
-        
 				  
 	},
 	methods: {
-		openTextarea(ev) {
-			ev.currentTarget.style.display = 'none'
-			this.longtextIsEditing = true
-		},
-		saveContent(ev) {
-			this.longtextIsEditing = false
-		},
-		editContent(ev) {
-			ev.currentTarget.style.display = 'none'
-			this.longtextIsEditing = true
-		}
 	},
 	components: {
-		'longtext': Longtext 
+		'longtext': Longtext, 
+		'modalproducts': ModalProducts
 	}
 }
 </script>

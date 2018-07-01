@@ -7,6 +7,17 @@
 
 			<longtext :theTitle="'Στρατηγική προϊόντων'"></longtext>
 
+			<h3 style="font-weight: 600;margin: 0;">Πλάνο Marketing</h3>
+			<longtext :theTitle="'Συμπεριφορά καταναλωτή'"></longtext>
+
+			<longtext :theTitle="'Προϊόν/υπηρεσία'"></longtext>
+
+			<longtext :theTitle="'Διανομή'"></longtext>
+
+			<longtext :theTitle="'Προώθηση'"></longtext>
+
+			<modalsales></modalsales>
+
 			<div class="main__footer">
 				<div class="footer__buttons">
 				</div>
@@ -16,6 +27,7 @@
 </template>
 <script>
 import Longtext from './custom/Longtext.vue'
+import ModalSales from './custom/ModalSales.vue'
 export default {
 	name: 'Strategy',
 	data() {
@@ -29,7 +41,8 @@ export default {
 	methods: {
 	},
 	components: {
-		'longtext': Longtext 
+		'longtext': Longtext,
+		'modalsales': ModalSales 
 	}
 }
 </script>
