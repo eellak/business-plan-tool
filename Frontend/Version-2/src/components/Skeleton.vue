@@ -66,7 +66,7 @@
         <div class="right_column">
       <div>
 			<div class="instructions_body">
-        <el-collapse  v-model="activeNames" @change="handleChange">
+        <el-collapse v-model="activeNames" @change="handleChange()">
         <el-collapse-item class="instructions_title" title="Οδηγίες" name="1">
           <div class="instructions">{{this.$store.state.newDesc[descId()].Description}}</div>
         </el-collapse-item>
@@ -92,7 +92,7 @@ export default {
  	name: 'Skeleton',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      activeNames: ''
     }
   },
     mounted(){
@@ -106,6 +106,9 @@ export default {
         });
   },
   methods: {
+    handleChange() {
+      console.log("handleChange()")
+    },
     // This function returns a parsed date from the db form(YYYYMMDD) into proper form with slashes(DD/MM/YYYY)
     dateParser(date){
       return String(date).slice(6) + "/" // Slice DD, 6-end
