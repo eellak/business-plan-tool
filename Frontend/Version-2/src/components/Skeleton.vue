@@ -847,13 +847,12 @@ position:relative;
 }
 .el-collapse-item__content {
     background-color:#F7F7F7;
-    max-height: 50%;
     padding-bottom: 25px;
-    padding-right: 25px;
+    padding-right: 20px;
     font-size: 14px;
     color: #303133;
     line-height: 1.769230769230769;
-    max-height: 700px; /*76px = two items 1 is 38px*/
+    max-height: 400px; /*76px = two items 1 is 38px*/
     overflow: overlay;
     
 }
