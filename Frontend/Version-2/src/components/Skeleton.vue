@@ -65,8 +65,13 @@
         
         <div class="right_column">
       <div>
-			<div class="instructions_title">Οδηγίες</div>
-			<div class="instructions_body">Αρχικά κλικάρετε το συμβολο + για να εμφανιστούν τα πεδία για το πρώτο διοικητικό μέλος. Συμπληρώνετε τα απαραίτητα όνομα και επίθετο στα αντίστοιχα πεδία, ενώ στο τρίτο πεδίο επιλέγετε την θέση που κατέχει το άτομο στην εταιρεία (οι επιλογές θα εμπλουτιστούν). Χρησιμοποιείτε το συμβολάκι της αλυσίδας ώστε να προσθέσετε, εάν επιθυμείτε, το LinkedIn του κάθε μέλους (to be implemented). Επαναλαμβάνετε τα προηγούμενα βήματα μέχρι να συμπληρώσετε όλες τις θέσεις διοίκησης και τέλος πατάτε το κουμπί αποθήκευσης ώστε να αποθηκευτούν όλες οι αλλαγές σας. </div>
+			<div class="instructions_body">
+        <el-collapse  v-model="activeNames" @change="handleChange">
+        <el-collapse-item class="instructions_title" title="Οδηγίες" name="1">
+          <div class="instructions">{{this.$store.state.newDesc[descId()].Description}}</div>
+        </el-collapse-item>
+      </el-collapse>
+			</div>
 			</div>
       <div  class="save_big_button"><p>Αποθήκευση</p></div>
     </div>
@@ -106,6 +111,30 @@ export default {
       return String(date).slice(6) + "/" // Slice DD, 6-end
         + String(date).slice(4, 6) + "/" // Slice MM, 4-5
         + String(date).slice(0, 4)       // Slice YYYY, 0-3
+    },
+    
+    descId(){
+      var id=0;
+      var path = this.$route.path;
+      console.log(path)
+      
+      if(path === "/basic-information"){
+        return id=1;
+      }
+      else if(path === "/internal-analysis"){
+        return id=2;
+      }
+      else if(path === "/external-analysis"){
+        return id=3;
+      }
+      else if(path === "/strategy"){
+        return id=4;
+      }
+      else if(path === "/financial-plan"){
+        return id=0;
+      }
+      
+      return id;
     },
 
     // Functions for dynamic PDFMake content generation based on the json
@@ -785,6 +814,7 @@ a.subSection{
 	padding:15px 15px 15px 15px;
 	color:rgb(30, 33, 51);
 	font-size:14px;
+  
 }
 
 .save_big_button{
@@ -805,4 +835,27 @@ position:relative;
     font-size:16px;
     color:white;
 }
+
+/*overrides */
+.el-collapse-item__header{
+  background-color: transparent;
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font: rgb(30, 33, 51);
+}
+.el-collapse-item__content {
+    background-color:#F7F7F7;
+    max-height: 50%;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    font-size: 14px;
+    color: #303133;
+    line-height: 1.769230769230769;
+    max-height: 700px; /*76px = two items 1 is 38px*/
+    overflow: overlay;
+    
+}
+
     </style>
