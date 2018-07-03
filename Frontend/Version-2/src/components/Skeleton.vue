@@ -66,7 +66,7 @@
         <div class="right_column">
       <div>
 			<div class="instructions_body">
-        <el-collapse v-model="activeNames" @change="handleChange()">
+        <el-collapse v-model="activeAccordion" @change="handleChange()">
         <el-collapse-item class="instructions_title" title="Οδηγίες" name="1">
           <div class="instructions">{{this.$store.state.newDesc[descId()].Description}}</div>
         </el-collapse-item>
@@ -92,7 +92,7 @@ export default {
  	name: 'Skeleton',
   data () {
     return {
-      activeNames: ''
+      activeAccordion: '1'
     }
   },
     mounted(){

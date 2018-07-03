@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <skeleton></skeleton>
+
+    <welcome v-if="$route.path === '/'"></Welcome>
+
+    <skeleton v-if="$route.path !== '/'"></skeleton>
+    
   </div>
 </template>
 
 <script>
 import Skeleton from './components/Skeleton.vue';
+import Welcome from './components/Welcome.vue';
 
 export default {
   name: 'app',
   components: {
-    Skeleton
+    Skeleton, Welcome
   }
 }
 </script>

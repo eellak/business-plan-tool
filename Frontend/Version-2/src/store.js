@@ -25,7 +25,7 @@ export const store = new Vuex.Store({
 			email: "fashion4u@gmail.com",
 			website: "fashion4u.gr",
 			businessNature: "fashion",
-			capital: "25000",
+			capital: 25000,
 			foundationYear: 1985,
 			strains: [ "Elon Musk", "Aria Stark" ],
 			synopsis: "This is a text.",
@@ -36,9 +36,9 @@ export const store = new Vuex.Store({
 			products: [
 				{
 				"id": 1,
-					"isProduct": true,
-					"name": "kenzo leather jacket",
-					"details":"2012 fall-winter collection"
+				"isProduct": true,
+				"name": "kenzo leather jacket",
+				"details":"2012 fall-winter collection"
 				},
 				{
 					"id": 2,
@@ -47,7 +47,7 @@ export const store = new Vuex.Store({
 					"details":"provides the ability for users to shop online"
 				}
 			],
-			  location: "Thessaloniki Greece",
+			location: "Thessaloniki Greece",
 			  
 			//3.External Analysis
 			consumerAnalysis: "",
