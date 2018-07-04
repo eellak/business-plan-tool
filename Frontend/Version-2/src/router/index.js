@@ -15,7 +15,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // { path: '/', name: 'Welcome', component: Welcome },
+    { path: '/', name: 'Welcome', component: Welcome },
     { path: '/basic-information', name: 'BasicInformation', component: BasicInformation },
     { path: '/internal-analysis', name: 'ΙnternalΑnalysis', component: InternalAnalysis },
     { path: '/external-analysis', name: 'ExternalΑnalysis', component: ExternalΑnalysis },

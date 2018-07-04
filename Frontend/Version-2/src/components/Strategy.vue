@@ -16,7 +16,7 @@
 
 			<longtext :theTitle="'Προώθηση'"></longtext>
 
-			<modalsales></modalsales>
+			<longtext :theTitle="'Πωλήσεις'"></longtext>
 
 			<div class="main__footer">
 				<div class="footer__buttons">

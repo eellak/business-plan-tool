@@ -35,16 +35,22 @@ export const store = new Vuex.Store({
 			description: "Είναι πλέον κοινά παραδεκτό ότι ένας αναγνώστης αποσπάται από το περιεχόμενο που διαβάζει, όταν εξετάζει τη διαμόρφωση μίας σελίδας. ",
 			products: [
 				{
-				id: 1,
-				type: 'product',
-				name: "Πουκάμισο",
-				details: "2012 fall-winter collection"
-			},
-			{
-				id: 2,
-				type: 'product',
-				name: "Παντελόνι"	,
-				details:"Είναι ανοικτό μπλε υφασμάτινο καλοκαιρινό Lee μάρκας."
+					id: 1,
+					type: 'product',
+					name: "Πουκάμισο",
+					details: "2012 fall-winter collection"
+				},
+				{
+					id: 2,
+					type: 'product',
+					name: "Παντελόνι"	,
+					details:"Είναι ανοικτό μπλε υφασμάτινο καλοκαιρινό Lee μάρκας."
+				},
+				{
+					id: 3,
+					type: 'product',
+					name: "Παπούτσια"	,
+					details:"Αθλητικά Nike παπούτσια."
 				}
 			],
 			location: "Το καθιερωμένο κομμάτι του Lorem Ipsum που χρησιμοποιείται από τον 15ο αιώνα αναπαράγεται παρακάτω για αυτούς που ενδιαφέρονται.",
@@ -87,11 +93,12 @@ export const store = new Vuex.Store({
 				{ "year": 2020, "yearExpenses": 52000, },
 			 ],
 			useResults: {
-				productSales:"",
-				mixedProfit:"",
-				standardExpenses:"",
-				variableExpenses:"",
-				totalExpenses:""
+				productSales: 0,
+				mixedProfit: 0,
+				standardExpenses: 16000,
+				variableExpenses: 2000,
+				totalExpenses: 0,
+				totalProfit: 0
 			}
 	},
 

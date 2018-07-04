@@ -5,8 +5,10 @@
 				<h1>Οικονομικό σχέδιο</h1>
 			</div>
 
-			
+			<ve-histogram :data="chartData" :settings="chartSettings"></ve-histogram>
 
+			<useResults :theTitle="'Αποτελέσματα Χρήσης 2018'" :useResultsProp="$store.state.useResults" :productSalesProp="productSales"></useResults>
+			
 			<div class="main__footer">
 				<div class="footer__buttons">
 				</div>
@@ -15,22 +17,55 @@
 	</div>	
 </template>
 <script>
-import Longtext from './custom/Longtext.vue'
+import UseResults from './custom/UseResults.vue'
 export default {
 	name: 'FinancialPlan',
 	data() {
 		return {
 			title: this.$options.name,
+			chartSettings: {
+				metrics: [],
+				stack: { 'sales': [] }
+			},
+			chartData: {
+				columns: ['date'],
+				rows: [
+					{ date: '2018' },
+					{ date: '2019' },
+					{ date: '2020' },
+					{ date: '2021' },
+					{ date: '2022' },
+				]
+			},
+			productSales: 0
 		}
 	},
-	mounted() {
-		  
+	created() {
+		for (var i = 0; i < this.$store.state.products.length; i++) {
+			var currProductName = this.$store.state.products[i].name
+
+			this.chartSettings.metrics.push(currProductName)
+			this.chartSettings.stack['sales'].push(currProductName)
+			this.chartData.columns.push(currProductName)
+			for (var j = 0; j < this.chartData.rows.length; j++) {
+				this.chartData.rows[j][currProductName] = Math.floor(Math.random() * 20000) + 1000;
+			}
+		}
+
+		for (var i = 0; i < this.chartData.rows.length; i++) {
+			if (this.chartData.rows[i].date === '2018') {
+				var productSalesSeparated = Object.values(this.chartData.rows[i])
+				productSalesSeparated.splice(0, 1)
+				this.productSales = productSalesSeparated.reduce((x, y) => x + y);
+			}
+		}
+		
 	},
 	methods: {
 
 	},
 	components: {
-		'longtext': Longtext 
+		'useResults': UseResults 
 	}
 }
 </script>

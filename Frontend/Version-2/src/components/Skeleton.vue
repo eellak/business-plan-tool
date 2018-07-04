@@ -21,7 +21,7 @@
       <div>
         <div>
             <!-- <p style="font-size:34px;color:white;margin-top:20px;margin-bottom:30px;margin-left:20px;">BP TOOL</p> -->
-            <img class="head__logo" src="../assets/logo.png" alt="Logo">
+            <img class="head__logo" src="../assets/logo.png" alt="Logo" @click="goHome()">
         </div>
             <div class="sections-menu">
                 <ul class="sections-menu-ul">
@@ -106,6 +106,9 @@ export default {
         });
   },
   methods: {
+    goHome() {
+      this.$router.push('/')
+    },
     handleChange() {
       console.log("handleChange()")
     },
@@ -591,6 +594,7 @@ body {
 .head__logo {
     width: 250px;
     padding: 5px;
+    cursor: pointer;
 }
 .head__export {
     color: #fff;
