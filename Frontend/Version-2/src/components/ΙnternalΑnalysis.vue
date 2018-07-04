@@ -5,13 +5,13 @@
 				<h1>Εσωτερική Ανάλυση</h1>
 			</div>
 
-			<longtext :theTitle="'Βασικοί εταίροι της επιχείρησης'"></longtext>
+			<longtext :theTitle="'Βασικοί εταίροι της επιχείρησης'" ></longtext>
 
-			<longtext :theTitle="'Περιγραφή επιχείρησης'"></longtext>
+			<longtext :theTitle="'Περιγραφή επιχείρησης'" :contentProp="$store.state.description"></longtext>
 
-			<modalproducts :theTitle="'Προϊόντα ή υπηρεσίες που θα προσφέρονται'"></modalproducts>
+			<products :theTitle="'Προϊόντα ή υπηρεσίες που θα προσφέρονται'" :productsProp="$store.state.products"></products>
 			
-			<longtext :theTitle="'Επιλογή τοποθεσίας'"></longtext>
+			<longtext :theTitle="'Επιλογή τοποθεσίας'" :contentProp="$store.state.location"></longtext>
 
 			<div class="main__footer">
 				<div class="footer__buttons">
@@ -21,32 +21,13 @@
 	</div>	
 </template>
 <script>
-import ModalProducts from './custom/ModalProducts.vue'
+import Products from './custom/Products.vue'
 import Longtext from './custom/Longtext.vue'
 export default {
 	name: 'InternalAnalysis',
 	data() {
 		return {
 			title: this.$options.name,
-			description: '',
-			// db
-			// "shareholders": ["John Smith", "Jack Sparrow"],
-			// "description": "description 1",
-			// "products": [
-			// 	{
-			// 	"id": 1,
-			// 	"isProduct": true,
-			// 		"name": "kenzo leather jacket",
-			// 		"details":"2012 fall-winter collection"
-			// 	},
-			// 	{
-			// 		"id": 2,
-			// 		"isProduct": false,
-			// 		"name": "e-shop",
-			// 		"details":"provides the ability for users to shop online"
-			// 	}
-			// ],
-			// "location": "Thessaloniki Greece"
 		}
 	},
 	mounted() {
@@ -56,7 +37,7 @@ export default {
 	},
 	components: {
 		'longtext': Longtext, 
-		'modalproducts': ModalProducts
+		'products': Products
 	}
 }
 </script>

@@ -32,22 +32,22 @@ export const store = new Vuex.Store({
 			
 			// 2.Internal Analysis
 			shareholders: ["John Smith", "Jack Sparrow"],
-			description: "description 1",
+			description: "Είναι πλέον κοινά παραδεκτό ότι ένας αναγνώστης αποσπάται από το περιεχόμενο που διαβάζει, όταν εξετάζει τη διαμόρφωση μίας σελίδας. ",
 			products: [
 				{
-				"id": 1,
-				"isProduct": true,
-				"name": "kenzo leather jacket",
-				"details":"2012 fall-winter collection"
-				},
-				{
-					"id": 2,
-					"isProduct": false,
-					"name": "e-shop",
-					"details":"provides the ability for users to shop online"
+				id: 1,
+				type: 'product',
+				name: "Πουκάμισο",
+				details: "2012 fall-winter collection"
+			},
+			{
+				id: 2,
+				type: 'product',
+				name: "Παντελόνι"	,
+				details:"Είναι ανοικτό μπλε υφασμάτινο καλοκαιρινό Lee μάρκας."
 				}
 			],
-			location: "Thessaloniki Greece",
+			location: "Το καθιερωμένο κομμάτι του Lorem Ipsum που χρησιμοποιείται από τον 15ο αιώνα αναπαράγεται παρακάτω για αυτούς που ενδιαφέρονται.",
 			  
 			//3.External Analysis
 			consumerAnalysis: "",

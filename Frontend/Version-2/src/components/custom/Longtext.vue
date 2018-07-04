@@ -1,22 +1,21 @@
 <template>
     <div class="longtext">
         <h3 class="longtext__title">{{ theTitle }}</h3>
-        <p class="longtext__content" v-if="!longtextIsEditing">{{ description }}</p>
-        <a class="longtext__addButton" @click="openTextarea($event)">+Συμπληρώστε</a>
+        <p class="longtext__content" v-if="!longtextIsEditing">{{ contentProp }}</p>
+        <a class="longtext__addButton" @click="openTextarea($event)" v-if="!contentProp">+Συμπληρώστε</a>
         <span class="longtext__addarea" v-if="longtextIsEditing">
-            <el-input class="longtext__textarea" autosize type="textarea" v-model="description"></el-input>
+            <el-input class="longtext__textarea" autosize type="textarea" v-model="contentProp"></el-input>
             <button class="longtext__save" @click="saveContent($event)">Ολοκλήρωση</button>	
         </span>
-        <a class="longtext__edit" @click="editContent($event)" v-if="!longtextIsEditing && !!description">Επεξεργασία</a>
+        <a class="longtext__edit" @click="editContent($event)" v-if="!longtextIsEditing && !!contentProp">Επεξεργασία</a>
     </div>
 </template>
 <script>
 export default {
     name: 'Longtext',
-    props: ['theTitle'],
+    props: ['theTitle', 'contentProp'],
 	data() {
 		return {
-			description: '',
 			longtextIsEditing: false,
 		}
 	},
