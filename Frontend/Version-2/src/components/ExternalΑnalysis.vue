@@ -9,7 +9,7 @@
 
 			<longtext :theTitle="'Ανάλυση ανταγωνισμού'"></longtext>
 
-			<longtext :theTitle="'Ανάλυση αγοράς'"></longtext>
+			<marketAnalysis :theTitle="'Ανάλυση αγοράς'" :mrkAnalysisProp="$store.state.marketAnalysis"></marketAnalysis>
 
 			<longtext :theTitle="'Ανάλυση μακροοικονομικού περιβάλλοντος'"></longtext>
 
@@ -28,38 +28,21 @@
 </template>
 <script>
 import Longtext from './custom/Longtext.vue'
+import MarketAnalysis from './custom/MarketAnalysis.vue'
 export default {
 	name: 'ExternalΑnalysis',
 	data() {
 		return {
 			title: this.$options.name,
-			description: '',
-			longtextIsEditing: false,
-			// db
-			// consumerAnalysis: "",
-			// competitionAnalysis: "",
-			// marketAnalysis: [
-			// 	synthesis: '',
-			// 	type: '',
-			// 	competitors: "",
-			// 	perithoriaEisodou: "",
-			// ],
-			// enviromentAnalysis: "",
-			// swot: [
-			// 	strengths: ["nice clothes","low prices","strong marketing"],
-			// 	weaknesses: ["lower quality of clothes"],
-			// 	opportunities: ["opportunity1","opportunity"],
-			// 	threats: ["thrt1"]
-			// ]
 		}
 	},
-	mounted() {
-				  
+	mounted() {	  
 	},
 	methods: {
 	},
 	components: {
-		'longtext': Longtext 
+		'longtext': Longtext, 
+		'marketAnalysis': MarketAnalysis 
 	}
 }
 </script>

@@ -53,10 +53,10 @@ export const store = new Vuex.Store({
 			consumerAnalysis: "",
 			competitionAnalysis: "",
 			marketAnalysis: {
-				synthesis: ' ',
-				type: ' ',
-				competitors: "",
-				perithoriaEisodou: "",
+				synthesis: '',
+				type: '',
+				competitors: '',
+				perithoriaEisodou: ''
 			},
 			enviromentAnalysis:  "",
 			swot: {
