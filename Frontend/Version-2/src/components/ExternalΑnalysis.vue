@@ -21,6 +21,8 @@
 
 			<div class="main__footer">
 				<div class="footer__buttons">
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.externalAnalysisIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.externalAnalysisIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>
 
@@ -34,11 +36,21 @@ export default {
 	data() {
 		return {
 			title: this.$options.name,
+			isCompleted: false
 		}
 	},
 	mounted() {	  
 	},
 	methods: {
+		toggleBasicInformation() {
+			if (this.$store.state.bpProgress.externalAnalysisIsComplete === false) {
+				this.$store.commit('TOGGLE_EXTERNAL_ANALYSIS_PROGRESS', true)
+				this.isCompleted = true
+			} else {
+				this.$store.commit('TOGGLE_EXTERNAL_ANALYSIS_PROGRESS', false)
+				this.isCompleted = false
+			} 
+		},
 	},
 	components: {
 		'longtext': Longtext, 

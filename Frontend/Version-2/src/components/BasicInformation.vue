@@ -46,13 +46,13 @@
 			<longtext :theTitle="'Σύνοψη'"></longtext>
 
 
-		<div class="main__footer">
-			
-				
+			<div class="main__footer">
+
 				<div class="footer__buttons">
-				<!-- <button class="button">BACK</button> -->
-				<!-- <button class="button">NEXT</button> -->
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.basicInformationIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.basicInformationIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
+
 			</div>
 
 
@@ -67,17 +67,24 @@ export default {
 		return {
 			// Here you can write your own variables.
 			// These variables are shown only inside this component.
-			title: this.$options.name
+			title: this.$options.name,
 		}
 	},
 	mounted() {
 		// Here you can write code you want to run,
 		// when this component is loaded.
-				  
+
 	},
 	methods: {
-		// Here you can write your functions.
-
+		toggleBasicInformation() {
+			if (this.$store.state.bpProgress.basicInformationIsComplete === false) {
+				this.$store.commit('TOGGLE_BASIC_INFORMATION_PROGRESS', true)
+				this.isCompleted = true
+			} else {
+				this.$store.commit('TOGGLE_BASIC_INFORMATION_PROGRESS', false)
+				this.isCompleted = false
+			} 
+		},
 	},
 	components: {
 		'longtext': Longtext 
@@ -86,16 +93,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button{
-	background-color: #299858;
-    color: #fff;
-    border: #299858;
-    padding: 15px;
-    text-align: center;
-    font-size: 20px;
-    width: 160px;
-	border-radius:5px;
-}
+
 
 .instructions_button{
     float: right;

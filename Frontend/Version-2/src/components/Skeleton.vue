@@ -1,20 +1,6 @@
 <template>
   <div class="skeleton">
   <body>
- <!--    <header class="head">
-        <div class="head__logo">
-            <img src="../assets/Logo.png" alt="Logo">
-        </div>
-        <div class="head__export"  @click="exportFunction()">
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
-            <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p>Export</p>
-        </div>
-      
-        <img class="head__avatar" src="../assets/avatar.png" alt="Avatar">
-        <p>Ioannis Stamelos</p>
-    </header>
- -->
 
     <div class="main_container">
      <nav>
@@ -26,22 +12,22 @@
             <div class="sections-menu">
                 <ul class="sections-menu-ul">
                   <li>
-                    <router-link to="/basic-information" tag="a" class="">Βασικά στοιχεία</router-link>
+                    <router-link to="/basic-information" tag="a" active-class="activeMenuProps">Βασικά στοιχεία<i class="sections-menu__i" v-if="$store.state.bpProgress.basicInformationIsComplete">✓</i></router-link>
                   </li>
                   <li>
-                    <router-link to="/internal-analysis" tag="a" class="">Εσωτερική ανάλυση</router-link>
+                    <router-link to="/internal-analysis" tag="a" active-class="activeMenuProps">Εσωτερική ανάλυση<i class="sections-menu__i" v-if="$store.state.bpProgress.internalAnalysisIsComplete">✓</i></router-link>
                   </li>
                   <li>
-                    <router-link to="/external-analysis" tag="a" class="">Εξωτερική ανάλυση</router-link>
+                    <router-link to="/external-analysis" tag="a" active-class="activeMenuProps">Εξωτερική ανάλυση<i class="sections-menu__i" v-if="$store.state.bpProgress.externalAnalysisIsComplete">✓</i></router-link>
                   </li>
                     <li>
-                      <router-link to="/strategy" tag="a" class="">Στρατηγική Marketing</router-link>
+                      <router-link to="/strategy" tag="a" active-class="activeMenuProps">Στρατηγική Marketing<i class="sections-menu__i" v-if="$store.state.bpProgress.strategyIsComplete">✓</i></router-link>
                     </li>
                     <li>
-                      <router-link to="/financial-plan" tag="a" class="">Οικονομικό Πλάνο</router-link>
+                      <router-link to="/financial-plan" tag="a" active-class="activeMenuProps">Οικονομικό Πλάνο<i class="sections-menu__i" v-if="$store.state.bpProgress.financialPlanIsComplete">✓</i></router-link>
                     </li>
                     <li>
-                      <router-link to="/test" tag="a" class="">ExportBeta</router-link>
+                      <router-link to="/test" tag="a" active-class="activeMenuProps">ExportBeta</router-link>
                     </li>
                 </ul>
             </div>
@@ -65,15 +51,18 @@
         
         <div class="right_column">
       <div>
-			<div class="instructions_body">
-        <el-collapse v-model="activeAccordion" @change="handleChange()">
-        <el-collapse-item class="instructions_title" title="Οδηγίες" name="1">
-          <div class="instructions">{{this.$store.state.newDesc[descId()].Description}}</div>
-        </el-collapse-item>
-      </el-collapse>
+        <div class="instructions_body">
+          <el-collapse v-model="activeAccordion" @change="handleChange()">
+            <el-collapse-item class="instructions_title" title="Οδηγίες" name="1">
+              <div class="instructions">{{this.$store.state.newDesc[descId()].Description}}</div>
+            </el-collapse-item>
+          </el-collapse>
+        </div>
 			</div>
-			</div>
-      <div  class="save_big_button"><p>Αποθήκευση</p></div>
+      <div style="display:flex; justify-content:center;">
+        <el-progress type="circle" :percentage="(calculateCompleteness()/5)*100" color="#62AC30" style="margin-top:0px;"></el-progress>
+      </div>
+      <div class="save_big_button"><p>Αποθήκευση</p></div>
     </div>
 
 
@@ -106,6 +95,17 @@ export default {
         });
   },
   methods: {
+    calculateCompleteness() {
+      var obj = this.$store.state.bpProgress
+      var sumOfTrues = 0
+      for (var o in obj) {
+        if (obj[o] === true) {
+          sumOfTrues++
+        }
+      }
+      
+      return sumOfTrues
+    },
     goHome() {
       this.$router.push('/')
     },
@@ -592,7 +592,7 @@ body {
     border-bottom: 0.1px solid black;
 }
 .head__logo {
-    width: 250px;
+    width: 240px;
     padding: 5px;
     cursor: pointer;
 }
@@ -660,6 +660,42 @@ footer {
     font-weight: 600;
     color: black;
 }
+
+/* Check button: "Ολοκληρώθηκε" */
+.check-button {
+  padding: 10px 35px;
+	border: 1px solid transparent;
+  text-align: center;
+  font-size: 16px;
+  width: 220px;
+	border-radius: 3px;
+}
+.check-button:hover {
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.check-button.isDone {
+	color: #fff;
+	background-color: #62AC30;
+}
+.check-button.isNotDone {
+	color: #62AC30;
+	background-color: #fff;
+	border: 1px solid #62AC30;
+}
+
+.check-button.isDone:hover {
+	color: #62AC30;
+	background-color: #fff;
+	border: 1px solid #62AC30;
+}
+.check-button.isNotDone:hover {
+	color: #fff;
+	background-color: #62AC30;
+	border: 1px solid #62AC30;
+}
+
 main {
     flex-grow: 1;
     display:flex;
@@ -683,9 +719,11 @@ nav {
     overflow-y: auto;                  /* extra */
 }
 /* SECTIONS MENU */
+
 .sections-menu-ul{
 list-style-type: none;
 padding-left:0px;
+margin-top: 25px;
 }
 .sections-menu-ul ul{
 display: none;
@@ -702,7 +740,12 @@ display: block;
     color:rgb(202, 202, 203);
     padding-left:15px;
     text-decoration:none;
-    font-size:16px;         /*extra*/
+    font-size: 18px;         /*extra*/
+}
+
+.sections-menu__i {
+  float: right;
+  margin-right: 15px;
 }
 
 .activeSection{
@@ -862,6 +905,11 @@ position:relative;
     max-height: 400px; /*76px = two items 1 is 38px*/
     overflow: overlay;
     
+}
+
+.activeMenuProps {
+  color: #333955 !important;
+  background-color: #FFF;
 }
 
     </style>

@@ -9,6 +9,14 @@ const serverUrl = 'http://play-trinity.com/theo/bplantool/api'
 export const store = new Vuex.Store({
 	state: {
 
+			bpProgress: {
+				basicInformationIsComplete: false,
+				internalAnalysisIsComplete: false,
+				externalAnalysisIsComplete: false,
+				strategyIsComplete: false,
+				financialPlanIsComplete: false
+			},
+
 			// Odigies.
 			newDesc: [
 				{"Id": 0, "Description": ""}, 
@@ -102,7 +110,7 @@ export const store = new Vuex.Store({
 			}
 	},
 
-	// actions: {
+	actions: {
 	// 	// Identity 2.1,  Categories based on FinalJsons.js
 	// 	getIdentities: function ({ commit }) {
 	// 		axios.get(serverUrl + "/identity")
@@ -135,341 +143,26 @@ export const store = new Vuex.Store({
 	// 			console.log(err)
 	// 		})
 	// 	},
-		
-	// 	// Clients 2.1
-	// 	getClients: function ({ commit }) {
-	// 		axios.get(serverUrl + "/client")
-	// 			.then(function (response)
-	// 			{
-	// 				commit('GET_CLIENTS', response.data)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},
-	// 	createClient: function ({ commit }, payload) {
-	// 		axios.post(serverUrl + "/client", payload)
-	// 		.then(function (response)
-	// 		{
-	// 			console.log("payload of create: ", payload)
-	// 			commit('CREATE_CLIENT', payload)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},	
-	// 	deleteClient: function ({ commit }, payload) {
-	// 		axios.delete(serverUrl + "/client/" + payload)
-	// 		.then(function (response)
-	// 		{
-	// 			commit('DELETE_CLIENT', payload)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
 
-	// 	// Description 2.2
-	// 	getDescriptions: function ({ commit }) {
-	// 		axios.get(serverUrl + "/description")
-	// 			.then(function (response)
-	// 			{
-	// 				commit('GET_DESCRIPTIONS', response.data)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},
-	// 	createDescription: function ({ commit }, payload) {
-	// 		axios.post(serverUrl + "/description", payload)
-	// 		.then(function (response)
-	// 		{
-	// 			console.log("payload of create: ", payload)
-	// 			commit('CREATE_DESCRIPTION', payload)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},	
-	// 	deleteDescription: function ({ commit }, payload) {
-	// 		axios.delete(serverUrl + "/description/" + payload)
-	// 		.then(function (response)
-	// 		{
-	// 			commit('DELETE_DESCRIPTION', payload)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
+	},
 
-
-	// 	// Managers 3.1
-	// 	getManagers: function ({ commit }) {
-	// 		axios.get(serverUrl + "/manager")
-	// 			.then(function (response)
-	// 			{
-	// 				commit('GET_MANAGERS', response.data)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},
-	// 	createManager: function ({ commit }, payload) {
-	// 		axios.post(serverUrl + "/manager", payload)
-	// 		.then(function (response)
-	// 		{
-	// 			console.log("payload of create: ", payload)
-	// 			commit('CREATE_MANAGER', payload)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},	
-	// 	deleteManager: function ({ commit }, payload) {
-	// 		axios.delete(serverUrl + "/manager/" + payload)
-	// 		.then(function (response)
-	// 		{
-	// 			commit('DELETE_MANAGER', payload)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
-
-	// 	// Employees 3.2
-	// 	getEmployees: function ({ commit }) {
-	// 		axios.get(serverUrl + "/employee")
-	// 			.then(function (response)
-	// 			{
-	// 				commit('GET_EMPLOYEES', response.data)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},
-	// 	createEmployee: function ({ commit }, payload) {
-	// 		axios.post(serverUrl + "/employee", payload)
-	// 		.then(function (response)
-	// 		{
-	// 			console.log("payload of create: ", payload)
-	// 			commit('CREATE_EMPLOYEE', payload)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)
-	// 			})
-	// 	},	
-	// 	deleteEmployee: function ({ commit }, payload) {
-	// 		axios.delete(serverUrl + "/employee/" + payload)
-	// 		.then(function (response)
-	// 		{
-	// 			commit('DELETE_EMPLOYEE', payload)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
-
-	// 	// Partners 3.3	
-	// 	getPartners: function ({ commit }) {
-	// 		axios.get(serverUrl + "/partner")
-	// 		.then(function (response)
-	// 		{
-	// 			commit('GET_PARTNERS', response.data)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
-	// 	createPartner: function ({ commit }, payload) {
-	// 		axios.post(serverUrl + "/partner", payload)
-	// 		.then(function (response)
-	// 		{
-	// 				console.log("payload of create: ", payload)
-	// 				commit('CREATE_PARTNER', payload)
-	// 			})
-	// 			.catch(function (err) {
-	// 				console.log(err)					
-	// 			})
-	// 	},
-	// 	deletePartner: function ({ commit }, payload) {
-	// 		axios.delete(serverUrl + "/partner/" + payload)
-	// 		.then(function (response)
-	// 		{
-	// 			commit('DELETE_PARTNER', payload)
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.log(err)
-	// 		})
-	// 	},
-
-	// 	// Employee Salaries 3.4
-
-	// 	// Faculties 4.1
-
-	// 	// Equipment 4.2
-
-	// 	// RunningCost 4.3
-
-	// 	// RunningCost - FacultyCosts 4.3
-
-	// 	// RunningCost - EquipmentCosts 4.3
-
-	// 	// Products 5
-
-	// 	// SWOT 6.1
-
-	// 	// PESTEL - Factors 6.2
-
-	// 	// Notes 6.3
-
-	// 	// Strategy 7.1
-
-	// 	// MarketingActions 7.2
-
-	// 	// StartActions 8.1
-
-	// 	// FunctionCost 8.2
-
-	// 	// FunctionCost - Functions 8.2
-
-	// 	// Deadspots 8.3
-
-	// 	// Links 9
-
-	// 	// Conclusion 1.1
-	// },
-
-	// mutations:{
-	// 	// Identity 2.1,  Categories based on FinalJsons.js
-	// 	GET_IDENTITIES: (state, payload) => {
-	// 		state.identity = payload
-	// 	},		
-	// 	CREATE_IDENTITY: (state, payload) => {
-	// 		state.identity.push(payload)
-	// 	},
-	// 	DELETE_IDENTITY: (state, payload) => {
-	// 		for (var i=0, l = state.identity.length; i < l; i++) {
-	// 			if (state.identity[i].ID === payload) {
-	// 				state.identity.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-		
-	// 	// Clients 2.1
-	// 	GET_CLIENTS: (state, payload) => {
-	// 		state.clients = payload
-	// 	},		
-	// 	CREATE_CLIENT: (state, payload) => {
-	// 		state.clients.push(payload)
-	// 	},
-	// 	DELETE_CLIENT: (state, payload) => {
-	// 		for (var i=0, l = state.clients.length; i < l; i++) {
-	// 			if (state.clients[i].ID === payload) {
-	// 				state.clients.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-
-	// 	// Description 2.2
-	// 	GET_DESCRIPTIONS: (state, payload) => {
-	// 		state.description = payload
-	// 	},		
-	// 	CREATE_DESCRIPTION: (state, payload) => {
-	// 		state.description.push(payload)
-	// 	},
-	// 	DELETE_DESCRIPTION: (state, payload) => {
-	// 		for (var i=0, l = state.description.length; i < l; i++) {
-	// 			if (state.description[i].ID === payload) {
-	// 				state.description.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-
-	// 	// Managers 3.1
-	// 	GET_MANAGERS: (state, payload) => {
-	// 		state.managers = payload
-	// 	},		
-	// 	CREATE_MANAGER: (state, payload) => {
-	// 		// state.managers.pop()
-	// 		state.managers.push(payload)
-	// 	},
-	// 	DELETE_MANAGER: (state, payload) => {
-	// 		//console.log("payload: ", payload)
-	// 		//console.log('state.managers: ', state.managers)
-	// 		for (var i=0, l = state.managers.length; i < l; i++) {
-	// 			if (state.managers[i].ID === payload) {
-	// 				//console.log("id: ", state.managers[i].ID)
-	// 				state.managers.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-
-	// 	// Employees 3.2
-	// 	GET_EMPLOYEES: (state, payload) => {
-	// 		state.employees = payload
-	// 	},		
-	// 	CREATE_EMPLOYEE: (state, payload) => {
-	// 		state.employees.push(payload)
-	// 	},
-	// 	DELETE_EMPLOYEE: (state, payload) => {
-	// 		for (var i=0, l = state.employees.length; i < l; i++) {
-	// 			if (state.employees[i].ID === payload) {
-	// 				state.employees.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-
-	// 	// Partners 3.3	
-	// 	GET_PARTNERS: (state, payload) => {
-	// 		state.partners = payload
-	// 	},		
-	// 	CREATE_PARTNER: (state, payload) => {
-	// 		state.partners.push(payload)
-	// 	},
-	// 	DELETE_PARTNER: (state, payload) => {
-	// 		for (var i=0, l = state.partners.length; i < l; i++) {
-	// 			if (state.partners[i].ID === payload) {
-	// 				state.partners.splice(i, 1)
-	// 			}
-	// 		}
-	// 	},
-
-	// 	// Employee Salaries 3.4
-
-	// 	// Faculties 4.1
-
-	// 	// Equipment 4.2
-
-	// 	// RunningCost 4.3
-
-	// 	// RunningCost - FacultyCosts 4.3
-
-	// 	// RunningCost - EquipmentCosts 4.3
-
-	// 	// Products 5
-
-	// 	// SWOT 6.1
-
-	// 	// PESTEL - Factors 6.2
-
-	// 	// Notes 6.3
-
-	// 	// Strategy 7.1
-
-	// 	// MarketingActions 7.2
-
-	// 	// StartActions 8.1
-
-	// 	// FunctionCost 8.2
-
-	// 	// FunctionCost - Functions 8.2
-
-	// 	// Deadspots 8.3
-
-	// 	// Links 9
-
-	// 	// Conclusion 1.1
-	// },
+	mutations:{
+		TOGGLE_BASIC_INFORMATION_PROGRESS: (state, payload) => {
+			state.bpProgress.basicInformationIsComplete = payload
+		},		
+		TOGGLE_INTERNAL_ANALYSIS_PROGRESS: (state, payload) => {
+			state.bpProgress.internalAnalysisIsComplete = payload
+		},		
+		TOGGLE_EXTERNAL_ANALYSIS_PROGRESS: (state, payload) => {
+			state.bpProgress.externalAnalysisIsComplete = payload
+		},		
+		TOGGLE_STRATEGY_PROGRESS: (state, payload) => {
+			state.bpProgress.strategyIsComplete = payload
+		},		
+		TOGGLE_FINANCIAL_PLAN_PROGRESS: (state, payload) => {
+			state.bpProgress.financialPlanIsComplete = payload
+		}
+	},
 
 	// getters:{
 	// 	// All the getters getting the first (0th) resource, assume that there exists

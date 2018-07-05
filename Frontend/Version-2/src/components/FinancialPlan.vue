@@ -11,6 +11,8 @@
 			
 			<div class="main__footer">
 				<div class="footer__buttons">
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.financialPlanIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.financialPlanIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>
 
@@ -23,6 +25,7 @@ export default {
 	data() {
 		return {
 			title: this.$options.name,
+			isCompleted: false,
 			chartSettings: {
 				metrics: [],
 				stack: { 'sales': [] }
@@ -62,7 +65,15 @@ export default {
 		
 	},
 	methods: {
-
+		toggleBasicInformation() {
+			if (this.$store.state.bpProgress.financialPlanIsComplete === false) {
+				this.$store.commit('TOGGLE_FINANCIAL_PLAN_PROGRESS', true)
+				this.isCompleted = true
+			} else {
+				this.$store.commit('TOGGLE_FINANCIAL_PLAN_PROGRESS', false)
+				this.isCompleted = false
+			} 
+		},
 	},
 	components: {
 		'useResults': UseResults 
