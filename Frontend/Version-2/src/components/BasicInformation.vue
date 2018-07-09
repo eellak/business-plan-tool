@@ -8,48 +8,48 @@
 			<div class="input_group">
 				<div class="title">ΕΠΩΝΥΜΙΑ ΕΤΑΙΡΙΑΣ</div>
 
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Fashion4u" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Fashion4u" v-model="$store.state.companyName"></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΔΙΕΥΘΥΝΣΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Βαλαωρίτου 15" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Βαλαωρίτου 15" v-model="$store.state.address"></el-input></div>
 			</div>		
 			<div class="input_group">
 				<div class="title">ΤΗΛΕΦΩΝΑ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="231025344" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="231025344" v-model="$store.state.telephone"></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">EMAIL</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="fashion4u@gmail.com" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="fashion4u@gmail.com" v-model="$store.state.email"></el-input></div>
 			</div>	
 			<div class="input_group">
 				<div class="title">WEBSITE</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="www.fashion4u.gr" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="www.fashion4u.gr" v-model="$store.state.website"></el-input></div>
 			</div>		
 			<div class="input_group">
 				<div class="title">ΕΡΓΑΣΙΑΚΗ ΦΥΣΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="e-shop προϊόντων ένδυσης" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="e-shop προϊόντων ένδυσης" v-model="$store.state.businessNature"></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΙΔΙΟ ΚΕΦΑΛΑΙΟ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="€25.000" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="€25.000" v-model="$store.state.capital"></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΕΤΟΣ ΙΔΡΥΣΗΣ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="2013" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="2013" v-model="$store.state.foundationYear"></el-input></div>
 			</div>
 			<div class="input_group">
 				<div class="title">ΣΤΕΛΕΧΗ</div>
-				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Κοιλαρίδου Όλγα" ></el-input></div>
+				<div style="flex-grow:1;margin-right:40px;"><el-input placeholder="Κοιλαρίδου Όλγα" v-model="$store.state.strains"></el-input></div>
 			</div>
 
-			<longtext :theTitle="'Σύνοψη'"></longtext>
+			<longtext :theTitle="'Σύνοψη'" :stateVarName="'synopsis'" :contentProp="$store.state.synopsis"></longtext>
 
 
 			<div class="main__footer">
 
 				<div class="footer__buttons">
-					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.basicInformationIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.basicInformationIsComplete">Ολοκλήρωση ενότητας</button>
 					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.basicInformationIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 
@@ -61,6 +61,8 @@
 </template>
 <script>
 import Longtext from './custom/Longtext.vue'
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
 	name: 'BasicInformation',
 	data() {
@@ -70,10 +72,8 @@ export default {
 			title: this.$options.name,
 		}
 	},
-	mounted() {
-		// Here you can write code you want to run,
-		// when this component is loaded.
-
+	created() {
+		// this.$store.dispatch('getBusinessPlan')
 	},
 	methods: {
 		toggleBasicInformation() {
@@ -85,6 +85,16 @@ export default {
 				this.isCompleted = false
 			} 
 		},
+	},
+	computed: {
+		...mapGetters(
+			[
+				'companyName', 'address', 'telephone',
+				'email', 'website', 'businessNature',
+				'capital', 'websfoundationYearite', 'strains',
+				'synopsis'
+			]
+		)
 	},
 	components: {
 		'longtext': Longtext 

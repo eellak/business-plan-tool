@@ -5,23 +5,23 @@
 				<h1>Εξωτερική Ανάλυση</h1>
 			</div>
 
-			<longtext :theTitle="'Ποια είναι τα βασικά χαρακτηριστικά των καταναλωτών;'"></longtext>
+			<longtext :theTitle="'Ποια είναι τα βασικά χαρακτηριστικά των καταναλωτών;'" :contentProp="$store.state.consumerAnalysis"></longtext>
 
-			<longtext :theTitle="'Ανάλυση ανταγωνισμού'"></longtext>
+			<longtext :theTitle="'Ανάλυση ανταγωνισμού'" :contentProp="$store.state.competitionAnalysis"></longtext>
 
 			<marketAnalysis :theTitle="'Ανάλυση αγοράς'" :mrkAnalysisProp="$store.state.marketAnalysis"></marketAnalysis>
 
-			<longtext :theTitle="'Ανάλυση μακροοικονομικού περιβάλλοντος'"></longtext>
+			<longtext :theTitle="'Ανάλυση μακροοικονομικού περιβάλλοντος'" :contentProp="$store.state.enviromentAnalysis" ></longtext>
 
 			<h3 style="font-weight: 600;margin: 0;">Ανάλυση SWOT</h3>
-			<longtext :theTitle="'Δυνάμεις'"></longtext>
-			<longtext :theTitle="'Αδυναμίες'"></longtext>
-			<longtext :theTitle="'Ευκαιρίες'"></longtext>
-			<longtext :theTitle="'Απειλές'"></longtext>
+			<longtext :theTitle="'Δυνάμεις'" :contentProp="$store.state.swot.strengths"></longtext>
+			<longtext :theTitle="'Αδυναμίες'" :contentProp="$store.state.swot.weaknesses"></longtext>
+			<longtext :theTitle="'Ευκαιρίες'" :contentProp="$store.state.swot.opportunities"></longtext>
+			<longtext :theTitle="'Απειλές'" :contentProp="$store.state.swot.threats"></longtext>
 
 			<div class="main__footer">
 				<div class="footer__buttons">
-					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.externalAnalysisIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.externalAnalysisIsComplete">Ολοκλήρωση ενότητας</button>
 					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.externalAnalysisIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>

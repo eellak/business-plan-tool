@@ -18,7 +18,6 @@
                     <img src="../assets/redChecklist.png" alt="Checked icon" class="icons" id="secIcon" />
                     <h1 class="titles-h1">ΚΑΘΟΔΗΓΗΣΗ</h1>
                     <p class="p-welcome">Ανάπτυξε την ιδέα σου σωστά, ακολουθώντας τις οδηγίες που παρέχονται σε κάθε βήμα.</p>
-                    <button id="button" @click="goToBasicInformation()">Ξεκινήστε τώρα!</button>
                 </span>
             </div>
             
@@ -28,6 +27,7 @@
                 <p class="p-welcome">Κατέβασε άμεσα το επιχειρηματικό σου σχέδιο σε μορφή doc, για να μπορείς να κάνεις ό,τι αλλαγή θέλεις.</p>
             </div>
         </div>
+        <button id="button" @click="goToBasicInformation()">Ξεκινήστε τώρα!</button>
     </div>	
 </template>
 <script>
@@ -114,6 +114,10 @@ export default {
                 cursor: pointer;
                 border: none;
                 border-radius: 3px;
+                margin-top: 15px;
+                width: 33.33%;
+                align-self: center;
+                margin-bottom: 15px;
             }
                 #button:hover {
                     background-color: white;

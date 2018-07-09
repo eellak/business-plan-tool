@@ -15,7 +15,7 @@
 
 			<div class="main__footer">
 				<div class="footer__buttons">
-					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.internalAnalysisIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.internalAnalysisIsComplete">Ολοκλήρωση ενότητας</button>
 					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.internalAnalysisIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>

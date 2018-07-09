@@ -37,7 +37,7 @@ export const store = new Vuex.Store({
 			capital: 25000,
 			foundationYear: 1985,
 			strains: [ "Elon Musk", "Aria Stark" ],
-			synopsis: "This is a text.",
+			synopsis: "Η ουσία της χρήσης του Lorem Ipsum είναι ότι έχει λίγο-πολύ μία ομαλή κατανομή γραμμάτων, αντίθετα με το να βάλει κανείς κείμενο όπως 'Εδώ θα μπει κείμενο, εδώ θα μπει κείμενο', κάνοντάς το να φαίνεται σαν κανονικό κείμενο.",
 			
 			// 2.Internal Analysis
 			shareholders: ["John Smith", "Jack Sparrow"],
@@ -65,15 +65,15 @@ export const store = new Vuex.Store({
 			location: "Το καθιερωμένο κομμάτι του Lorem Ipsum που χρησιμοποιείται από τον 15ο αιώνα αναπαράγεται παρακάτω για αυτούς που ενδιαφέρονται.",
 			  
 			//3.External Analysis
-			consumerAnalysis: "",
-			competitionAnalysis: "",
+			consumerAnalysis: "Πολλά λογισμικά πακέτα ηλεκτρονικής σελιδοποίησης και επεξεργαστές ιστότοπων πλέον χρησιμοποιούν το Lorem Ipsum σαν προκαθορισμένο δείγμα κειμένου, και η αναζήτησ για τις λέξεις 'lorem ipsum' στο διαδίκτυο θα αποκαλύψει πολλά web site που βρίσκονται στο στάδιο της δημιουργίας. ",
+			competitionAnalysis: "Έγινε δημοφιλές τη δεκαετία του '60 με την έκδοση των δειγμάτων της Letraset όπου περιελάμβαναν αποσπάσματα του Lorem Ipsum, και πιο πρόσφατα με το λογισμικό ηλεκτρονικής σελιδοποίησης όπως το Aldus PageMaker που περιείχαν εκδοχές του Lorem Ipsum.",
 			marketAnalysis: {
 				synthesis: "",
 				type: "",
 				competitors: "",
 				perithoriaEisodou: ""
 			},
-			enviromentAnalysis:  "",
+			enviromentAnalysis:  "Αντίθετα με αυτό που θεωρεί η πλειοψηφία, το Lorem Ipsum δεν είναι απλά ένα τυχαίο κείμενο. Οι ρίζες του βρίσκονται σε ένα κείμενο Λατινικής λογοτεχνίας του 45 π.Χ., φτάνοντας την ηλικία του πάνω από 2000 έτη.",
 			swot: {
 				strengths: ["nice clothes","low prices","strong marketing"],
 				weaknesses: ["lower quality of clothes"],
@@ -82,11 +82,11 @@ export const store = new Vuex.Store({
 			},
 			
 			// 4.Strategy
-			productStrategy: "products or services strat 1",
-			consumerBehavior: "",
-			productMarketing: "",
-			distribution: "",
-			promotion: "",
+			productStrategy: "Υπάρχουν πολλές εκδοχές των αποσπασμάτων του Lorem Ipsum διαθέσιμες, αλλά η πλειοψηφία τους έχει δεχθεί κάποιας μορφής αλλοιώσεις, με ενσωματωμένους αστεεισμούς, ή τυχαίες λέξεις που δεν γίνονται καν πιστευτές. ",
+			consumerBehavior: "Ο Richard McClintock, καθηγητής Λατινικών στο κολλέγιο Hampden-Dydney στην Βιρτζίνια, αναζήτησε μία από τις πιο σπάνιες Λατινικές λέξεις, την consectetur, από ένα απόσπασμα του Lorem Ipsum, και ανάμεσα σε όλα τα έργα της κλασσικής λογοτεχνίας, ανακάλυψε την αναμφισβήτητη πηγή του. ",
+			productMarketing: "Οι ενότητες 1.10.32 και 1.10.33 από το 'de Finibus Bonorum et Malorum' από τον Σισερό επίσης αναπαράγονται στην ακριβή αυθεντική τους μορφή, συνοδευόμενες από Αγγλικές εκδοχές από την μετάφραση του 1914 από τον H. Rackham.",
+			distribution: "Υπάρχουν πολλές εκδοχές των αποσπασμάτων του Lorem Ipsum διαθέσιμες, αλλά η πλειοψηφία τους έχει δεχθεί κάποιας μορφής αλλοιώσεις, με ενσωματωμένους αστεεισμούς, ή τυχαίες λέξεις που δεν γίνονται καν πιστευτές. Εάν πρόκειται να χρησιμοποιήσετε ένα κομμάτι του Lorem Ipsum, πρέπει να είστε βέβαιοι πως δεν βρίσκεται κάτι προσβλητικό κρυμμένο μέσα στο κείμενο.",
+			promotion: " και η αναζήτησ για τις λέξεις 'lorem ipsum' στο διαδίκτυο θα αποκαλύψει πολλά web site που βρίσκονται στο στάδιο της δημιουργίας. Διάφορες εκδοχές έχουν προκύψει με το πέρασμα των χρόνων, άλλες φορές κατά λάθος, άλλες φορές σκόπιμα (με σκοπό το χιούμορ και άλλα συναφή",
 			sales: {
 				value: 0,
 				salesTimelap: "",
@@ -100,7 +100,7 @@ export const store = new Vuex.Store({
 				{ "year": 2018, "yearExpenses": 32000, },
 				{ "year": 2019, "yearExpenses": 37000, },
 				{ "year": 2020, "yearExpenses": 52000, },
-			 ],
+			],
 			useResults: {
 				productSales: 0,
 				mixedProfit: 0,
@@ -147,7 +147,7 @@ export const store = new Vuex.Store({
 
 	},
 
-	mutations:{
+	mutations:{	
 		TOGGLE_BASIC_INFORMATION_PROGRESS: (state, payload) => {
 			state.bpProgress.basicInformationIsComplete = payload
 		},		
@@ -165,134 +165,60 @@ export const store = new Vuex.Store({
 		}
 	},
 
-	// getters:{
-	// 	// All the getters getting the first (0th) resource, assume that there exists
-	// 	// one of that resource inside the state manager (meaning one per business plan)
-
-	// 	// Identity 2.1,  Categories based on FinalJsons.js
-	// 	identity: state => {
-	// 		return state.identity[0] // Returns the first (0th) identity
-	// 	},
-
-	// 	// Clients 2.1
-	// 	clients: state => {
-	// 		return state.clients
-	// 	},
-
-	// 	// Description 2.2
-	// 	description: state => {
-	// 		return state.description[0] // Returns the first (0th) description
-	// 	},
-
-	// 	// Managers 3.1
-	// 	managers: state => {
-	// 		return state.managers
-	// 	},
-
-	// 	// Employees 3.2
-	// 	employees: state => {
-	// 		return state.employees
-	// 	},
-
-	// 	// Partners 3.3	
-	// 	partners: state => {
-	// 		return state.partners
-	// 	},
-
-	// 	// Employee Salaries 3.4
-	// 	employeeSalaries: state => {
-	// 		return state.employeeSalaries
-	// 	},
-
-	// 	// Faculties 4.1
-	// 	faculties: state => {
-	// 		return state.faculties
-	// 	},
-
-	// 	// Equipment 4.2
-	// 	equipment: state => {
-	// 		return state.equipment
-	// 	},
-
-	// 	// RunningCost 4.3
-	// 	// Returns the full runningCost resource including faculty and equipment costs
-	// 	runningCost: state => {
-	// 		return state.runningCost[0] // Returns the first (0th) runningCost
-	// 	},
-
-	// 	// RunningCost - FacultyCosts 4.3
-	// 	// Returns only the facultyCosts array from inside the first (0th) runningCost
-	// 	facultyCosts: state => {
-	// 		return state.runningCost[0].FacultyCosts 
-	// 	},
-
-	// 	// RunningCost - EquipmentCosts 4.3
-	// 	// Returns only the equipmentCosts array from inside the first (0th) runningCost		
-	// 	equipmentCosts: state => {
-	// 		return state.runningCost[0].EquipmentCosts
-	// 	},
-
-	// 	// Products 5
-	// 	products: state => {
-	// 		return state.products
-	// 	},
-
-	// 	// SWOT 6.1
-	// 	swot: state => {
-	// 		return state.swot[0] // Returns the first (0th) swot
-	// 	},
-
-	// 	// PESTEL - Factors 6.2
-	// 	factors: state => {
-	// 		return state.factors
-	// 	},
-
-	// 	// Note 6.3
-	// 	note: state => {
-	// 		return state.note[0] // Returns the first (0th) note
-	// 	},
-
-	// 	// Strategy 7.1
-	// 	strategy: state => {
-	// 		return state.strategy[0] // Returns the first (0th) strategy
-	// 	},
-
-	// 	// MarketingActions 7.2
-	// 	marketingActions: state => {
-	// 		return state.marketingActions
-	// 	},
-
-	// 	// StartActions 8.1
-	// 	startActions: state => {
-	// 		return state.startActions
-	// 	},
-
-	// 	// FunctionCost 8.2
-	// 	// Returns the full functionCost resource including the individual functions
-	// 	// and the totalCost
-	// 	functionCost: state => {
-	// 		return state.functionCost[0] // Returns the first (0th) functionCost
-	// 	},
-
-	// 	// FunctionCost - Functions 8.2
-	// 	// Returns only the functions array from inside the first (0th) functionCost resource
-	// 	functions: state => {
-	// 		return state.functionCost[0].Functions
-	// 	},
-
-	// 	// Deadspots 8.3
-	// 	deadspots: state => {
-	// 		return state.deadspots
-	// 	},
-
-	// 	// Links 9
-	// 	links: state => {
-	// 		return state.links
-	// 	},
-
-	// 	// Conclusion 1.1
-	// 	conclusion: state => {
-	// 		return state.conclusion[0] // Returns the first (0th) conclusion
-	// 	},
-	// }
+	getters:{
+		companyName: state => {
+			return state.companyName
+		},
+		address: state => {
+			return state.address
+		},
+		telephone: state => {
+			return state.telephone
+		},
+		email: state => {
+			return state.email
+		},
+		website: state => {
+			return state.website
+		},
+		businessNature: state => {
+			return state.businessNature
+		},
+		capital: state => {
+			return state.capital
+		},
+		foundationYear: state => {
+			return state.foundationYear
+		},
+		strains: state => {
+			return state.strains
+		},
+		synopsis: state => {
+			return state.synopsis
+		},
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+		// aaaaaaa: state => {
+		// 	return state.aaaaaa
+		// },
+	}
 })

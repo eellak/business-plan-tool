@@ -3,7 +3,7 @@
         <h3 class="products__title">{{ theTitle }}</h3>
         <div class="products__content" v-if="!productsIsEditing">
 			<el-card v-for="p in productsProp" :key="p.id" class="products__card">
-				<img src="../../assets/Checked.png" width="100"	>
+				<img src="../../assets/product-icon.png" width="100"	>
 				<div style="padding: 14px;">
 					<strong>Προϊόν</strong>
 					<p>{{ p.name }}</p>
@@ -16,7 +16,10 @@
 				<span style="color:#EB5757;font-style:normal;float:right;cursor:pointer;" @click="deleteProduct($event)">- Αφαίρεση</span>
 			</el-card>
 		</div>
-        <a class="products__addButton" @click="productsIsOpen = true">+Προσθέστε Προϊόντα</a>
+        <a class="products__addButton" @click="productsIsOpen = true">
+			<img src="../../assets/plus.png">
+			Προσθέστε Προϊόντα
+		</a>
 
 		<el-dialog title="Πληροφορίες προϊόντος/υπηρεσίας" :visible.sync="productsIsOpen" width="70%">
 			<span>

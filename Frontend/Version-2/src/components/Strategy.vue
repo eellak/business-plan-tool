@@ -5,22 +5,23 @@
 				<h1>Στρατηγική Marketing</h1>
 			</div>
 
-			<longtext :theTitle="'Στρατηγική προϊόντων'"></longtext>
+			<longtext :theTitle="'Στρατηγική προϊόντων'" :contentProp="$store.state.productStrategy"></longtext>
 
 			<h3 style="font-weight: 600;margin: 0;">Πλάνο Marketing</h3>
-			<longtext :theTitle="'Συμπεριφορά καταναλωτή'"></longtext>
+			<longtext :theTitle="'Συμπεριφορά καταναλωτή'" :contentProp="$store.state.consumerBehavior"></longtext>
 
-			<longtext :theTitle="'Προϊόν/υπηρεσία'"></longtext>
+			<longtext :theTitle="'Προϊόν/υπηρεσία'" :contentProp="$store.state.productMarketing"></longtext>
 
-			<longtext :theTitle="'Διανομή'"></longtext>
+			<longtext :theTitle="'Διανομή'" :contentProp="$store.state.distribution"></longtext>
 
-			<longtext :theTitle="'Προώθηση'"></longtext>
-
-			<longtext :theTitle="'Πωλήσεις'"></longtext>
+			<longtext :theTitle="'Προώθηση'" :contentProp="$store.state.promotion"></longtext>
+			
+			<!-- to be changed -->
+			<longtext :theTitle="'Πωλήσεις'" :contentProp="$store.state.consumerBehavior"></longtext>
 
 			<div class="main__footer">
 				<div class="footer__buttons">
-					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.strategyIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.strategyIsComplete">Ολοκλήρωση ενότητας</button>
 					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.strategyIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>

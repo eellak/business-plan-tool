@@ -2,18 +2,26 @@
     <div class="longtext">
         <h3 class="longtext__title">{{ theTitle }}</h3>
         <p class="longtext__content" v-if="!longtextIsEditing">{{ contentProp }}</p>
-        <a class="longtext__addButton" @click="openTextarea($event)" v-if="!contentProp">+Συμπληρώστε</a>
+        <a class="longtext__addButton" @click="openTextarea($event)" v-if="!contentProp">
+			<img src="../../assets/plus.png">
+			Συμπληρώστε
+		</a>
         <span class="longtext__addarea" v-if="longtextIsEditing">
             <el-input class="longtext__textarea" autosize type="textarea" v-model="contentProp"></el-input>
             <button class="longtext__save" @click="saveContent($event)">Ολοκλήρωση</button>	
         </span>
-        <a class="longtext__edit" @click="editContent($event)" v-if="!longtextIsEditing && !!contentProp">Επεξεργασία</a>
+        <a class="longtext__edit" @click="editContent($event)" v-if="!longtextIsEditing && !!contentProp">
+			<img src="../../assets/pencil-edit-button.png" style="width:20px;">
+			Επεξεργασία
+		</a>
     </div>
 </template>
 <script>
+// import { mapGetters } from 'vuex'
+// import { mapMutations } from 'vuex'
 export default {
     name: 'Longtext',
-    props: ['theTitle', 'contentProp'],
+    props: ['theTitle', 'contentProp', 'stateVarName'],
 	data() {
 		return {
 			longtextIsEditing: false,
@@ -29,6 +37,10 @@ export default {
 		},
 		saveContent(ev) {
 			this.longtextIsEditing = false
+			// this.$store.commit('SAVE_RESOURCE', { 
+			// 	resourceName: this.stateVarName, 
+			// 	resourceContent: this.contentProp
+			// })
 		},
 		editContent(ev) {
 			ev.currentTarget.style.display = 'none'

@@ -26,9 +26,9 @@
                     <li>
                       <router-link to="/financial-plan" tag="a" active-class="activeMenuProps">Οικονομικό Πλάνο<i class="sections-menu__i" v-if="$store.state.bpProgress.financialPlanIsComplete">✓</i></router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                       <router-link to="/test" tag="a" active-class="activeMenuProps">ExportBeta</router-link>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
           </div>
@@ -62,7 +62,7 @@
       <div style="display:flex; justify-content:center;">
         <el-progress type="circle" :percentage="(calculateCompleteness()/5)*100" color="#62AC30" style="margin-top:0px;"></el-progress>
       </div>
-      <div class="save_big_button"><p>Αποθήκευση</p></div>
+      <div class="save_big_button" @click="exportToPDF()"><p>Αποθήκευση</p></div>
     </div>
 
 
@@ -95,6 +95,283 @@ export default {
         });
   },
   methods: {
+    // Export PDF functionality.
+    exportToPDF() {
+      var db = this.$store.state
+      pdfMake.createPdf(this.contentToExport(db)).download();
+    },
+    contentToExport(db){
+      var docDefinition = {
+          
+          // Content of the pdf document
+          content: [
+          // Section 1
+          {text: "Επιχειρηματικό Μοντέλο", style: "sectionHeader"},
+          " ",
+          // Subsection 1.1
+          // This content element is a complicated one, with extra "tags" like bold, underline, etc., all contained into the style. 
+          // Notice it is inside curly brackets.
+          {text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
+          " ", // Newline
+          // This content element is a simple string element, no need for curly brackets, just comma after it.
+          {
+              style: 'tableExample',
+              table:{
+                  body: [
+                      ["Όνομα Επιχείρησης ", db.companyName],
+                      ["Διεύθυνση ", db.address],
+                      ["Ημερομηνία δημιουργίας " , db.foundationYear],
+                      ["Τηλέφωνο "           , db.telephone],
+                      ["Ιστοσελίδα" , db.website],
+                      ["Φύση της επιχείρησης", db.businessNature],
+                      ["Κεφάλαιο", db.capital]
+                  ]
+              },
+              layout: {
+                  fillColor: function (i, node) {
+                  return (i % 2 === 0) ? '#CCCCCC' : null;
+                  }
+              }
+          },
+          " ", " ",
+
+          {text: "1.2 Σύνοψη", style: "subSectionHeader"},
+          db.synopsis,
+
+          " ", " ",
+
+          {text: "Ανθρώπινο Δυναμικό", style:"sectionHeader"},
+
+          " ",
+          
+          {text: "2.1 Μέτοχοι", style:"subSectionHeader"},
+
+          {
+              ul: [
+                  db.shareholders[0],
+                  db.shareholders[1]
+              ]
+          },
+
+          " "," ",
+
+          {text: "2.2 Προιόντα", style:"subSectionHeader"},
+          " "," ",
+          
+          {
+              
+              table:{
+                  headerRows:1,
+                  
+                  body :[
+                      [{text: "Τύπος προίοντος", style:"tableHeader"}, {text: "Όνομα προιόντος", style:"tableHeader"},{text:"Πληροφορίες Προιόντος",style:"tableHeader"}],
+                      [db.products[0].type, db.products[0].name, db.products[0].details],
+                      [db.products[1].type,db.products[1].name, db.products[1].details],
+                      [db.products[2].type,db.products[2].name, db.products[2].details]
+                  ] 
+              },
+              layout: 'headerLineOnly'
+          },
+
+          " ", " ",
+          {text: "Τοποθεσία", style: "subSectionHeader"},
+          db.location,
+
+          " ", " ",
+
+          {text: "Εξωτερική Ανάλυση", style: "sectionHeader"},
+
+          " ", " ",
+
+          {text:"3.1 Ανάλυση Καταναλωτή", style: "subSectionHeader"},
+
+          " ",
+
+          db.consumerAnalysis,
+
+          " "," ",
+
+          {text: "3.2 Ανάλυση Ανταγωνισμου", style:"subSectionHeader"},
+
+          " ",
+
+          db.competitionAnalysis,
+
+          " ", " ",
+
+          {text: "3.3 Ανάλυση Αγοράς", style: "subSectionHeader"},
+
+          " ",
+          
+          {
+              style: 'tableExample',
+              table:{
+                  body: [
+                      ["Σύνθεση", db.marketAnalysis["synthesis"]],
+                      ["Τύπος", db.marketAnalysis["type"]],
+                      ["Ανταγωνιστες",db.marketAnalysis["competitors"]],
+                      ["Περιθώρια Εισόδου",db.marketAnalysis["perithoriaEisodou"]]
+                  ]
+              },
+              layout: {
+                  fillColor: function (i, node) {
+                  return (i % 2 === 0) ? '#CCCCCC' : null;
+                  }
+              }
+          },
+
+          " ", " ",
+
+          {text: "3.4 Ανάλυση Περιβάλλοντος:", style: "subSectionHeader"},
+          
+          " ",
+
+          db.enviromentAnalysis,
+
+          {text: "3.5 Ανάλυση SWOT:", style: "subSectionHeader"},
+          " ",
+          {
+              columns: [
+                  {
+                      width: '50%',
+                      stack: ["Δυνατά: ", {ul: db.swot["strengths"]}]
+                  },
+                  
+                  
+                  {
+                      width: '50%',
+                      stack: ["Αδύνατα: ", {ul: db.swot["weaknesses"]}]
+                  }
+              ],                    
+          },
+
+          " ",
+          {
+              columns: [
+                  {
+                      width: '50%',
+                      stack: ["Ευκαιρίες: ", {ul: db.swot["opportunities"]}]
+                  },
+                  
+                  {
+                      width: '50%',
+                      stack: ["Κίνδυνοι: ", {ul: db.swot["threats"]}]
+                  }
+              ],
+          },
+
+          " ", " ",
+
+          {text: "Στρατηγική", style:"sectionHeader"},
+
+          " ",
+
+          {text:"4.1 Στρατηγική των προιώντων", style:"subSectionHeader"},
+          
+          " ",
+          
+          db.productStrategy,
+          
+          " ", " ",
+
+          {text:"4.2 Συμπεριφορά του Καταναλωτή", style:"subSectionHeader"},
+          
+          " ",
+          
+          db.consumerBehavior,
+
+          " ", " ",
+
+          {text:"4.3 Μάρκετινγκ Προιώντων", style:"subSectionHeader"},
+
+          " ",
+
+          db.productMarketing,
+
+          " ", " ",
+
+          {text:"4.4 Διανομή Προιώντων", style:"subSectionHeader"},
+
+          " ",
+
+          db.distribution,
+
+          " ", " ",
+
+          {text:"4.5 Προώθηση", style:"subSectionHeader"},
+
+          " ",
+
+          db.promotion,
+
+          " "," ",
+
+          {text:"4.6 Πωλήσεις", style:"subSectionHeader"},
+          " ",
+          {
+              style: 'tableExample',
+              table:{
+                  body: [
+                      ["Αξία", db.sales["value"]],
+                      ["Χρονοδιάγραμμα Πωλήσεων", db.sales["salesTimelap"]],
+                      ["Ποσότητα",db.sales["quantity"]],
+                      ["Συνολική Αξία",db.sales["totalValue"]]
+                  ]
+              },
+              layout: {
+                  fillColor: function (i, node) {
+                  return (i % 2 === 0) ? '#CCCCCC' : null;
+                  }
+              }
+          },
+          " ", " ",
+
+          {text:"4.7 Διαχειριστικό Πλάνο", style:"subSectionHeader"},
+          " ",
+          db.administrativePlan,
+          " ", " ",
+          
+          {text:"Οικονομικό Πλάνο", style:"sectionHeader"},
+          " ",
+
+          {text:"5.1 Έξοδα", style:"subSectionHeader"},
+          " ",
+          {
+              style: 'tableExample',
+              table:{
+                  headerRows:1,
+                  body: [
+                      [{text: "Έτος", style:"tableHeader"}, {text: "Συνολικά Έξοδα", style:"tableHeader"}],
+                      [db.expenses[0].year, db.expenses[0].yearExpenses],
+                      [db.expenses[1].year, db.expenses[1].yearExpenses],
+                      [db.expenses[2].year, db.expenses[2].yearExpenses],
+                      
+                  ]
+              },
+              layout: 'lightHorizontalLines'
+              
+          },
+          " ", " ",
+
+          ], // Content array end
+
+          styles: {
+              sectionHeader: {
+                  bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
+              },
+              subSectionHeader: {
+                  bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+              }
+          }
+      }
+      return docDefinition
+      // console.log(typeof docDefinition);
+      css = ('\
+              h1 {font-family: "Times New Roman", Georgia, Serif; font-size: 16pt;}\
+              p {font-family: "Times New Roman", Georgia, Serif; font-size: 14pt;}\
+      ');
+    },
+    // ----------
     calculateCompleteness() {
       var obj = this.$store.state.bpProgress
       var sumOfTrues = 0
@@ -667,7 +944,7 @@ footer {
 	border: 1px solid transparent;
   text-align: center;
   font-size: 16px;
-  width: 220px;
+  width: 240px;
 	border-radius: 3px;
 }
 .check-button:hover {
@@ -874,6 +1151,7 @@ height:60px;
 text-align:justify;
 background-color:rgb(30, 33, 51);
 position:relative;
+cursor: pointer;
 }
 
 .save_big_button p {

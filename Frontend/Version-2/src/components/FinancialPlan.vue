@@ -11,7 +11,7 @@
 			
 			<div class="main__footer">
 				<div class="footer__buttons">
-					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.financialPlanIsComplete">Δεν Ολοκληρώθηκε</button>
+					<button class="check-button isNotDone" @click="toggleBasicInformation()" v-if="!$store.state.bpProgress.financialPlanIsComplete">Ολοκλήρωση ενότητας</button>
 					<button class="check-button isDone" @click="toggleBasicInformation()" v-if="$store.state.bpProgress.financialPlanIsComplete">✓Ολοκληρώθηκε</button>
 				</div>
 			</div>
@@ -49,8 +49,9 @@ export default {
 
 			this.chartSettings.metrics.push(currProductName)
 			this.chartSettings.stack['sales'].push(currProductName)
-			this.chartData.columns.push(currProductName)
-			for (var j = 0; j < this.chartData.rows.length; j++) {
+			this.chartData.columns.push(currProductName) // Pushes the products names.
+			for (var j = 0; j < this.chartData.rows.length; j++) { // Pushes the values (y-axis)
+				// this.chartData.rows[j][currProductName] = 30000;
 				this.chartData.rows[j][currProductName] = Math.floor(Math.random() * 20000) + 1000;
 			}
 		}
