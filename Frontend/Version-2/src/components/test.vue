@@ -1,5 +1,7 @@
 <template>
+    
     <div class="test">
+        
         <!-- <button id="but_export" @click="exportf()" >EXPORT</button> -->
         <el-dropdown @command="handleCommand">
             <el-button type="primary">EXPORT<i class="el-icon-arrow-down el-icon--right"></i>
@@ -12,25 +14,78 @@
 
         <div id="docx">
             <div class="testdiv">
-                <h1 id="header">Fusce luctus convallis justo</h1>
-                <p> 
-                    Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. P
-                    ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu
-                    ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna. Ph\
-                    asellus luctus venenatis magna. Vivamus eget lacus. Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, ferment
-                    um id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim. Cras lobortis tempor velit. Phasellus nec diam
-                    ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lob
-                    ortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.
-                </p>
+                <h1>Bussiness Plan for {{this.$store.state.companyName}} </h1>
+                <table style="width:100%">
+                    <tr>
+                        <td>Oνομα Εταιρίας</td>
+                        <td>{{this.$store.state.companyName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Διευθυνση</td>
+                        <td>{{this.$store.state.address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Τηλέφωνο</td>
+                        <td>{{this.$store.state.telephone}}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{{this.$store.state.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Ιστοσελίδα</td>
+                        <td>{{this.$store.state.website}}</td>
+                    </tr>
+                    <tr>
+                        <td>Φύση Εταιρίας</td>
+                        <td>{{this.$store.state.businessNature}}</td>
+                    </tr>
+                    <tr>
+                        <td>Κεφάλαιο</td>
+                        <td>{{this.$store.state.capital}}</td>
+                    </tr>
+                    <tr>
+                        <td>Έτος Ιδρύσεως</td>
+                        <td>{{this.$store.state.foundationYear}}</td>
+                    </tr>
+                    <tr>
+                        <td>Μέτοχοι</td>
+                        <td>{{this.$store.state.strains}}</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
+    
 </template>
 
 <script>
+import pdfMake from "pdfmake/build/pdfmake"
+import pdfFonts from "pdfmake/build/vfs_fonts"
+pdfMake.vfs = pdfFonts.pdfMake.vfs
 export default {
+
     name: 'test',
     methods: {
+        // productFun(db){
+        //         var charListArray = []
+        //         var charListArrayObj=db.products
+
+        //         for (var i = 0; i < charListArrayObj.length; i++){
+        //             charListArray [i] = [];
+        //             var a3 = Object.keys(charListArrayObj).map(
+        //                 function (k) { 
+        //                     return charListArrayObj[k];})
+
+                    
+        //         }
+        //         charListArray = charListArrayObj.slice()
+        //         console.log(charListArray)
+        //         return charListArray
+        // },
+
+
+
         handleCommand(command){
             if(command=="pdf"){
                 this.export_to_pdf();
@@ -50,10 +105,10 @@ export default {
                 }
             }
         },
-        export_to_doc() {
-            var html, link, blob, url,css;
-            
+
+        content_to_export(db){
             var docDefinition = {
+                
                 // Content of the pdf document
                 content: [
                 // Section 1
@@ -65,180 +120,284 @@ export default {
                 {text: "1.1 Ταυτότητα Επιχείρησης:", style: "subSectionHeader"},
                 " ", // Newline
                 // This content element is a simple string element, no need for curly brackets, just comma after it.
-                "Όνομα επιχείρησης: "      + "PAOK",
-                "Ημερομηνία δημιουργίας: " + "PAOK",
-                "Νομική μορφή: "           + "PAOK",
-                "Τύπος επιχείρησης: "      + "PAOK",
-                " ",
-                "Πελάτες: ",
-                " ",
-                // Due to the "ol" tag, it needs curly brackets. Equivalent to {ol: [firstItem, secondItem]} syntax.
-                {ol: "PAOK"},
-                " "," ", // 2 newlines between sections/subsections
-                // Subsection 1.2
-                {text: "1.2 Περιγραφή Επιχείρησης:", style: "subSectionHeader"},
-                " ",
-                // Simple string element coming straight from db
-                "PAOK",
-                " "," ",
-                // Section 2
-                {text: "Ανθρώπινο Δυναμικό", style: "sectionHeader"},
-                " ",
-                // Subsection 2.1
-                {text: "2.1 Ομάδα Διοίκησης:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"}, // Call dynamic content creation function for managers
-                " "," ",
-                // Subsection 2.2
-                {text: "2.2 Προσωπικό:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Subsection 2.3
-                {text: "2.3 Εξωτερικοί Συνεργάτες:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Subsection 2.3
-                {text: "2.4 Ανάλυση Κόστους:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Section 3
-                {text: "Εγκαταστάσεις - Εξοπλισμός", style: "sectionHeader"},
-                " ",
-                // Subsection 3.1
-                {text: "3.1 Τόπος Εγκατάστασης:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Subsection 3.2
-                {text: "3.2 Εξοπλισμός:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Subsection 3.3
-                {text: "3.3 Ανάλυση Κόστους:", style: "subSectionHeader"},
-                " ",
-                {text: "Κόστος εγκαταστάσεων:", bold: true},
-                " ",
-                {ol: "PAOK"},
-                {text: "Συνολικό κόστος εγκαταστάσεων: " + "PAOK" + "€", bold: true},
-                " ",
-                {text: "Κόστος εξοπλισμού:", bold: true},
-                " ",
-                {ol: "PAOK"},
-                {text: "Συνολικό κόστος εξοπλισμού: " + "PAOK" + "€", bold: true},
-                " "," ",
-                // Section 4
-                {text: "Προϊόντα - Υπηρεσίες", style: "sectionHeader"},
-                " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Section 5
-                {text: "Ανάλυση Αγοράς", style: "sectionHeader", pageBreak: "before"},
-                " ",
-                // Subsection 5.1
-                {text: "5.1 Ανάλυση SWOT:", style: "subSectionHeader"},
-                " ",
-                {columns: [{width: '50%', stack: ["Δυνατά: ", {ul: "PAOK"}]},
-                            {width: '50%', stack: ["Αδύναμα: ", {ul: "PAOK"}]},]
+                {
+                    style: 'tableExample',
+                    table:{
+                        body: [
+                            ["Όνομα Επιχείρησης ", db.companyName],
+                            ["Διεύθυνση ", db.address],
+                            ["Ημερομηνία δημιουργίας " , db.foundationYear],
+                            ["Τηλέφωνο "           , db.telephone],
+                            ["Ιστοσελίδα" , db.website],
+                            ["Φύση της επιχείρησης", db.businessNature],
+                            ["Κεφάλαιο", db.capital]
+                        ]
+                    },
+                    layout: {
+                        fillColor: function (i, node) {
+                        return (i % 2 === 0) ? '#CCCCCC' : null;
+                        }
+                    }
                 },
+                " ", " ",
+
+                {text: "1.2 Σύνοψη", style: "subSectionHeader"},
+                db.synopsis,
+
+                " ", " ",
+
+                {text: "Ανθρώπινο Δυναμικό", style:"sectionHeader"},
+
                 " ",
-                {columns: [{width: '50%', stack: ["Ευκαιρίες: ", {ul: "PAOK"}]},
-                            {width: '50%', stack: ["Απειλές: ", {ul: "PAOK"}]}]
+                
+                {text: "2.1 Μέτοχοι", style:"subSectionHeader"},
+
+                {
+                    ul: [
+                        db.shareholders[0],
+                        db.shareholders[1]
+                    ]
                 },
+
                 " "," ",
-                // Subsection 5.2
-                {text: "5.2 Ανάλυση PESTEL:", style: "subSectionHeader"},
-                " ",
-                {ol: "PAOK"},
+
+                {text: "2.2 Προιόντα", style:"subSectionHeader"},
                 " "," ",
-                // Subsection 5.3
-                {text: "5.3 Γενικές Παρατηρήσεις:", style: "subSectionHeader"},
+                
+                {
+                    
+                    table:{
+                        headerRows:1,
+                        
+                        body :[
+                            [{text: "Τύπος προίοντος", style:"tableHeader"}, {text: "Όνομα προιόντος", style:"tableHeader"},{text:"Πληροφορίες Προιόντος",style:"tableHeader"}],
+                            [db.products[0].type, db.products[0].name, db.products[0].details],
+                            [db.products[1].type,db.products[1].name, db.products[1].details],
+                            [db.products[2].type,db.products[2].name, db.products[2].details]
+                        ] 
+                    },
+                    layout: 'headerLineOnly'
+                },
+
+                " ", " ",
+                {text: "Τοποθεσία", style: "subSectionHeader"},
+                db.location,
+
+                " ", " ",
+
+                {text: "Εξωτερική Ανάλυση", style: "sectionHeader"},
+
+                " ", " ",
+
+                {text:"3.1 Ανάλυση Καταναλωτή", style: "subSectionHeader"},
+
                 " ",
-                "PAOK",
+
+                db.consumerAnalysis,
+
                 " "," ",
-                // Section 6
-                {text: "Στρατηγική Marketing", style: "sectionHeader"},
+
+                {text: "3.2 Ανάλυση Ανταγωνισμου", style:"subSectionHeader"},
+
                 " ",
-                // Subsection 6.1 
-                {text: "6.1 Στρατηγική:", style: "subSectionHeader"},
+
+                db.competitionAnalysis,
+
+                " ", " ",
+
+                {text: "3.3 Ανάλυση Αγοράς", style: "subSectionHeader"},
+
                 " ",
-                "Κανάλια προβολής: "              + "PAOK",
-                "Κανάλια διανομής: "              + "PAOK",
-                "Τεχνικές εισαγωγής στην αγορά: " + "PAOK",
-                "Δημόσιες σχέσεις: "              + "PAOK",
-                "Κινήσεις προς αποφυγείν: "       + "PAOK",
+                
+                {
+                    style: 'tableExample',
+                    table:{
+                        body: [
+                            ["Σύνθεση", db.marketAnalysis["synthesis"]],
+                            ["Τύπος", db.marketAnalysis["type"]],
+                            ["Ανταγωνιστες",db.marketAnalysis["competitors"]],
+                            ["Περιθώρια Εισόδου",db.marketAnalysis["perithoriaEisodou"]]
+                        ]
+                    },
+                    layout: {
+                        fillColor: function (i, node) {
+                        return (i % 2 === 0) ? '#CCCCCC' : null;
+                        }
+                    }
+                },
+
+                " ", " ",
+
+                {text: "3.4 Ανάλυση Περιβάλλοντος:", style: "subSectionHeader"},
+                
+                " ",
+
+                db.enviromentAnalysis,
+
+                {text: "3.5 Ανάλυση SWOT:", style: "subSectionHeader"},
+                " ",
+                {
+                    columns: [
+                        {
+                            width: '50%',
+                            stack: ["Δυνατά: ", {ul: db.swot["strengths"]}]
+                        },
+                        
+                        
+                        {
+                            width: '50%',
+                            stack: ["Αδύνατα: ", {ul: db.swot["weaknesses"]}]
+                        }
+                    ],                    
+                },
+
+                " ",
+                {
+                    columns: [
+                        {
+                            width: '50%',
+                            stack: ["Ευκαιρίες: ", {ul: db.swot["opportunities"]}]
+                        },
+                        
+                        {
+                            width: '50%',
+                            stack: ["Κίνδυνοι: ", {ul: db.swot["threats"]}]
+                        }
+                    ],
+                },
+
+                " ", " ",
+
+                {text: "Στρατηγική", style:"sectionHeader"},
+
+                " ",
+
+                {text:"4.1 Στρατηγική των προιώντων", style:"subSectionHeader"},
+                
+                " ",
+                
+                db.productStrategy,
+                
+                " ", " ",
+
+                {text:"4.2 Συμπεριφορά του Καταναλωτή", style:"subSectionHeader"},
+                
+                " ",
+                
+                db.consumerBehavior,
+
+                " ", " ",
+
+                {text:"4.3 Μάρκετινγκ Προιώντων", style:"subSectionHeader"},
+
+                " ",
+
+                db.productMarketing,
+
+                " ", " ",
+
+                {text:"4.4 Διανομή Προιώντων", style:"subSectionHeader"},
+
+                " ",
+
+                db.distribution,
+
+                " ", " ",
+
+                {text:"4.5 Προώθηση", style:"subSectionHeader"},
+
+                " ",
+
+                db.promotion,
+
                 " "," ",
-                // Subsection 6.2
-                {text: "6.2 Ενέργειες Marketing:", style: "subSectionHeader"},
-                " ", 
-                {ol: "PAOK"},
-                " "," ", 
-                // Section 7
-                {text: "Χρηματοοικονομικός Σχεδιασμός", style: "sectionHeader"},
+
+                {text:"4.6 Πωλήσεις", style:"subSectionHeader"},
                 " ",
-                // Subsection 7.1
-                {text: "7.1 Κόστος Έναρξης:", style: "subSectionHeader"},
+                {
+                    style: 'tableExample',
+                    table:{
+                        body: [
+                            ["Αξία", db.sales["value"]],
+                            ["Χρονοδιάγραμμα Πωλήσεων", db.sales["salesTimelap"]],
+                            ["Ποσότητα",db.sales["quantity"]],
+                            ["Συνολική Αξία",db.sales["totalValue"]]
+                        ]
+                    },
+                    layout: {
+                        fillColor: function (i, node) {
+                        return (i % 2 === 0) ? '#CCCCCC' : null;
+                        }
+                    }
+                },
+                " ", " ",
+
+                {text:"4.7 Διαχειριστικό Πλάνο", style:"subSectionHeader"},
                 " ",
-                {ol: "PAOK"},
-                " ", " ",     
-                // Subsection 7.2
-                {text: "7.2 Κόστος Λειτουργίας:", style: "subSectionHeader"},
-                " ", 
-                {ol: "PAOK"},
-                {text: "Συνολικό κόστος λειτουργίας: " + "PAOK" + "€", bold: true},
-                " "," ",
-                // Subsection 7.3
-                {text: "7.3 Νεκρά σημεία:", style: "subSectionHeader"},
+                db.administrativePlan,
+                " ", " ",
+                
+                {text:"Οικονομικό Πλάνο", style:"sectionHeader"},
                 " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Section 8
-                {text: "Χρονοδιάγραμμα", style: "sectionHeader"},
-                " "," ",
-                // Section 9
-                {text: "Παράρτημα", style: "sectionHeader"},
+
+                {text:"5.1 Έξοδα", style:"subSectionHeader"},
                 " ",
-                {ol: "PAOK"},
-                " "," ",
-                // Section 10
-                {text: "Σύνοψη", style: "sectionHeader"},
-                " ",
-                "Κείμενο: " + "PAOK"
+                {
+                    style: 'tableExample',
+                    table:{
+                        headerRows:1,
+                        body: [
+                            [{text: "Έτος", style:"tableHeader"}, {text: "Συνολικά Έξοδα", style:"tableHeader"}],
+                            [db.expenses[0].year, db.expenses[0].yearExpenses],
+                            [db.expenses[1].year, db.expenses[1].yearExpenses],
+                            [db.expenses[2].year, db.expenses[2].yearExpenses],
+                            
+                        ]
+                    },
+                    layout: 'lightHorizontalLines'
+                    
+                },
+                " ", " ",
 
                 ], // Content array end
 
                 styles: {
-                sectionHeader: {
-                    bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
-                },
-                subSectionHeader: {
-                    bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
-                }
+                    sectionHeader: {
+                        bold: true, underline: true, fontSize: 20, alignment: "left", decoration:"underline"
+                    },
+                    subSectionHeader: {
+                        bold: true, underline: true, fontSize: 15, alignment: "left", decoration:"underline"
+                    }
                 }
             }
+            return docDefinition
             // console.log(typeof docDefinition);
             css = ('\
                     h1 {font-family: "Times New Roman", Georgia, Serif; font-size: 16pt;}\
                     p {font-family: "Times New Roman", Georgia, Serif; font-size: 14pt;}\
             ');
+        },
+        
+        export_to_doc() {
+            // var html, link, blob, url,css;
+            // var db = this.$store.state
             
-            html = window.docx.innerHTML;
-            blob = new Blob(['\ufeff', html], {
-                type: 'application/msword'
-            });
-            url = URL.createObjectURL(blob);
-            link = document.createElement('A');
-            link.href = url;
-            // Set default file name. 
-            // Word will append file extension - do not add an extension here.
-            link.download = 'MyBusinessPlan';   
-            document.body.appendChild(link);
-            if (navigator.msSaveOrOpenBlob ) navigator.msSaveOrOpenBlob( blob, 'MyBusinessPlan.doc'); // IE10-11
-                    else link.click();  // other browsers
-            document.body.removeChild(link);
+            
+            
+            //   html = this.content_to_export(db);
+            //   blob = new Blob(['\ufeff', html], {
+            //       type: 'application/msword'
+            //   });
+            //   url = URL.createObjectURL(blob);
+            //   link = document.createElement('A');
+            //   link.href = url;
+            //   // Set default file name. 
+            //   // Word will append file extension - do not add an extension here.
+            //   link.download = 'MyBusinessPlan';   
+            //   document.body.appendChild(link);
+            //   if (navigator.msSaveOrOpenBlob ) navigator.msSaveOrOpenBlob( blob, 'MyBusinessPlan.doc'); // IE10-11
+            //           else link.click();  // other browsers
+            //   document.body.removeChild(link);
         },
         // export_to_doc2(){
         //     var doc = new docx.Document();
@@ -253,13 +412,14 @@ export default {
         //     exporter.pack('My Document');
         // },
         export_to_pdf() {
-            var mystring = window.docx.innerHTML;
-            var docDef = { content: [mystring]};
-            pdfMake.createPdf(docDef).download();
+            var db = this.$store.state
+            pdfMake.createPdf(this.content_to_export(db)).download();
         },
     }
 }
 </script>
+
+
 
 <style scoped>
     @import url("//unpkg.com/element-ui@2.3.8/lib/theme-chalk/index.css");
@@ -284,5 +444,20 @@ export default {
     #header{
         text-align: center;
         text-decoration: underline;
+    }
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
     }
 </style>
